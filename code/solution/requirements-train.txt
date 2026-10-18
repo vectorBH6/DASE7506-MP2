@@ -1,0 +1,3 @@
+# 独立训练环境；推理环境使用课程原始 code/requirements.txt。
+numpy==1.26.4
+scipy==1.11.4

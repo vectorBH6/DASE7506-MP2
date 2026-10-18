@@ -1,0 +1,30 @@
+{
+  "protocol": "dase7506-mp2-open-hard-verifier-v5",
+  "feature_version": "answer-group-basic-v1",
+  "feature_dim": 2088,
+  "model": "linear",
+  "enabled_scalar_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "l2": 0.01,
+  "seed": 7506,
+  "folds": 5,
+  "maxiter": 300,
+  "training_split": "train",
+  "training_questions": 2114
+}

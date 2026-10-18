@@ -1,4 +1,4 @@
-"""纯投票方法对比"""
+"""基线消融：纯答案投票，不使用 embedding。"""
 from common import parse_answer
 
 def predict(bank, arrays, checkpoint):

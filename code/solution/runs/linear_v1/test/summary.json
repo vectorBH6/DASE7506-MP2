@@ -1,0 +1,99 @@
+{
+  "freeze_id": "22c93832f59d840a0f45fb1c0562a87ded5c07695bc5cfc62e337acbdb2a91cb",
+  "freeze_manifest_sha256": "d9e1b178f6665bb1459d6e2b0e367827f17b5f060b0eac3fdb2ee0a8baa9a45a",
+  "started_utc": "2026-10-18T04:20:18.516864+00:00",
+  "finished_utc": "2026-10-18T04:20:18.759650+00:00",
+  "split": "test",
+  "method": "solution/group_ranker/submission_linear.py",
+  "official": {
+    "protocol": "dase7506-mp2-open-hard-verifier-v5",
+    "split": "test",
+    "correct": 375,
+    "n": 467,
+    "accuracy": 80.29978586723769,
+    "scoring_seconds": 0.012926933999551693
+  },
+  "total_wall_seconds": 0.24277942099797656,
+  "measurement": "External perf_counter wall time around two sequential fresh processes, including startup, imports, supplied input/asset hashes and loading, preprocessing, prediction, output writing, independent scoring and 1ms thread monitoring. Local page-cache state is uncontrolled; this is not a reference-CPU measurement.",
+  "processes": [
+    {
+      "command": [
+        "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+        "predict.py",
+        "--method",
+        "solution/group_ranker/submission_linear.py",
+        "--checkpoint",
+        "solution/runs/linear_v1/checkpoint",
+        "--split",
+        "test",
+        "--output",
+        "solution/runs/linear_v1/test/predictions.json"
+      ],
+      "started_utc": "2026-10-18T04:20:18.516868+00:00",
+      "coordinator_peak_threads": 1,
+      "child_peak_threads": 3,
+      "total_peak_threads": 4,
+      "sampled_child_peak_rss_kib": 56336,
+      "thread_samples": 147,
+      "wall_seconds": 0.17017381899859174,
+      "returncode": 0,
+      "stdout": "{\"protocol\": \"dase7506-mp2-open-hard-verifier-v5\", \"split\": \"test\", \"prediction_seconds\": 0.10953524399883463}\n",
+      "stderr": "",
+      "cpu_user_seconds": 0.428041,
+      "cpu_system_seconds": 0.025002
+    },
+    {
+      "command": [
+        "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+        "score_predictions.py",
+        "--split",
+        "test",
+        "--predictions",
+        "solution/runs/linear_v1/test/predictions.json",
+        "--output",
+        "solution/runs/linear_v1/test/score.json"
+      ],
+      "started_utc": "2026-10-18T04:20:18.687069+00:00",
+      "coordinator_peak_threads": 1,
+      "child_peak_threads": 3,
+      "total_peak_threads": 4,
+      "sampled_child_peak_rss_kib": 38380,
+      "thread_samples": 64,
+      "wall_seconds": 0.07254560999717796,
+      "returncode": 0,
+      "stdout": "{\n  \"protocol\": \"dase7506-mp2-open-hard-verifier-v5\",\n  \"split\": \"test\",\n  \"correct\": 375,\n  \"n\": 467,\n  \"accuracy\": 80.29978586723769,\n  \"scoring_seconds\": 0.012926933999551693\n}\n",
+      "stderr": "",
+      "cpu_user_seconds": 0.15430199999999994,
+      "cpu_system_seconds": 0.011022
+    }
+  ],
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.5.3",
+    "cpu": "Intel(R) Core(TM) Ultra 9 275HX",
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.39",
+    "thread_budget_total": 4,
+    "coordinator_threads": 1,
+    "child_threads": 3,
+    "coordinator": "standard-library Python only",
+    "child_thread_environment": {
+      "OMP_NUM_THREADS": "3",
+      "OPENBLAS_NUM_THREADS": "3",
+      "MKL_NUM_THREADS": "3",
+      "BLIS_NUM_THREADS": "3"
+    }
+  },
+  "inference_asset_bytes": 28771,
+  "frozen_files_unchanged": true,
+  "complete_test_bank": true,
+  "eligibility": {
+    "local_under_30_seconds": true,
+    "observed_total_threads_at_most_4": true,
+    "assets_within_16_mib": true,
+    "reference_cpu_verified": false
+  },
+  "artifact_sha256": {
+    "predictions.json": "77f21128d008467eb739bc7597e02c68c5dbc21eeeb9868b69b53e2304e44a7f",
+    "score.json": "325d3fce4e78765f9c360596a0f4c820619731eae7c07777550f428f79ab4a41"
+  }
+}

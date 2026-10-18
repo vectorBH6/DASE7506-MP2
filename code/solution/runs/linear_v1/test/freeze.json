@@ -1,0 +1,232 @@
+{
+  "created_utc": "2026-10-18T04:20:18.516435+00:00",
+  "freeze_id": "22c93832f59d840a0f45fb1c0562a87ded5c07695bc5cfc62e337acbdb2a91cb",
+  "method": "solution/group_ranker/submission_linear.py",
+  "checkpoint": "solution/runs/linear_v1/checkpoint",
+  "config": {
+    "protocol": "dase7506-mp2-open-hard-verifier-v5",
+    "feature_version": "answer-group-basic-v1",
+    "feature_dim": 2088,
+    "model": "linear",
+    "enabled_scalar_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "l2": 0.01,
+    "seed": 7506,
+    "folds": 5,
+    "maxiter": 300,
+    "training_split": "train",
+    "training_questions": 2114
+  },
+  "selection_basis": "Prespecified train-only five-fold OOF L2 selection, refit on all 2114 conflict training questions; validation comparison completed before test.",
+  "test_policy": "Evaluate only the selected linear_v1 method. No fitting, tuning or model selection using test. References opened only by the independent official scorer.",
+  "sha256": {
+    "code/PACKAGE_MANIFEST.json": "2e9b714598e1addba61545f0d7ce4891d9d11aaf567fb341420d36694fcfd656",
+    "code/check_data.py": "32f203e156e3019f87bb038ade4f303da21ca2f1694bb678a3ddc44661f0b533",
+    "code/common.py": "aecd10f7ff2e9e82ac5673d34d576e122caac51d2caaa7c7a8aa05906da51f6c",
+    "code/data/LICENSE.txt": "86bbb73e855821d7c401912fd4bf82e34313e6e3b6fd6f909f2b6cc9e209a53b",
+    "code/data/NOTICE.txt": "d577cdf7202ae22f2b19ace348b0ec69958a59aaf51d30cdab902bf7c1e67d78",
+    "code/data/manifest.json": "8b3721d458e48c87eab3a28f660e663981b10617b6e7321123c6ff30b1fbe825",
+    "code/predict.py": "e7a627fbdc9ef8d4ab3189a6fa5ac02d56ae703ccd1a81507aea0bd66e042162",
+    "code/requirements.txt": "5c12d85e7c08038d1dd9ffbf8119d12ce808885230a47e2bf65dcd9f114659d5",
+    "code/score_predictions.py": "fe12b809b82117aea722e5dfef7a55a88950a7cf50c49ec2ea007ea847959960",
+    "code/solution/__init__.py": "f96fb2e99c9bccb49c392355614c70fe2d9cd1f1c9a4fcb5fa7d688bdb451a28",
+    "code/solution/baselines/submission.py": "360ba032f77136ad6203e370b9df4e4cafb61681ea1965fcbb0e8e5f6288c268",
+    "code/solution/baselines/submission_emb_only.py": "f1b12384f3d2ecdeef0108e1357a1a04f4ab42e8444e42595a075676aa958d0a",
+    "code/solution/baselines/submission_voling_only.py": "c25078c99476ee50ac989fbaa1a36b51225e34fead921b20a5339df07f8660cd",
+    "code/solution/evaluate.py": "2f37bf118ec2b0f10267fb740bad6da9a4e527908c67a2164024fde686de1647",
+    "code/solution/group_ranker/__init__.py": "004736c19147e3623f71ff02762c85488e48821eebac5be4872478c28e1bcfaa",
+    "code/solution/group_ranker/features.py": "276d2e0183fc68979fc716a354e1647cbf7ba2c6e586ddd8b9fb2fc8438717a2",
+    "code/solution/group_ranker/submission_linear.py": "798b6cc85e0385aed9a529c1cb2f4f72657fa5004f33d54107c4b43bc9fb6fa0",
+    "code/solution/group_ranker/test_group_ranker.py": "753239cdc396590dd50024d5bb089917a037194983f951cee22e5477f2f5fac2",
+    "code/solution/group_ranker/train_linear.py": "a4d60652c9563dbfc3ede31e80eb7d7b6c17450de499f0cff228a9ba46e087eb",
+    "code/solution/requirements-train.txt": "a61ff83e1b6c50a77edab661510724d504ab459957f8c3f4ee5bc5340c0ac1e3",
+    "code/solution/runs/linear_v1/checkpoint/asset_manifest.json": "d39394a7cec192916d89f9f69ee0dbc469012480cd639b45e43e8dbd35f9444b",
+    "code/solution/runs/linear_v1/checkpoint/config.json": "136063546d7e1ccfcc39a8b707691204e321fd8fd53a508d34225e3a862fb033",
+    "code/solution/runs/linear_v1/checkpoint/model.npz": "b8656b760268f74203f26a3a7204843bd3e4b77e735c1ed21e39cb843c1ea3e5",
+    "code/solution/runs/linear_v1/training.json": "fe09710cbd19de13722b699929bacec587a183c03cbf79bf523f288085df4b39",
+    "code/submission.py": "37dcf01801937c4ba13a05a018b352afd2ff264541035143efa955ca31e24c10",
+    "guide/GUIDE.md": "7b4ab87265040f407854cdfb9860887f722008d24e03fffe311f99c2f2065130"
+  },
+  "source_archive": {
+    "file": "source.tar",
+    "sha256": "6d835860d90957fbb07db879f6a5536db50264623bbe9a21d9ade608c17cf4ba",
+    "bytes": 102400
+  },
+  "inference_assets": {
+    "bytes": 28771,
+    "limit_bytes": 16777216,
+    "size_basis": "All checkpoint files; NPZ entries are stored without compression."
+  },
+  "unit_checks": [
+    {
+      "environment": "training",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "solution.group_ranker.test_group_ranker",
+        "-v"
+      ],
+      "working_directory": "code",
+      "exit_code": 0,
+      "output": "test_equivalent_answers_and_reserved_features (solution.group_ranker.test_group_ranker.GroupRankerTests.test_equivalent_answers_and_reserved_features) ... ok\ntest_modified_asset_is_rejected (solution.group_ranker.test_group_ranker.GroupRankerTests.test_modified_asset_is_rejected) ... ok\ntest_objective_gradient_and_fold_preprocessing (solution.group_ranker.test_group_ranker.GroupRankerTests.test_objective_gradient_and_fold_preprocessing) ... ok\ntest_permutation_invariance_of_group_features (solution.group_ranker.test_group_ranker.GroupRankerTests.test_permutation_invariance_of_group_features) ... ok\ntest_prediction_is_independent_of_batch_and_permutation (solution.group_ranker.test_group_ranker.GroupRankerTests.test_prediction_is_independent_of_batch_and_permutation) ... ok\ntest_shortcuts_and_shape_checks (solution.group_ranker.test_group_ranker.GroupRankerTests.test_shortcuts_and_shape_checks) ... ok\ntest_zero_embeddings_and_missing_answers (solution.group_ranker.test_group_ranker.GroupRankerTests.test_zero_embeddings_and_missing_answers) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.085s\n\nOK\n"
+    },
+    {
+      "environment": "inference",
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "unittest",
+        "solution.group_ranker.test_group_ranker",
+        "-v"
+      ],
+      "working_directory": "code",
+      "exit_code": 0,
+      "output": "test_equivalent_answers_and_reserved_features (solution.group_ranker.test_group_ranker.GroupRankerTests.test_equivalent_answers_and_reserved_features) ... ok\ntest_modified_asset_is_rejected (solution.group_ranker.test_group_ranker.GroupRankerTests.test_modified_asset_is_rejected) ... ok\ntest_objective_gradient_and_fold_preprocessing (solution.group_ranker.test_group_ranker.GroupRankerTests.test_objective_gradient_and_fold_preprocessing) ... skipped '训练梯度检查需要 SciPy'\ntest_permutation_invariance_of_group_features (solution.group_ranker.test_group_ranker.GroupRankerTests.test_permutation_invariance_of_group_features) ... ok\ntest_prediction_is_independent_of_batch_and_permutation (solution.group_ranker.test_group_ranker.GroupRankerTests.test_prediction_is_independent_of_batch_and_permutation) ... ok\ntest_shortcuts_and_shape_checks (solution.group_ranker.test_group_ranker.GroupRankerTests.test_shortcuts_and_shape_checks) ... ok\ntest_zero_embeddings_and_missing_answers (solution.group_ranker.test_group_ranker.GroupRankerTests.test_zero_embeddings_and_missing_answers) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.045s\n\nOK (skipped=1)\n"
+    }
+  ],
+  "preflight": {
+    "official_source_manifest_match": true,
+    "official_source_hashes_checked": {
+      "code/README.md": "4c4218d68818d850fbad2fe38d2b1f3d2b80b7646720f21d2356fe3c0e020bc2",
+      "code/check_data.py": "32f203e156e3019f87bb038ade4f303da21ca2f1694bb678a3ddc44661f0b533",
+      "code/common.py": "aecd10f7ff2e9e82ac5673d34d576e122caac51d2caaa7c7a8aa05906da51f6c",
+      "code/data/manifest.json": "8b3721d458e48c87eab3a28f660e663981b10617b6e7321123c6ff30b1fbe825",
+      "code/predict.py": "e7a627fbdc9ef8d4ab3189a6fa5ac02d56ae703ccd1a81507aea0bd66e042162",
+      "code/requirements.txt": "5c12d85e7c08038d1dd9ffbf8119d12ce808885230a47e2bf65dcd9f114659d5",
+      "code/score_predictions.py": "fe12b809b82117aea722e5dfef7a55a88950a7cf50c49ec2ea007ea847959960",
+      "code/submission.py": "37dcf01801937c4ba13a05a018b352afd2ff264541035143efa955ca31e24c10",
+      "guide/GUIDE.md": "7b4ab87265040f407854cdfb9860887f722008d24e03fffe311f99c2f2065130"
+    },
+    "validation_choices_identical_for_all_four_methods": true,
+    "validation_environment": {
+      "python": "3.12.3",
+      "numpy": "2.5.3",
+      "cpu": "Intel(R) Core(TM) Ultra 9 275HX",
+      "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.39",
+      "thread_budget_total": 4,
+      "coordinator_threads": 1,
+      "child_threads": 3
+    },
+    "validation_results": {
+      "baseline": {
+        "official": {
+          "protocol": "dase7506-mp2-open-hard-verifier-v5",
+          "split": "validation",
+          "correct": 688,
+          "n": 798,
+          "accuracy": 86.2155388471178,
+          "scoring_seconds": 0.021087073000671808
+        },
+        "total_wall_seconds": 0.22119008200024837
+      },
+      "voting": {
+        "official": {
+          "protocol": "dase7506-mp2-open-hard-verifier-v5",
+          "split": "validation",
+          "correct": 688,
+          "n": 798,
+          "accuracy": 86.2155388471178,
+          "scoring_seconds": 0.020740112999192206
+        },
+        "total_wall_seconds": 0.22391299099763273
+      },
+      "embedding": {
+        "official": {
+          "protocol": "dase7506-mp2-open-hard-verifier-v5",
+          "split": "validation",
+          "correct": 624,
+          "n": 798,
+          "accuracy": 78.19548872180451,
+          "scoring_seconds": 0.021357621997594833
+        },
+        "total_wall_seconds": 0.21630224399996223
+      },
+      "linear": {
+        "official": {
+          "protocol": "dase7506-mp2-open-hard-verifier-v5",
+          "split": "validation",
+          "correct": 730,
+          "n": 798,
+          "accuracy": 91.47869674185463,
+          "scoring_seconds": 0.020953965999069624
+        },
+        "total_wall_seconds": 0.2613955660017382
+      }
+    },
+    "thread_observations": [
+      {
+        "tool": "predict.py",
+        "coordinator_peak_threads": 1,
+        "child_peak_threads": 3,
+        "total_peak_threads": 4,
+        "samples": 117
+      },
+      {
+        "tool": "score_predictions.py",
+        "coordinator_peak_threads": 1,
+        "child_peak_threads": 3,
+        "total_peak_threads": 4,
+        "samples": 67
+      },
+      {
+        "tool": "predict.py",
+        "coordinator_peak_threads": 1,
+        "child_peak_threads": 3,
+        "total_peak_threads": 4,
+        "samples": 115
+      },
+      {
+        "tool": "score_predictions.py",
+        "coordinator_peak_threads": 1,
+        "child_peak_threads": 3,
+        "total_peak_threads": 4,
+        "samples": 72
+      },
+      {
+        "tool": "predict.py",
+        "coordinator_peak_threads": 1,
+        "child_peak_threads": 3,
+        "total_peak_threads": 4,
+        "samples": 113
+      },
+      {
+        "tool": "score_predictions.py",
+        "coordinator_peak_threads": 1,
+        "child_peak_threads": 3,
+        "total_peak_threads": 4,
+        "samples": 70
+      },
+      {
+        "tool": "predict.py",
+        "coordinator_peak_threads": 1,
+        "child_peak_threads": 3,
+        "total_peak_threads": 4,
+        "samples": 160
+      },
+      {
+        "tool": "score_predictions.py",
+        "coordinator_peak_threads": 1,
+        "child_peak_threads": 3,
+        "total_peak_threads": 4,
+        "samples": 69
+      }
+    ]
+  }
+}

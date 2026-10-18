@@ -474,9 +474,11 @@ $$
 
 建议至少汇报官方 selection accuracy、每类错误（解析失败、答案平票、多数错、embedding 与投票冲突）、验证集与测试集的差异，以及全量 CPU 预测/评分时间和额外资产大小。核心消融是答案文本/最终答案、推理文本特征、固定 embeddings 三者各自贡献多少。
 
-## 6. 对当前 code/submission.py 的针对性阅读与修正结论
+## 6. 对原基线的针对性阅读与修正结论
 
-### 6.1 嵌入分支为什么无法提高当前官方得分
+### 6.1 嵌入分支为什么无法提高原基线的官方得分
+
+原基线代码入口见 [实现说明](../code/solution/README.md)。下面的推导对应该基线算法。
 
 由 `code/common.py` 的评分定义可知：若两个候选的 `parse_answer` 结果相同，则它们对任意相同 gold 的得分相同。当前代码先确定答案组，随后只在组内用 embedding 选择代表候选，故这一步的任意替换都不会改变官方准确率。
 
@@ -556,5 +558,5 @@ $$
 - [Lecture 4：Fine-Tuning](Lecture%204.pdf) — 分类/指令微调、LoRA、MoE。
 - [Lecture 5：What Is Reasoning in an LLM?](Lecture%205.pdf) — 数学 verifier、CoT、自一致性、ReAct。
 - [Lecture 6：Inference-Time Scaling and RLHF](Lecture%206.pdf) — 采样投票、候选评分、自我修订、偏好优化。
-- 项目任务和限制见 [MP2 GUIDE](../guide/GUIDE.md)、[代码说明](../code/README_cn.md)；当前算法接口见 [submission.py](../code/submission.py)。
+- 项目任务和限制见 [MP2 GUIDE](../guide/GUIDE.md)、[课程原始代码说明](../code/README_cn.md)；实现、运行命令与实验记录统一见 [实现说明](../code/solution/README.md)。
 

@@ -1,4 +1,4 @@
-"""纯嵌入方法对比"""
+"""基线消融：仅使用 embedding 余弦中心性，不解析答案。"""
 import numpy as np
 
 def predict(bank, arrays, checkpoint):

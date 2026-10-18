@@ -1,6 +1,6 @@
 # MP2 最终算法路线：基于答案分组的轻量监督排序
 
-> 状态：可进入实现的方案定稿。本次完成课程复核、代码推导以及 train/validation 输入统计；尚未训练新模型，也未测得新方案准确率或耗时。知识背景、原方案和补充推导见 [课程知识点与方案库](MP2算法知识点总结与方案灵感.md)。规则以 [英文 GUIDE](../guide/GUIDE.md) 为准。
+> 本文维护算法设计、推导与选型原则。项目结构、实际运行命令和实验结果统一维护在 [实现说明](../code/solution/README.md)。知识背景见 [课程知识点与方案库](MP2算法知识点总结与方案灵感.md)，作业规则以 [英文 GUIDE](../guide/GUIDE.md) 为准。
 
 ## 1. 最终选择的路线
 
@@ -25,11 +25,11 @@ flowchart LR
 
 ## 2. 为什么优先解决答案组之间的选择
 
-### 2.1 当前代码中的 embedding 没有改变得分
+### 2.1 原基线中的 embedding 没有改变得分
 
 根据 [common.py](../code/common.py)，得分只取决于所选候选的 `parse_answer` 值。若候选 A、B 的解析答案相同，选择 A 或 B 得分必然相同。
 
-当前 [submission.py](../code/submission.py) 先按最多票确定一个答案，再在该答案组内部使用 embedding。因此：
+原基线（代码入口见 [实现说明](../code/solution/README.md)）先按最多票确定一个答案，再在该答案组内部使用 embedding。因此：
 
 - 组内质心、余弦距离或另一个代表候选选择规则，都不会改变它的官方准确率。
 - 不同答案组票数相同时，代码通过字典插入顺序选最早出现的组；此时 embedding 没有介入。
@@ -311,7 +311,7 @@ $$
 
 | 编号 | 方法 | 主要回答的问题 |
 |---|---|---|
-| B0 | 现有 submission.py | 历史方法的可复现基线 |
+| B0 | 原投票与组内 embedding 基线 | 历史方法的可复现基线 |
 | B1 | 最多票；仅答案组平票时按跨候选余弦证据选组 | 修复真正的组间平票是否有用 |
 | B2 | 按答案组的候选中心性均值排序，不强制多数票 | 中心性单独能否选对答案 |
 | L0 | 组间线性模型：embedding、交互、0–15 维 | 监督是否优于无监督中心性 |
@@ -408,63 +408,9 @@ softmax 分数默认只是相对置信度。若报告需要温度校准，可以
 
 先在 validation 上排查成本；方法冻结后在完整 test 上做官方最终测量。目标留出余量，例如本地完整流程争取低于 20 秒，但资格取决于指南指定的参考 CPU，不能把本地成绩等同于参考机认证。
 
-## 11. 实现文件、命令与交付
+## 11. 实施验收与交付
 
-### 11.1 待新增文件
-
-本节是实施清单，所列新脚本本次尚未创建。
-
-| 文件 | 责任 |
-|---|---|
-| `code/group_features.py` | 官方解析分组、固定特征 schema、可选受限算术检查 |
-| `code/train_group_ranker.py` | train 标签、按题 CV、训练、OOF、最终 NumPy 权重导出 |
-| `code/submission_group_ranker.py` | 只读冻结资源的 `predict`，不导入训练代码 |
-| `code/analyze_group_ranker.py` | validation 分层分析、消融结果、错误案例与资源汇总 |
-| `code/configs/group_ranker_v1.json` | feature mask、结构、有限搜索空间、种子及协议版本 |
-| `code/runs/group_ranker_v1/model.npz` | 前向权重、均值、尺度和掩码 |
-| `code/runs/group_ranker_v1/config.json` | 特征版本、结构、确定性规则、训练/输入版本元信息 |
-| `code/runs/group_ranker_v1/asset_manifest.json` | 推理资产列表、未压缩规模和哈希 |
-
-复用原 `common.py`、`predict.py`、`score_predictions.py`，不修改官方协议。
-
-### 11.2 实施后的命令模板
-
-以下从 `code/` 目录执行。训练脚本命令是拟定接口，需随实现落地；官方预测与评分命令沿用现有工具。训练依赖另行锁定，推理继续使用仓库固定的 NumPy 依赖。
-
-```bash
-export OMP_NUM_THREADS=4
-export OPENBLAS_NUM_THREADS=4
-export MKL_NUM_THREADS=4
-
-python train_group_ranker.py \
-  --config configs/group_ranker_v1.json \
-  --output runs/group_ranker_v1
-
-python predict.py --method submission_group_ranker.py \
-  --checkpoint runs/group_ranker_v1 --split validation \
-  --output runs/validation-group-ranker.json
-
-python score_predictions.py --split validation \
-  --predictions runs/validation-group-ranker.json \
-  --output runs/validation-group-ranker-score.json
-```
-
-冻结之后，使用外部计时包住两个新进程，而不是相加工具内部的部分计时：
-
-```bash
-/usr/bin/time -f 'total_wall_seconds=%e' sh -c '
-python predict.py --method submission_group_ranker.py \
-  --checkpoint runs/group_ranker_v1 --split test \
-  --output runs/test-group-ranker.json &&
-python score_predictions.py --split test \
-  --predictions runs/test-group-ranker.json \
-  --output runs/test-group-ranker-score.json
-'
-```
-
-未来审计题库仍使用同一冻结方法，传入 `--split audit --data-dir /path/to/audit_inputs`；预测不能依赖公开测试集路径、样本数或 ID。
-
-### 11.3 阶段验收
+实现复用官方 `common.py`、`predict.py` 与 `score_predictions.py`，不修改数据或评测协议。目录、脚本与执行命令统一见 [实现说明](../code/solution/README.md)，这里仅保留设计的验收条件。各轮产物按实验名归档，源码持续演进，不按阶段复制。
 
 | 阶段 | 完成条件 |
 |---|---|
