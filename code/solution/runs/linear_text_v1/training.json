@@ -1,0 +1,312 @@
+{
+  "created_utc": "2026-10-19T11:58:05.986067+00:00",
+  "state": "complete",
+  "feature_set": "text",
+  "planned_l2": [
+    0.0001,
+    0.001,
+    0.01
+  ],
+  "folds": 5,
+  "seed": 7506,
+  "command": [
+    "/usr/bin/python3",
+    "/home/rvector/DASE7506-MP2/code/solution/linear_text/train.py",
+    "--l2",
+    "0.0001",
+    "0.001",
+    "0.01",
+    "--folds",
+    "5",
+    "--seed",
+    "7506",
+    "--maxiter",
+    "300",
+    "--output",
+    "solution/runs/linear_text_v1"
+  ],
+  "search": [
+    {
+      "l2": 0.0001,
+      "oof": {
+        "correct": 1646,
+        "n": 2114,
+        "accuracy": 77.86187322611164,
+        "nll": 1.0249214892041998
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "correct": 325,
+          "n": 426,
+          "accuracy": 76.29107981220658,
+          "nll": 1.0762777912800559,
+          "converged": true,
+          "iterations": 196,
+          "objective": 0.034355519099799364,
+          "message": "CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL"
+        },
+        {
+          "fold": 1,
+          "correct": 336,
+          "n": 425,
+          "accuracy": 79.05882352941177,
+          "nll": 1.0293631335508733,
+          "converged": true,
+          "iterations": 208,
+          "objective": 0.03483377150986089,
+          "message": "CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL"
+        },
+        {
+          "fold": 2,
+          "correct": 320,
+          "n": 423,
+          "accuracy": 75.65011820330969,
+          "nll": 1.1012585581924978,
+          "converged": true,
+          "iterations": 195,
+          "objective": 0.03409150515195636,
+          "message": "CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL"
+        },
+        {
+          "fold": 3,
+          "correct": 330,
+          "n": 420,
+          "accuracy": 78.57142857142857,
+          "nll": 1.026907260668103,
+          "converged": true,
+          "iterations": 208,
+          "objective": 0.035787075814721084,
+          "message": "CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL"
+        },
+        {
+          "fold": 4,
+          "correct": 335,
+          "n": 420,
+          "accuracy": 79.76190476190476,
+          "nll": 0.8894688993743426,
+          "converged": true,
+          "iterations": 204,
+          "objective": 0.03632144687332551,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+        }
+      ]
+    },
+    {
+      "l2": 0.001,
+      "oof": {
+        "correct": 1687,
+        "n": 2114,
+        "accuracy": 79.80132450331126,
+        "nll": 0.648542761516221
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "correct": 335,
+          "n": 426,
+          "accuracy": 78.63849765258216,
+          "nll": 0.6884638515771973,
+          "converged": true,
+          "iterations": 149,
+          "objective": 0.12489415013282928,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+        },
+        {
+          "fold": 1,
+          "correct": 341,
+          "n": 425,
+          "accuracy": 80.23529411764706,
+          "nll": 0.6492076740901321,
+          "converged": true,
+          "iterations": 143,
+          "objective": 0.12645939762619754,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+        },
+        {
+          "fold": 2,
+          "correct": 329,
+          "n": 423,
+          "accuracy": 77.77777777777777,
+          "nll": 0.6979239483715075,
+          "converged": true,
+          "iterations": 137,
+          "objective": 0.12460343090789866,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+        },
+        {
+          "fold": 3,
+          "correct": 339,
+          "n": 420,
+          "accuracy": 80.71428571428571,
+          "nll": 0.6344638791147699,
+          "converged": true,
+          "iterations": 143,
+          "objective": 0.12969089299467063,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+        },
+        {
+          "fold": 4,
+          "correct": 343,
+          "n": 420,
+          "accuracy": 81.66666666666667,
+          "nll": 0.5717235147517811,
+          "converged": true,
+          "iterations": 143,
+          "objective": 0.13156954658275266,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+        }
+      ]
+    },
+    {
+      "l2": 0.01,
+      "oof": {
+        "correct": 1716,
+        "n": 2114,
+        "accuracy": 81.17313150425733,
+        "nll": 0.466175076747398
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "correct": 332,
+          "n": 426,
+          "accuracy": 77.93427230046949,
+          "nll": 0.5092878086341321,
+          "converged": true,
+          "iterations": 74,
+          "objective": 0.288774611886962,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+        },
+        {
+          "fold": 1,
+          "correct": 349,
+          "n": 425,
+          "accuracy": 82.11764705882354,
+          "nll": 0.4607912415524214,
+          "converged": true,
+          "iterations": 70,
+          "objective": 0.2951968644160378,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+        },
+        {
+          "fold": 2,
+          "correct": 342,
+          "n": 423,
+          "accuracy": 80.85106382978724,
+          "nll": 0.49137700797541195,
+          "converged": true,
+          "iterations": 74,
+          "objective": 0.29150067912790095,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+        },
+        {
+          "fold": 3,
+          "correct": 346,
+          "n": 420,
+          "accuracy": 82.38095238095238,
+          "nll": 0.44128968275609687,
+          "converged": true,
+          "iterations": 75,
+          "objective": 0.30032729827174953,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+        },
+        {
+          "fold": 4,
+          "correct": 347,
+          "n": 420,
+          "accuracy": 82.61904761904762,
+          "nll": 0.4273978261307619,
+          "converged": true,
+          "iterations": 73,
+          "objective": 0.30281733863457094,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+        }
+      ]
+    }
+  ],
+  "development_policy": "仅 train 拟合与 OOF 选参数；validation 开发比较；不读取 test 参考或用 test 选型",
+  "config": {
+    "protocol": "dase7506-mp2-open-hard-verifier-v5",
+    "feature_version": "answer-group-text-v1",
+    "feature_dim": 2088,
+    "feature_set": "text",
+    "model": "linear",
+    "enabled_scalar_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31
+    ],
+    "l2": 0.01,
+    "seed": 7506,
+    "folds": 5,
+    "maxiter": 300,
+    "training_split": "train",
+    "training_questions": 2114
+  },
+  "feature_diagnostics": {
+    "questions": 2114,
+    "valid_candidates": 8082,
+    "evidence_seconds": 0.6587329198810039,
+    "feature_seconds": 1.0271571180128376
+  },
+  "fit_count": 16,
+  "train_total": 4755,
+  "train_conflict": 2114,
+  "selected_l2": 0.01,
+  "final_optimizer": {
+    "converged": true,
+    "iterations": 77,
+    "objective": 0.3152901186672511,
+    "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+  },
+  "inference_asset_bytes": 28923,
+  "training_seconds": 40.55941324000014,
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "1.26.4",
+    "scipy": "1.11.4",
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.39",
+    "threads": 1,
+    "cpu": "Intel(R) Core(TM) Ultra 9 275HX"
+  },
+  "source_sha256": {
+    "solution/group_ranker/evidence.py": "6c5c7c8985cfa097ccabd52f28b1eff426b81f36e87564b8cecc89de79007b4d",
+    "solution/group_ranker/features.py": "ff6e76bd7fd9afa23d77ccb2e06f7b095e7186fd0f55807093244f91a77ce2e9",
+    "solution/group_ranker/submission_linear.py": "978d007e581558ee17ef8945b08f5ce978274667a345e566beaf678fe61744e4",
+    "solution/group_ranker/train_linear.py": "99fc6be83e04e7c6bf17e946c1c1a2d8a2f68b732e1f6856b82b2a5a071649c3",
+    "solution/group_ranker/training.py": "0792f9a0f0229731be469a6fcaeb8aebca5f0591515b7ebfab55d185ed1c359c",
+    "solution/linear_text/submission.py": "e1e315b7f1f603ff7732d1c880362bd228c4e61ba4f09b6dda56aa4a2ce0af40",
+    "solution/linear_text/train.py": "aaeeb02f5a5524c1a65b175258998c065217afeaa9d0e916bb2b7c1c5e8aff2d"
+  },
+  "data_manifest_sha256": "8b3721d458e48c87eab3a28f660e663981b10617b6e7321123c6ff30b1fbe825"
+}

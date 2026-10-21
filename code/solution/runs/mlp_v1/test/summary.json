@@ -1,0 +1,401 @@
+{
+  "freeze_id": "2adf7544991d4245fc2029b8edbd5d3e98d8484b402a22dbfefe02b631db85fe",
+  "freeze_manifest_sha256": "9efffbf17e4f2794dc01186bd2c894381a172cf8668e027498027379383ec571",
+  "started_utc": "2026-10-21T03:47:04.612738+00:00",
+  "finished_utc": "2026-10-21T03:47:04.884940+00:00",
+  "split": "test",
+  "method": "solution/group_ranker/submission_mlp.py",
+  "official": {
+    "protocol": "dase7506-mp2-open-hard-verifier-v5",
+    "split": "test",
+    "correct": 369,
+    "n": 467,
+    "accuracy": 79.01498929336188,
+    "scoring_seconds": 0.020780357999683474
+  },
+  "total_wall_seconds": 0.2721547050005029,
+  "processes": [
+    {
+      "command": [
+        "/home/rvector/DASE7506-MP2/code/solution/.venv/bin/python",
+        "predict.py",
+        "--method",
+        "solution/group_ranker/submission_mlp.py",
+        "--checkpoint",
+        "solution/runs/mlp_v1/checkpoint",
+        "--split",
+        "test",
+        "--output",
+        "solution/runs/mlp_v1/test/predictions.json"
+      ],
+      "stdout": "{\"protocol\": \"dase7506-mp2-open-hard-verifier-v5\", \"split\": \"test\", \"prediction_seconds\": 0.12624364099974628}\n",
+      "stderr": "",
+      "thread_samples": 162,
+      "coordinator_peak_threads": 1,
+      "child_peak_threads": 3,
+      "total_peak_threads": 4
+    },
+    {
+      "command": [
+        "/home/rvector/DASE7506-MP2/code/solution/.venv/bin/python",
+        "score_predictions.py",
+        "--split",
+        "test",
+        "--predictions",
+        "solution/runs/mlp_v1/test/predictions.json",
+        "--output",
+        "solution/runs/mlp_v1/test/score.json"
+      ],
+      "stdout": "{\n  \"protocol\": \"dase7506-mp2-open-hard-verifier-v5\",\n  \"split\": \"test\",\n  \"correct\": 369,\n  \"n\": 467,\n  \"accuracy\": 79.01498929336188,\n  \"scoring_seconds\": 0.020780357999683474\n}\n",
+      "stderr": "",
+      "thread_samples": 73,
+      "coordinator_peak_threads": 1,
+      "child_peak_threads": 3,
+      "total_peak_threads": 4
+    }
+  ],
+  "inference_asset_bytes": 560785,
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "1.26.4",
+    "python_executable": "/home/rvector/DASE7506-MP2/code/solution/.venv/bin/python",
+    "cpu": "Intel(R) Core(TM) Ultra 9 275HX",
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.39",
+    "pythonpath_removed": true,
+    "thread_budget_total": 4,
+    "coordinator_threads": 1,
+    "child_threads": 3,
+    "child_thread_environment": {
+      "OMP_NUM_THREADS": "3",
+      "OPENBLAS_NUM_THREADS": "3",
+      "MKL_NUM_THREADS": "3",
+      "BLIS_NUM_THREADS": "3"
+    }
+  },
+  "measurement": "两个顺序新进程的外部计时，含启动、导入、哈希检查、载入、预处理、前向、输出、预测冻结与独立评分；缓存未控制。",
+  "scope": "既有 test 已接触；此次仅补充评分历史固定 M0/M2，属于事后冻结评分，不称新盲测。不训练、不调参、不更换种子、不添加规则或融合，不据 test 改变 validation 选定的最终融合。",
+  "complete_test_bank": true,
+  "eligibility": {
+    "local_under_30_seconds": true,
+    "observed_total_threads_at_most_4": true,
+    "assets_within_16_mib": true,
+    "reference_cpu_verified": false
+  },
+  "artifact_sha256": {
+    "predictions.json": "3009c28490934f3dd07eb2ddcca1addde211b301ce2b15aba817bf4bc48f7191",
+    "score.json": "7ecc6daffa30f0b5485f1f20063b2012353512429a9aac60af147d78ba48fe64",
+    "prediction_freeze.json": "3e9fb52f8363ceb6aa3844b005957873fe42faedfce72a8a64281c715717ad5a"
+  },
+  "analysis": {
+    "purpose": "既有 test 已接触；此次仅补充评分历史固定 M0/M2，属于事后冻结评分，不称新盲测。不训练、不调参、不更换种子、不添加规则或融合，不据 test 改变 validation 选定的最终融合。",
+    "correct": 369,
+    "wrong": 98,
+    "by_group_count": {
+      "2": {
+        "correct": 263,
+        "n": 303,
+        "accuracy": 86.79867986798679
+      },
+      "3": {
+        "correct": 84,
+        "n": 126,
+        "accuracy": 66.66666666666666
+      },
+      "4": {
+        "correct": 22,
+        "n": 38,
+        "accuracy": 57.89473684210527
+      }
+    },
+    "by_vote_pattern": {
+      "1+1": {
+        "correct": 14,
+        "n": 18,
+        "accuracy": 77.77777777777779
+      },
+      "1+1+1": {
+        "correct": 12,
+        "n": 24,
+        "accuracy": 50.0
+      },
+      "1+1+1+1": {
+        "correct": 22,
+        "n": 38,
+        "accuracy": 57.89473684210527
+      },
+      "2+1": {
+        "correct": 41,
+        "n": 50,
+        "accuracy": 82.0
+      },
+      "2+1+1": {
+        "correct": 72,
+        "n": 102,
+        "accuracy": 70.58823529411765
+      },
+      "2+2": {
+        "correct": 32,
+        "n": 39,
+        "accuracy": 82.05128205128204
+      },
+      "3+1": {
+        "correct": 176,
+        "n": 196,
+        "accuracy": 89.79591836734694
+      }
+    },
+    "profile_replay": {
+      "feature_seconds": 0.05835042300168425,
+      "forward_seconds": 0.012253734999831067
+    },
+    "confidence": {
+      "nll": 0.4892855142520832,
+      "conflict_nll": 0.4892855142520832,
+      "conflict_mean_max_probability": 0.8271323233699526,
+      "conflict_mean_probability_margin": 0.6842533417513514,
+      "conflict_mean_score_margin": 2.750117047158383,
+      "calibration": {
+        "overall": {
+          "n": 467,
+          "nll": 0.4892855142520832,
+          "brier": 0.2868692423006778,
+          "ece_10_bins": 0.04654821480921565
+        },
+        "conflict": {
+          "n": 467,
+          "nll": 0.4892855142520832,
+          "brier": 0.2868692423006778,
+          "ece_10_bins": 0.04654821480921565
+        },
+        "by_group_count": {
+          "2": {
+            "n": 303,
+            "nll": 0.30537989405138727,
+            "brier": 0.1928543005771827,
+            "ece_10_bins": 0.03159981589705491
+          },
+          "3": {
+            "n": 126,
+            "nll": 0.7229317053947029,
+            "brier": 0.42039539475545035,
+            "ece_10_bins": 0.09279249904742862
+          },
+          "4": {
+            "n": 38,
+            "nll": 1.1809692731163153,
+            "brier": 0.593770087903775,
+            "ece_10_bins": 0.10960876374973445
+          }
+        },
+        "definitions": "NLL 为逐题交叉熵；Brier 为组概率与 one-hot 的平方差之和；ECE 为最高组概率的十个等宽桶加权绝对偏差，非校准保证"
+      },
+      "conflict_confidence_bins": [
+        {
+          "low_inclusive": 0,
+          "high": 0.5,
+          "correct": 11,
+          "n": 29,
+          "accuracy": 37.93103448275862,
+          "mean_confidence": 0.4380823881187603
+        },
+        {
+          "low_inclusive": 0.5,
+          "high": 0.7,
+          "correct": 51,
+          "n": 90,
+          "accuracy": 56.666666666666664,
+          "mean_confidence": 0.5987425279985321
+        },
+        {
+          "low_inclusive": 0.7,
+          "high": 0.85,
+          "correct": 45,
+          "n": 72,
+          "accuracy": 62.5,
+          "mean_confidence": 0.7706137756129827
+        },
+        {
+          "low_inclusive": 0.85,
+          "high": 0.95,
+          "correct": 89,
+          "n": 96,
+          "accuracy": 92.70833333333334,
+          "mean_confidence": 0.9069716241943576
+        },
+        {
+          "low_inclusive": 0.95,
+          "high": 1.0,
+          "correct": 173,
+          "n": 180,
+          "accuracy": 96.11111111111111,
+          "mean_confidence": 0.9840339470647935
+        }
+      ]
+    },
+    "vs_m2": {
+      "corrected": 12,
+      "regressed": 16,
+      "net_correct": -4,
+      "difference_pp": -0.8565310492505354,
+      "paired_bootstrap_95ci_pp": [
+        -2.9978586723768736,
+        1.4989293361884368
+      ],
+      "bootstrap_draws": 2000,
+      "bootstrap_seed": 7506,
+      "multiple_comparison_adjustment": false,
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "test",
+        "correct": 373,
+        "n": 467,
+        "accuracy": 79.87152034261241,
+        "scoring_seconds": 0.012686994999967283
+      },
+      "predictions_sha256": "0730b04fc27697351f2d50af32d81added68311e19630f0524d448f5154cae35"
+    },
+    "vs_linear": {
+      "corrected": 20,
+      "regressed": 26,
+      "net_correct": -6,
+      "difference_pp": -1.284796573875803,
+      "paired_bootstrap_95ci_pp": [
+        -4.068522483940043,
+        1.4989293361884368
+      ],
+      "bootstrap_draws": 2000,
+      "bootstrap_seed": 7506,
+      "multiple_comparison_adjustment": false,
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "test",
+        "correct": 375,
+        "n": 467,
+        "accuracy": 80.29978586723769,
+        "scoring_seconds": 0.012926933999551693
+      },
+      "predictions_sha256": "77f21128d008467eb739bc7597e02c68c5dbc21eeeb9868b69b53e2304e44a7f"
+    },
+    "vs_m1": {
+      "corrected": 9,
+      "regressed": 12,
+      "net_correct": -3,
+      "difference_pp": -0.6423982869379015,
+      "paired_bootstrap_95ci_pp": [
+        -2.569593147751606,
+        1.284796573875803
+      ],
+      "bootstrap_draws": 2000,
+      "bootstrap_seed": 7506,
+      "multiple_comparison_adjustment": false,
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "test",
+        "correct": 372,
+        "n": 467,
+        "accuracy": 79.65738758029978,
+        "scoring_seconds": 0.013542243003030308
+      },
+      "predictions_sha256": "3ad7d2a98157242c507c8aaedb6878abcb48cc1f10b2043ec7101064f24633a8"
+    },
+    "vs_ensemble": {
+      "corrected": 9,
+      "regressed": 17,
+      "net_correct": -8,
+      "difference_pp": -1.7130620985010707,
+      "paired_bootstrap_95ci_pp": [
+        -3.854389721627409,
+        0.4282655246252677
+      ],
+      "bootstrap_draws": 2000,
+      "bootstrap_seed": 7506,
+      "multiple_comparison_adjustment": false,
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "test",
+        "correct": 377,
+        "n": 467,
+        "accuracy": 80.72805139186295,
+        "scoring_seconds": 0.013436297005682718
+      },
+      "predictions_sha256": "85b379930b9ac05ec9d04152bb4a4219d713633e1d6521b8beb23f8b8ef74727"
+    },
+    "vs_baseline": {
+      "corrected": 68,
+      "regressed": 22,
+      "net_correct": 46,
+      "difference_pp": 9.850107066381156,
+      "paired_bootstrap_95ci_pp": [
+        5.995717344753747,
+        13.704496788008566
+      ],
+      "bootstrap_draws": 2000,
+      "bootstrap_seed": 7506,
+      "multiple_comparison_adjustment": false,
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "test",
+        "correct": 323,
+        "n": 467,
+        "accuracy": 69.16488222698072,
+        "scoring_seconds": 0.02788540599794942
+      },
+      "predictions_sha256": "6d8a366337374339e7da844ea8e25f862715e4193a41e2118e4d5175bf450606"
+    },
+    "by_arithmetic_coverage": {
+      "covered": {
+        "own": {
+          "correct": 176,
+          "n": 223,
+          "accuracy": 78.9237668161435
+        },
+        "m1": {
+          "correct": 171,
+          "n": 223,
+          "accuracy": 76.68161434977578
+        },
+        "vs_m1": {
+          "corrected": 7,
+          "regressed": 2,
+          "net_correct": 5,
+          "difference_pp": 2.242152466367713,
+          "paired_bootstrap_95ci_pp": [
+            0.0,
+            4.932735426008969
+          ],
+          "bootstrap_draws": 2000,
+          "bootstrap_seed": 7506,
+          "multiple_comparison_adjustment": false
+        }
+      },
+      "not_covered": {
+        "own": {
+          "correct": 193,
+          "n": 244,
+          "accuracy": 79.09836065573771
+        },
+        "m1": {
+          "correct": 201,
+          "n": 244,
+          "accuracy": 82.37704918032787
+        },
+        "vs_m1": {
+          "corrected": 2,
+          "regressed": 10,
+          "net_correct": -8,
+          "difference_pp": -3.278688524590164,
+          "paired_bootstrap_95ci_pp": [
+            -6.147540983606557,
+            -0.4098360655737705
+          ],
+          "bootstrap_draws": 2000,
+          "bootstrap_seed": 7506,
+          "multiple_comparison_adjustment": false
+        }
+      }
+    }
+  },
+  "frozen_files_unchanged": true,
+  "historical_artifact_count": 317,
+  "historical_artifacts_unchanged": true
+}

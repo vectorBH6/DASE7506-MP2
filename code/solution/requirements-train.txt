@@ -1,3 +1,4 @@
-# 独立训练环境；推理环境使用课程原始 code/requirements.txt。
+# solution/.venv 的统一依赖；保留文件名以兼容已有运行说明。
 numpy==1.26.4
 scipy==1.11.4
+catboost==1.2.8

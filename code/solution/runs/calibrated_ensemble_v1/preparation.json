@@ -1,0 +1,118 @@
+{
+  "created_utc": "2026-10-19T12:13:41.466838+00:00",
+  "state": "complete",
+  "command": [
+    "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+    "/home/rvector/DASE7506-MP2/code/solution/calibrated_ensemble/calibrate.py",
+    "--linear-checkpoint",
+    "solution/runs/linear_v1/checkpoint",
+    "--mlp-checkpoint",
+    "solution/runs/mlp_text_v1/checkpoint",
+    "--output",
+    "solution/runs/calibrated_ensemble_v1"
+  ],
+  "fit_count": 2,
+  "base_model_fit_count": 0,
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "temperatures": [
+    1.2278854512454669,
+    1.337883194300168
+  ],
+  "calibration": {
+    "linear": {
+      "temperature": 1.2278854512454669,
+      "inverse_temperature": 0.8144082161619242,
+      "nll_before": 0.476703089726901,
+      "nll_after": 0.46927805651534926,
+      "final_gradient": -4.957665729641191e-17,
+      "boundary": null,
+      "bisection_steps": 60,
+      "n": 2114
+    },
+    "mlp": {
+      "temperature": 1.337883194300168,
+      "inverse_temperature": 0.7474494068393533,
+      "nll_before": 0.5040590274648488,
+      "nll_after": 0.4892320533080635,
+      "final_gradient": -2.352790515761921e-17,
+      "boundary": null,
+      "bisection_steps": 60,
+      "n": 2114
+    }
+  },
+  "beta_bounds": [
+    0.05,
+    20.0
+  ],
+  "bisection_steps": 60,
+  "objective": "per-question answer-group NLL on supplied train OOF logits",
+  "train_diagnostics": {
+    "uncalibrated": {
+      "correct": 1717,
+      "n": 2114,
+      "accuracy": 81.22043519394512,
+      "nll": 0.46369870301663174
+    },
+    "calibrated": {
+      "correct": 1715,
+      "n": 2114,
+      "accuracy": 81.12582781456953,
+      "nll": 0.4623708375200131
+    },
+    "scope": "温度拟合数据上的描述性指标；成员 logits 是 OOF，但温度使用全部这些标签拟合，不能视为独立验证",
+    "member_argmax_unchanged": true,
+    "fusion_choice_changes": 9
+  },
+  "member_artifacts": {
+    "linear": {
+      "oof_sha256": "d433b58efad5c26b99f3c88a53c4f3409d89ca394384832943f43ce1a9027e6d",
+      "training_sha256": "fe09710cbd19de13722b699929bacec587a183c03cbf79bf523f288085df4b39",
+      "checkpoint_sha256": {
+        "asset_manifest.json": "d39394a7cec192916d89f9f69ee0dbc469012480cd639b45e43e8dbd35f9444b",
+        "config.json": "136063546d7e1ccfcc39a8b707691204e321fd8fd53a508d34225e3a862fb033",
+        "model.npz": "b8656b760268f74203f26a3a7204843bd3e4b77e735c1ed21e39cb843c1ea3e5"
+      }
+    },
+    "mlp": {
+      "oof_sha256": "ffb5de43d88a4b8424f18a3934876c4f361be5eb876d030f510fed23b1ec7f03",
+      "training_sha256": "730badea614381875e26940b8de457baf0f5347401a981793f3e604184cf7962",
+      "checkpoint_sha256": {
+        "asset_manifest.json": "2af4fceb7486d83bd281427754a461dc20dc86e455d2914702a7965146bd36af",
+        "config.json": "1c042f6347f02584e4f2d97495257678090d48da9ab5b96d0eb5d40115b6722e",
+        "model.npz": "19a8bdc5d12865df401a66e588b1be58409cd0753c662806268901062dbcdca9"
+      }
+    }
+  },
+  "inference_asset_bytes": 590736,
+  "source_sha256": {
+    "solution/calibrated_ensemble/__init__.py": "3471e6eb19e2f71826b594cb9b45fb8de31de08a6082c37db1ce1db52095590e",
+    "solution/calibrated_ensemble/calibrate.py": "029208080068c66f4bce05a24534a1d168c7e7ac7a87342a014d890759bdf938",
+    "solution/calibrated_ensemble/submission.py": "ddbc11f3b58ab045d0635144d3f9fb8c50306cddd995f09a5661d1dacb063cb5",
+    "solution/calibrated_ensemble/test_calibration.py": "f46dd065578853aae6992ea664231ac4189b84d1cd1042325236a40eaccb2def",
+    "solution/evaluate.py": "1715f31b858e5b7c9262838a5710d0d766dd56e92793b9057ce1fc53a1672482",
+    "solution/group_ranker/__init__.py": "004736c19147e3623f71ff02762c85488e48821eebac5be4872478c28e1bcfaa",
+    "solution/group_ranker/evidence.py": "6c5c7c8985cfa097ccabd52f28b1eff426b81f36e87564b8cecc89de79007b4d",
+    "solution/group_ranker/features.py": "ff6e76bd7fd9afa23d77ccb2e06f7b095e7186fd0f55807093244f91a77ce2e9",
+    "solution/group_ranker/mlp.py": "d16fe03fdd3b2454d3eec623224b33e80b1545222936c01c2818b2e206a3bef4",
+    "solution/group_ranker/submission_ensemble.py": "df52006b90213d0dfc811a29041d11f3d518b8713a0180de9eb0258a98399fb5",
+    "solution/group_ranker/submission_linear.py": "978d007e581558ee17ef8945b08f5ce978274667a345e566beaf678fe61744e4",
+    "solution/group_ranker/submission_mlp.py": "cb8e8df149dc21ad9b7dd39c92b0f5dee34c7eda55283a92f908a0626979486b",
+    "solution/group_ranker/test_ensemble.py": "3217a7134f00a6ce8490e857528afb27cec8e2cba19a234f48d34c98040eb501",
+    "solution/group_ranker/test_group_ranker.py": "dfd1c8a39428baf9a65a0d5eba2f7c3046630cc16d80b3f45e8d212cc969f903",
+    "solution/group_ranker/train_linear.py": "99fc6be83e04e7c6bf17e946c1c1a2d8a2f68b732e1f6856b82b2a5a071649c3",
+    "solution/group_ranker/train_mlp.py": "1b4fdc0755b082517042aa239887b56d27f2e11f47fa6ad47d0bf30c31f22962",
+    "solution/group_ranker/training.py": "0792f9a0f0229731be469a6fcaeb8aebca5f0591515b7ebfab55d185ed1c359c"
+  },
+  "data_manifest_sha256": "8b3721d458e48c87eab3a28f660e663981b10617b6e7321123c6ff30b1fbe825",
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.5.3",
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.39",
+    "threads": 1
+  },
+  "preparation_seconds": 0.024233605996414553,
+  "scope": "既有 test 已接触；本轮仅 train OOF 拟合两个温度，validation 比较，不读取 test 参考、不运行 test，不按旧 test 调参、挑成员或权重"
+}

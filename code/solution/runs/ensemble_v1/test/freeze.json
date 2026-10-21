@@ -1,0 +1,80 @@
+{
+  "created_utc": "2026-10-19T11:40:17.949733+00:00",
+  "method": "solution/group_ranker/submission_ensemble.py",
+  "checkpoint": "solution/runs/ensemble_v1/checkpoint",
+  "config": {
+    "protocol": "dase7506-mp2-open-hard-verifier-v5",
+    "model": "equal-probability-v1",
+    "weights": [
+      0.5,
+      0.5
+    ],
+    "components": [
+      "linear",
+      "mlp"
+    ],
+    "temperature": 1.0,
+    "aggregation": "per-question answer-group probabilities"
+  },
+  "sha256": {
+    "code/PACKAGE_MANIFEST.json": "2e9b714598e1addba61545f0d7ce4891d9d11aaf567fb341420d36694fcfd656",
+    "code/README.md": "4c4218d68818d850fbad2fe38d2b1f3d2b80b7646720f21d2356fe3c0e020bc2",
+    "code/check_data.py": "32f203e156e3019f87bb038ade4f303da21ca2f1694bb678a3ddc44661f0b533",
+    "code/common.py": "aecd10f7ff2e9e82ac5673d34d576e122caac51d2caaa7c7a8aa05906da51f6c",
+    "code/data/manifest.json": "8b3721d458e48c87eab3a28f660e663981b10617b6e7321123c6ff30b1fbe825",
+    "code/predict.py": "e7a627fbdc9ef8d4ab3189a6fa5ac02d56ae703ccd1a81507aea0bd66e042162",
+    "code/requirements.txt": "5c12d85e7c08038d1dd9ffbf8119d12ce808885230a47e2bf65dcd9f114659d5",
+    "code/score_predictions.py": "fe12b809b82117aea722e5dfef7a55a88950a7cf50c49ec2ea007ea847959960",
+    "code/solution/__init__.py": "f96fb2e99c9bccb49c392355614c70fe2d9cd1f1c9a4fcb5fa7d688bdb451a28",
+    "code/solution/baselines/submission.py": "360ba032f77136ad6203e370b9df4e4cafb61681ea1965fcbb0e8e5f6288c268",
+    "code/solution/baselines/submission_emb_only.py": "f1b12384f3d2ecdeef0108e1357a1a04f4ab42e8444e42595a075676aa958d0a",
+    "code/solution/baselines/submission_group_center.py": "8aec2b59b914519a70245600b71d117eaf1532a3c85a8d4c24a865b2bdf05858",
+    "code/solution/baselines/submission_tiebreak.py": "836f7730db174d25ea16b00e909b3f64bf396fcf5ae208a318e2b13f128fb9ad",
+    "code/solution/baselines/submission_voling_only.py": "c25078c99476ee50ac989fbaa1a36b51225e34fead921b20a5339df07f8660cd",
+    "code/solution/evaluate.py": "c019a8c92f70f7f2b1f0501e8180d490ef8842965b210ea653ef5b8b6be2a6ce",
+    "code/solution/group_ranker/__init__.py": "004736c19147e3623f71ff02762c85488e48821eebac5be4872478c28e1bcfaa",
+    "code/solution/group_ranker/evidence.py": "6c5c7c8985cfa097ccabd52f28b1eff426b81f36e87564b8cecc89de79007b4d",
+    "code/solution/group_ranker/features.py": "ff6e76bd7fd9afa23d77ccb2e06f7b095e7186fd0f55807093244f91a77ce2e9",
+    "code/solution/group_ranker/mlp.py": "d16fe03fdd3b2454d3eec623224b33e80b1545222936c01c2818b2e206a3bef4",
+    "code/solution/group_ranker/submission_ensemble.py": "11ed0f0b7b0d90baee33dc9d57873fcf990ecc2802fc99597b08179b96846d85",
+    "code/solution/group_ranker/submission_linear.py": "798b6cc85e0385aed9a529c1cb2f4f72657fa5004f33d54107c4b43bc9fb6fa0",
+    "code/solution/group_ranker/submission_mlp.py": "cb8e8df149dc21ad9b7dd39c92b0f5dee34c7eda55283a92f908a0626979486b",
+    "code/solution/group_ranker/test_ensemble.py": "3217a7134f00a6ce8490e857528afb27cec8e2cba19a234f48d34c98040eb501",
+    "code/solution/group_ranker/test_group_ranker.py": "dfd1c8a39428baf9a65a0d5eba2f7c3046630cc16d80b3f45e8d212cc969f903",
+    "code/solution/group_ranker/train_linear.py": "ada8c028e200c6abc3827672458412febc3b2347f1d8e9ee97a457a8d96ec5f1",
+    "code/solution/group_ranker/train_mlp.py": "1b4fdc0755b082517042aa239887b56d27f2e11f47fa6ad47d0bf30c31f22962",
+    "code/solution/group_ranker/training.py": "0792f9a0f0229731be469a6fcaeb8aebca5f0591515b7ebfab55d185ed1c359c",
+    "code/solution/requirements-train.txt": "a61ff83e1b6c50a77edab661510724d504ab459957f8c3f4ee5bc5340c0ac1e3",
+    "code/solution/runs/ensemble_v1/checkpoint/asset_manifest.json": "c811e72b1c6fc79ff31d38764c901de2e8aa21a615fe1d489af0fc6bfcb9f635",
+    "code/solution/runs/ensemble_v1/checkpoint/config.json": "a0bbf1a3b3c46cc4b11ba769e3a6f1c94b93d2840e9f7915cf77bd746006ccd9",
+    "code/solution/runs/ensemble_v1/checkpoint/linear/asset_manifest.json": "d39394a7cec192916d89f9f69ee0dbc469012480cd639b45e43e8dbd35f9444b",
+    "code/solution/runs/ensemble_v1/checkpoint/linear/config.json": "136063546d7e1ccfcc39a8b707691204e321fd8fd53a508d34225e3a862fb033",
+    "code/solution/runs/ensemble_v1/checkpoint/linear/model.npz": "b8656b760268f74203f26a3a7204843bd3e4b77e735c1ed21e39cb843c1ea3e5",
+    "code/solution/runs/ensemble_v1/checkpoint/mlp/asset_manifest.json": "2af4fceb7486d83bd281427754a461dc20dc86e455d2914702a7965146bd36af",
+    "code/solution/runs/ensemble_v1/checkpoint/mlp/config.json": "1c042f6347f02584e4f2d97495257678090d48da9ab5b96d0eb5d40115b6722e",
+    "code/solution/runs/ensemble_v1/checkpoint/mlp/model.npz": "19a8bdc5d12865df401a66e588b1be58409cd0753c662806268901062dbcdca9",
+    "code/solution/runs/ensemble_v1/checks.json": "240aac16e6b9d89d47a8b6b2406514ca3a9f5bb84fc19e3752bd29d7b4e5e8fd",
+    "code/solution/runs/ensemble_v1/preparation.json": "7df5905160777120dcdf732dc2d4b9d7caa7586ddaa9d92ad811dc79ca24cc00",
+    "code/solution/runs/ensemble_v1/validation/summary.json": "9929ef5856507807b352bcd6bf0b43f19e660d1d50fc0dd984aeca18f9b1fc4c",
+    "code/submission.py": "37dcf01801937c4ba13a05a018b352afd2ff264541035143efa955ca31e24c10",
+    "guide/GUIDE.md": "7b4ab87265040f407854cdfb9860887f722008d24e03fffe311f99c2f2065130"
+  },
+  "selection_basis": "用户授权的单一固定配方：线性 + 7506 M1，各自答案组 softmax 后按 0.5/0.5 平均；三种子 train OOF 复核及 validation 已完成，无训练或权重搜索。",
+  "test_policy": "单模型旧 test 成绩已知，故本轮是事后扩展的冻结评分，不是新盲测。只运行这个配方，不根据 test 调温度、权重、种子、门控或重选模型。",
+  "source_archive": {
+    "file": "source.tar",
+    "sha256": "33aae9b861f6f5d3d34f58a6cd9cfdb01e63a214f716c5861faf3b2a14da005c",
+    "bytes": 317440
+  },
+  "inference_assets": {
+    "bytes": 590639,
+    "limit_bytes": 16777216,
+    "all_npz_uncompressed": true
+  },
+  "git": {
+    "base_commit": "0e5576e60cb028a5cc62e88199e3c24cb539e2ac",
+    "working_tree_dirty": true,
+    "identity_basis": "匹配的源码快照和代码/资产 SHA-256 清单"
+  },
+  "freeze_id": "79062305cd4b895b0c26d7f2eed97c321a68b1fe2b83d07e40905bb29b72db1b"
+}

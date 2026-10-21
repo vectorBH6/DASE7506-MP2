@@ -1,0 +1,1076 @@
+{
+  "created_utc": "2026-10-21T04:39:04.960037+00:00",
+  "split": "validation",
+  "methods": {
+    "gated": {
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "validation",
+        "correct": 727,
+        "n": 798,
+        "accuracy": 91.10275689223057,
+        "scoring_seconds": 0.020523626000795048
+      },
+      "total_wall_seconds": 0.44031610100137186,
+      "processes": [
+        {
+          "command": [
+            "/home/rvector/DASE7506-MP2/code/solution/.venv/bin/python",
+            "predict.py",
+            "--method",
+            "solution/attention_ranker/submission.py",
+            "--checkpoint",
+            "solution/runs/attention_v1/gated/checkpoint",
+            "--split",
+            "validation",
+            "--output",
+            "solution/runs/attention_v1/gated/validation/predictions.json"
+          ],
+          "stdout": "{\"protocol\": \"dase7506-mp2-open-hard-verifier-v5\", \"split\": \"validation\", \"prediction_seconds\": 0.28943906699896615}\n",
+          "stderr": "",
+          "thread_samples": 297,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 3,
+          "total_peak_threads": 4
+        },
+        {
+          "command": [
+            "/home/rvector/DASE7506-MP2/code/solution/.venv/bin/python",
+            "score_predictions.py",
+            "--split",
+            "validation",
+            "--predictions",
+            "solution/runs/attention_v1/gated/validation/predictions.json",
+            "--output",
+            "solution/runs/attention_v1/gated/validation/score.json"
+          ],
+          "stdout": "{\n  \"protocol\": \"dase7506-mp2-open-hard-verifier-v5\",\n  \"split\": \"validation\",\n  \"correct\": 727,\n  \"n\": 798,\n  \"accuracy\": 91.10275689223057,\n  \"scoring_seconds\": 0.020523626000795048\n}\n",
+          "stderr": "",
+          "thread_samples": 69,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 3,
+          "total_peak_threads": 4
+        }
+      ],
+      "inference_asset_bytes": 694073,
+      "checkpoint": "solution/runs/attention_v1/gated/checkpoint",
+      "measurement": "新预测进程和独立评分进程的外部计时；含启动、导入、哈希、加载、预处理、全部成员、输出与预测冻结；缓存未控制。",
+      "analysis": {
+        "conflict": {
+          "correct": 284,
+          "n": 355,
+          "accuracy": 80.0
+        },
+        "by_group_count": {
+          "1": {
+            "correct": 443,
+            "n": 443,
+            "accuracy": 100.0
+          },
+          "2": {
+            "correct": 194,
+            "n": 227,
+            "accuracy": 85.46255506607929
+          },
+          "3": {
+            "correct": 76,
+            "n": 108,
+            "accuracy": 70.37037037037037
+          },
+          "4": {
+            "correct": 14,
+            "n": 20,
+            "accuracy": 70.0
+          }
+        },
+        "confidence": {
+          "nll": 0.21771468000895966,
+          "conflict_nll": 0.48939806942859104,
+          "conflict_mean_max_probability": 0.81877048698754,
+          "conflict_mean_probability_margin": 0.6694121765247533,
+          "conflict_mean_score_margin": 2.5723917883584724,
+          "calibration": {
+            "overall": {
+              "n": 798,
+              "nll": 0.21771468000895966,
+              "brier": 0.12426846777193382,
+              "ece_10_bins": 0.014503829179396537
+            },
+            "conflict": {
+              "n": 355,
+              "nll": 0.48939806942859104,
+              "brier": 0.2793415134704315,
+              "ece_10_bins": 0.03260297376100965
+            },
+            "by_group_count": {
+              "1": {
+                "n": 443,
+                "nll": 0.0,
+                "brier": 0.0,
+                "ece_10_bins": 0.0
+              },
+              "2": {
+                "n": 227,
+                "nll": 0.3336366398081525,
+                "brier": 0.199206189548597,
+                "ece_10_bins": 0.03025889308961911
+              },
+              "3": {
+                "n": 108,
+                "nll": 0.7480924962523268,
+                "brier": 0.4138910093862822,
+                "ece_10_bins": 0.0864578437590346
+              },
+              "4": {
+                "n": 20,
+                "nll": 0.8603403907723969,
+                "brier": 0.4623101620376594,
+                "ece_10_bins": 0.19560535841212534
+              }
+            },
+            "definitions": "NLL 为逐题交叉熵；Brier 为组概率与 one-hot 的平方差之和；ECE 为最高组概率的十个等宽桶加权绝对偏差，非校准保证"
+          },
+          "conflict_confidence_bins": [
+            {
+              "low_inclusive": 0,
+              "high": 0.5,
+              "correct": 9,
+              "n": 22,
+              "accuracy": 40.909090909090914,
+              "mean_confidence": 0.4276942140805536
+            },
+            {
+              "low_inclusive": 0.5,
+              "high": 0.7,
+              "correct": 39,
+              "n": 68,
+              "accuracy": 57.35294117647059,
+              "mean_confidence": 0.5920572785423519
+            },
+            {
+              "low_inclusive": 0.7,
+              "high": 0.85,
+              "correct": 47,
+              "n": 63,
+              "accuracy": 74.60317460317461,
+              "mean_confidence": 0.7849974818879841
+            },
+            {
+              "low_inclusive": 0.85,
+              "high": 0.95,
+              "correct": 82,
+              "n": 91,
+              "accuracy": 90.10989010989012,
+              "mean_confidence": 0.9028165914538493
+            },
+            {
+              "low_inclusive": 0.95,
+              "high": 1.0,
+              "correct": 107,
+              "n": 111,
+              "accuracy": 96.3963963963964,
+              "mean_confidence": 0.985434270708841
+            }
+          ]
+        },
+        "profile_replay": {
+          "feature_seconds": 0.17189001803672,
+          "forward_seconds": 0.03331424499810964
+        },
+        "comparisons": {
+          "attention": {
+            "corrected": 9,
+            "regressed": 11,
+            "net_correct": -2,
+            "difference_pp": -0.2506265664160401,
+            "difference_95ci_pp": [
+              -1.3784461152882206,
+              0.8771929824561403
+            ],
+            "bootstrap_seed": 7506,
+            "bootstrap_draws": 2000,
+            "multiple_comparison_adjustment": false
+          },
+          "gated_ensemble": {
+            "corrected": 7,
+            "regressed": 18,
+            "net_correct": -11,
+            "difference_pp": -1.3784461152882206,
+            "difference_95ci_pp": [
+              -2.631578947368421,
+              -0.12531328320802004
+            ],
+            "bootstrap_seed": 7506,
+            "bootstrap_draws": 2000,
+            "multiple_comparison_adjustment": false
+          },
+          "attention_ensemble": {
+            "corrected": 9,
+            "regressed": 19,
+            "net_correct": -10,
+            "difference_pp": -1.2531328320802004,
+            "difference_95ci_pp": [
+              -2.631578947368421,
+              0.0031328320801834054
+            ],
+            "bootstrap_seed": 7506,
+            "bootstrap_draws": 2000,
+            "multiple_comparison_adjustment": false
+          },
+          "m1_original": {
+            "corrected": 8,
+            "regressed": 19,
+            "net_correct": -11,
+            "difference_pp": -1.3784461152882206,
+            "difference_95ci_pp": [
+              -2.631578947368421,
+              -0.12531328320802004
+            ],
+            "bootstrap_seed": 7506,
+            "bootstrap_draws": 2000,
+            "multiple_comparison_adjustment": false
+          },
+          "ensemble_original": {
+            "corrected": 8,
+            "regressed": 21,
+            "net_correct": -13,
+            "difference_pp": -1.6290726817042605,
+            "difference_95ci_pp": [
+              -2.882205513784461,
+              -0.37593984962406013
+            ],
+            "bootstrap_seed": 7506,
+            "bootstrap_draws": 2000,
+            "multiple_comparison_adjustment": false
+          },
+          "linear": {
+            "corrected": 20,
+            "regressed": 23,
+            "net_correct": -3,
+            "difference_pp": -0.37593984962406013,
+            "difference_95ci_pp": [
+              -2.0050125313283207,
+              1.2531328320802004
+            ],
+            "bootstrap_seed": 7506,
+            "bootstrap_draws": 2000,
+            "multiple_comparison_adjustment": false
+          }
+        }
+      },
+      "train_oof": {
+        "correct": 1640,
+        "n": 2114,
+        "accuracy": 77.57805108798486,
+        "nll": 0.5407586989635623
+      }
+    },
+    "attention": {
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "validation",
+        "correct": 729,
+        "n": 798,
+        "accuracy": 91.35338345864662,
+        "scoring_seconds": 0.020397161999426316
+      },
+      "total_wall_seconds": 0.43399782099913864,
+      "processes": [
+        {
+          "command": [
+            "/home/rvector/DASE7506-MP2/code/solution/.venv/bin/python",
+            "predict.py",
+            "--method",
+            "solution/attention_ranker/submission.py",
+            "--checkpoint",
+            "solution/runs/attention_v1/attention/checkpoint",
+            "--split",
+            "validation",
+            "--output",
+            "solution/runs/attention_v1/attention/validation/predictions.json"
+          ],
+          "stdout": "{\"protocol\": \"dase7506-mp2-open-hard-verifier-v5\", \"split\": \"validation\", \"prediction_seconds\": 0.28743343600035587}\n",
+          "stderr": "",
+          "thread_samples": 293,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 3,
+          "total_peak_threads": 4
+        },
+        {
+          "command": [
+            "/home/rvector/DASE7506-MP2/code/solution/.venv/bin/python",
+            "score_predictions.py",
+            "--split",
+            "validation",
+            "--predictions",
+            "solution/runs/attention_v1/attention/validation/predictions.json",
+            "--output",
+            "solution/runs/attention_v1/attention/validation/score.json"
+          ],
+          "stdout": "{\n  \"protocol\": \"dase7506-mp2-open-hard-verifier-v5\",\n  \"split\": \"validation\",\n  \"correct\": 729,\n  \"n\": 798,\n  \"accuracy\": 91.35338345864662,\n  \"scoring_seconds\": 0.020397161999426316\n}\n",
+          "stderr": "",
+          "thread_samples": 68,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 3,
+          "total_peak_threads": 4
+        }
+      ],
+      "inference_asset_bytes": 694077,
+      "checkpoint": "solution/runs/attention_v1/attention/checkpoint",
+      "measurement": "新预测进程和独立评分进程的外部计时；含启动、导入、哈希、加载、预处理、全部成员、输出与预测冻结；缓存未控制。",
+      "analysis": {
+        "conflict": {
+          "correct": 286,
+          "n": 355,
+          "accuracy": 80.56338028169014
+        },
+        "by_group_count": {
+          "1": {
+            "correct": 443,
+            "n": 443,
+            "accuracy": 100.0
+          },
+          "2": {
+            "correct": 194,
+            "n": 227,
+            "accuracy": 85.46255506607929
+          },
+          "3": {
+            "correct": 78,
+            "n": 108,
+            "accuracy": 72.22222222222221
+          },
+          "4": {
+            "correct": 14,
+            "n": 20,
+            "accuracy": 70.0
+          }
+        },
+        "confidence": {
+          "nll": 0.21692844512543616,
+          "conflict_nll": 0.4876307020002761,
+          "conflict_mean_max_probability": 0.8042279165177529,
+          "conflict_mean_probability_margin": 0.6411496203797677,
+          "conflict_mean_score_margin": 2.3065247833518914,
+          "calibration": {
+            "overall": {
+              "n": 798,
+              "nll": 0.21692844512543616,
+              "brier": 0.12256854340223051,
+              "ece_10_bins": 0.018319930637129805
+            },
+            "conflict": {
+              "n": 355,
+              "nll": 0.4876307020002761,
+              "brier": 0.27552027502811255,
+              "ece_10_bins": 0.04118113985473132
+            },
+            "by_group_count": {
+              "1": {
+                "n": 443,
+                "nll": 0.0,
+                "brier": 0.0,
+                "ece_10_bins": 0.0
+              },
+              "2": {
+                "n": 227,
+                "nll": 0.35798564167802677,
+                "brier": 0.20903239690777245,
+                "ece_10_bins": 0.03319536835506774
+              },
+              "3": {
+                "n": 108,
+                "nll": 0.6808818925902632,
+                "brier": 0.37246780167283505,
+                "ece_10_bins": 0.09888343000129182
+              },
+              "4": {
+                "n": 20,
+                "nll": 0.9155457074718771,
+                "brier": 0.5066410478124718,
+                "ece_10_bins": 0.21721606287179607
+              }
+            },
+            "definitions": "NLL 为逐题交叉熵；Brier 为组概率与 one-hot 的平方差之和；ECE 为最高组概率的十个等宽桶加权绝对偏差，非校准保证"
+          },
+          "conflict_confidence_bins": [
+            {
+              "low_inclusive": 0,
+              "high": 0.5,
+              "correct": 9,
+              "n": 19,
+              "accuracy": 47.368421052631575,
+              "mean_confidence": 0.44425870980613663
+            },
+            {
+              "low_inclusive": 0.5,
+              "high": 0.7,
+              "correct": 48,
+              "n": 84,
+              "accuracy": 57.14285714285714,
+              "mean_confidence": 0.5933768016164811
+            },
+            {
+              "low_inclusive": 0.7,
+              "high": 0.85,
+              "correct": 63,
+              "n": 73,
+              "accuracy": 86.3013698630137,
+              "mean_confidence": 0.7804011428142162
+            },
+            {
+              "low_inclusive": 0.85,
+              "high": 0.95,
+              "correct": 60,
+              "n": 67,
+              "accuracy": 89.55223880597015,
+              "mean_confidence": 0.9022489776658786
+            },
+            {
+              "low_inclusive": 0.95,
+              "high": 1.0,
+              "correct": 106,
+              "n": 112,
+              "accuracy": 94.64285714285714,
+              "mean_confidence": 0.9803248090415145
+            }
+          ]
+        },
+        "profile_replay": {
+          "feature_seconds": 0.17224566199183755,
+          "forward_seconds": 0.03051232500001788
+        },
+        "comparisons": {
+          "gated": {
+            "corrected": 11,
+            "regressed": 9,
+            "net_correct": 2,
+            "difference_pp": 0.2506265664160401,
+            "difference_95ci_pp": [
+              -0.8771929824561403,
+              1.3784461152882206
+            ],
+            "bootstrap_seed": 7506,
+            "bootstrap_draws": 2000,
+            "multiple_comparison_adjustment": false
+          },
+          "gated_ensemble": {
+            "corrected": 7,
+            "regressed": 16,
+            "net_correct": -9,
+            "difference_pp": -1.1278195488721803,
+            "difference_95ci_pp": [
+              -2.258771929824561,
+              0.0031328320801834054
+            ],
+            "bootstrap_seed": 7506,
+            "bootstrap_draws": 2000,
+            "multiple_comparison_adjustment": false
+          },
+          "attention_ensemble": {
+            "corrected": 5,
+            "regressed": 13,
+            "net_correct": -8,
+            "difference_pp": -1.0025062656641603,
+            "difference_95ci_pp": [
+              -2.1303258145363406,
+              0.0
+            ],
+            "bootstrap_seed": 7506,
+            "bootstrap_draws": 2000,
+            "multiple_comparison_adjustment": false
+          },
+          "m1_original": {
+            "corrected": 7,
+            "regressed": 16,
+            "net_correct": -9,
+            "difference_pp": -1.1278195488721803,
+            "difference_95ci_pp": [
+              -2.2556390977443606,
+              0.0
+            ],
+            "bootstrap_seed": 7506,
+            "bootstrap_draws": 2000,
+            "multiple_comparison_adjustment": false
+          },
+          "ensemble_original": {
+            "corrected": 4,
+            "regressed": 15,
+            "net_correct": -11,
+            "difference_pp": -1.3784461152882206,
+            "difference_95ci_pp": [
+              -2.506265664160401,
+              -0.37593984962406013
+            ],
+            "bootstrap_seed": 7506,
+            "bootstrap_draws": 2000,
+            "multiple_comparison_adjustment": false
+          },
+          "linear": {
+            "corrected": 16,
+            "regressed": 17,
+            "net_correct": -1,
+            "difference_pp": -0.12531328320802004,
+            "difference_95ci_pp": [
+              -1.5037593984962405,
+              1.3784461152882206
+            ],
+            "bootstrap_seed": 7506,
+            "bootstrap_draws": 2000,
+            "multiple_comparison_adjustment": false
+          }
+        }
+      },
+      "train_oof": {
+        "correct": 1659,
+        "n": 2114,
+        "accuracy": 78.47682119205298,
+        "nll": 0.5276565589961215
+      }
+    },
+    "gated_ensemble": {
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "validation",
+        "correct": 738,
+        "n": 798,
+        "accuracy": 92.4812030075188,
+        "scoring_seconds": 0.021701629999370198
+      },
+      "total_wall_seconds": 0.4452750600012223,
+      "processes": [
+        {
+          "command": [
+            "/home/rvector/DASE7506-MP2/code/solution/.venv/bin/python",
+            "predict.py",
+            "--method",
+            "solution/attention_ranker/submission.py",
+            "--checkpoint",
+            "solution/runs/attention_v1/gated_ensemble/checkpoint",
+            "--split",
+            "validation",
+            "--output",
+            "solution/runs/attention_v1/gated_ensemble/validation/predictions.json"
+          ],
+          "stdout": "{\"protocol\": \"dase7506-mp2-open-hard-verifier-v5\", \"split\": \"validation\", \"prediction_seconds\": 0.294482456998594}\n",
+          "stderr": "",
+          "thread_samples": 312,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 3,
+          "total_peak_threads": 4
+        },
+        {
+          "command": [
+            "/home/rvector/DASE7506-MP2/code/solution/.venv/bin/python",
+            "score_predictions.py",
+            "--split",
+            "validation",
+            "--predictions",
+            "solution/runs/attention_v1/gated_ensemble/validation/predictions.json",
+            "--output",
+            "solution/runs/attention_v1/gated_ensemble/validation/score.json"
+          ],
+          "stdout": "{\n  \"protocol\": \"dase7506-mp2-open-hard-verifier-v5\",\n  \"split\": \"validation\",\n  \"correct\": 738,\n  \"n\": 798,\n  \"accuracy\": 92.4812030075188,\n  \"scoring_seconds\": 0.021701629999370198\n}\n",
+          "stderr": "",
+          "thread_samples": 73,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 3,
+          "total_peak_threads": 4
+        }
+      ],
+      "inference_asset_bytes": 723682,
+      "checkpoint": "solution/runs/attention_v1/gated_ensemble/checkpoint",
+      "measurement": "新预测进程和独立评分进程的外部计时；含启动、导入、哈希、加载、预处理、全部成员、输出与预测冻结；缓存未控制。",
+      "analysis": {
+        "conflict": {
+          "correct": 295,
+          "n": 355,
+          "accuracy": 83.09859154929578
+        },
+        "by_group_count": {
+          "1": {
+            "correct": 443,
+            "n": 443,
+            "accuracy": 100.0
+          },
+          "2": {
+            "correct": 206,
+            "n": 227,
+            "accuracy": 90.7488986784141
+          },
+          "3": {
+            "correct": 75,
+            "n": 108,
+            "accuracy": 69.44444444444444
+          },
+          "4": {
+            "correct": 14,
+            "n": 20,
+            "accuracy": 70.0
+          }
+        },
+        "confidence": {
+          "nll": 0.20259633680098468,
+          "conflict_nll": 0.4554137373723543,
+          "conflict_mean_max_probability": 0.8232198056816343,
+          "conflict_mean_probability_margin": 0.6754773465131303,
+          "conflict_mean_score_margin": 2.482895899499599,
+          "calibration": {
+            "overall": {
+              "n": 798,
+              "nll": 0.20259633680098468,
+              "brier": 0.1168763259215063,
+              "ece_10_bins": 0.014477461981341234
+            },
+            "conflict": {
+              "n": 355,
+              "nll": 0.4554137373723543,
+              "brier": 0.26272481150806204,
+              "ece_10_bins": 0.03254370327073342
+            },
+            "by_group_count": {
+              "1": {
+                "n": 443,
+                "nll": 0.0,
+                "brier": 0.0,
+                "ece_10_bins": 0.0
+              },
+              "2": {
+                "n": 227,
+                "nll": 0.2990309742746182,
+                "brier": 0.18009220441389703,
+                "ece_10_bins": 0.05020511265892429
+              },
+              "3": {
+                "n": 108,
+                "nll": 0.7187694426358113,
+                "brier": 0.40615354235122597,
+                "ece_10_bins": 0.06649210528243853
+              },
+              "4": {
+                "n": 20,
+                "nll": 0.8082372901089908,
+                "brier": 0.4260897554737495,
+                "ece_10_bins": 0.19345079412793104
+              }
+            },
+            "definitions": "NLL 为逐题交叉熵；Brier 为组概率与 one-hot 的平方差之和；ECE 为最高组概率的十个等宽桶加权绝对偏差，非校准保证"
+          },
+          "conflict_confidence_bins": [
+            {
+              "low_inclusive": 0,
+              "high": 0.5,
+              "correct": 9,
+              "n": 19,
+              "accuracy": 47.368421052631575,
+              "mean_confidence": 0.4517565138600618
+            },
+            {
+              "low_inclusive": 0.5,
+              "high": 0.7,
+              "correct": 49,
+              "n": 71,
+              "accuracy": 69.01408450704226,
+              "mean_confidence": 0.60133290178238
+            },
+            {
+              "low_inclusive": 0.7,
+              "high": 0.85,
+              "correct": 47,
+              "n": 62,
+              "accuracy": 75.80645161290323,
+              "mean_confidence": 0.7808662131107553
+            },
+            {
+              "low_inclusive": 0.85,
+              "high": 0.95,
+              "correct": 78,
+              "n": 87,
+              "accuracy": 89.65517241379311,
+              "mean_confidence": 0.9045317729238103
+            },
+            {
+              "low_inclusive": 0.95,
+              "high": 1.0,
+              "correct": 112,
+              "n": 116,
+              "accuracy": 96.55172413793103,
+              "mean_confidence": 0.9815263083607906
+            }
+          ]
+        },
+        "profile_replay": {
+          "feature_seconds": 0.17536788600227737,
+          "forward_seconds": 0.03691931600224052
+        },
+        "comparisons": {
+          "gated": {
+            "corrected": 18,
+            "regressed": 7,
+            "net_correct": 11,
+            "difference_pp": 1.3784461152882206,
+            "difference_95ci_pp": [
+              0.12531328320802004,
+              2.631578947368421
+            ],
+            "bootstrap_seed": 7506,
+            "bootstrap_draws": 2000,
+            "multiple_comparison_adjustment": false
+          },
+          "attention": {
+            "corrected": 16,
+            "regressed": 7,
+            "net_correct": 9,
+            "difference_pp": 1.1278195488721803,
+            "difference_95ci_pp": [
+              -0.003132832080200323,
+              2.2587719298245443
+            ],
+            "bootstrap_seed": 7506,
+            "bootstrap_draws": 2000,
+            "multiple_comparison_adjustment": false
+          },
+          "attention_ensemble": {
+            "corrected": 8,
+            "regressed": 7,
+            "net_correct": 1,
+            "difference_pp": 0.12531328320802004,
+            "difference_95ci_pp": [
+              -0.8771929824561403,
+              1.1278195488721803
+            ],
+            "bootstrap_seed": 7506,
+            "bootstrap_draws": 2000,
+            "multiple_comparison_adjustment": false
+          },
+          "m1_original": {
+            "corrected": 12,
+            "regressed": 12,
+            "net_correct": 0,
+            "difference_pp": 0.0,
+            "difference_95ci_pp": [
+              -1.2531328320802004,
+              1.2531328320802004
+            ],
+            "bootstrap_seed": 7506,
+            "bootstrap_draws": 2000,
+            "multiple_comparison_adjustment": false
+          },
+          "ensemble_original": {
+            "corrected": 6,
+            "regressed": 8,
+            "net_correct": -2,
+            "difference_pp": -0.2506265664160401,
+            "difference_95ci_pp": [
+              -1.1278195488721803,
+              0.6265664160401002
+            ],
+            "bootstrap_seed": 7506,
+            "bootstrap_draws": 2000,
+            "multiple_comparison_adjustment": false
+          },
+          "linear": {
+            "corrected": 13,
+            "regressed": 5,
+            "net_correct": 8,
+            "difference_pp": 1.0025062656641603,
+            "difference_95ci_pp": [
+              0.0,
+              2.1303258145363406
+            ],
+            "bootstrap_seed": 7506,
+            "bootstrap_draws": 2000,
+            "multiple_comparison_adjustment": false
+          }
+        }
+      },
+      "train_oof": {
+        "correct": 1702,
+        "n": 2114,
+        "accuracy": 80.51087984862819,
+        "nll": 0.4747694279029423
+      }
+    },
+    "attention_ensemble": {
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "validation",
+        "correct": 737,
+        "n": 798,
+        "accuracy": 92.35588972431077,
+        "scoring_seconds": 0.019949276000261307
+      },
+      "total_wall_seconds": 0.4429059510002844,
+      "processes": [
+        {
+          "command": [
+            "/home/rvector/DASE7506-MP2/code/solution/.venv/bin/python",
+            "predict.py",
+            "--method",
+            "solution/attention_ranker/submission.py",
+            "--checkpoint",
+            "solution/runs/attention_v1/attention_ensemble/checkpoint",
+            "--split",
+            "validation",
+            "--output",
+            "solution/runs/attention_v1/attention_ensemble/validation/predictions.json"
+          ],
+          "stdout": "{\"protocol\": \"dase7506-mp2-open-hard-verifier-v5\", \"split\": \"validation\", \"prediction_seconds\": 0.2961402669989184}\n",
+          "stderr": "",
+          "thread_samples": 317,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 3,
+          "total_peak_threads": 4
+        },
+        {
+          "command": [
+            "/home/rvector/DASE7506-MP2/code/solution/.venv/bin/python",
+            "score_predictions.py",
+            "--split",
+            "validation",
+            "--predictions",
+            "solution/runs/attention_v1/attention_ensemble/validation/predictions.json",
+            "--output",
+            "solution/runs/attention_v1/attention_ensemble/validation/score.json"
+          ],
+          "stdout": "{\n  \"protocol\": \"dase7506-mp2-open-hard-verifier-v5\",\n  \"split\": \"validation\",\n  \"correct\": 737,\n  \"n\": 798,\n  \"accuracy\": 92.35588972431077,\n  \"scoring_seconds\": 0.019949276000261307\n}\n",
+          "stderr": "",
+          "thread_samples": 72,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 3,
+          "total_peak_threads": 4
+        }
+      ],
+      "inference_asset_bytes": 723686,
+      "checkpoint": "solution/runs/attention_v1/attention_ensemble/checkpoint",
+      "measurement": "新预测进程和独立评分进程的外部计时；含启动、导入、哈希、加载、预处理、全部成员、输出与预测冻结；缓存未控制。",
+      "analysis": {
+        "conflict": {
+          "correct": 294,
+          "n": 355,
+          "accuracy": 82.8169014084507
+        },
+        "by_group_count": {
+          "1": {
+            "correct": 443,
+            "n": 443,
+            "accuracy": 100.0
+          },
+          "2": {
+            "correct": 203,
+            "n": 227,
+            "accuracy": 89.42731277533039
+          },
+          "3": {
+            "correct": 76,
+            "n": 108,
+            "accuracy": 70.37037037037037
+          },
+          "4": {
+            "correct": 15,
+            "n": 20,
+            "accuracy": 75.0
+          }
+        },
+        "confidence": {
+          "nll": 0.20451715930605863,
+          "conflict_nll": 0.4597315299330557,
+          "conflict_mean_max_probability": 0.8181845163663787,
+          "conflict_mean_probability_margin": 0.6657593647316055,
+          "conflict_mean_score_margin": 2.3766525871434707,
+          "calibration": {
+            "overall": {
+              "n": 798,
+              "nll": 0.20451715930605863,
+              "brier": 0.11708179973908299,
+              "ece_10_bins": 0.013040314507519735
+            },
+            "conflict": {
+              "n": 355,
+              "nll": 0.4597315299330557,
+              "brier": 0.263186693497995,
+              "ece_10_bins": 0.0293131576816924
+            },
+            "by_group_count": {
+              "1": {
+                "n": 443,
+                "nll": 0.0,
+                "brier": 0.0,
+                "ece_10_bins": 0.0
+              },
+              "2": {
+                "n": 227,
+                "nll": 0.3155379186012249,
+                "brier": 0.1858810401029553,
+                "ece_10_bins": 0.04261559895848861
+              },
+              "3": {
+                "n": 108,
+                "nll": 0.6907080496639205,
+                "brier": 0.39100685498664767,
+                "ece_10_bins": 0.05253218255627643
+              },
+              "4": {
+                "n": 20,
+                "nll": 0.8490558120026664,
+                "brier": 0.45037698749297145,
+                "ece_10_bins": 0.12573536925963819
+              }
+            },
+            "definitions": "NLL 为逐题交叉熵；Brier 为组概率与 one-hot 的平方差之和；ECE 为最高组概率的十个等宽桶加权绝对偏差，非校准保证"
+          },
+          "conflict_confidence_bins": [
+            {
+              "low_inclusive": 0,
+              "high": 0.5,
+              "correct": 9,
+              "n": 18,
+              "accuracy": 50.0,
+              "mean_confidence": 0.44701741165729886
+            },
+            {
+              "low_inclusive": 0.5,
+              "high": 0.7,
+              "correct": 48,
+              "n": 76,
+              "accuracy": 63.1578947368421,
+              "mean_confidence": 0.6085615457964766
+            },
+            {
+              "low_inclusive": 0.7,
+              "high": 0.85,
+              "correct": 53,
+              "n": 66,
+              "accuracy": 80.3030303030303,
+              "mean_confidence": 0.7800001031550722
+            },
+            {
+              "low_inclusive": 0.85,
+              "high": 0.95,
+              "correct": 77,
+              "n": 83,
+              "accuracy": 92.7710843373494,
+              "mean_confidence": 0.9012778299037179
+            },
+            {
+              "low_inclusive": 0.95,
+              "high": 1.0,
+              "correct": 107,
+              "n": 112,
+              "accuracy": 95.53571428571429,
+              "mean_confidence": 0.9810039797272994
+            }
+          ]
+        },
+        "profile_replay": {
+          "feature_seconds": 0.17418524500499188,
+          "forward_seconds": 0.03570631300135574
+        },
+        "comparisons": {
+          "gated": {
+            "corrected": 19,
+            "regressed": 9,
+            "net_correct": 10,
+            "difference_pp": 1.2531328320802004,
+            "difference_95ci_pp": [
+              -0.003132832080200323,
+              2.631578947368421
+            ],
+            "bootstrap_seed": 7506,
+            "bootstrap_draws": 2000,
+            "multiple_comparison_adjustment": false
+          },
+          "attention": {
+            "corrected": 13,
+            "regressed": 5,
+            "net_correct": 8,
+            "difference_pp": 1.0025062656641603,
+            "difference_95ci_pp": [
+              0.0,
+              2.1303258145363406
+            ],
+            "bootstrap_seed": 7506,
+            "bootstrap_draws": 2000,
+            "multiple_comparison_adjustment": false
+          },
+          "gated_ensemble": {
+            "corrected": 7,
+            "regressed": 8,
+            "net_correct": -1,
+            "difference_pp": -0.12531328320802004,
+            "difference_95ci_pp": [
+              -1.1278195488721803,
+              0.8771929824561403
+            ],
+            "bootstrap_seed": 7506,
+            "bootstrap_draws": 2000,
+            "multiple_comparison_adjustment": false
+          },
+          "m1_original": {
+            "corrected": 8,
+            "regressed": 9,
+            "net_correct": -1,
+            "difference_pp": -0.12531328320802004,
+            "difference_95ci_pp": [
+              -1.1278195488721803,
+              0.8771929824561403
+            ],
+            "bootstrap_seed": 7506,
+            "bootstrap_draws": 2000,
+            "multiple_comparison_adjustment": false
+          },
+          "ensemble_original": {
+            "corrected": 2,
+            "regressed": 5,
+            "net_correct": -3,
+            "difference_pp": -0.37593984962406013,
+            "difference_95ci_pp": [
+              -1.1278195488721803,
+              0.2506265664160401
+            ],
+            "bootstrap_seed": 7506,
+            "bootstrap_draws": 2000,
+            "multiple_comparison_adjustment": false
+          },
+          "linear": {
+            "corrected": 12,
+            "regressed": 5,
+            "net_correct": 7,
+            "difference_pp": 0.8771929824561403,
+            "difference_95ci_pp": [
+              -0.12531328320802004,
+              1.882832080200484
+            ],
+            "bootstrap_seed": 7506,
+            "bootstrap_draws": 2000,
+            "multiple_comparison_adjustment": false
+          }
+        }
+      },
+      "train_oof": {
+        "correct": 1704,
+        "n": 2114,
+        "accuracy": 80.60548722800378,
+        "nll": 0.46886257691747646
+      }
+    }
+  },
+  "scope": "此前已有 test 已见。本轮各模型在 test 前冻结，预测文件评分前锁定；test 仅最终评分和描述，不据 test 调参、换种子、增加规则、修改融合或重选模型。属于事后扩展，不称新盲测。",
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "1.26.4",
+    "cpu": "Intel(R) Core(TM) Ultra 9 275HX",
+    "thread_budget_total": 4,
+    "coordinator_threads": 1,
+    "child_threads": 3
+  },
+  "reference_cpu_verified": false,
+  "historical_artifacts_unchanged": true,
+  "historical_artifact_count": 419,
+  "selection": {
+    "name": "ensemble_v1",
+    "rule": "完整 validation 准确率；同分依次比较启用维数、未压缩推理资产、本机完整耗时、固定名称；与原 ensemble_v1 比较，在新 test 前记录选择。",
+    "all_new_test_scores_not_yet_run": true,
+    "checkpoint": "solution/runs/ensemble_v1/checkpoint"
+  }
+}

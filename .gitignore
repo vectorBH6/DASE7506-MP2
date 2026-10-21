@@ -1,11 +1,14 @@
 __pycache__/
 *.py[cod]
 .venv/
-.venv-train/
 venv/
-runs/
 .DS_Store
 Thumbs.db
 .agents/
 /.aws
 .codex/
+
+# 实验权重、OOF、评测记录和源码快照纳入版本控制。
+# 仅忽略报告构建时的临时文件。
+/report/tmp/
+/report/.build-*/

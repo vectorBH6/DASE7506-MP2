@@ -1,0 +1,430 @@
+{
+  "freeze_id": "26433ec90cedb1ff3326bee149945a338fe4ccc93ddeae89c2e70e8af929ae91",
+  "freeze_manifest_sha256": "db13129841b90a855683b1cdfd0773268b7abc6a01c277c196781de9701cafd5",
+  "started_utc": "2026-10-19T12:19:04.241498+00:00",
+  "finished_utc": "2026-10-19T12:19:04.658652+00:00",
+  "split": "test",
+  "method": "solution/calibrated_ensemble/submission.py",
+  "official": {
+    "protocol": "dase7506-mp2-open-hard-verifier-v5",
+    "split": "test",
+    "correct": 378,
+    "n": 467,
+    "accuracy": 80.94218415417559,
+    "scoring_seconds": 0.013057697004114743
+  },
+  "total_wall_seconds": 0.41465287600294687,
+  "processes": [
+    {
+      "command": [
+        "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+        "predict.py",
+        "--method",
+        "solution/calibrated_ensemble/submission.py",
+        "--checkpoint",
+        "solution/runs/calibrated_ensemble_v1/checkpoint",
+        "--split",
+        "test",
+        "--output",
+        "solution/runs/calibrated_ensemble_v1/test/predictions.json"
+      ],
+      "stdout": "{\"protocol\": \"dase7506-mp2-open-hard-verifier-v5\", \"split\": \"test\", \"prediction_seconds\": 0.28574801099603064}\n",
+      "stderr": "",
+      "thread_samples": 290,
+      "coordinator_peak_threads": 1,
+      "child_peak_threads": 3,
+      "total_peak_threads": 4,
+      "wall_seconds": 0.3458658279996598,
+      "cpu_user_seconds": 0.8580129999999999,
+      "cpu_system_seconds": 0.026936999999999996
+    },
+    {
+      "command": [
+        "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+        "score_predictions.py",
+        "--split",
+        "test",
+        "--predictions",
+        "solution/runs/calibrated_ensemble_v1/test/predictions.json",
+        "--output",
+        "solution/runs/calibrated_ensemble_v1/test/score.json"
+      ],
+      "stdout": "{\n  \"protocol\": \"dase7506-mp2-open-hard-verifier-v5\",\n  \"split\": \"test\",\n  \"correct\": 378,\n  \"n\": 467,\n  \"accuracy\": 80.94218415417559,\n  \"scoring_seconds\": 0.013057697004114743\n}\n",
+      "stderr": "",
+      "thread_samples": 57,
+      "coordinator_peak_threads": 1,
+      "child_peak_threads": 3,
+      "total_peak_threads": 4,
+      "wall_seconds": 0.06862441200064495,
+      "cpu_user_seconds": 0.15069900000000014,
+      "cpu_system_seconds": 0.011898000000000002
+    }
+  ],
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.5.3",
+    "cpu": "Intel(R) Core(TM) Ultra 9 275HX",
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.39",
+    "thread_budget_total": 4,
+    "coordinator_threads": 1,
+    "child_threads": 3,
+    "child_thread_environment": {
+      "OMP_NUM_THREADS": "3",
+      "OPENBLAS_NUM_THREADS": "3",
+      "MKL_NUM_THREADS": "3",
+      "BLIS_NUM_THREADS": "3"
+    }
+  },
+  "measurement": "两个顺序新进程的外部计时，包含启动、导入、资产/数据哈希校验、载入、特征、两成员前向、温度缩放、概率融合、写文件、预测冻结记录及独立评分；缓存未控制。",
+  "inference_asset_bytes": 590736,
+  "frozen_files_unchanged": true,
+  "scope": "既有方法 test 成绩已知，本轮为固定温度校准融合的事后冻结官方评分，不称新的盲测；不得用 test 调温度、权重、特征、成员、种子、选型或构建查表。",
+  "eligibility": {
+    "local_under_30_seconds": true,
+    "observed_total_threads_at_most_4": true,
+    "assets_within_16_mib": true,
+    "reference_cpu_verified": false
+  },
+  "artifact_sha256": {
+    "predictions.json": "80f2e3fbd0d6e4464a76299610762a4150c80ce3f9e9e0d29c90f96824d89d13",
+    "score.json": "9e7a24ebadadf986d8abb504356ef878b5ce4a5883f1a72956e496efb890319b",
+    "prediction_freeze.json": "864bd111279ba636fa224533bd7ec803ac30e6ed9fd8faec73ae06f3575e25a9"
+  },
+  "complete_test_bank": true,
+  "analysis": {
+    "purpose": "仅对既定冻结预测作描述性比较，不用于 test 选型、训练或调参；既有 test 已接触，不是新盲测",
+    "complete_test_bank": true,
+    "correct": 378,
+    "wrong": 89,
+    "by_group_count": {
+      "2": {
+        "correct": 267,
+        "n": 303,
+        "accuracy": 88.11881188118812
+      },
+      "3": {
+        "correct": 89,
+        "n": 126,
+        "accuracy": 70.63492063492063
+      },
+      "4": {
+        "correct": 22,
+        "n": 38,
+        "accuracy": 57.89473684210527
+      }
+    },
+    "by_vote_pattern": {
+      "1+1": {
+        "correct": 14,
+        "n": 18,
+        "accuracy": 77.77777777777779
+      },
+      "1+1+1": {
+        "correct": 16,
+        "n": 24,
+        "accuracy": 66.66666666666666
+      },
+      "1+1+1+1": {
+        "correct": 22,
+        "n": 38,
+        "accuracy": 57.89473684210527
+      },
+      "2+1": {
+        "correct": 43,
+        "n": 50,
+        "accuracy": 86.0
+      },
+      "2+1+1": {
+        "correct": 73,
+        "n": 102,
+        "accuracy": 71.56862745098039
+      },
+      "2+2": {
+        "correct": 32,
+        "n": 39,
+        "accuracy": 82.05128205128204
+      },
+      "3+1": {
+        "correct": 178,
+        "n": 196,
+        "accuracy": 90.81632653061224
+      }
+    },
+    "vs_linear": {
+      "historical_official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "test",
+        "correct": 375,
+        "n": 467,
+        "accuracy": 80.29978586723769,
+        "scoring_seconds": 0.012926933999551693
+      },
+      "corrected": 16,
+      "regressed": 13,
+      "net_correct": 3,
+      "difference_pp": 0.6423982869379015,
+      "paired_bootstrap_95ci_pp": [
+        -1.7130620985010707,
+        2.7837259100642395
+      ],
+      "bootstrap_seed": 7506,
+      "bootstrap_draws": 2000,
+      "candidate_choice_changes": 30,
+      "historical_predictions_sha256": "77f21128d008467eb739bc7597e02c68c5dbc21eeeb9868b69b53e2304e44a7f"
+    },
+    "vs_m1": {
+      "historical_official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "test",
+        "correct": 372,
+        "n": 467,
+        "accuracy": 79.65738758029978,
+        "scoring_seconds": 0.013542243003030308
+      },
+      "corrected": 13,
+      "regressed": 7,
+      "net_correct": 6,
+      "difference_pp": 1.284796573875803,
+      "paired_bootstrap_95ci_pp": [
+        -0.4282655246252677,
+        3.2119914346895073
+      ],
+      "bootstrap_seed": 7506,
+      "bootstrap_draws": 2000,
+      "candidate_choice_changes": 22,
+      "historical_predictions_sha256": "3ad7d2a98157242c507c8aaedb6878abcb48cc1f10b2043ec7101064f24633a8"
+    },
+    "vs_ensemble": {
+      "historical_official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "test",
+        "correct": 377,
+        "n": 467,
+        "accuracy": 80.72805139186295,
+        "scoring_seconds": 0.013436297005682718
+      },
+      "corrected": 1,
+      "regressed": 0,
+      "net_correct": 1,
+      "difference_pp": 0.21413276231263384,
+      "paired_bootstrap_95ci_pp": [
+        0.0,
+        0.6423982869379015
+      ],
+      "bootstrap_seed": 7506,
+      "bootstrap_draws": 2000,
+      "candidate_choice_changes": 1,
+      "historical_predictions_sha256": "85b379930b9ac05ec9d04152bb4a4219d713633e1d6521b8beb23f8b8ef74727"
+    },
+    "vs_linear_text": {
+      "historical_official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "test",
+        "correct": 378,
+        "n": 467,
+        "accuracy": 80.94218415417559,
+        "scoring_seconds": 0.013096173999656457
+      },
+      "corrected": 12,
+      "regressed": 12,
+      "net_correct": 0,
+      "difference_pp": 0.0,
+      "paired_bootstrap_95ci_pp": [
+        -2.141327623126338,
+        2.141327623126338
+      ],
+      "bootstrap_seed": 7506,
+      "bootstrap_draws": 2000,
+      "candidate_choice_changes": 26,
+      "historical_predictions_sha256": "1dc08132d73f57c61757da767de82f00ee9a0c5d8af3bf130ed4ed90e78b8b94"
+    },
+    "probability_metrics": {
+      "scope": "官方冻结评分之后的固定模型重放；单独分析，不计入官方预测加独立评分的完整计时，不进行参数拟合或阈值选择",
+      "uncalibrated": {
+        "nll": 0.4568422869696469,
+        "conflict_nll": 0.4568422869696469,
+        "conflict_mean_max_probability": 0.8279650401065063,
+        "conflict_mean_probability_margin": 0.6843477995286951,
+        "conflict_mean_score_margin": 2.7414618546320573,
+        "calibration": {
+          "overall": {
+            "n": 467,
+            "nll": 0.4568422869696469,
+            "brier": 0.26681483809033724,
+            "ece_10_bins": 0.022408432603393848
+          },
+          "conflict": {
+            "n": 467,
+            "nll": 0.4568422869696469,
+            "brier": 0.26681483809033724,
+            "ece_10_bins": 0.022408432603393848
+          },
+          "by_group_count": {
+            "2": {
+              "n": 303,
+              "nll": 0.29702289092279666,
+              "brier": 0.17960708002182538,
+              "ece_10_bins": 0.02596596445026812
+            },
+            "3": {
+              "n": 126,
+              "nll": 0.6479969301599768,
+              "brier": 0.3826339134628729,
+              "ece_10_bins": 0.07834807086419533
+            },
+            "4": {
+              "n": 38,
+              "nll": 1.097363128027911,
+              "brier": 0.5781502906645375,
+              "ece_10_bins": 0.10000932128240904
+            }
+          },
+          "definitions": "NLL 为逐题交叉熵；Brier 为组概率与 one-hot 的平方差之和；ECE 为最高组概率的十个等宽桶加权绝对偏差，非校准保证"
+        },
+        "conflict_confidence_bins": [
+          {
+            "low_inclusive": 0,
+            "high": 0.5,
+            "correct": 12,
+            "n": 30,
+            "accuracy": 40.0,
+            "mean_confidence": 0.45025476118290414
+          },
+          {
+            "low_inclusive": 0.5,
+            "high": 0.7,
+            "correct": 53,
+            "n": 88,
+            "accuracy": 60.22727272727273,
+            "mean_confidence": 0.6014332897435376
+          },
+          {
+            "low_inclusive": 0.7,
+            "high": 0.85,
+            "correct": 59,
+            "n": 82,
+            "accuracy": 71.95121951219512,
+            "mean_confidence": 0.7791849691142325
+          },
+          {
+            "low_inclusive": 0.85,
+            "high": 0.95,
+            "correct": 76,
+            "n": 84,
+            "accuracy": 90.47619047619048,
+            "mean_confidence": 0.908025808343834
+          },
+          {
+            "low_inclusive": 0.95,
+            "high": 1.0,
+            "correct": 177,
+            "n": 183,
+            "accuracy": 96.72131147540983,
+            "mean_confidence": 0.9839265903200596
+          }
+        ]
+      },
+      "calibrated": {
+        "nll": 0.45247291842894427,
+        "conflict_nll": 0.45247291842894427,
+        "conflict_mean_max_probability": 0.793816007427458,
+        "conflict_mean_probability_margin": 0.6245747707361704,
+        "conflict_mean_score_margin": 2.1773751083147737,
+        "calibration": {
+          "overall": {
+            "n": 467,
+            "nll": 0.45247291842894427,
+            "brier": 0.2659613066755246,
+            "ece_10_bins": 0.032042907991133546
+          },
+          "conflict": {
+            "n": 467,
+            "nll": 0.45247291842894427,
+            "brier": 0.2659613066755246,
+            "ece_10_bins": 0.032042907991133546
+          },
+          "by_group_count": {
+            "2": {
+              "n": 303,
+              "nll": 0.29616483841988545,
+              "brier": 0.18055628208076807,
+              "ece_10_bins": 0.03153808079749509
+            },
+            "3": {
+              "n": 126,
+              "nll": 0.642060873319637,
+              "brier": 0.378240639230023,
+              "ece_10_bins": 0.08908477695778337
+            },
+            "4": {
+              "n": 38,
+              "nll": 1.0701904428109856,
+              "brier": 0.5746593737898515,
+              "ece_10_bins": 0.1522602377720304
+            }
+          },
+          "definitions": "NLL 为逐题交叉熵；Brier 为组概率与 one-hot 的平方差之和；ECE 为最高组概率的十个等宽桶加权绝对偏差，非校准保证"
+        },
+        "conflict_confidence_bins": [
+          {
+            "low_inclusive": 0,
+            "high": 0.5,
+            "correct": 16,
+            "n": 39,
+            "accuracy": 41.02564102564102,
+            "mean_confidence": 0.43672101594609414
+          },
+          {
+            "low_inclusive": 0.5,
+            "high": 0.7,
+            "correct": 68,
+            "n": 107,
+            "accuracy": 63.55140186915887,
+            "mean_confidence": 0.6036138746546001
+          },
+          {
+            "low_inclusive": 0.7,
+            "high": 0.85,
+            "correct": 70,
+            "n": 88,
+            "accuracy": 79.54545454545455,
+            "mean_confidence": 0.7751213556250153
+          },
+          {
+            "low_inclusive": 0.85,
+            "high": 0.95,
+            "correct": 97,
+            "n": 105,
+            "accuracy": 92.38095238095238,
+            "mean_confidence": 0.9076136085958232
+          },
+          {
+            "low_inclusive": 0.95,
+            "high": 1.0,
+            "correct": 127,
+            "n": 128,
+            "accuracy": 99.21875,
+            "mean_confidence": 0.9811184614150017
+          }
+        ]
+      }
+    },
+    "validation": {
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "validation",
+        "correct": 740,
+        "n": 798,
+        "accuracy": 92.73182957393483,
+        "scoring_seconds": 0.020591834996594116
+      },
+      "pre_test_selection": {
+        "method": "ensemble",
+        "checkpoint": "/home/rvector/DASE7506-MP2/code/solution/runs/ensemble_v1/checkpoint",
+        "rule": "完整 validation 准确率；同分优先更少启用维度、更少资产、更短完整耗时、固定名称",
+        "scope": "温度仅在 train OOF 拟合；validation 比较；既有 test 已接触，本轮不读取 test 参考或运行 test"
+      },
+      "selection_unchanged_by_test": true
+    }
+  }
+}

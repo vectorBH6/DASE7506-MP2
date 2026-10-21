@@ -1,0 +1,410 @@
+{
+  "freeze_id": "3696b4f94fc3153f6229b8301694d013ca01f7b0bb89910defaed069b16a0870",
+  "freeze_manifest_sha256": "5d1a7651b1d2dcddebd24de60bb54bc67d8ed460e52befd79c52fa3650acab3c",
+  "started_utc": "2026-10-21T03:47:04.886575+00:00",
+  "finished_utc": "2026-10-21T03:47:05.396372+00:00",
+  "split": "test",
+  "method": "solution/group_ranker/submission_mlp.py",
+  "official": {
+    "protocol": "dase7506-mp2-open-hard-verifier-v5",
+    "split": "test",
+    "correct": 373,
+    "n": 467,
+    "accuracy": 79.87152034261241,
+    "scoring_seconds": 0.012686994999967283
+  },
+  "total_wall_seconds": 0.5097358139992139,
+  "processes": [
+    {
+      "command": [
+        "/home/rvector/DASE7506-MP2/code/solution/.venv/bin/python",
+        "predict.py",
+        "--method",
+        "solution/group_ranker/submission_mlp.py",
+        "--checkpoint",
+        "solution/runs/mlp_arithmetic_v1/checkpoint",
+        "--split",
+        "test",
+        "--output",
+        "solution/runs/mlp_arithmetic_v1/test/predictions.json"
+      ],
+      "stdout": "{\"protocol\": \"dase7506-mp2-open-hard-verifier-v5\", \"split\": \"test\", \"prediction_seconds\": 0.3718422999991162}\n",
+      "stderr": "",
+      "thread_samples": 382,
+      "coordinator_peak_threads": 1,
+      "child_peak_threads": 3,
+      "total_peak_threads": 4
+    },
+    {
+      "command": [
+        "/home/rvector/DASE7506-MP2/code/solution/.venv/bin/python",
+        "score_predictions.py",
+        "--split",
+        "test",
+        "--predictions",
+        "solution/runs/mlp_arithmetic_v1/test/predictions.json",
+        "--output",
+        "solution/runs/mlp_arithmetic_v1/test/score.json"
+      ],
+      "stdout": "{\n  \"protocol\": \"dase7506-mp2-open-hard-verifier-v5\",\n  \"split\": \"test\",\n  \"correct\": 373,\n  \"n\": 467,\n  \"accuracy\": 79.87152034261241,\n  \"scoring_seconds\": 0.012686994999967283\n}\n",
+      "stderr": "",
+      "thread_samples": 65,
+      "coordinator_peak_threads": 1,
+      "child_peak_threads": 3,
+      "total_peak_threads": 4
+    }
+  ],
+  "inference_asset_bytes": 561013,
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "1.26.4",
+    "python_executable": "/home/rvector/DASE7506-MP2/code/solution/.venv/bin/python",
+    "cpu": "Intel(R) Core(TM) Ultra 9 275HX",
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.39",
+    "pythonpath_removed": true,
+    "thread_budget_total": 4,
+    "coordinator_threads": 1,
+    "child_threads": 3,
+    "child_thread_environment": {
+      "OMP_NUM_THREADS": "3",
+      "OPENBLAS_NUM_THREADS": "3",
+      "MKL_NUM_THREADS": "3",
+      "BLIS_NUM_THREADS": "3"
+    }
+  },
+  "measurement": "两个顺序新进程的外部计时，含启动、导入、哈希检查、载入、预处理、前向、输出、预测冻结与独立评分；缓存未控制。",
+  "scope": "既有 test 已接触；此次仅补充评分历史固定 M0/M2，属于事后冻结评分，不称新盲测。不训练、不调参、不更换种子、不添加规则或融合，不据 test 改变 validation 选定的最终融合。",
+  "complete_test_bank": true,
+  "eligibility": {
+    "local_under_30_seconds": true,
+    "observed_total_threads_at_most_4": true,
+    "assets_within_16_mib": true,
+    "reference_cpu_verified": false
+  },
+  "artifact_sha256": {
+    "predictions.json": "0730b04fc27697351f2d50af32d81added68311e19630f0524d448f5154cae35",
+    "score.json": "be114f92cf7e013bcd30f9d74d8576daf6bf443547f572294d0e10a83828cdb3",
+    "prediction_freeze.json": "8f42525ff6806c60a83c33e50b391ce11194a46b4f8677b8ae761733a4942933"
+  },
+  "analysis": {
+    "purpose": "既有 test 已接触；此次仅补充评分历史固定 M0/M2，属于事后冻结评分，不称新盲测。不训练、不调参、不更换种子、不添加规则或融合，不据 test 改变 validation 选定的最终融合。",
+    "correct": 373,
+    "wrong": 94,
+    "by_group_count": {
+      "2": {
+        "correct": 266,
+        "n": 303,
+        "accuracy": 87.78877887788778
+      },
+      "3": {
+        "correct": 83,
+        "n": 126,
+        "accuracy": 65.87301587301587
+      },
+      "4": {
+        "correct": 24,
+        "n": 38,
+        "accuracy": 63.1578947368421
+      }
+    },
+    "by_vote_pattern": {
+      "1+1": {
+        "correct": 15,
+        "n": 18,
+        "accuracy": 83.33333333333334
+      },
+      "1+1+1": {
+        "correct": 11,
+        "n": 24,
+        "accuracy": 45.83333333333333
+      },
+      "1+1+1+1": {
+        "correct": 24,
+        "n": 38,
+        "accuracy": 63.1578947368421
+      },
+      "2+1": {
+        "correct": 40,
+        "n": 50,
+        "accuracy": 80.0
+      },
+      "2+1+1": {
+        "correct": 72,
+        "n": 102,
+        "accuracy": 70.58823529411765
+      },
+      "2+2": {
+        "correct": 32,
+        "n": 39,
+        "accuracy": 82.05128205128204
+      },
+      "3+1": {
+        "correct": 179,
+        "n": 196,
+        "accuracy": 91.3265306122449
+      }
+    },
+    "profile_replay": {
+      "feature_seconds": 0.3001552429923322,
+      "forward_seconds": 0.009406778000993654,
+      "questions": 467,
+      "valid_candidates": 1758,
+      "evidence_seconds": 0.22318543800429325,
+      "arithmetic_seconds": 0.06075474899807887,
+      "covered_questions": 223,
+      "covered_candidates": 418,
+      "equations_passed": 577,
+      "equations_failed": 24,
+      "equations_unknown": 8025
+    },
+    "confidence": {
+      "nll": 0.4966636941020698,
+      "conflict_nll": 0.4966636941020698,
+      "conflict_mean_max_probability": 0.8383303076637385,
+      "conflict_mean_probability_margin": 0.7026112493687492,
+      "conflict_mean_score_margin": 2.9162049678321806,
+      "calibration": {
+        "overall": {
+          "n": 467,
+          "nll": 0.4966636941020698,
+          "brier": 0.28445282373439895,
+          "ece_10_bins": 0.04333093891570006
+        },
+        "conflict": {
+          "n": 467,
+          "nll": 0.4966636941020698,
+          "brier": 0.28445282373439895,
+          "ece_10_bins": 0.04333093891570006
+        },
+        "by_group_count": {
+          "2": {
+            "n": 303,
+            "nll": 0.3235071039798934,
+            "brier": 0.1936174802000525,
+            "ece_10_bins": 0.04299491474120389
+          },
+          "3": {
+            "n": 126,
+            "nll": 0.7182548548242773,
+            "brier": 0.42151213412955285,
+            "ece_10_bins": 0.11379587072993896
+          },
+          "4": {
+            "n": 38,
+            "nll": 1.1426100245236819,
+            "brier": 0.5542853495532823,
+            "ece_10_bins": 0.15717572207387512
+          }
+        },
+        "definitions": "NLL 为逐题交叉熵；Brier 为组概率与 one-hot 的平方差之和；ECE 为最高组概率的十个等宽桶加权绝对偏差，非校准保证"
+      },
+      "conflict_confidence_bins": [
+        {
+          "low_inclusive": 0,
+          "high": 0.5,
+          "correct": 10,
+          "n": 29,
+          "accuracy": 34.48275862068966,
+          "mean_confidence": 0.4406123241548768
+        },
+        {
+          "low_inclusive": 0.5,
+          "high": 0.7,
+          "correct": 47,
+          "n": 77,
+          "accuracy": 61.038961038961034,
+          "mean_confidence": 0.6077509790026044
+        },
+        {
+          "low_inclusive": 0.7,
+          "high": 0.85,
+          "correct": 56,
+          "n": 81,
+          "accuracy": 69.1358024691358,
+          "mean_confidence": 0.7762764985064532
+        },
+        {
+          "low_inclusive": 0.85,
+          "high": 0.95,
+          "correct": 76,
+          "n": 90,
+          "accuracy": 84.44444444444444,
+          "mean_confidence": 0.9096936794700932
+        },
+        {
+          "low_inclusive": 0.95,
+          "high": 1.0,
+          "correct": 184,
+          "n": 190,
+          "accuracy": 96.84210526315789,
+          "mean_confidence": 0.9851307545470676
+        }
+      ]
+    },
+    "vs_m0": {
+      "corrected": 16,
+      "regressed": 12,
+      "net_correct": 4,
+      "difference_pp": 0.8565310492505354,
+      "paired_bootstrap_95ci_pp": [
+        -1.4989293361884368,
+        2.9978586723768736
+      ],
+      "bootstrap_draws": 2000,
+      "bootstrap_seed": 7506,
+      "multiple_comparison_adjustment": false,
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "test",
+        "correct": 369,
+        "n": 467,
+        "accuracy": 79.01498929336188,
+        "scoring_seconds": 0.020780357999683474
+      },
+      "predictions_sha256": "3009c28490934f3dd07eb2ddcca1addde211b301ce2b15aba817bf4bc48f7191"
+    },
+    "vs_linear": {
+      "corrected": 25,
+      "regressed": 27,
+      "net_correct": -2,
+      "difference_pp": -0.4282655246252677,
+      "paired_bootstrap_95ci_pp": [
+        -3.4261241970021414,
+        2.569593147751606
+      ],
+      "bootstrap_draws": 2000,
+      "bootstrap_seed": 7506,
+      "multiple_comparison_adjustment": false,
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "test",
+        "correct": 375,
+        "n": 467,
+        "accuracy": 80.29978586723769,
+        "scoring_seconds": 0.012926933999551693
+      },
+      "predictions_sha256": "77f21128d008467eb739bc7597e02c68c5dbc21eeeb9868b69b53e2304e44a7f"
+    },
+    "vs_m1": {
+      "corrected": 13,
+      "regressed": 12,
+      "net_correct": 1,
+      "difference_pp": 0.21413276231263384,
+      "paired_bootstrap_95ci_pp": [
+        -1.9271948608137044,
+        2.355460385438972
+      ],
+      "bootstrap_draws": 2000,
+      "bootstrap_seed": 7506,
+      "multiple_comparison_adjustment": false,
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "test",
+        "correct": 372,
+        "n": 467,
+        "accuracy": 79.65738758029978,
+        "scoring_seconds": 0.013542243003030308
+      },
+      "predictions_sha256": "3ad7d2a98157242c507c8aaedb6878abcb48cc1f10b2043ec7101064f24633a8"
+    },
+    "vs_ensemble": {
+      "corrected": 15,
+      "regressed": 19,
+      "net_correct": -4,
+      "difference_pp": -0.8565310492505354,
+      "paired_bootstrap_95ci_pp": [
+        -3.4261241970021414,
+        1.4989293361884368
+      ],
+      "bootstrap_draws": 2000,
+      "bootstrap_seed": 7506,
+      "multiple_comparison_adjustment": false,
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "test",
+        "correct": 377,
+        "n": 467,
+        "accuracy": 80.72805139186295,
+        "scoring_seconds": 0.013436297005682718
+      },
+      "predictions_sha256": "85b379930b9ac05ec9d04152bb4a4219d713633e1d6521b8beb23f8b8ef74727"
+    },
+    "vs_baseline": {
+      "corrected": 73,
+      "regressed": 23,
+      "net_correct": 50,
+      "difference_pp": 10.706638115631693,
+      "paired_bootstrap_95ci_pp": [
+        6.852248394004283,
+        14.5610278372591
+      ],
+      "bootstrap_draws": 2000,
+      "bootstrap_seed": 7506,
+      "multiple_comparison_adjustment": false,
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "test",
+        "correct": 323,
+        "n": 467,
+        "accuracy": 69.16488222698072,
+        "scoring_seconds": 0.02788540599794942
+      },
+      "predictions_sha256": "6d8a366337374339e7da844ea8e25f862715e4193a41e2118e4d5175bf450606"
+    },
+    "by_arithmetic_coverage": {
+      "covered": {
+        "own": {
+          "correct": 180,
+          "n": 223,
+          "accuracy": 80.71748878923766
+        },
+        "m1": {
+          "correct": 171,
+          "n": 223,
+          "accuracy": 76.68161434977578
+        },
+        "vs_m1": {
+          "corrected": 11,
+          "regressed": 2,
+          "net_correct": 9,
+          "difference_pp": 4.0358744394618835,
+          "paired_bootstrap_95ci_pp": [
+            1.345291479820628,
+            7.174887892376682
+          ],
+          "bootstrap_draws": 2000,
+          "bootstrap_seed": 7506,
+          "multiple_comparison_adjustment": false
+        }
+      },
+      "not_covered": {
+        "own": {
+          "correct": 193,
+          "n": 244,
+          "accuracy": 79.09836065573771
+        },
+        "m1": {
+          "correct": 201,
+          "n": 244,
+          "accuracy": 82.37704918032787
+        },
+        "vs_m1": {
+          "corrected": 2,
+          "regressed": 10,
+          "net_correct": -8,
+          "difference_pp": -3.278688524590164,
+          "paired_bootstrap_95ci_pp": [
+            -6.147540983606557,
+            -0.819672131147541
+          ],
+          "bootstrap_draws": 2000,
+          "bootstrap_seed": 7506,
+          "multiple_comparison_adjustment": false
+        }
+      }
+    }
+  },
+  "frozen_files_unchanged": true,
+  "historical_artifact_count": 317,
+  "historical_artifacts_unchanged": true
+}

@@ -1,0 +1,48 @@
+{
+  "created_utc": "2026-10-21T04:15:08.669789+00:00",
+  "unit_command": [
+    "/home/rvector/DASE7506-MP2/code/solution/.venv/bin/python",
+    "-m",
+    "unittest",
+    "solution.group_ranker.test_group_ranker",
+    "solution.group_ranker.test_ensemble",
+    "-v"
+  ],
+  "unit_returncode": 0,
+  "unit_stdout": "",
+  "unit_stderr": "test_arithmetic_limits_and_unsafe_syntax (solution.group_ranker.test_group_ranker.EvidenceTests.test_arithmetic_limits_and_unsafe_syntax) ... ok\ntest_body_and_numeric_literals (solution.group_ranker.test_group_ranker.EvidenceTests.test_body_and_numeric_literals) ... ok\ntest_checked_failed_unknown_and_overlap (solution.group_ranker.test_group_ranker.EvidenceTests.test_checked_failed_unknown_and_overlap) ... ok\ntest_equivalent_answers_and_reserved_features (solution.group_ranker.test_group_ranker.GroupRankerTests.test_equivalent_answers_and_reserved_features) ... ok\ntest_modified_asset_is_rejected (solution.group_ranker.test_group_ranker.GroupRankerTests.test_modified_asset_is_rejected) ... ok\ntest_objective_gradient_and_fold_preprocessing (solution.group_ranker.test_group_ranker.GroupRankerTests.test_objective_gradient_and_fold_preprocessing) ... ok\ntest_permutation_invariance_of_group_features (solution.group_ranker.test_group_ranker.GroupRankerTests.test_permutation_invariance_of_group_features) ... ok\ntest_prediction_is_independent_of_batch_and_permutation (solution.group_ranker.test_group_ranker.GroupRankerTests.test_prediction_is_independent_of_batch_and_permutation) ... ok\ntest_shortcuts_and_shape_checks (solution.group_ranker.test_group_ranker.GroupRankerTests.test_shortcuts_and_shape_checks) ... ok\ntest_zero_embeddings_and_missing_answers (solution.group_ranker.test_group_ranker.GroupRankerTests.test_zero_embeddings_and_missing_answers) ... ok\ntest_ablation_scaler_and_inference_masks (solution.group_ranker.test_group_ranker.MLPTests.test_ablation_scaler_and_inference_masks) ... ok\ntest_all_permutations_features_and_prediction (solution.group_ranker.test_group_ranker.MLPTests.test_all_permutations_features_and_prediction) ... ok\ntest_batch_shortcuts_zero_and_protocol (solution.group_ranker.test_group_ranker.MLPTests.test_batch_shortcuts_zero_and_protocol) ... ok\ntest_ce_pairwise_values_gradients_and_padding (solution.group_ranker.test_group_ranker.MLPTests.test_ce_pairwise_values_gradients_and_padding) ... ok\ntest_checkpoint_hash_and_feature_version (solution.group_ranker.test_group_ranker.MLPTests.test_checkpoint_hash_and_feature_version) ... ok\ntest_deterministic_ties (solution.group_ranker.test_group_ranker.MLPTests.test_deterministic_ties) ... ok\ntest_forward_matches_independent_scalar_calculation (solution.group_ranker.test_group_ranker.MLPTests.test_forward_matches_independent_scalar_calculation) ... ok\ntest_bundle_hash_fixed_recipe_and_complete_asset_count (solution.group_ranker.test_ensemble.EnsembleTests.test_bundle_hash_fixed_recipe_and_complete_asset_count) ... ok\ntest_matches_separate_member_features_and_scalers (solution.group_ranker.test_ensemble.EnsembleTests.test_matches_separate_member_features_and_scalers) ... ok\ntest_permutations_batches_and_boundary_protocol (solution.group_ranker.test_ensemble.EnsembleTests.test_permutations_batches_and_boundary_protocol) ... ok\ntest_probability_average_not_logit_average (solution.group_ranker.test_ensemble.EnsembleTests.test_probability_average_not_logit_average) ... ok\n\n----------------------------------------------------------------------\nRan 21 tests in 0.401s\n\nOK\n",
+  "models": {
+    "m1_128": {
+      "validation_replay_identical": true,
+      "all_24_permutations": true,
+      "cross_chunk_129": true,
+      "oof_labels_and_folds_identical": true
+    },
+    "ensemble_128": {
+      "validation_replay_identical": true,
+      "all_24_permutations": true,
+      "cross_chunk_129": true,
+      "oof_labels_and_folds_identical": true
+    },
+    "m1_256": {
+      "validation_replay_identical": true,
+      "all_24_permutations": true,
+      "cross_chunk_129": true,
+      "oof_labels_and_folds_identical": true
+    },
+    "ensemble_256": {
+      "validation_replay_identical": true,
+      "all_24_permutations": true,
+      "cross_chunk_129": true,
+      "oof_labels_and_folds_identical": true
+    }
+  },
+  "legacy_validation": {
+    "mlp_text_v1": {
+      "all_798_choices_identical": true
+    },
+    "ensemble_v1": {
+      "all_798_choices_identical": true
+    }
+  }
+}

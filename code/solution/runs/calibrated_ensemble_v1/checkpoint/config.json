@@ -1,0 +1,18 @@
+{
+  "protocol": "dase7506-mp2-open-hard-verifier-v5",
+  "model": "temperature-equal-probability-v1",
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "components": [
+    "linear",
+    "mlp"
+  ],
+  "aggregation": "per-question answer-group probabilities",
+  "temperatures": [
+    1.2278854512454669,
+    1.337883194300168
+  ],
+  "calibration_split": "train_oof"
+}

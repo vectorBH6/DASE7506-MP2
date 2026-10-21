@@ -1,0 +1,9 @@
+{
+  "protocol": "dase7506-mp2-open-hard-verifier-v5",
+  "model": "group-context-ensemble-v1",
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "temperature": 1.0
+}

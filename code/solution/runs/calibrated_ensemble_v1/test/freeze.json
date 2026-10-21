@@ -1,0 +1,93 @@
+{
+  "created_utc": "2026-10-19T12:19:04.238624+00:00",
+  "method": "solution/calibrated_ensemble/submission.py",
+  "checkpoint": "solution/runs/calibrated_ensemble_v1/checkpoint",
+  "config": {
+    "protocol": "dase7506-mp2-open-hard-verifier-v5",
+    "model": "temperature-equal-probability-v1",
+    "weights": [
+      0.5,
+      0.5
+    ],
+    "components": [
+      "linear",
+      "mlp"
+    ],
+    "aggregation": "per-question answer-group probabilities",
+    "temperatures": [
+      1.2278854512454669,
+      1.337883194300168
+    ],
+    "calibration_split": "train_oof"
+  },
+  "sha256": {
+    "code/PACKAGE_MANIFEST.json": "2e9b714598e1addba61545f0d7ce4891d9d11aaf567fb341420d36694fcfd656",
+    "code/README.md": "4c4218d68818d850fbad2fe38d2b1f3d2b80b7646720f21d2356fe3c0e020bc2",
+    "code/check_data.py": "32f203e156e3019f87bb038ade4f303da21ca2f1694bb678a3ddc44661f0b533",
+    "code/common.py": "aecd10f7ff2e9e82ac5673d34d576e122caac51d2caaa7c7a8aa05906da51f6c",
+    "code/data/manifest.json": "8b3721d458e48c87eab3a28f660e663981b10617b6e7321123c6ff30b1fbe825",
+    "code/predict.py": "e7a627fbdc9ef8d4ab3189a6fa5ac02d56ae703ccd1a81507aea0bd66e042162",
+    "code/requirements.txt": "5c12d85e7c08038d1dd9ffbf8119d12ce808885230a47e2bf65dcd9f114659d5",
+    "code/score_predictions.py": "fe12b809b82117aea722e5dfef7a55a88950a7cf50c49ec2ea007ea847959960",
+    "code/solution/__init__.py": "f96fb2e99c9bccb49c392355614c70fe2d9cd1f1c9a4fcb5fa7d688bdb451a28",
+    "code/solution/baselines/submission.py": "360ba032f77136ad6203e370b9df4e4cafb61681ea1965fcbb0e8e5f6288c268",
+    "code/solution/baselines/submission_emb_only.py": "f1b12384f3d2ecdeef0108e1357a1a04f4ab42e8444e42595a075676aa958d0a",
+    "code/solution/baselines/submission_group_center.py": "8aec2b59b914519a70245600b71d117eaf1532a3c85a8d4c24a865b2bdf05858",
+    "code/solution/baselines/submission_tiebreak.py": "836f7730db174d25ea16b00e909b3f64bf396fcf5ae208a318e2b13f128fb9ad",
+    "code/solution/baselines/submission_voling_only.py": "c25078c99476ee50ac989fbaa1a36b51225e34fead921b20a5339df07f8660cd",
+    "code/solution/calibrated_ensemble/__init__.py": "3471e6eb19e2f71826b594cb9b45fb8de31de08a6082c37db1ce1db52095590e",
+    "code/solution/calibrated_ensemble/calibrate.py": "029208080068c66f4bce05a24534a1d168c7e7ac7a87342a014d890759bdf938",
+    "code/solution/calibrated_ensemble/submission.py": "ddbc11f3b58ab045d0635144d3f9fb8c50306cddd995f09a5661d1dacb063cb5",
+    "code/solution/calibrated_ensemble/test_calibration.py": "f46dd065578853aae6992ea664231ac4189b84d1cd1042325236a40eaccb2def",
+    "code/solution/evaluate.py": "1715f31b858e5b7c9262838a5710d0d766dd56e92793b9057ce1fc53a1672482",
+    "code/solution/group_ranker/__init__.py": "004736c19147e3623f71ff02762c85488e48821eebac5be4872478c28e1bcfaa",
+    "code/solution/group_ranker/evidence.py": "6c5c7c8985cfa097ccabd52f28b1eff426b81f36e87564b8cecc89de79007b4d",
+    "code/solution/group_ranker/features.py": "ff6e76bd7fd9afa23d77ccb2e06f7b095e7186fd0f55807093244f91a77ce2e9",
+    "code/solution/group_ranker/mlp.py": "d16fe03fdd3b2454d3eec623224b33e80b1545222936c01c2818b2e206a3bef4",
+    "code/solution/group_ranker/submission_ensemble.py": "df52006b90213d0dfc811a29041d11f3d518b8713a0180de9eb0258a98399fb5",
+    "code/solution/group_ranker/submission_linear.py": "978d007e581558ee17ef8945b08f5ce978274667a345e566beaf678fe61744e4",
+    "code/solution/group_ranker/submission_mlp.py": "cb8e8df149dc21ad9b7dd39c92b0f5dee34c7eda55283a92f908a0626979486b",
+    "code/solution/group_ranker/test_ensemble.py": "3217a7134f00a6ce8490e857528afb27cec8e2cba19a234f48d34c98040eb501",
+    "code/solution/group_ranker/test_group_ranker.py": "dfd1c8a39428baf9a65a0d5eba2f7c3046630cc16d80b3f45e8d212cc969f903",
+    "code/solution/group_ranker/train_linear.py": "99fc6be83e04e7c6bf17e946c1c1a2d8a2f68b732e1f6856b82b2a5a071649c3",
+    "code/solution/group_ranker/train_mlp.py": "1b4fdc0755b082517042aa239887b56d27f2e11f47fa6ad47d0bf30c31f22962",
+    "code/solution/group_ranker/training.py": "0792f9a0f0229731be469a6fcaeb8aebca5f0591515b7ebfab55d185ed1c359c",
+    "code/solution/linear_text/__init__.py": "750c106bb302b36aa700b1669983cc161e86f56167ea0a536ecc47e9fbde9c5a",
+    "code/solution/linear_text/submission.py": "e1e315b7f1f603ff7732d1c880362bd228c4e61ba4f09b6dda56aa4a2ce0af40",
+    "code/solution/linear_text/test_linear_text.py": "0a6c277ea944887041bc4a1e4186b415f8d542d78e46d040697c683ee1960baa",
+    "code/solution/linear_text/train.py": "aaeeb02f5a5524c1a65b175258998c065217afeaa9d0e916bb2b7c1c5e8aff2d",
+    "code/solution/requirements-train.txt": "a61ff83e1b6c50a77edab661510724d504ab459957f8c3f4ee5bc5340c0ac1e3",
+    "code/solution/runs/calibrated_ensemble_v1/checkpoint/asset_manifest.json": "6802d3a9bd8679c6b022ba5860747ba0f85c829ee2b950ddff9759a7441606eb",
+    "code/solution/runs/calibrated_ensemble_v1/checkpoint/config.json": "e0d889c1f217a93544e57395d4cf58151e1304b639add750a747c129f996f9d7",
+    "code/solution/runs/calibrated_ensemble_v1/checkpoint/linear/asset_manifest.json": "d39394a7cec192916d89f9f69ee0dbc469012480cd639b45e43e8dbd35f9444b",
+    "code/solution/runs/calibrated_ensemble_v1/checkpoint/linear/config.json": "136063546d7e1ccfcc39a8b707691204e321fd8fd53a508d34225e3a862fb033",
+    "code/solution/runs/calibrated_ensemble_v1/checkpoint/linear/model.npz": "b8656b760268f74203f26a3a7204843bd3e4b77e735c1ed21e39cb843c1ea3e5",
+    "code/solution/runs/calibrated_ensemble_v1/checkpoint/mlp/asset_manifest.json": "2af4fceb7486d83bd281427754a461dc20dc86e455d2914702a7965146bd36af",
+    "code/solution/runs/calibrated_ensemble_v1/checkpoint/mlp/config.json": "1c042f6347f02584e4f2d97495257678090d48da9ab5b96d0eb5d40115b6722e",
+    "code/solution/runs/calibrated_ensemble_v1/checkpoint/mlp/model.npz": "19a8bdc5d12865df401a66e588b1be58409cd0753c662806268901062dbcdca9",
+    "code/solution/runs/calibrated_ensemble_v1/checks.json": "efcdf53f73646d34d054a25aeefdd3a3f0c6af960915d23778992fa84247fd66",
+    "code/solution/runs/calibrated_ensemble_v1/oof.npz": "deadb49ed0cf7ebee3115808d0cbdecdfd042521e42a11cc5b6a9fcf7d3a6e8f",
+    "code/solution/runs/calibrated_ensemble_v1/preparation.json": "65f265eb4c691a241c65e0819eca6654aeca182abd6051f2f231ff684abda893",
+    "code/solution/runs/calibrated_ensemble_v1/validation/summary.json": "c2b8f9ce353f0472a59dff44368fa579070b913a8ed94ebad05e8d94710469a0",
+    "code/submission.py": "37dcf01801937c4ba13a05a018b352afd2ff264541035143efa955ca31e24c10",
+    "guide/GUIDE.md": "7b4ab87265040f407854cdfb9860887f722008d24e03fffe311f99c2f2065130"
+  },
+  "selection_basis": "固定使用既有 L0/M1 两成员和 0.5/0.5 权重；两个温度仅由 train OOF 最小化 NLL 拟合，validation 比较已完成。本次不拟合或修改任何参数，既有 validation 选型保持原融合。",
+  "test_policy": "既有方法 test 成绩已知，本轮为固定温度校准融合的事后冻结官方评分，不称新的盲测；不得用 test 调温度、权重、特征、成员、种子、选型或构建查表。",
+  "source_archive": {
+    "file": "source.tar",
+    "sha256": "909366c0618ad6f4936d2d2505db235cea5502129da743c46e01bcd6534d360c",
+    "bytes": 235520
+  },
+  "inference_assets": {
+    "bytes": 590736,
+    "limit_bytes": 16777216,
+    "all_npz_uncompressed": true
+  },
+  "git": {
+    "base_commit": "0e5576e60cb028a5cc62e88199e3c24cb539e2ac",
+    "working_tree_dirty": true,
+    "identity_basis": "匹配的源码快照和代码/资产 SHA-256 清单"
+  },
+  "freeze_id": "26433ec90cedb1ff3326bee149945a338fe4ccc93ddeae89c2e70e8af929ae91"
+}

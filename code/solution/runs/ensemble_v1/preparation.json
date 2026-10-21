@@ -1,0 +1,269 @@
+{
+  "created_utc": "2026-10-19T11:38:48.582820+00:00",
+  "state": "complete",
+  "command": [
+    "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+    "/home/rvector/DASE7506-MP2/code/solution/group_ranker/submission_ensemble.py",
+    "--linear-checkpoint",
+    "solution/runs/linear_v1/checkpoint",
+    "--mlp-checkpoint",
+    "solution/runs/mlp_text_v1/checkpoint",
+    "--stability-dir",
+    "solution/runs/p3/stability",
+    "--output",
+    "solution/runs/ensemble_v1"
+  ],
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "temperature": 1.0,
+  "fit_count": 0,
+  "search_count": 0,
+  "final_mlp_seed": 7506,
+  "component_directories": {
+    "linear": "solution/runs/linear_v1/checkpoint",
+    "mlp": "solution/runs/mlp_text_v1/checkpoint"
+  },
+  "stability_seeds_are_diagnostics_only": true,
+  "scope": "原路线预留的事后扩展；已看过单模型 test。配方在本轮评测前固定，不按 test 调整或选型。",
+  "seeds": [
+    {
+      "mlp_seed": 7506,
+      "mlp_oof_sha256": "ffb5de43d88a4b8424f18a3934876c4f361be5eb876d030f510fed23b1ec7f03",
+      "linear": {
+        "correct": 1715,
+        "n": 2114,
+        "accuracy": 81.12582781456953,
+        "nll": 0.476703089726901
+      },
+      "mlp": {
+        "correct": 1692,
+        "n": 2114,
+        "accuracy": 80.03784295175024,
+        "nll": 0.5040590274648488
+      },
+      "ensemble": {
+        "correct": 1717,
+        "n": 2114,
+        "accuracy": 81.22043519394512,
+        "nll": 0.46369870301663174
+      },
+      "mlp_rescues": 92,
+      "mlp_regresses": 115,
+      "folds": [
+        {
+          "fold": 0,
+          "mlp_rescues": 17,
+          "ensemble": {
+            "correct": 335,
+            "n": 426,
+            "accuracy": 78.63849765258216,
+            "nll": 0.5034588102975636
+          }
+        },
+        {
+          "fold": 1,
+          "mlp_rescues": 17,
+          "ensemble": {
+            "correct": 347,
+            "n": 425,
+            "accuracy": 81.6470588235294,
+            "nll": 0.47948011602620094
+          }
+        },
+        {
+          "fold": 2,
+          "mlp_rescues": 22,
+          "ensemble": {
+            "correct": 348,
+            "n": 423,
+            "accuracy": 82.26950354609929,
+            "nll": 0.4639717925998913
+          }
+        },
+        {
+          "fold": 3,
+          "mlp_rescues": 21,
+          "ensemble": {
+            "correct": 339,
+            "n": 420,
+            "accuracy": 80.71428571428571,
+            "nll": 0.4386302441291829
+          }
+        },
+        {
+          "fold": 4,
+          "mlp_rescues": 15,
+          "ensemble": {
+            "correct": 348,
+            "n": 420,
+            "accuracy": 82.85714285714286,
+            "nll": 0.4321947258934553
+          }
+        }
+      ]
+    },
+    {
+      "mlp_seed": 7507,
+      "mlp_oof_sha256": "63114fab45d30a45eefde6776833cd522a674c67c5954cabe544a6bedfd44882",
+      "linear": {
+        "correct": 1715,
+        "n": 2114,
+        "accuracy": 81.12582781456953,
+        "nll": 0.476703089726901
+      },
+      "mlp": {
+        "correct": 1671,
+        "n": 2114,
+        "accuracy": 79.04446546830653,
+        "nll": 0.5014448163466397
+      },
+      "ensemble": {
+        "correct": 1708,
+        "n": 2114,
+        "accuracy": 80.79470198675497,
+        "nll": 0.4622834505961194
+      },
+      "mlp_rescues": 96,
+      "mlp_regresses": 140,
+      "folds": [
+        {
+          "fold": 0,
+          "mlp_rescues": 20,
+          "ensemble": {
+            "correct": 336,
+            "n": 426,
+            "accuracy": 78.87323943661971,
+            "nll": 0.4859720722324643
+          }
+        },
+        {
+          "fold": 1,
+          "mlp_rescues": 19,
+          "ensemble": {
+            "correct": 342,
+            "n": 425,
+            "accuracy": 80.47058823529412,
+            "nll": 0.4710095160400843
+          }
+        },
+        {
+          "fold": 2,
+          "mlp_rescues": 24,
+          "ensemble": {
+            "correct": 344,
+            "n": 423,
+            "accuracy": 81.32387706855792,
+            "nll": 0.45981758495736463
+          }
+        },
+        {
+          "fold": 3,
+          "mlp_rescues": 18,
+          "ensemble": {
+            "correct": 340,
+            "n": 420,
+            "accuracy": 80.95238095238095,
+            "nll": 0.44724054112322875
+          }
+        },
+        {
+          "fold": 4,
+          "mlp_rescues": 15,
+          "ensemble": {
+            "correct": 346,
+            "n": 420,
+            "accuracy": 82.38095238095238,
+            "nll": 0.4469528613414513
+          }
+        }
+      ]
+    },
+    {
+      "mlp_seed": 7508,
+      "mlp_oof_sha256": "60db1da0e5e50f10b66c56c8dc15cb74a4c66b5a8f90f43eee85d0670522f9ff",
+      "linear": {
+        "correct": 1715,
+        "n": 2114,
+        "accuracy": 81.12582781456953,
+        "nll": 0.476703089726901
+      },
+      "mlp": {
+        "correct": 1686,
+        "n": 2114,
+        "accuracy": 79.75402081362347,
+        "nll": 0.49980512122245063
+      },
+      "ensemble": {
+        "correct": 1716,
+        "n": 2114,
+        "accuracy": 81.17313150425733,
+        "nll": 0.45834062898299677
+      },
+      "mlp_rescues": 101,
+      "mlp_regresses": 130,
+      "folds": [
+        {
+          "fold": 0,
+          "mlp_rescues": 20,
+          "ensemble": {
+            "correct": 335,
+            "n": 426,
+            "accuracy": 78.63849765258216,
+            "nll": 0.48960148802842074
+          }
+        },
+        {
+          "fold": 1,
+          "mlp_rescues": 22,
+          "ensemble": {
+            "correct": 348,
+            "n": 425,
+            "accuracy": 81.88235294117646,
+            "nll": 0.4685371315408009
+          }
+        },
+        {
+          "fold": 2,
+          "mlp_rescues": 23,
+          "ensemble": {
+            "correct": 340,
+            "n": 423,
+            "accuracy": 80.37825059101655,
+            "nll": 0.4678137175872403
+          }
+        },
+        {
+          "fold": 3,
+          "mlp_rescues": 21,
+          "ensemble": {
+            "correct": 347,
+            "n": 420,
+            "accuracy": 82.61904761904762,
+            "nll": 0.43820677529376323
+          }
+        },
+        {
+          "fold": 4,
+          "mlp_rescues": 15,
+          "ensemble": {
+            "correct": 346,
+            "n": 420,
+            "accuracy": 82.38095238095238,
+            "nll": 0.42690839691029586
+          }
+        }
+      ]
+    }
+  ],
+  "stable_rescues_all_three_seeds": 53,
+  "complementarity_in_every_seed_and_fold": true,
+  "linear_oof_sha256": "d433b58efad5c26b99f3c88a53c4f3409d89ca394384832943f43ce1a9027e6d",
+  "inference_asset_bytes": 590639,
+  "preparation_seconds": 0.011450912003056146,
+  "source_sha256": {
+    "submission_ensemble.py": "11ed0f0b7b0d90baee33dc9d57873fcf990ecc2802fc99597b08179b96846d85"
+  },
+  "numpy": "2.5.3"
+}
