@@ -1,0 +1,56 @@
+{
+  "method": "solution/baselines/submission_emb_only.py",
+  "checkpoint": null,
+  "official": {
+    "protocol": "dase7506-mp2-open-hard-verifier-v5",
+    "split": "test",
+    "correct": 271,
+    "n": 467,
+    "accuracy": 58.02997858672377,
+    "scoring_seconds": 0.013182751994463615
+  },
+  "total_wall_seconds": 0.1859455030062236,
+  "processes": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "predict.py",
+        "--method",
+        "solution/baselines/submission_emb_only.py",
+        "--split",
+        "test",
+        "--output",
+        "/home/rvector/DASE7506-MP2/code/solution/runs/readme_comparison_test_v1/embedding/predictions.json"
+      ],
+      "wall_seconds": 0.11036678799428046,
+      "coordinator_peak_threads": 1,
+      "child_peak_threads": 1,
+      "total_peak_threads": 2,
+      "returncode": 0,
+      "stdout": "{\"protocol\": \"dase7506-mp2-open-hard-verifier-v5\", \"split\": \"test\", \"prediction_seconds\": 0.04591889100265689}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "score_predictions.py",
+        "--split",
+        "test",
+        "--predictions",
+        "/home/rvector/DASE7506-MP2/code/solution/runs/readme_comparison_test_v1/embedding/predictions.json",
+        "--output",
+        "/home/rvector/DASE7506-MP2/code/solution/runs/readme_comparison_test_v1/embedding/score.json"
+      ],
+      "wall_seconds": 0.07549608100089245,
+      "coordinator_peak_threads": 1,
+      "child_peak_threads": 1,
+      "total_peak_threads": 2,
+      "returncode": 0,
+      "stdout": "{\n  \"protocol\": \"dase7506-mp2-open-hard-verifier-v5\",\n  \"split\": \"test\",\n  \"correct\": 271,\n  \"n\": 467,\n  \"accuracy\": 58.02997858672377,\n  \"scoring_seconds\": 0.013182751994463615\n}\n",
+      "stderr": ""
+    }
+  ],
+  "total_peak_threads": 2,
+  "inference_asset_bytes": 0,
+  "reference_cpu_verified": false
+}

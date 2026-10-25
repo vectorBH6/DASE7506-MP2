@@ -1,0 +1,53 @@
+{
+  "created_utc": "2026-10-25T05:40:35.177752+00:00",
+  "seed": 7506,
+  "folds": 5,
+  "initial_grid": {
+    "schema": "math",
+    "hidden": [
+      8,
+      16
+    ],
+    "residual_l2": [
+      0.001,
+      0.01
+    ],
+    "linear_l2": 0.01
+  },
+  "fallback_trigger": "No initial residual trial has validation correct > incumbent (733). Evaluated before any new test.",
+  "fallback": [
+    {
+      "schema": "expanded",
+      "hidden": 0,
+      "linear_l2": [
+        0.003,
+        0.01,
+        0.03
+      ]
+    },
+    {
+      "schema": "expanded",
+      "hidden": 8,
+      "linear_l2": "OOF winner of expanded linear",
+      "residual_l2": [
+        0.001,
+        0.01
+      ]
+    }
+  ],
+  "selection": "Validation correct descending; train OOF accuracy descending; train OOF NLL ascending; fewer parameters; fixed trial order.",
+  "within_trial_selection": "Train OOF accuracy descending, NLL ascending, stronger linear L2, stronger residual L2.",
+  "optimizer": {
+    "algorithm": "L-BFGS-B",
+    "maxiter": 300,
+    "ftol": 1e-08,
+    "gtol": 1e-05,
+    "warm_start": "train-fold linear model only"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "1.26.4",
+    "cpu": "Intel(R) Core(TM) Ultra 9 275HX"
+  },
+  "test_policy": "Previously published test scores are known; current test is not used to decide fallback, hyperparameters or model selection."
+}

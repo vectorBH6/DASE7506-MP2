@@ -2,8 +2,16 @@ __pycache__/
 *.py[cod]
 .venv/
 .venv-train/
+.venv-inference/
 venv/
+# Ignore experiment runs, except the final submission.
 runs/
+!/code/solution/runs/
+/code/solution/runs/*
+!/code/solution/runs/handcrafted_extended_v2/
+
+# Keep review evidence, but exclude the duplicate audit retraining output.
+/code/solution/runs/handcrafted_extended_v2/review/retrain_lexical/
 .DS_Store
 Thumbs.db
 .agents/

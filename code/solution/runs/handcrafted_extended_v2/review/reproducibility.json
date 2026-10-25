@@ -1,0 +1,25 @@
+{
+  "same_fixed_configuration_retraining": true,
+  "model_arrays_bitwise_equal": {
+    "mean": true,
+    "scale": true,
+    "active": true,
+    "weight": true
+  },
+  "oof_arrays_bitwise_equal": {
+    "scores": true,
+    "labels": true,
+    "folds": true
+  },
+  "configs_equal": true,
+  "frozen_files_verified": 45,
+  "source_archive_sha256_verified": true,
+  "official_package_files_verified": 20,
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "1.26.4",
+    "scipy": "1.11.4",
+    "cpu": "Intel Core Ultra 9 275HX"
+  },
+  "no_new_test_selection_or_hyperparameter_search": true
+}

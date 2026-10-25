@@ -1,0 +1,16 @@
+{
+  "selected": "incumbent",
+  "policy": "Validation correct descending; train OOF accuracy descending; train OOF NLL ascending; fewer extra features; multiplier nearest 1 in log space; incumbent/stage order.",
+  "selected_checkpoint": "solution/runs/handcrafted_v1/math/checkpoint",
+  "validation": {
+    "protocol": "dase7506-mp2-open-hard-verifier-v5",
+    "split": "validation",
+    "correct": 733,
+    "n": 798,
+    "accuracy": 91.8546365914787,
+    "scoring_seconds": 0.022129988006781787
+  },
+  "selected_l2": 0.01,
+  "handcrafted_l2_multiplier": 1.0,
+  "feature_set": "math"
+}

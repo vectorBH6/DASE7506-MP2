@@ -9,13 +9,15 @@ code/
 ├── common.py、predict.py、score_predictions.py、data/ …  # 课程原始文件
 └── solution/                  # 作业实现，按功能组织
     ├── baselines/             # 原基线、纯投票、纯 embedding
-    ├── group_ranker/          # 共享特征、训练、预测接口与检查
+    ├── group_ranker/          # 基础答案组特征、线性训练与预测
+    ├── handcrafted_ranker/    # 手工算术特征扩展、训练、实验、测试与说明
+    ├── residual_ranker/       # 小型非线性残差头与条件手工特征扩展
     ├── evaluate.py            # 调用官方工具，统一验证与记录
     ├── requirements-train.txt
     └── runs/<实验名>/         # checkpoint/、训练记录、validation/、冻结后的 test/
 ```
 
-源码在 `solution/` 中复用和扩展；每轮产物集中到对应实验目录，已有记录不覆盖。`runs/` 与虚拟环境默认由 Git 忽略；`linear_v1` 的权重及训练、验证、冻结测试记录作为复现快照随仓库提交。历史 JSON 保留生成时的命令和路径。
+源码在 `solution/` 中复用和扩展；每轮产物集中到对应实验目录，已有记录不覆盖。新实验与虚拟环境默认由 Git 忽略；最终 `handcrafted_extended_v2`、原 `linear_v1` 及报告引用的历史对照记录作为复现快照随仓库提交。最终推理使用 `handcrafted_extended_v2/models/lexical/checkpoint`。历史 JSON 保留生成时的命令和路径。
 
 官方 `common.py` 负责数据与答案解析，`predict.py`、`score_predictions.py` 负责独立预测与评分；本目录只实现算法、训练和实验编排。
 
@@ -53,7 +55,7 @@ solution/.venv-train/bin/python -m unittest solution.group_ranker.test_group_ran
 .venv/bin/python -m unittest solution.group_ranker.test_group_ranker -v
 ```
 
-纯 NumPy 环境会跳过训练梯度检查。推理入口是 `solution/group_ranker/submission_linear.py`，实现 `predict(bank, arrays, checkpoint)`，为每题返回一个 0–3 的 Python 整数。作业允许自定义文件名，通过 `--method` 传入；官方 `submission.py` 保留原始占位接口。
+纯 NumPy 环境会跳过训练梯度检查。基础方案的推理入口是 `solution/group_ranker/submission_linear.py`，实现 `predict(bank, arrays, checkpoint)`，为每题返回一个 0–3 的 Python 整数。作业允许自定义文件名，通过 `--method` 传入；官方 `submission.py` 保留原始占位接口。
 
 直接使用官方工具时，预留 1 线程给外层编排，并顺序运行预测、评分：
 
@@ -106,3 +108,50 @@ fi
 ```
 
 原始记录集中在 `runs/linear_v1/`，历史基线记录在本地 `runs/baselines/`。仓库包含 `linear_v1` 的匹配 checkpoint 和冻结记录；新实验产物继续默认忽略。正式提交还需确认代码版本与权重匹配，并完成参考机测时、至多 10 页报告及实际 AI 辅助与复用披露；保留数据许可。
+
+## 手工特征消融
+
+新增 8 维组特征及四配置实验见 [handcrafted_ranker/README.md](handcrafted_ranker/README.md)。`group_ranker/` 保留基础方案；扩展方案使用独立入口，并根据 checkpoint 配置选择手工特征。
+
+```bash
+python3 -m unittest solution.group_ranker.test_group_ranker solution.handcrafted_ranker.test_handcrafted -v
+python3 -m solution.handcrafted_ranker.experiment --output solution/runs/handcrafted_v2 --test
+```
+
+本轮记录：[handcrafted_v1/REPORT.md](runs/handcrafted_v1/REPORT.md)。已有实验目录不会覆盖；`--test` 在验证集选型后仅测试一个冻结方案。
+
+## 提交前优化结果
+
+三阶段有限搜索已完成，详见 [handcrafted_opt_v1/REPORT.md](runs/handcrafted_opt_v1/REPORT.md)：扩大 L2、分块正则化和两项交互特征均未超过原 6 维算术方案，因此按验证集/OOF 规则保留 math，L2=0.01、手工块倍率=1。
+
+该轮选定预测入口为 solution/handcrafted_ranker/submission_linear.py，checkpoint 为 solution/runs/handcrafted_v1/math/checkpoint。官方 test 再次复现 384/467，accuracy=82.22698072805139%；本轮完整预测加评分约 0.523 秒，推理资产 28,850 字节，参考 CPU 尚未验证。
+
+23 项测试通过；本轮 source.tar 包含新目录源码和选定权重，freeze.json 保留匹配哈希。新 runs 默认被 Git 忽略，最终交付需包含选定 checkpoint 和评测记录。原 linear_v1 仍可通过基础 group_ranker 入口复现。
+
+## 非线性残差与手工扩展
+
+新增独立目录 [residual_ranker/README.md](residual_ranker/README.md)。预设四组小型残差网络；若 validation 无增益，则自动运行 16 维手工指标扩展。按训练 OOF/validation 选一个模型，再冻结 test。
+
+    python3 -m solution.residual_ranker.experiment --output solution/runs/residual_v2 --test
+
+本轮记录：[residual_v1/REPORT.md](runs/residual_v1/REPORT.md)。旧模型和实验产物保持归档。
+
+## 上一轮选定结果：83.08351%
+
+最终复现说明见 [residual_ranker/RESULTS.md](residual_ranker/RESULTS.md)，详细对照见 [residual_features_v1/REPORT.md](runs/residual_features_v1/REPORT.md)。选定模型为 expanded_residual_r01，官方 test 388/467，accuracy=83.08351177730192%，比原 6 维方案多对 4 题。
+
+预测入口：solution/residual_ranker/submission.py；checkpoint：solution/runs/residual_features_v1/expanded_residual_r01/checkpoint。本机完整预测加评分约 0.800 秒，推理资产 31,188 字节；参考 CPU 尚未验证。27 项测试及实际模型预测重放、候选重排检查通过。
+
+首次残差模型未提高的结果仍保留在 residual_v1，后续独立手工特征对照及收紧的 OOF/收敛资格均有单独预设计划，没有改写历史记录。新 runs 受 Git 忽略，最终交付需包含选定 checkpoint 和匹配源码。
+
+## 当前选定结果：84.15418%
+
+本轮新增24个候选级信号，实验词法、算术追踪、组合及组内标准化/交互四种方案。最后选中较小的lexical：新增24列组特征，总维度2112，线性L2=0.03。选型依据仅为train OOF和validation，冻结后官方test为 **393/467，84.15417559%**，比上一版多对5题。
+
+Train OOF 1761/2114（83.30%），validation 751/798（94.11%，比上一版多17题）。完整80列扩展没有胜出。新增信号也包含答案数值形态先验，尚未逐项消融，不能将收益单独归因于语义匹配。
+
+预测入口：solution/residual_ranker/extended_submission.py；checkpoint：solution/runs/handcrafted_extended_v2/models/lexical/checkpoint。本机完整预测加评分1.166秒，推理资产29,766字节；参考CPU尚未验证。
+
+31项测试、真实预测重放、候选重排和批次一致性检查通过；45个冻结文件及源码包哈希通过。原group_ranker和此前模型源码/权重保持原样。新runs默认受Git忽略，提交需包含匹配checkpoint和代码。
+
+[当前复现说明](residual_ranker/RESULTS.md) · [新增特征定义](residual_ranker/EXTENDED.md) · [消融报告](runs/handcrafted_extended_v2/REPORT.md) · [官方评分](runs/handcrafted_extended_v2/test/score.json) · [源码与权重包](runs/handcrafted_extended_v2/source.tar)

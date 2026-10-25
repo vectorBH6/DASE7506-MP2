@@ -1,0 +1,13 @@
+{
+  "selected": "math",
+  "policy": "Validation correct descending; train OOF accuracy descending; train OOF NLL ascending; fewer extra features; variant order. Fixed before training; no test access for selection.",
+  "selected_checkpoint": "solution/runs/handcrafted_v1/math/checkpoint",
+  "selected_validation": {
+    "protocol": "dase7506-mp2-open-hard-verifier-v5",
+    "split": "validation",
+    "correct": 733,
+    "n": 798,
+    "accuracy": 91.8546365914787,
+    "scoring_seconds": 0.021122409001691267
+  }
+}

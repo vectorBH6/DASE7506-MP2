@@ -1,0 +1,9 @@
+# AI辅助与复用披露
+
+本项目使用Codex进行方案讨论、特征及模型代码编写、测试生成、训练与评测脚本编排、结果分析、复现说明整理和规则审阅。最新lexical模型、扩展特征和检查记录也包含实质性AI辅助。本说明不替代提交者对实现的理解、核对和个人论证；最终报告应明确列出实际采用的帮助范围。
+
+复用课程提供的common.py、predict.py、score_predictions.py、check_data.py、固定候选与嵌入，以及官方最终数值解析规则。项目内部扩展复用group_ranker与handcrafted_ranker函数；线性优化使用SciPy的L-BFGS-B，推理使用NumPy和Python标准库。没有调用外部LLM生成候选、下载外部预训练权重或加入外部训练数据。
+
+题目和参考答案源自课程提供的GSM8K数据，候选文本和固定表征来自课程提供的Qwen3-0.6B产物。重新分发数据时保留code/data/LICENSE.txt与NOTICE.txt。
+
+实验使用公开test进行过多轮冻结评分和复现，历史结果均保留。最新模型在本轮test前按train OOF与validation冻结；公开test已知，应在报告中说明完整时间线与局限，不宣称完全未见测试，也不把本轮冻结视为消除此前test反馈影响的证明。

@@ -1,0 +1,274 @@
+{
+  "created_utc": "2026-10-25T05:26:13.128482+00:00",
+  "config": {
+    "protocol": "dase7506-mp2-open-hard-verifier-v5",
+    "feature_version": "answer-group-handcrafted-v2",
+    "feature_dim": 2088,
+    "feature_set": "math",
+    "model": "linear",
+    "enabled_scalar_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      17,
+      18,
+      19,
+      20,
+      22,
+      23
+    ],
+    "l2": 0.01,
+    "handcrafted_l2_multiplier": 1.0,
+    "seed": 7506,
+    "folds": 5,
+    "maxiter": 300,
+    "training_split": "train",
+    "training_questions": 2114
+  },
+  "train_total": 4755,
+  "train_conflict": 2114,
+  "search": [
+    {
+      "l2": 0.01,
+      "handcrafted_l2_multiplier": 0.3,
+      "oof": {
+        "correct": 1730,
+        "n": 2114,
+        "accuracy": 81.83538315988648,
+        "nll": 0.4639232783434457
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "correct": 338,
+          "n": 426,
+          "accuracy": 79.34272300469483,
+          "nll": 0.5072271584701508,
+          "converged": true,
+          "iterations": 91,
+          "objective": 0.2845291831987923,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+        },
+        {
+          "fold": 1,
+          "correct": 347,
+          "n": 425,
+          "accuracy": 81.6470588235294,
+          "nll": 0.45111797721304175,
+          "converged": true,
+          "iterations": 94,
+          "objective": 0.2923535275610931,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+        },
+        {
+          "fold": 2,
+          "correct": 345,
+          "n": 423,
+          "accuracy": 81.56028368794327,
+          "nll": 0.484519739217437,
+          "converged": true,
+          "iterations": 94,
+          "objective": 0.28882237831071705,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+        },
+        {
+          "fold": 3,
+          "correct": 353,
+          "n": 420,
+          "accuracy": 84.04761904761905,
+          "nll": 0.42919041031822963,
+          "converged": true,
+          "iterations": 93,
+          "objective": 0.29783283723700804,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+        },
+        {
+          "fold": 4,
+          "correct": 347,
+          "n": 420,
+          "accuracy": 82.61904761904762,
+          "nll": 0.4469478061228213,
+          "converged": true,
+          "iterations": 82,
+          "objective": 0.2957778859718896,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+        }
+      ]
+    },
+    {
+      "l2": 0.01,
+      "handcrafted_l2_multiplier": 1.0,
+      "oof": {
+        "correct": 1736,
+        "n": 2114,
+        "accuracy": 82.11920529801324,
+        "nll": 0.46345009784649643
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "correct": 340,
+          "n": 426,
+          "accuracy": 79.81220657276995,
+          "nll": 0.5049190755449664,
+          "converged": true,
+          "iterations": 73,
+          "objective": 0.2861184490703581,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+        },
+        {
+          "fold": 1,
+          "correct": 350,
+          "n": 425,
+          "accuracy": 82.3529411764706,
+          "nll": 0.45314635074120874,
+          "converged": true,
+          "iterations": 75,
+          "objective": 0.293333192743595,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+        },
+        {
+          "fold": 2,
+          "correct": 344,
+          "n": 423,
+          "accuracy": 81.32387706855792,
+          "nll": 0.4813471242670654,
+          "converged": true,
+          "iterations": 73,
+          "objective": 0.2905391116868995,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+        },
+        {
+          "fold": 3,
+          "correct": 352,
+          "n": 420,
+          "accuracy": 83.80952380952381,
+          "nll": 0.43179654688042085,
+          "converged": true,
+          "iterations": 78,
+          "objective": 0.29875050371079337,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+        },
+        {
+          "fold": 4,
+          "correct": 350,
+          "n": 420,
+          "accuracy": 83.33333333333333,
+          "nll": 0.44544380558471086,
+          "converged": true,
+          "iterations": 72,
+          "objective": 0.2971567285755534,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+        }
+      ]
+    },
+    {
+      "l2": 0.01,
+      "handcrafted_l2_multiplier": 3.0,
+      "oof": {
+        "correct": 1729,
+        "n": 2114,
+        "accuracy": 81.78807947019868,
+        "nll": 0.46378360795192924
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "correct": 338,
+          "n": 426,
+          "accuracy": 79.34272300469483,
+          "nll": 0.5023645388120844,
+          "converged": true,
+          "iterations": 76,
+          "objective": 0.28853756409816766,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+        },
+        {
+          "fold": 1,
+          "correct": 347,
+          "n": 425,
+          "accuracy": 81.6470588235294,
+          "nll": 0.4566992909123708,
+          "converged": true,
+          "iterations": 73,
+          "objective": 0.29487077271928,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+        },
+        {
+          "fold": 2,
+          "correct": 340,
+          "n": 423,
+          "accuracy": 80.37825059101655,
+          "nll": 0.47949661825744216,
+          "converged": true,
+          "iterations": 74,
+          "objective": 0.29286387037192313,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+        },
+        {
+          "fold": 3,
+          "correct": 352,
+          "n": 420,
+          "accuracy": 83.80952380952381,
+          "nll": 0.4358048655493515,
+          "converged": true,
+          "iterations": 78,
+          "objective": 0.3002279597422821,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+        },
+        {
+          "fold": 4,
+          "correct": 352,
+          "n": 420,
+          "accuracy": 83.80952380952381,
+          "nll": 0.4439736713929691,
+          "converged": true,
+          "iterations": 79,
+          "objective": 0.29930177499414334,
+          "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+        }
+      ]
+    }
+  ],
+  "selected_l2": 0.01,
+  "selected_handcrafted_l2_multiplier": 1.0,
+  "selected_search_index": 1,
+  "final_optimizer": {
+    "converged": true,
+    "iterations": 71,
+    "objective": 0.31279954234545065,
+    "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+  },
+  "inference_asset_bytes": 28886,
+  "training_seconds": 29.422670676998678,
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "1.26.4",
+    "scipy": "1.11.4",
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.39",
+    "threads": 4
+  },
+  "source_sha256": {
+    "solution/handcrafted_ranker/train_linear.py": "efa911a206c6be810a7c209ca41846ef35226195af5bca89d0da9c6796c1be89",
+    "solution/handcrafted_ranker/features.py": "29f41c567f72f565d61a86c4199876a6eee386da01c5ad6871294d84e22f28b6",
+    "solution/handcrafted_ranker/submission_linear.py": "acf14120439c00b221ecb6e3045367380dddcae1b09d256347b9b9122a426ac9",
+    "solution/handcrafted_ranker/arithmetic.py": "4d659635235d02e97b735a94ddd2756e82f6aeb95957fc19b669e61893daad65",
+    "solution/handcrafted_ranker/optimization.py": "588d4502c3bcb571db17e11d0e39965537eb51465a2cece565719816ab6d1cf8",
+    "solution/group_ranker/features.py": "276d2e0183fc68979fc716a354e1647cbf7ba2c6e586ddd8b9fb2fc8438717a2",
+    "solution/group_ranker/train_linear.py": "a4d60652c9563dbfc3ede31e80eb7d7b6c17450de499f0cff228a9ba46e087eb"
+  },
+  "data_manifest_sha256": "8b3721d458e48c87eab3a28f660e663981b10617b6e7321123c6ff30b1fbe825"
+}

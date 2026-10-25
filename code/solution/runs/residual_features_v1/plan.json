@@ -1,0 +1,34 @@
+{
+  "created_utc": "2026-10-25T05:45:51.106965+00:00",
+  "seed": 7506,
+  "folds": 5,
+  "reason": "Follow-up on prewritten expanded features: weak residual configurations had substantially lower train OOF and hit the iteration cap. Original residual_v1 plan, decision and test remain unchanged.",
+  "known_test_history": "Original math=82.22698%; residual_v1=80.51392%. These scores do not determine feature definitions, penalties or current selection.",
+  "features": "Same 16 expanded features already implemented before residual_v1 training; no test-error-specific rules.",
+  "trials": [
+    {
+      "name": "expanded_linear",
+      "hidden": 0,
+      "linear_l2": [
+        0.003,
+        0.01,
+        0.03
+      ]
+    },
+    {
+      "name": "expanded_residual_r003",
+      "hidden": 8,
+      "residual_l2": 0.003,
+      "linear_l2": "OOF selected expanded linear L2"
+    },
+    {
+      "name": "expanded_residual_r01",
+      "hidden": 8,
+      "residual_l2": 0.01,
+      "linear_l2": "OOF selected expanded linear L2"
+    }
+  ],
+  "eligibility": "All fold optimizers and final optimizer converged, and train OOF correct >= incumbent 1736/2114. Incumbent always eligible.",
+  "selection": "Among eligible models: validation correct descending; train OOF accuracy descending; train OOF NLL ascending; fewer parameters; fixed order.",
+  "test_policy": "Only one selected model is frozen/scored after validation. No tuning after this test."
+}

@@ -1,0 +1,149 @@
+{
+  "created_utc": "2026-10-25T05:47:17.158394+00:00",
+  "config": {
+    "protocol": "dase7506-mp2-open-hard-verifier-v5",
+    "feature_version": "answer-group-residual-v1",
+    "feature_dim": 2088,
+    "feature_schema": "expanded",
+    "hidden": 8,
+    "linear_l2": 0.01,
+    "residual_l2": 0.003,
+    "seed": 7506,
+    "folds": 5,
+    "maxiter": 300,
+    "training_split": "train",
+    "training_questions": 2114
+  },
+  "train_total": 4755,
+  "train_conflict": 2114,
+  "search": [
+    {
+      "hidden": 8,
+      "residual_l2": 0.003,
+      "linear_l2": 0.01,
+      "oof": {
+        "correct": 1720,
+        "n": 2114,
+        "accuracy": 81.36234626300852,
+        "nll": 0.4804012865812226
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "correct": 338,
+          "n": 426,
+          "accuracy": 79.34272300469483,
+          "nll": 0.4940673533869601,
+          "converged": false,
+          "iterations": 300,
+          "objective": 0.2525423176418375,
+          "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT",
+          "warm_optimizer": {
+            "converged": true,
+            "iterations": 72,
+            "objective": 0.2747526041626552,
+            "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+          }
+        },
+        {
+          "fold": 1,
+          "correct": 346,
+          "n": 425,
+          "accuracy": 81.41176470588235,
+          "nll": 0.4877790061409358,
+          "converged": false,
+          "iterations": 300,
+          "objective": 0.24959223386529908,
+          "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT",
+          "warm_optimizer": {
+            "converged": true,
+            "iterations": 74,
+            "objective": 0.27892594313220875,
+            "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+          }
+        },
+        {
+          "fold": 2,
+          "correct": 341,
+          "n": 423,
+          "accuracy": 80.61465721040189,
+          "nll": 0.5103844158695016,
+          "converged": false,
+          "iterations": 300,
+          "objective": 0.24614035753915545,
+          "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT",
+          "warm_optimizer": {
+            "converged": true,
+            "iterations": 74,
+            "objective": 0.27753352607134724,
+            "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+          }
+        },
+        {
+          "fold": 3,
+          "correct": 343,
+          "n": 420,
+          "accuracy": 81.66666666666667,
+          "nll": 0.43467951195317117,
+          "converged": false,
+          "iterations": 300,
+          "objective": 0.256691002596058,
+          "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT",
+          "warm_optimizer": {
+            "converged": true,
+            "iterations": 73,
+            "objective": 0.28688517691750726,
+            "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+          }
+        },
+        {
+          "fold": 4,
+          "correct": 352,
+          "n": 420,
+          "accuracy": 83.80952380952381,
+          "nll": 0.4745989208257877,
+          "converged": false,
+          "iterations": 300,
+          "objective": 0.25123363547152544,
+          "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT",
+          "warm_optimizer": {
+            "converged": true,
+            "iterations": 74,
+            "objective": 0.28229622600610116,
+            "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+          }
+        }
+      ]
+    }
+  ],
+  "selected_search_index": 0,
+  "final_optimizer": {
+    "converged": false,
+    "iterations": 300,
+    "objective": 0.27147486351909966,
+    "message": "STOP: TOTAL NO. of ITERATIONS REACHED LIMIT",
+    "warm_optimizer": {
+      "converged": true,
+      "iterations": 74,
+      "objective": 0.2991011756931182,
+      "message": "CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH"
+    }
+  },
+  "training_seconds": 54.29487220601004,
+  "inference_asset_bytes": 31189,
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "1.26.4",
+    "scipy": "1.11.4"
+  },
+  "source_sha256": {
+    "test_residual.py": "36ce9d062bbac734539c8b9a5658cff461b1270ab601d9b0c1a28243cba63523",
+    "submission.py": "309c428d352432d11ce87b8f4e629667783ce04e891fc9ad2c74d52cbcec49bf",
+    "feature_experiment.py": "cacaa4041ae5f5517696ff19d8b0ccbcb21442eb9d4f72d1977a9cebd8c8a5ab",
+    "train.py": "d0976fe316a78c476d3ccbae9dbdf19f2b107f3c03c0dcce278a9cb382c82e01",
+    "experiment.py": "3a4879e222944cc972d1311b2ad39aec937b8e13bc32e70e55cf9059342ab9af",
+    "__init__.py": "23fe0363babf044b94e10cf6fe3d56320563a027c1a47f09d11bd6469047b0a1",
+    "features.py": "2991bfacd3a17968904862cd40969d3ad842c6ec0c2cfd3ad01f66bc36b52527",
+    "model.py": "7ce22cfcff4b2ad106ae22867f108ee8b4cd54bb2dc5d495745751bf86f716d8"
+  }
+}

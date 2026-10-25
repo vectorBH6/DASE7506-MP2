@@ -1,0 +1,56 @@
+{
+  "split": "validation",
+  "official": {
+    "protocol": "dase7506-mp2-open-hard-verifier-v5",
+    "split": "validation",
+    "correct": 733,
+    "n": 798,
+    "accuracy": 91.8546365914787,
+    "scoring_seconds": 0.020984253991628066
+  },
+  "total_wall_seconds": 0.48236298900155816,
+  "processes": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "predict.py",
+        "--method",
+        "solution/handcrafted_ranker/submission_linear.py",
+        "--checkpoint",
+        "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_opt_v1/block_l2/checkpoint",
+        "--split",
+        "validation",
+        "--output",
+        "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_opt_v1/block_l2/validation/predictions.json"
+      ],
+      "wall_seconds": 0.39851291400555056,
+      "coordinator_peak_threads": 1,
+      "child_peak_threads": 1,
+      "total_peak_threads": 2,
+      "returncode": 0,
+      "stdout": "{\"protocol\": \"dase7506-mp2-open-hard-verifier-v5\", \"split\": \"validation\", \"prediction_seconds\": 0.33118384701083414}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "score_predictions.py",
+        "--split",
+        "validation",
+        "--predictions",
+        "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_opt_v1/block_l2/validation/predictions.json",
+        "--output",
+        "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_opt_v1/block_l2/validation/score.json"
+      ],
+      "wall_seconds": 0.08374988300784025,
+      "coordinator_peak_threads": 1,
+      "child_peak_threads": 1,
+      "total_peak_threads": 2,
+      "returncode": 0,
+      "stdout": "{\n  \"protocol\": \"dase7506-mp2-open-hard-verifier-v5\",\n  \"split\": \"validation\",\n  \"correct\": 733,\n  \"n\": 798,\n  \"accuracy\": 91.8546365914787,\n  \"scoring_seconds\": 0.020984253991628066\n}\n",
+      "stderr": ""
+    }
+  ],
+  "total_peak_threads": 2,
+  "inference_asset_bytes": 28886
+}

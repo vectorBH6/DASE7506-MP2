@@ -1,0 +1,604 @@
+{
+  "train": {
+    "counts": {
+      "candidates": 19020,
+      "candidates_with_equals": 18954,
+      "equals_lines": 65719,
+      "candidates_with_checked_equations": 16316,
+      "checked_equations": 41793,
+      "invalid_equations": 739,
+      "valid_answer_candidates": 18149,
+      "last_equation_matches": 13414,
+      "trace_reaches": 13526
+    },
+    "examples": {
+      "valid": [
+        {
+          "id": "gsm8k:dcddb345ed871819274e746ca931847f1bb2fcc2440eb8d2f69a2e9bd91c46fa",
+          "candidate": 0,
+          "line": "  $ \\frac{10 + 15 + 5}{2} = \\frac{30}{2} = 15 $ miles.",
+          "lhs": "15",
+          "rhs": "15"
+        },
+        {
+          "id": "gsm8k:dcddb345ed871819274e746ca931847f1bb2fcc2440eb8d2f69a2e9bd91c46fa",
+          "candidate": 0,
+          "line": "  $ \\frac{10 + 15 + 5}{2} = \\frac{30}{2} = 15 $ miles.",
+          "lhs": "15",
+          "rhs": "15"
+        },
+        {
+          "id": "gsm8k:dcddb345ed871819274e746ca931847f1bb2fcc2440eb8d2f69a2e9bd91c46fa",
+          "candidate": 1,
+          "line": "10 + 15 + 5 = 30 \\text{ miles}",
+          "lhs": "30",
+          "rhs": "30"
+        },
+        {
+          "id": "gsm8k:dcddb345ed871819274e746ca931847f1bb2fcc2440eb8d2f69a2e9bd91c46fa",
+          "candidate": 1,
+          "line": "\\frac{30}{2} = 15 \\text{ miles}",
+          "lhs": "15",
+          "rhs": "15"
+        },
+        {
+          "id": "gsm8k:dcddb345ed871819274e746ca931847f1bb2fcc2440eb8d2f69a2e9bd91c46fa",
+          "candidate": 2,
+          "line": "\\text{Total distance} = 10 + 15 + 5 = 30 \\text{ miles}",
+          "lhs": "30",
+          "rhs": "30"
+        },
+        {
+          "id": "gsm8k:dcddb345ed871819274e746ca931847f1bb2fcc2440eb8d2f69a2e9bd91c46fa",
+          "candidate": 2,
+          "line": "\\text{Halfway point} = \\frac{30}{2} = 15 \\text{ miles}",
+          "lhs": "15",
+          "rhs": "15"
+        },
+        {
+          "id": "gsm8k:dcddb345ed871819274e746ca931847f1bb2fcc2440eb8d2f69a2e9bd91c46fa",
+          "candidate": 3,
+          "line": "10 + 15 + 5 = 30 \\text{ miles}",
+          "lhs": "30",
+          "rhs": "30"
+        },
+        {
+          "id": "gsm8k:dcddb345ed871819274e746ca931847f1bb2fcc2440eb8d2f69a2e9bd91c46fa",
+          "candidate": 3,
+          "line": "\\frac{30}{2} = 15 \\text{ miles}",
+          "lhs": "15",
+          "rhs": "15"
+        },
+        {
+          "id": "gsm8k:ebe96bf3f01a8fd5676acc084b67aa5a571bff7091c6a774cdae9da5db8e3d1e",
+          "candidate": 0,
+          "line": "- Slices eaten = $16 - 4 = 12$",
+          "lhs": "12",
+          "rhs": "12"
+        },
+        {
+          "id": "gsm8k:ebe96bf3f01a8fd5676acc084b67aa5a571bff7091c6a774cdae9da5db8e3d1e",
+          "candidate": 0,
+          "line": "- So the number of people = $\\frac{12}{2} = 6$",
+          "lhs": "6",
+          "rhs": "6"
+        },
+        {
+          "id": "gsm8k:ebe96bf3f01a8fd5676acc084b67aa5a571bff7091c6a774cdae9da5db8e3d1e",
+          "candidate": 1,
+          "line": "   \\text{Slices eaten} = 16 - 4 = 12",
+          "lhs": "12",
+          "rhs": "12"
+        },
+        {
+          "id": "gsm8k:ebe96bf3f01a8fd5676acc084b67aa5a571bff7091c6a774cdae9da5db8e3d1e",
+          "candidate": 1,
+          "line": "   \\text{Number of people} = \\frac{12}{2} = 6",
+          "lhs": "6",
+          "rhs": "6"
+        },
+        {
+          "id": "gsm8k:ebe96bf3f01a8fd5676acc084b67aa5a571bff7091c6a774cdae9da5db8e3d1e",
+          "candidate": 2,
+          "line": "\\text{Total slices eaten} = 16 - 4 = 12",
+          "lhs": "12",
+          "rhs": "12"
+        },
+        {
+          "id": "gsm8k:ebe96bf3f01a8fd5676acc084b67aa5a571bff7091c6a774cdae9da5db8e3d1e",
+          "candidate": 2,
+          "line": "\\text{Number of people} = \\frac{12}{2} = 6",
+          "lhs": "6",
+          "rhs": "6"
+        },
+        {
+          "id": "gsm8k:ebe96bf3f01a8fd5676acc084b67aa5a571bff7091c6a774cdae9da5db8e3d1e",
+          "candidate": 3,
+          "line": "   → Total slices eaten = $ 16 - 4 = 12 $",
+          "lhs": "12",
+          "rhs": "12"
+        },
+        {
+          "id": "gsm8k:ebe96bf3f01a8fd5676acc084b67aa5a571bff7091c6a774cdae9da5db8e3d1e",
+          "candidate": 3,
+          "line": "   → Number of people = $ \\frac{12}{2} = 6 $",
+          "lhs": "6",
+          "rhs": "6"
+        },
+        {
+          "id": "gsm8k:61af08f5e783fa5b96aa2f9fe6e914a9896281ede3fd2e45618db4de6939604f",
+          "candidate": 0,
+          "line": "\\text{Original Price} = \\frac{\\text{Discount}}{\\text{Discount Rate}} = \\frac{40}{0.25} = 160",
+          "lhs": "160",
+          "rhs": "160"
+        },
+        {
+          "id": "gsm8k:61af08f5e783fa5b96aa2f9fe6e914a9896281ede3fd2e45618db4de6939604f",
+          "candidate": 0,
+          "line": "\\text{Total Amount} = \\text{Original Price} - \\text{Discount} = 160 - 40 = 120",
+          "lhs": "120",
+          "rhs": "120"
+        },
+        {
+          "id": "gsm8k:61af08f5e783fa5b96aa2f9fe6e914a9896281ede3fd2e45618db4de6939604f",
+          "candidate": 1,
+          "line": "\\text{Original price} = \\frac{\\text{Discount}}{\\text{Discount rate}} = \\frac{40}{0.25} = 160",
+          "lhs": "160",
+          "rhs": "160"
+        },
+        {
+          "id": "gsm8k:61af08f5e783fa5b96aa2f9fe6e914a9896281ede3fd2e45618db4de6939604f",
+          "candidate": 2,
+          "line": "\\text{Original price} = \\frac{\\text{Discount}}{\\text{Discount percentage}} = \\frac{40}{0.25} = 160",
+          "lhs": "160",
+          "rhs": "160"
+        }
+      ],
+      "invalid": [
+        {
+          "id": "gsm8k:95691fde17ea0acd33c8b58ec6cc5e918f2a97cbc347af0f9314670b418682a8",
+          "candidate": 0,
+          "line": "\\text{Revenue} = \\text{Number of items} \\times (\\text{Retail price} - \\text{Discount}) = 2000 \\times (50 - 0.8 \\times 50) = 2000 \\times 30 = 60,000",
+          "lhs": "20000",
+          "rhs": "60000"
+        },
+        {
+          "id": "gsm8k:1f9d8c3ce2df138382622545bbed5282594ac4bfc3be29113ddf7d8744877974",
+          "candidate": 1,
+          "line": "24 + 16 + 10 = 40 \\text{ inches}",
+          "lhs": "50",
+          "rhs": "40"
+        },
+        {
+          "id": "gsm8k:7ccc60ace2f4899eb9351fea40f2ac6cf6a70e04d09961c422ccb447f8d3ea62",
+          "candidate": 3,
+          "line": "12 + 19 + 8 + 4 + 16 = \\boxed{61}",
+          "lhs": "59",
+          "rhs": "61"
+        },
+        {
+          "id": "gsm8k:c2b774ce8d6a26df67879fd372e4dcea454504f60c376d1b5cf474b6ea92b52d",
+          "candidate": 0,
+          "line": "\\text{Initial amount} = 27 + 2 \\times 10 + 3 = 27 + 20 + 3 = 40",
+          "lhs": "50",
+          "rhs": "40"
+        },
+        {
+          "id": "gsm8k:6d83989d23e0cd88ec40fc920cb772f3b62fea942113dff85ed70e2032e997f4",
+          "candidate": 0,
+          "line": "$$ \\frac{8}{25} \\times 100 = 32\\% $$",
+          "lhs": "32",
+          "rhs": "8/25"
+        },
+        {
+          "id": "gsm8k:6d83989d23e0cd88ec40fc920cb772f3b62fea942113dff85ed70e2032e997f4",
+          "candidate": 1,
+          "line": "\\text{New percentage of girls} = \\left( \\frac{8}{25} \\right) \\times 100 = 32\\%",
+          "lhs": "32",
+          "rhs": "8/25"
+        },
+        {
+          "id": "gsm8k:6d83989d23e0cd88ec40fc920cb772f3b62fea942113dff85ed70e2032e997f4",
+          "candidate": 2,
+          "line": "\\frac{8}{25} \\times 100 = 32\\%",
+          "lhs": "32",
+          "rhs": "8/25"
+        },
+        {
+          "id": "gsm8k:6d83989d23e0cd88ec40fc920cb772f3b62fea942113dff85ed70e2032e997f4",
+          "candidate": 3,
+          "line": "\\text{New percentage of girls} = \\left( \\frac{8}{25} \\right) \\times 100 = 32\\%",
+          "lhs": "32",
+          "rhs": "8/25"
+        },
+        {
+          "id": "gsm8k:db33d9d135a66a405c1bb0b81134f9f1f1ce18324d53f2b269b4b3883dc593f9",
+          "candidate": 3,
+          "line": "Total spent: $32 + $18 = **$40**",
+          "lhs": "50",
+          "rhs": "40"
+        },
+        {
+          "id": "gsm8k:ef42dacae4f913fcdd83067fd1849d170e686c59e81bdc7416f72c49e6f351ef",
+          "candidate": 0,
+          "line": "- **3 cups** = 3 × 1/3 = **3 scoops**  ",
+          "lhs": "1",
+          "rhs": "3"
+        },
+        {
+          "id": "gsm8k:ef42dacae4f913fcdd83067fd1849d170e686c59e81bdc7416f72c49e6f351ef",
+          "candidate": 0,
+          "line": "- **2 cups** = 2 × 1/3 = **6/3 = 2 scoops**",
+          "lhs": "2/3",
+          "rhs": "2"
+        },
+        {
+          "id": "gsm8k:1323444feadfe3b311924623fd76bfab5fcf31083eedd5e9c5b73842c8528653",
+          "candidate": 0,
+          "line": "\\text{Percentage of initial cost} = \\left( \\frac{45}{300} \\right) \\times 100 = 15\\%",
+          "lhs": "15",
+          "rhs": "3/20"
+        },
+        {
+          "id": "gsm8k:1323444feadfe3b311924623fd76bfab5fcf31083eedd5e9c5b73842c8528653",
+          "candidate": 1,
+          "line": "\\text{Loss percentage} = \\left( \\frac{\\text{Loss amount}}{\\text{Initial cost}} \\right) \\times 100 = \\left( \\frac{45}{300} \\right) \\times 100 = 15\\%",
+          "lhs": "15",
+          "rhs": "3/20"
+        },
+        {
+          "id": "gsm8k:1323444feadfe3b311924623fd76bfab5fcf31083eedd5e9c5b73842c8528653",
+          "candidate": 2,
+          "line": "\\text{Percentage of initial cost} = \\frac{45}{300} \\times 100 = 15\\%",
+          "lhs": "15",
+          "rhs": "3/20"
+        },
+        {
+          "id": "gsm8k:1323444feadfe3b311924623fd76bfab5fcf31083eedd5e9c5b73842c8528653",
+          "candidate": 3,
+          "line": "\\text{Loss percentage} = \\left( \\frac{45}{300} \\right) \\times 100 = 15\\%",
+          "lhs": "15",
+          "rhs": "3/20"
+        },
+        {
+          "id": "gsm8k:052a082fe2cb31a3c76be41ee66ac678aecf0311d0339aa45c92d338e719c796",
+          "candidate": 0,
+          "line": "2 + 4 + 8 + 16 + 32 + 64 = 140",
+          "lhs": "126",
+          "rhs": "140"
+        },
+        {
+          "id": "gsm8k:052a082fe2cb31a3c76be41ee66ac678aecf0311d0339aa45c92d338e719c796",
+          "candidate": 3,
+          "line": "- February: $4 = $2 + $4  ",
+          "lhs": "4",
+          "rhs": "6"
+        },
+        {
+          "id": "gsm8k:052a082fe2cb31a3c76be41ee66ac678aecf0311d0339aa45c92d338e719c796",
+          "candidate": 3,
+          "line": "- March: $8 = $2 + $4 + $8  ",
+          "lhs": "8",
+          "rhs": "14"
+        },
+        {
+          "id": "gsm8k:052a082fe2cb31a3c76be41ee66ac678aecf0311d0339aa45c92d338e719c796",
+          "candidate": 3,
+          "line": "- April: $16 = $2 + $4 + $8 + $16  ",
+          "lhs": "16",
+          "rhs": "30"
+        },
+        {
+          "id": "gsm8k:052a082fe2cb31a3c76be41ee66ac678aecf0311d0339aa45c92d338e719c796",
+          "candidate": 3,
+          "line": "- May: $32 = $2 + $4 + $8 + $16 + $32  ",
+          "lhs": "32",
+          "rhs": "62"
+        }
+      ]
+    },
+    "wall_seconds": 3.475252175994683,
+    "notes": "No references read. Unsupported expressions are skipped, not marked invalid."
+  },
+  "validation": {
+    "counts": {
+      "candidates": 3192,
+      "candidates_with_equals": 3181,
+      "equals_lines": 10825,
+      "candidates_with_checked_equations": 2758,
+      "checked_equations": 6764,
+      "invalid_equations": 126,
+      "valid_answer_candidates": 3035,
+      "last_equation_matches": 2265,
+      "trace_reaches": 2287
+    },
+    "examples": {
+      "valid": [
+        {
+          "id": "gsm8k:b536c532b75503159107b3c0f795356aaca5523857967698fc2d7f64212e15c9",
+          "candidate": 0,
+          "line": "- $7 / $1.40 = 5 bags",
+          "lhs": "5",
+          "rhs": "5"
+        },
+        {
+          "id": "gsm8k:b536c532b75503159107b3c0f795356aaca5523857967698fc2d7f64212e15c9",
+          "candidate": 0,
+          "line": "5 \\times 17 = 85 \\text{ ounces}",
+          "lhs": "85",
+          "rhs": "85"
+        },
+        {
+          "id": "gsm8k:b536c532b75503159107b3c0f795356aaca5523857967698fc2d7f64212e15c9",
+          "candidate": 1,
+          "line": "  \\frac{7}{1} = 7 \\text{ bags}",
+          "lhs": "7",
+          "rhs": "7"
+        },
+        {
+          "id": "gsm8k:44fee03dab209b476ed1a10830570b89a7f85ab73f63ca378aa2525a28d4bdb7",
+          "candidate": 0,
+          "line": "- Cost per orange: $12.50 ÷ 25 = $0.50  ",
+          "lhs": "1/2",
+          "rhs": "1/2"
+        },
+        {
+          "id": "gsm8k:44fee03dab209b476ed1a10830570b89a7f85ab73f63ca378aa2525a28d4bdb7",
+          "candidate": 0,
+          "line": "Profit per orange: $0.60 - $0.50 = **$0.10**  ",
+          "lhs": "1/10",
+          "rhs": "1/10"
+        },
+        {
+          "id": "gsm8k:44fee03dab209b476ed1a10830570b89a7f85ab73f63ca378aa2525a28d4bdb7",
+          "candidate": 1,
+          "line": "\\text{Profit per orange} = \\text{Selling price} - \\text{Cost price} = 0.60 - 12.50 = -11.90 \\text{ cents}",
+          "lhs": "-119/10",
+          "rhs": "-119/10"
+        },
+        {
+          "id": "gsm8k:44fee03dab209b476ed1a10830570b89a7f85ab73f63ca378aa2525a28d4bdb7",
+          "candidate": 2,
+          "line": "- Profit per orange = $0.60 - $12.50 = **-11.90 cents**",
+          "lhs": "-119/10",
+          "rhs": "-119/10"
+        },
+        {
+          "id": "gsm8k:3eba1401bd2d8dffe791643015ddb1e105b4d3d07f6dabd9e3ac5f1569adf9e1",
+          "candidate": 0,
+          "line": "x = \\frac{60}{4} = 15",
+          "lhs": "15",
+          "rhs": "15"
+        },
+        {
+          "id": "gsm8k:3eba1401bd2d8dffe791643015ddb1e105b4d3d07f6dabd9e3ac5f1569adf9e1",
+          "candidate": 1,
+          "line": "x = \\frac{60}{4} = 15",
+          "lhs": "15",
+          "rhs": "15"
+        },
+        {
+          "id": "gsm8k:3eba1401bd2d8dffe791643015ddb1e105b4d3d07f6dabd9e3ac5f1569adf9e1",
+          "candidate": 1,
+          "line": "15 + 60 = 75",
+          "lhs": "75",
+          "rhs": "75"
+        },
+        {
+          "id": "gsm8k:3eba1401bd2d8dffe791643015ddb1e105b4d3d07f6dabd9e3ac5f1569adf9e1",
+          "candidate": 2,
+          "line": "D = \\frac{60}{4} = 15",
+          "lhs": "15",
+          "rhs": "15"
+        },
+        {
+          "id": "gsm8k:3eba1401bd2d8dffe791643015ddb1e105b4d3d07f6dabd9e3ac5f1569adf9e1",
+          "candidate": 2,
+          "line": "\\text{Total} = \\text{Alexis} + \\text{Dilan and Ashley} = 60 + 15 = 75",
+          "lhs": "75",
+          "rhs": "75"
+        },
+        {
+          "id": "gsm8k:3eba1401bd2d8dffe791643015ddb1e105b4d3d07f6dabd9e3ac5f1569adf9e1",
+          "candidate": 3,
+          "line": "4D = 60 \\Rightarrow D = \\frac{60}{4} = 15",
+          "lhs": "15",
+          "rhs": "15"
+        },
+        {
+          "id": "gsm8k:3eba1401bd2d8dffe791643015ddb1e105b4d3d07f6dabd9e3ac5f1569adf9e1",
+          "candidate": 3,
+          "line": "4 \\times 15 = 60",
+          "lhs": "60",
+          "rhs": "60"
+        },
+        {
+          "id": "gsm8k:3eba1401bd2d8dffe791643015ddb1e105b4d3d07f6dabd9e3ac5f1569adf9e1",
+          "candidate": 3,
+          "line": "15 + 60 = 75",
+          "lhs": "75",
+          "rhs": "75"
+        },
+        {
+          "id": "gsm8k:e0bce5638f28ceb61a610767278059aec4a642fdcd584761a2df8491c7ef6c46",
+          "candidate": 0,
+          "line": "- Time spent singing: 90 - 10 = 80 minutes.",
+          "lhs": "80",
+          "rhs": "80"
+        },
+        {
+          "id": "gsm8k:e0bce5638f28ceb61a610767278059aec4a642fdcd584761a2df8491c7ef6c46",
+          "candidate": 0,
+          "line": "- Number of songs: 80 / 5 = 16 songs.",
+          "lhs": "16",
+          "rhs": "16"
+        },
+        {
+          "id": "gsm8k:e0bce5638f28ceb61a610767278059aec4a642fdcd584761a2df8491c7ef6c46",
+          "candidate": 1,
+          "line": "   - Total concert time = $60 + 20 = 80$ minutes",
+          "lhs": "80",
+          "rhs": "80"
+        },
+        {
+          "id": "gsm8k:e0bce5638f28ceb61a610767278059aec4a642fdcd584761a2df8491c7ef6c46",
+          "candidate": 1,
+          "line": "   - $80 - 10 = 70$ minutes",
+          "lhs": "70",
+          "rhs": "70"
+        },
+        {
+          "id": "gsm8k:e0bce5638f28ceb61a610767278059aec4a642fdcd584761a2df8491c7ef6c46",
+          "candidate": 1,
+          "line": "     70 = 6 \\times 10 + 10 = 70",
+          "lhs": "70",
+          "rhs": "70"
+        }
+      ],
+      "invalid": [
+        {
+          "id": "gsm8k:e0bce5638f28ceb61a610767278059aec4a642fdcd584761a2df8491c7ef6c46",
+          "candidate": 3,
+          "line": "   $60 = 5 \\times 12 + 10$  ",
+          "lhs": "60",
+          "rhs": "70"
+        },
+        {
+          "id": "gsm8k:e0bce5638f28ceb61a610767278059aec4a642fdcd584761a2df8491c7ef6c46",
+          "candidate": 3,
+          "line": "   $60 = 60 + 10$ ✅",
+          "lhs": "60",
+          "rhs": "70"
+        },
+        {
+          "id": "gsm8k:2d48d1467709b986dea7b8b43a31dcaa849fcf2eba9e5c854d54758eb3f73b9b",
+          "candidate": 1,
+          "line": "  \\text{Real count} = 26 + 8 - 3 = 21",
+          "lhs": "31",
+          "rhs": "21"
+        },
+        {
+          "id": "gsm8k:71405c5e3fe9595dd29773dfb06725b8c2be9cf7735b679d447ad371bab3f3c8",
+          "candidate": 3,
+          "line": "x = \\frac{1980}{816} = 2.44",
+          "lhs": "165/68",
+          "rhs": "61/25"
+        },
+        {
+          "id": "gsm8k:02e6a3586d4118e71421fdc68390a128f9deffd2e36cf200f9d29105c4e0e3e0",
+          "candidate": 2,
+          "line": "13 + 14 + 15 + 17 + 18 = 87 \\text{ students}",
+          "lhs": "77",
+          "rhs": "87"
+        },
+        {
+          "id": "gsm8k:9bb5fbe86fef3370a75fd8d35c55e52bb22a8726cfeacedb042e6f1ae65222d8",
+          "candidate": 0,
+          "line": "\\text{Time} = \\frac{\\text{Head Start}}{\\text{Relative Speed}} = \\frac{0.6}{9} = \\frac{2}{15} \\text{ hours}",
+          "lhs": "1/15",
+          "rhs": "2/15"
+        },
+        {
+          "id": "gsm8k:9bb5fbe86fef3370a75fd8d35c55e52bb22a8726cfeacedb042e6f1ae65222d8",
+          "candidate": 2,
+          "line": "\\text{Time} = \\frac{\\text{Distance}}{\\text{Relative speed}} = \\frac{0.6}{9} = \\frac{2}{15} \\text{ hours}",
+          "lhs": "1/15",
+          "rhs": "2/15"
+        },
+        {
+          "id": "gsm8k:9bb5fbe86fef3370a75fd8d35c55e52bb22a8726cfeacedb042e6f1ae65222d8",
+          "candidate": 3,
+          "line": "t = \\frac{0.6}{9} = \\frac{2}{15} \\text{ hours}",
+          "lhs": "1/15",
+          "rhs": "2/15"
+        },
+        {
+          "id": "gsm8k:38f73cd8c061981bb74884f1305cd5474c1eceb904939c57b914d53eb83277b8",
+          "candidate": 1,
+          "line": "\\frac{800}{300} \\times 30 = \\frac{800}{3} \\times 10 = \\frac{8000}{3} \\approx 2666.67 \\text{ minutes}",
+          "lhs": "80",
+          "rhs": "8000/3"
+        },
+        {
+          "id": "gsm8k:be18ba2d44375c7018c1b51ad58bd854f89ebfdd01c39e6c7ac2f2c2859858a0",
+          "candidate": 3,
+          "line": "$$ 3 \\times 30 + 5 \\times 30 = 60 + 150 = 210 \\text{ minutes} $$  ",
+          "lhs": "240",
+          "rhs": "210"
+        },
+        {
+          "id": "gsm8k:a5296009775135e3b0626a1f4a24ed920c33e4a7052c18add2e5a3e43a5557cf",
+          "candidate": 1,
+          "line": "3 + 5 + 7 + 9 + 11 = 36",
+          "lhs": "35",
+          "rhs": "36"
+        },
+        {
+          "id": "gsm8k:a5296009775135e3b0626a1f4a24ed920c33e4a7052c18add2e5a3e43a5557cf",
+          "candidate": 3,
+          "line": "3 + 5 + 7 + 9 + 11 = 36",
+          "lhs": "35",
+          "rhs": "36"
+        },
+        {
+          "id": "gsm8k:f786810eeb3814ef511d6d35ad780d720f852f764c260218e030b01027e64be8",
+          "candidate": 3,
+          "line": "7 + 9 + 0 + (2 \\times (7 + 9)) = 7 + 9 + 0 + 28 = 44",
+          "lhs": "48",
+          "rhs": "44"
+        },
+        {
+          "id": "gsm8k:0c1812f94c67a367f4ec7b54f301092f127a446e556aa6955219ab58c4d5a890",
+          "candidate": 0,
+          "line": "\\text{Percentage} = \\left( \\frac{50}{50 + 150} \\right) \\times 100 = \\left( \\frac{50}{200} \\right) \\times 100 = 25\\%",
+          "lhs": "25",
+          "rhs": "1/4"
+        },
+        {
+          "id": "gsm8k:0c1812f94c67a367f4ec7b54f301092f127a446e556aa6955219ab58c4d5a890",
+          "candidate": 1,
+          "line": "- Percentage of snowballs Janet made = $ \\frac{50}{200} \\times 100 = 25\\% $",
+          "lhs": "25",
+          "rhs": "1/4"
+        },
+        {
+          "id": "gsm8k:0c1812f94c67a367f4ec7b54f301092f127a446e556aa6955219ab58c4d5a890",
+          "candidate": 2,
+          "line": "  \\frac{50}{200} \\times 100 = 25\\%",
+          "lhs": "25",
+          "rhs": "1/4"
+        },
+        {
+          "id": "gsm8k:0c1812f94c67a367f4ec7b54f301092f127a446e556aa6955219ab58c4d5a890",
+          "candidate": 3,
+          "line": "   $ \\frac{50}{200} \\times 100 = 25\\% $",
+          "lhs": "25",
+          "rhs": "1/4"
+        },
+        {
+          "id": "gsm8k:6aa616001592b165572f8315c3e9c6d0e76467fa1406cb7ca2964791da77eff4",
+          "candidate": 2,
+          "line": "   2 \\times 240\\% \\times 50 = 2 \\times 100 = 200",
+          "lhs": "240",
+          "rhs": "200"
+        },
+        {
+          "id": "gsm8k:c64c5d8281176d27cf46f197db1f53b0b3ba2e971214d58e0f963736409005d6",
+          "candidate": 1,
+          "line": "\\text{Pens per student} = \\frac{22}{3} = 7 \\text{ pens}",
+          "lhs": "22/3",
+          "rhs": "7"
+        },
+        {
+          "id": "gsm8k:5663d0b4df86dc7d6fb0575f117f3fb37ffd45e0edef11ca79c9e6990a785d36",
+          "candidate": 0,
+          "line": "- **Level 2**: 7 more than Level 1 = $4 + 7 = 11$ spots  ",
+          "lhs": "1",
+          "rhs": "11"
+        }
+      ]
+    },
+    "wall_seconds": 0.5706169379991479,
+    "notes": "No references read. Unsupported expressions are skipped, not marked invalid."
+  }
+}

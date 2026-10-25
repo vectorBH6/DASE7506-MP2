@@ -1,0 +1,14 @@
+{
+  "selected": "residual_h16_r0.001",
+  "method": "solution/residual_ranker/submission.py",
+  "checkpoint": "solution/runs/residual_v1/residual_h16_r0.001/checkpoint",
+  "policy": "Validation correct descending; train OOF accuracy descending; train OOF NLL ascending; fewer parameters; fixed trial order.",
+  "validation": {
+    "protocol": "dase7506-mp2-open-hard-verifier-v5",
+    "split": "validation",
+    "correct": 737,
+    "n": 798,
+    "accuracy": 92.35588972431077,
+    "scoring_seconds": 0.021766858990304172
+  }
+}

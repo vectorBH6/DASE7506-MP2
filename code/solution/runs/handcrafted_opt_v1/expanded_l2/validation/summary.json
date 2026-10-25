@@ -1,0 +1,56 @@
+{
+  "split": "validation",
+  "official": {
+    "protocol": "dase7506-mp2-open-hard-verifier-v5",
+    "split": "validation",
+    "correct": 733,
+    "n": 798,
+    "accuracy": 91.8546365914787,
+    "scoring_seconds": 0.021703630991396494
+  },
+  "total_wall_seconds": 0.4723159019922605,
+  "processes": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "predict.py",
+        "--method",
+        "solution/handcrafted_ranker/submission_linear.py",
+        "--checkpoint",
+        "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_opt_v1/expanded_l2/checkpoint",
+        "--split",
+        "validation",
+        "--output",
+        "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_opt_v1/expanded_l2/validation/predictions.json"
+      ],
+      "wall_seconds": 0.38469954900210723,
+      "coordinator_peak_threads": 1,
+      "child_peak_threads": 1,
+      "total_peak_threads": 2,
+      "returncode": 0,
+      "stdout": "{\"protocol\": \"dase7506-mp2-open-hard-verifier-v5\", \"split\": \"validation\", \"prediction_seconds\": 0.32022993099235464}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "score_predictions.py",
+        "--split",
+        "validation",
+        "--predictions",
+        "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_opt_v1/expanded_l2/validation/predictions.json",
+        "--output",
+        "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_opt_v1/expanded_l2/validation/score.json"
+      ],
+      "wall_seconds": 0.08753473398974165,
+      "coordinator_peak_threads": 1,
+      "child_peak_threads": 1,
+      "total_peak_threads": 2,
+      "returncode": 0,
+      "stdout": "{\n  \"protocol\": \"dase7506-mp2-open-hard-verifier-v5\",\n  \"split\": \"validation\",\n  \"correct\": 733,\n  \"n\": 798,\n  \"accuracy\": 91.8546365914787,\n  \"scoring_seconds\": 0.021703630991396494\n}\n",
+      "stderr": ""
+    }
+  ],
+  "total_peak_threads": 2,
+  "inference_asset_bytes": 28886
+}

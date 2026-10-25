@@ -1,0 +1,56 @@
+{
+  "created_utc": "2026-10-25T05:25:20.219179+00:00",
+  "seed": 7506,
+  "folds": 5,
+  "maxiter": 300,
+  "incumbent_checkpoint": "solution/runs/handcrafted_v1/math/checkpoint",
+  "stages": [
+    {
+      "name": "expanded_l2",
+      "feature_set": "math",
+      "l2": [
+        0.01,
+        0.03,
+        0.1
+      ],
+      "multipliers": [
+        1
+      ]
+    },
+    {
+      "name": "block_l2",
+      "feature_set": "math",
+      "l2": "OOF winner of expanded_l2",
+      "multipliers": [
+        0.3,
+        1,
+        3
+      ]
+    },
+    {
+      "name": "interactions",
+      "feature_set": "math_interactions",
+      "l2": "OOF winner of expanded_l2",
+      "multipliers": [
+        0.3,
+        1,
+        3
+      ]
+    }
+  ],
+  "within_stage_selection": "Train OOF accuracy descending, NLL ascending, stronger L2, multiplier nearest 1 in log space, stronger multiplier.",
+  "final_selection": "Validation correct descending; train OOF accuracy descending; train OOF NLL ascending; fewer extra features; multiplier nearest 1 in log space; incumbent/stage order.",
+  "interaction_definition": {
+    "2072": "group count / 4 * mean invalid equation fraction",
+    "2073": "group count / 4 * mean last valid equation matches"
+  },
+  "penalty_definition": "lambda for old columns; lambda*multiplier for columns 2064:2074; applied in objective after fold-local standardization.",
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "1.26.4",
+    "cpu": "Intel(R) Core(TM) Ultra 9 275HX",
+    "coordinator_threads": 1,
+    "inference_child_threads_max": 3
+  },
+  "test_policy": "Existing public test scores are known. No test references or new test predictions used for search/selection; only one selected frozen method is scored."
+}

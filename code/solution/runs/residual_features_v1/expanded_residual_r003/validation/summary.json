@@ -1,0 +1,55 @@
+{
+  "official": {
+    "protocol": "dase7506-mp2-open-hard-verifier-v5",
+    "split": "validation",
+    "correct": 740,
+    "n": 798,
+    "accuracy": 92.73182957393483,
+    "scoring_seconds": 0.021721190001699142
+  },
+  "total_wall_seconds": 0.6913259220018517,
+  "processes": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "predict.py",
+        "--method",
+        "solution/residual_ranker/submission.py",
+        "--checkpoint",
+        "/home/rvector/DASE7506-MP2/code/solution/runs/residual_features_v1/expanded_residual_r003/checkpoint",
+        "--split",
+        "validation",
+        "--output",
+        "/home/rvector/DASE7506-MP2/code/solution/runs/residual_features_v1/expanded_residual_r003/validation/predictions.json"
+      ],
+      "wall_seconds": 0.6038739479990909,
+      "coordinator_peak_threads": 1,
+      "child_peak_threads": 1,
+      "total_peak_threads": 2,
+      "returncode": 0,
+      "stdout": "{\"protocol\": \"dase7506-mp2-open-hard-verifier-v5\", \"split\": \"validation\", \"prediction_seconds\": 0.5385138270066818}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "score_predictions.py",
+        "--split",
+        "validation",
+        "--predictions",
+        "/home/rvector/DASE7506-MP2/code/solution/runs/residual_features_v1/expanded_residual_r003/validation/predictions.json",
+        "--output",
+        "/home/rvector/DASE7506-MP2/code/solution/runs/residual_features_v1/expanded_residual_r003/validation/score.json"
+      ],
+      "wall_seconds": 0.087353634997271,
+      "coordinator_peak_threads": 1,
+      "child_peak_threads": 1,
+      "total_peak_threads": 2,
+      "returncode": 0,
+      "stdout": "{\n  \"protocol\": \"dase7506-mp2-open-hard-verifier-v5\",\n  \"split\": \"validation\",\n  \"correct\": 740,\n  \"n\": 798,\n  \"accuracy\": 92.73182957393483,\n  \"scoring_seconds\": 0.021721190001699142\n}\n",
+      "stderr": ""
+    }
+  ],
+  "total_peak_threads": 2,
+  "inference_asset_bytes": 31189
+}

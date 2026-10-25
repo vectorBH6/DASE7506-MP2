@@ -1,0 +1,14 @@
+{
+  "created_utc": "2026-10-25T05:03:08.372321+00:00",
+  "unit_tests_passed": 17,
+  "selected_validation_replay_equal": true,
+  "selected_all_798_validation_answers_permutation_invariant": true,
+  "legacy_checkpoint_validation_replay_equal": true,
+  "scipy_imported_in_inference": false,
+  "basic_model_and_oof_arrays_identical_to_linear_v1": true,
+  "same_folds_and_labels_all_variants": true,
+  "all_optimizers_converged": true,
+  "frozen_files_checked": 22,
+  "frozen_hashes_match": true,
+  "source_archive_hash_matches": true
+}

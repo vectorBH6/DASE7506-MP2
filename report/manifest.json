@@ -1,0 +1,26 @@
+{
+  "sha256": {
+    "DATA_LICENSE.txt": "86bbb73e855821d7c401912fd4bf82e34313e6e3b6fd6f909f2b6cc9e209a53b",
+    "DATA_NOTICE.txt": "d577cdf7202ae22f2b19ace348b0ec69958a59aaf51d30cdab902bf7c1e67d78",
+    "MP2_Final_Report.pdf": "01051155fa20a6e14119674c28f4fb8b024747d2f31347f0fc630354d0dbd849",
+    "README.md": "869a9c8299f745008667e2ef986764ecf5222a9c32ba3f8efa0d8e6d59f4423e",
+    "REPORT.md": "fd632b4af7958bd723a56bd48f4ee4267321f8a8c05d0dccc0091aa5f999f05a",
+    "analyze_results.py": "a9b6ad4899339cfd20df06725e0096be9470dad5bcff3e8704e2886c2f41a460",
+    "environment.json": "cea6dc4f17180a36925c2fbae86c3af18735dcc5073df4968fe423966e803c81",
+    "figures/architecture.png": "51494c62a3e8ba33d86e988f50719ef909f587930156c42dab70cca5e63deb61",
+    "figures/architecture.svg": "5ae7dded00e4a6e5908ac2d21841da455584d8e6c714cad76c29fea06c79482f",
+    "figures/formulation.png": "8a16947b79e2c861b56b9404350097613af1979059273ef4c859614ba5fd7c85",
+    "figures/l2_ablation.png": "fe6af881d42c6a3dd0450f8c9c9723449629e06e978c0c80578e91b678cf977c",
+    "figures/l2_ablation.svg": "9f43473636b834096bae1800ffb430b4f993d749b8eeddec9545c6dea8e20aa2",
+    "figures/performance.png": "c00ac705a298b24ba3b4e15a5bbad52e7ad6ab1e015fd56dbb4fb6b7946e005a",
+    "figures/performance.svg": "d9088f18b943ab676f5a19fc705bb82fa9bc73e08d15042ea1f0c9b24970c751",
+    "figures/validation_calibration.png": "e6096d7ee5f13464b1595a4b800ea616cf38a546ba4907e248fbde9288112c53",
+    "figures/validation_calibration.svg": "8855cf17c420a0aa45d5083aa08f32c750a9ea9c97a0e8d88ab86bebe56a9fc4",
+    "generate_report.py": "ed673aa63811670b01eca84ac40029b935f5db3d3d71b233c8ee624190fce845",
+    "layout.json": "82e5c90657a651b0562248e66a656c17a669ebe374b96d539b9cd15bebdc9f2a",
+    "requirements.txt": "d240911ac1098d98f5777ae4437b4bd72b6b58b7e6b385e09a47ec1849ae679a",
+    "results.json": "0c43b686a48e034b20816b334f538bebb71ac38e030448530a7d4755b460380b",
+    "verification.json": "cb2ae6f00709bbd33c6f6056befd06308cced18d7da6680eee77085fb4c2ba7f",
+    "verify_report.py": "d198b2310b583018e3c492f50f33500fdb50f81641fa6c932a17772d21ebc65d"
+  }
+}

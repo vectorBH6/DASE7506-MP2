@@ -1,0 +1,20 @@
+{
+  "created_utc": "2026-10-25T05:28:20.338983+00:00",
+  "unit_tests_passed": 23,
+  "all_search_optimizers_converged": true,
+  "folds_and_labels_equal_to_incumbent": {
+    "expanded_l2": true,
+    "block_l2": true,
+    "interactions": true
+  },
+  "checkpoint_arrays_equal_to_incumbent": {
+    "expanded_l2": true,
+    "block_l2": true,
+    "interactions": false
+  },
+  "test_choices_identical_to_incumbent_archive": true,
+  "frozen_files_checked": 31,
+  "frozen_files_unchanged": true,
+  "source_archive_hash_matches": true,
+  "selected_before_test": "incumbent"
+}
