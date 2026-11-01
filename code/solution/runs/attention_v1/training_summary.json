@@ -1,0 +1,28 @@
+{
+  "fit_count": 12,
+  "training_seconds": 35.26805650999995,
+  "methods": {
+    "gated": {
+      "oof": {
+        "correct": 1640,
+        "n": 2114,
+        "accuracy": 77.57805108798486,
+        "nll": 0.5407586989635623
+      },
+      "parameter_count": 167233,
+      "training_seconds": 16.52665593799975,
+      "inference_asset_bytes": 694073
+    },
+    "attention": {
+      "oof": {
+        "correct": 1659,
+        "n": 2114,
+        "accuracy": 78.47682119205298,
+        "nll": 0.5276565589961215
+      },
+      "parameter_count": 167233,
+      "training_seconds": 17.135241017000226,
+      "inference_asset_bytes": 694077
+    }
+  }
+}

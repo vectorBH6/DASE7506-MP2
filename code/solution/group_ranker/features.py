@@ -1,11 +1,25 @@
-"""答案组共享特征：只依赖候选与固定 embedding，不读取文件或标签。"""
+"""答案组共享特征：只依赖题目、候选与固定 embedding，不读取标签。"""
 import numpy as np
 
 from common import parse_answer
 
 FEATURE_VERSION = "answer-group-basic-v1"
+FEATURE_VERSIONS = {"basic": FEATURE_VERSION, "text": "answer-group-text-v1",
+                    "arithmetic": "answer-group-arithmetic-v1"}
+SCALAR_COUNTS = {"basic": 16, "text": 32, "arithmetic": 40}
 EMBED_DIM = 1024
 FEATURE_DIM = 2088  # 1024 组均值 + 1024 题内交互 + 40 标量
+ABLATIONS = {"none": (), "no_votes": ((2048, 2056),),
+             "no_embedding": ((0, 2048), (2056, 2064)),
+             "no_context": ((1024, 2048),), "no_style": ((2064, 2072),)}
+
+
+def feature_mask(feature_set, ablation="none"):
+    """先关闭未启用块，再关闭消融块；训练和推理共用定义。"""
+    mask = np.arange(FEATURE_DIM) < 2 * EMBED_DIM + SCALAR_COUNTS[feature_set]
+    for start, end in ABLATIONS[ablation]:
+        mask[start:end] = False
+    return mask
 
 
 def answer_groups(candidates):
@@ -18,7 +32,9 @@ def answer_groups(candidates):
     return {answer: groups[answer] for answer in sorted(groups)}
 
 
-def build_features(candidates, embeddings, groups):
+def build_features(candidates, embeddings, groups, *, question="", feature_set="basic", diagnostics=None):
+    if feature_set not in FEATURE_VERSIONS:
+        raise ValueError(f"未知特征组：{feature_set}")
     e = np.asarray(embeddings, dtype=np.float64)
     if len(candidates) != 4 or e.shape != (4, EMBED_DIM) or not np.isfinite(e).all():
         raise ValueError("每题需要 4 个候选及有限的 [4, 1024] embedding")
@@ -57,7 +73,11 @@ def build_features(candidates, embeddings, groups):
         features[g, :EMBED_DIM] = means[g]
         features[g, EMBED_DIM:2 * EMBED_DIM] = means[g] * context
         features[g, 2 * EMBED_DIM:2 * EMBED_DIM + len(scalar)] = scalar
-    # 后 24 维预留给文本/算术实验，当前固定为零，不引入未验证的复杂度。
+    if feature_set != "basic":
+        from solution.group_ranker.evidence import build_evidence
+
+        features[:, 2 * EMBED_DIM + 16:] = build_evidence(
+            question, candidates, groups, members, feature_set == "arithmetic", diagnostics)
     return features
 
 

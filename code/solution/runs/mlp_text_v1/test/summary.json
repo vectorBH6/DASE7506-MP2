@@ -1,0 +1,282 @@
+{
+  "freeze_id": "1147e6f4ce3bca60002064db47959b696d8a38ad25717fb7dfca30f2b4e1e117",
+  "freeze_manifest_sha256": "e962f0f5d5396117d851f34664785e60e23d759c10bbb00bd6a378bd7b369637",
+  "started_utc": "2026-10-19T07:13:55.555668+00:00",
+  "finished_utc": "2026-10-19T07:13:55.963456+00:00",
+  "split": "test",
+  "method": "solution/group_ranker/submission_mlp.py",
+  "official": {
+    "protocol": "dase7506-mp2-open-hard-verifier-v5",
+    "split": "test",
+    "correct": 372,
+    "n": 467,
+    "accuracy": 79.65738758029978,
+    "scoring_seconds": 0.013542243003030308
+  },
+  "total_wall_seconds": 0.40548242799923173,
+  "processes": [
+    {
+      "command": [
+        "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+        "predict.py",
+        "--method",
+        "solution/group_ranker/submission_mlp.py",
+        "--checkpoint",
+        "solution/runs/mlp_text_v1/checkpoint",
+        "--split",
+        "test",
+        "--output",
+        "solution/runs/mlp_text_v1/test/predictions.json"
+      ],
+      "stdout": "{\"protocol\": \"dase7506-mp2-open-hard-verifier-v5\", \"split\": \"test\", \"prediction_seconds\": 0.2782087310006318}\n",
+      "stderr": "",
+      "thread_samples": 286,
+      "coordinator_peak_threads": 1,
+      "child_peak_threads": 3,
+      "total_peak_threads": 4,
+      "wall_seconds": 0.33854805400187615,
+      "cpu_user_seconds": 0.8386889999999999,
+      "cpu_system_seconds": 0.023934
+    },
+    {
+      "command": [
+        "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+        "score_predictions.py",
+        "--split",
+        "test",
+        "--predictions",
+        "solution/runs/mlp_text_v1/test/predictions.json",
+        "--output",
+        "solution/runs/mlp_text_v1/test/score.json"
+      ],
+      "stdout": "{\n  \"protocol\": \"dase7506-mp2-open-hard-verifier-v5\",\n  \"split\": \"test\",\n  \"correct\": 372,\n  \"n\": 467,\n  \"accuracy\": 79.65738758029978,\n  \"scoring_seconds\": 0.013542243003030308\n}\n",
+      "stderr": "",
+      "thread_samples": 56,
+      "coordinator_peak_threads": 1,
+      "child_peak_threads": 3,
+      "total_peak_threads": 4,
+      "wall_seconds": 0.06692485399980797,
+      "cpu_user_seconds": 0.1482690000000001,
+      "cpu_system_seconds": 0.008956000000000002
+    }
+  ],
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.5.3",
+    "cpu": "Intel(R) Core(TM) Ultra 9 275HX",
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.39",
+    "thread_budget_total": 4,
+    "coordinator_threads": 1,
+    "child_threads": 3,
+    "child_thread_environment": {
+      "OMP_NUM_THREADS": "3",
+      "OPENBLAS_NUM_THREADS": "3",
+      "MKL_NUM_THREADS": "3",
+      "BLIS_NUM_THREADS": "3"
+    }
+  },
+  "measurement": "两个顺序新进程的外部 perf_counter 总耗时，包含启动、导入、哈希检查、载入、预处理、预测、写文件和独立评分及线程采样；本机缓存未控制。",
+  "inference_asset_bytes": 560937,
+  "frozen_files_unchanged": true,
+  "eligibility": {
+    "local_under_30_seconds": true,
+    "observed_total_threads_at_most_4": true,
+    "assets_within_16_mib": true,
+    "reference_cpu_verified": false
+  },
+  "artifact_sha256": {
+    "predictions.json": "3ad7d2a98157242c507c8aaedb6878abcb48cc1f10b2043ec7101064f24633a8",
+    "score.json": "d96ca84e7834831136425e4edce0ef81de6691e07772ea46605b86c98f2f94c5"
+  },
+  "complete_test_bank": true,
+  "analysis": {
+    "purpose": "冻结后的最终评分分析；不用于拟合、调参或重选模型",
+    "complete_test_bank": true,
+    "conflict_n": 467,
+    "correct": 372,
+    "wrong": 95,
+    "validation_context": {
+      "full": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "validation",
+        "correct": 738,
+        "n": 798,
+        "accuracy": 92.4812030075188,
+        "scoring_seconds": 0.02072479900016333
+      },
+      "conflict": {
+        "correct": 295,
+        "n": 355,
+        "accuracy": 83.09859154929578
+      },
+      "single_answer": {
+        "correct": 443,
+        "n": 443,
+        "accuracy": 100.0
+      },
+      "conflict_accuracy_change_pp": -3.4412039689959926
+    },
+    "by_group_count": {
+      "2": {
+        "m1": {
+          "correct": 266,
+          "n": 303,
+          "accuracy": 87.78877887788778
+        },
+        "frozen_linear": {
+          "correct": 263,
+          "n": 303,
+          "accuracy": 86.79867986798679
+        },
+        "validation_m1": {
+          "correct": 203,
+          "n": 227,
+          "accuracy": 89.42731277533039
+        }
+      },
+      "3": {
+        "m1": {
+          "correct": 85,
+          "n": 126,
+          "accuracy": 67.46031746031747
+        },
+        "frozen_linear": {
+          "correct": 93,
+          "n": 126,
+          "accuracy": 73.80952380952381
+        },
+        "validation_m1": {
+          "correct": 78,
+          "n": 108,
+          "accuracy": 72.22222222222221
+        }
+      },
+      "4": {
+        "m1": {
+          "correct": 21,
+          "n": 38,
+          "accuracy": 55.26315789473685
+        },
+        "frozen_linear": {
+          "correct": 19,
+          "n": 38,
+          "accuracy": 50.0
+        },
+        "validation_m1": {
+          "correct": 14,
+          "n": 20,
+          "accuracy": 70.0
+        }
+      }
+    },
+    "by_vote_pattern": {
+      "1+1": {
+        "m1": {
+          "correct": 15,
+          "n": 18,
+          "accuracy": 83.33333333333334
+        },
+        "frozen_linear": {
+          "correct": 12,
+          "n": 18,
+          "accuracy": 66.66666666666666
+        }
+      },
+      "1+1+1": {
+        "m1": {
+          "correct": 14,
+          "n": 24,
+          "accuracy": 58.333333333333336
+        },
+        "frozen_linear": {
+          "correct": 18,
+          "n": 24,
+          "accuracy": 75.0
+        }
+      },
+      "1+1+1+1": {
+        "m1": {
+          "correct": 21,
+          "n": 38,
+          "accuracy": 55.26315789473685
+        },
+        "frozen_linear": {
+          "correct": 19,
+          "n": 38,
+          "accuracy": 50.0
+        }
+      },
+      "2+1": {
+        "m1": {
+          "correct": 42,
+          "n": 50,
+          "accuracy": 84.0
+        },
+        "frozen_linear": {
+          "correct": 42,
+          "n": 50,
+          "accuracy": 84.0
+        }
+      },
+      "2+1+1": {
+        "m1": {
+          "correct": 71,
+          "n": 102,
+          "accuracy": 69.6078431372549
+        },
+        "frozen_linear": {
+          "correct": 75,
+          "n": 102,
+          "accuracy": 73.52941176470588
+        }
+      },
+      "2+2": {
+        "m1": {
+          "correct": 31,
+          "n": 39,
+          "accuracy": 79.48717948717949
+        },
+        "frozen_linear": {
+          "correct": 33,
+          "n": 39,
+          "accuracy": 84.61538461538461
+        }
+      },
+      "3+1": {
+        "m1": {
+          "correct": 178,
+          "n": 196,
+          "accuracy": 90.81632653061224
+        },
+        "frozen_linear": {
+          "correct": 176,
+          "n": 196,
+          "accuracy": 89.79591836734694
+        }
+      }
+    },
+    "vs_frozen_linear": {
+      "historical_official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "test",
+        "correct": 375,
+        "n": 467,
+        "accuracy": 80.29978586723769,
+        "scoring_seconds": 0.012926933999551693
+      },
+      "corrected": 23,
+      "regressed": 26,
+      "both_correct": 349,
+      "both_wrong": 69,
+      "net_correct": -3,
+      "accuracy_difference_pp": -0.6423982869379015,
+      "paired_bootstrap_95ci_pp": [
+        -3.640256959314775,
+        2.355460385438972
+      ],
+      "bootstrap_seed": 7506,
+      "bootstrap_draws": 2000,
+      "reference_predictions_sha256": "77f21128d008467eb739bc7597e02c68c5dbc21eeeb9868b69b53e2304e44a7f"
+    }
+  }
+}

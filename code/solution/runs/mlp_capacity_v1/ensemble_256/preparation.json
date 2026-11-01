@@ -1,0 +1,115 @@
+{
+  "created_utc": "2026-10-21T04:12:24.051228+00:00",
+  "state": "complete",
+  "command": [
+    "/home/rvector/DASE7506-MP2/code/solution/.venv/bin/python",
+    "/home/rvector/DASE7506-MP2/code/solution/group_ranker/submission_ensemble.py",
+    "--linear-checkpoint",
+    "solution/runs/linear_v1/checkpoint",
+    "--mlp-checkpoint",
+    "solution/runs/mlp_capacity_v1/m1_256/checkpoint",
+    "--output",
+    "solution/runs/mlp_capacity_v1/ensemble_256"
+  ],
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "temperature": 1.0,
+  "fit_count": 0,
+  "search_count": 0,
+  "final_mlp_seed": 7506,
+  "component_directories": {
+    "linear": "solution/runs/linear_v1/checkpoint",
+    "mlp": "solution/runs/mlp_capacity_v1/m1_256/checkpoint"
+  },
+  "stability_seeds_are_diagnostics_only": true,
+  "scope": "原路线预留的事后扩展；已看过单模型 test。配方在本轮评测前固定，不按 test 调整或选型。",
+  "seeds": [
+    {
+      "mlp_seed": 7506,
+      "mlp_oof_sha256": "4226347b0d6ea4af9b8ff6357ff4114338595c60772531da1b1e1ce6429631ca",
+      "linear": {
+        "correct": 1715,
+        "n": 2114,
+        "accuracy": 81.12582781456953,
+        "nll": 0.476703089726901
+      },
+      "mlp": {
+        "correct": 1677,
+        "n": 2114,
+        "accuracy": 79.3282876064333,
+        "nll": 0.5003982363336218
+      },
+      "ensemble": {
+        "correct": 1708,
+        "n": 2114,
+        "accuracy": 80.79470198675497,
+        "nll": 0.4647989733004687
+      },
+      "mlp_rescues": 97,
+      "mlp_regresses": 135,
+      "folds": [
+        {
+          "fold": 0,
+          "mlp_rescues": 16,
+          "ensemble": {
+            "correct": 331,
+            "n": 426,
+            "accuracy": 77.69953051643192,
+            "nll": 0.5074316622065503
+          }
+        },
+        {
+          "fold": 1,
+          "mlp_rescues": 20,
+          "ensemble": {
+            "correct": 350,
+            "n": 425,
+            "accuracy": 82.3529411764706,
+            "nll": 0.46625415107168405
+          }
+        },
+        {
+          "fold": 2,
+          "mlp_rescues": 21,
+          "ensemble": {
+            "correct": 345,
+            "n": 423,
+            "accuracy": 81.56028368794327,
+            "nll": 0.4734097084290723
+          }
+        },
+        {
+          "fold": 3,
+          "mlp_rescues": 24,
+          "ensemble": {
+            "correct": 337,
+            "n": 420,
+            "accuracy": 80.23809523809524,
+            "nll": 0.4432483703342717
+          }
+        },
+        {
+          "fold": 4,
+          "mlp_rescues": 16,
+          "ensemble": {
+            "correct": 345,
+            "n": 420,
+            "accuracy": 82.14285714285714,
+            "nll": 0.43296310725200726
+          }
+        }
+      ]
+    }
+  ],
+  "stable_rescues_all_three_seeds": null,
+  "complementarity_in_every_seed_and_fold": true,
+  "linear_oof_sha256": "d433b58efad5c26b99f3c88a53c4f3409d89ca394384832943f43ce1a9027e6d",
+  "inference_asset_bytes": 2256934,
+  "preparation_seconds": 0.012686132999078836,
+  "source_sha256": {
+    "submission_ensemble.py": "eb5023787f34f374d67d68c2b2305337f12412201c0eddb4d448318b566701bc"
+  },
+  "numpy": "1.26.4"
+}

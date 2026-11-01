@@ -1,0 +1,47 @@
+{
+  "created_utc": "2026-10-21T04:30:06.469600+00:00",
+  "training_split": "train",
+  "variants": [
+    "gated",
+    "attention",
+    "gated_ensemble",
+    "attention_ensemble"
+  ],
+  "architecture": {
+    "input_dim": 2088,
+    "width": 64,
+    "heads": 2,
+    "ff_dim": 128,
+    "blocks": 1,
+    "positional_encoding": false,
+    "feature_set": "text",
+    "dropout": 0.1
+  },
+  "control": "门控版与注意力版使用同形 Q/K/V/O、相同参数量与初始化；门控仅在组内计算，不交换各组 value；两版均保留原手工上下文特征。",
+  "training": {
+    "folds": 5,
+    "fold_seed": 7506,
+    "seed": 7506,
+    "max_epochs": 150,
+    "patience": 15,
+    "learning_rate": 0.001,
+    "weight_decay": 0.01,
+    "batch_questions": 64,
+    "gradient_clip": 1.0
+  },
+  "ensemble": {
+    "linear": "linear_v1",
+    "weights": [
+      0.5,
+      0.5
+    ],
+    "temperature": 1.0
+  },
+  "selection_rule": "完整 validation 准确率；同分依次比较启用维数、未压缩推理资产、本机完整耗时、固定名称；与原 ensemble_v1 比较，在新 test 前记录选择。",
+  "test_policy": "此前已有 test 已见。本轮各模型在 test 前冻结，预测文件评分前锁定；test 仅最终评分和描述，不据 test 调参、换种子、增加规则、修改融合或重选模型。属于事后扩展，不称新盲测。",
+  "external_data": false,
+  "pretrained_weights": false,
+  "backend": "NumPy, CPU",
+  "environment": "existing code/solution/.venv",
+  "seed_search": false
+}

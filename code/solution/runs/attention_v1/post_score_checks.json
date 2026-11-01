@@ -1,0 +1,34 @@
+{
+  "gated": {
+    "all_24_candidate_permutations": true,
+    "cross_chunk_129": true,
+    "uncompressed_arrays": true
+  },
+  "attention": {
+    "all_24_candidate_permutations": true,
+    "cross_chunk_129": true,
+    "uncompressed_arrays": true
+  },
+  "gated_ensemble": {
+    "all_24_candidate_permutations": true,
+    "cross_chunk_129": true,
+    "uncompressed_arrays": true
+  },
+  "attention_ensemble": {
+    "all_24_candidate_permutations": true,
+    "cross_chunk_129": true,
+    "uncompressed_arrays": true
+  },
+  "nonfinite": {
+    "rejected": true
+  },
+  "wrong_shape": {
+    "rejected": true
+  },
+  "zero_scale": {
+    "rejected": true
+  },
+  "disabled_feature": {
+    "rejected": true
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "created_utc": "2026-10-21T04:15:10.526253+00:00",
+  "selected": "ensemble_v1",
+  "rule": "完整 validation 准确率；同分依次比较启用维数、未压缩资产、完整本机耗时、固定名称。比较四个新方法与旧 validation 选型；test 不参与。",
+  "candidates": {
+    "m1_128": {
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "validation",
+        "correct": 735,
+        "n": 798,
+        "accuracy": 92.10526315789474,
+        "scoring_seconds": 0.02032937300100457
+      },
+      "enabled_input_dimensions": 2080,
+      "inference_asset_bytes": 1108256,
+      "total_wall_seconds": 0.40707587399992917
+    },
+    "ensemble_128": {
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "validation",
+        "correct": 740,
+        "n": 798,
+        "accuracy": 92.73182957393483,
+        "scoring_seconds": 0.02046311300000525
+      },
+      "enabled_input_dimensions": 2080,
+      "inference_asset_bytes": 1137958,
+      "total_wall_seconds": 0.41817469299894583
+    },
+    "m1_256": {
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "validation",
+        "correct": 733,
+        "n": 798,
+        "accuracy": 91.8546365914787,
+        "scoring_seconds": 0.020868979998340365
+      },
+      "enabled_input_dimensions": 2080,
+      "inference_asset_bytes": 2227232,
+      "total_wall_seconds": 0.41168179099986446
+    },
+    "ensemble_256": {
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "validation",
+        "correct": 740,
+        "n": 798,
+        "accuracy": 92.73182957393483,
+        "scoring_seconds": 0.02049020900085452
+      },
+      "enabled_input_dimensions": 2080,
+      "inference_asset_bytes": 2256934,
+      "total_wall_seconds": 0.4214404630001809
+    },
+    "ensemble_v1": {
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "validation",
+        "correct": 740,
+        "n": 798,
+        "accuracy": 92.73182957393483,
+        "scoring_seconds": 0.021322050000890158
+      },
+      "enabled_input_dimensions": 2080,
+      "inference_asset_bytes": 590639,
+      "total_wall_seconds": 0.38915357099904213
+    }
+  },
+  "all_new_test_scores_not_yet_run": true,
+  "scope": "按 validation 锁定本轮选择；历史 test 已见，不称新盲测。"
+}

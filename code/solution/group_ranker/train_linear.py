@@ -1,9 +1,9 @@
 """仅用 train 拟合线性答案组排序器：按题交叉验证，导出纯 NumPy 权重。"""
 import os
 
-# 在导入数值库前限制线程；训练与后续复现实验都使用 CPU。
+# NumPy 与 SciPy 可能各载入一套 BLAS；统一单线程，避免线程池叠加。
 for variable in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS", "BLIS_NUM_THREADS"):
-    os.environ[variable] = "4"
+    os.environ[variable] = "1"
 
 import argparse
 from collections import Counter
@@ -19,60 +19,13 @@ import numpy as np
 import scipy
 from scipy.optimize import minimize
 
-from common import DATA, PROTOCOL, check_data, load_inputs, parse_answer, read_jsonl
+from common import DATA, PROTOCOL
 from solution.group_ranker.features import (
-    FEATURE_DIM, FEATURE_VERSION, answer_groups, best_group, build_features, standardize,
+    FEATURE_DIM, FEATURE_VERSIONS, SCALAR_COUNTS, standardize,
 )
-
-
-def prepare_training(data_dir):
-    check_data(data_dir, ("train",))
-    bank, arrays = load_inputs("train", data_dir)
-    gold = read_jsonl(data_dir / "gsm8k_train.jsonl")
-    if len(gold) != len(bank):
-        raise ValueError("训练参考数量不匹配")
-    features, labels, patterns = [], [], []
-    for row, reference, embedding in zip(bank, gold, arrays["embeddings"]):
-        if (row["id"], row["question"]) != (reference["id"], reference["question"]):
-            raise ValueError("训练输入与参考未对齐")
-        groups = answer_groups(row["candidates"])
-        target = parse_answer(reference["answer"])
-        if target not in groups:
-            raise ValueError("题库保证被违反：没有最终答案正确的有效候选")
-        if len(groups) < 2:
-            continue  # 单答案题无需学习，组间交叉熵梯度为零。
-        x = build_features(row["candidates"], embedding, groups)
-        features.append(np.pad(x, ((0, 4 - len(groups)), (0, 0))))
-        labels.append(list(groups).index(target))
-        patterns.append(tuple(sorted((len(v) for v in groups.values()), reverse=True)))
-    mask = np.array([[g < len(p) for g in range(4)] for p in patterns])
-    return np.stack(features), mask, np.array(labels), patterns, len(bank)
-
-
-def make_folds(patterns, folds, seed):
-    """同题的组永远在一起，按有效答案票型分层，不依赖候选顺序。"""
-    rng = np.random.default_rng(seed)
-    assignment = np.empty(len(patterns), dtype=int)
-    for pattern in sorted(set(patterns)):
-        indices = np.array([i for i, p in enumerate(patterns) if p == pattern])
-        rng.shuffle(indices)
-        assignment[indices] = np.arange(len(indices)) % folds
-    return assignment
-
-
-def fit_standardizer(features, mask):
-    # 每题总权重相同：每个有效组获得 1/G 权重，padding 不参与统计。
-    values = features[mask].astype(np.float64)
-    weights = np.broadcast_to(1 / mask.sum(axis=1, keepdims=True), mask.shape)[mask]
-    mean = np.average(values, axis=0, weights=weights)
-    variance = np.average((values - mean) ** 2, axis=0, weights=weights)
-    scale = np.sqrt(variance)
-    active = scale >= 1e-6
-    return {
-        "mean": mean.astype(np.float32),
-        "scale": np.where(active, scale, 1).astype(np.float32),
-        "active": active,
-    }
+from solution.group_ranker.training import (
+    export_model, fit_standardizer, make_folds, metrics, prepare_training, write_json,
+)
 
 
 def objective(weight, x, mask, labels, l2):
@@ -111,34 +64,10 @@ def group_scores(features, mask, model):
     return np.where(mask, x @ model["weight"], -np.inf)
 
 
-def metrics(scores, labels):
-    correct = int(np.sum(best_group(scores) == labels))
-    shifted = scores.astype(np.float64) - scores.max(axis=1, keepdims=True)
-    nll = np.mean(np.log(np.exp(shifted).sum(axis=1)) - shifted[np.arange(len(labels)), labels])
-    return {"correct": correct, "n": len(labels), "accuracy": 100 * correct / len(labels),
-            "nll": float(nll)}
-
-
-def write_json(path, value):
-    path.write_text(json.dumps(value, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-
-
-def export_model(directory, model, config):
-    directory.mkdir(parents=True, exist_ok=True)
-    np.savez(directory / "model.npz", **model)  # 不压缩，资源大小可直接检查。
-    write_json(directory / "config.json", config)
-    assets = [directory / name for name in ("model.npz", "config.json")]
-    write_json(directory / "asset_manifest.json", {
-        "sha256": {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in assets},
-        "array_bytes": sum(array.nbytes for array in model.values()),
-    })
-    total = sum(p.stat().st_size for p in directory.iterdir() if p.is_file())
-    if total > 16 * 2**20:
-        raise ValueError("checkpoint 超过 16 MiB")
-    return total
-
-
-def main():
+def main(*, feature_set="basic", method=None):
+    if feature_set not in ("basic", "text"):
+        raise ValueError("线性训练只支持基础或文本特征")
+    method = Path(method) if method else Path(__file__).with_name("submission_linear.py")
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--data-dir", type=Path, default=DATA)
     parser.add_argument("--output", type=Path, required=True, help="新实验目录，例如 solution/runs/linear_v2")
@@ -151,8 +80,15 @@ def main():
         parser.error("folds 至少为 2，maxiter 和 l2 必须为正")
     if args.output.exists() and any(args.output.iterdir()):
         parser.error("输出目录已含文件；请使用新的实验目录，保留旧记录")
+    args.output.mkdir(parents=True, exist_ok=True)
+    report = {"created_utc": datetime.now(timezone.utc).isoformat(), "state": "running",
+              "feature_set": feature_set, "planned_l2": args.l2, "folds": args.folds, "seed": args.seed,
+              "command": [sys.executable, *sys.argv], "search": [],
+              "development_policy": "仅 train 拟合与 OOF 选参数；validation 开发比较；不读取 test 参考或用 test 选型"}
+    write_json(args.output / "training.json", report)
     tick = time.perf_counter()
-    features, mask, labels, patterns, total = prepare_training(args.data_dir)
+    diagnostics = {}
+    features, mask, labels, patterns, total = prepare_training(args.data_dir, feature_set, diagnostics=diagnostics)
     if args.folds > min(Counter(patterns).values()):
         parser.error("folds 超过最小票型样本数")
     fold_ids = make_folds(patterns, args.folds, args.seed)
@@ -168,34 +104,41 @@ def main():
             print(f"l2={l2:g}, fold={fold}: {fold_records[-1]}", flush=True)
         records.append({"l2": l2, "oof": metrics(scores, labels), "folds": fold_records})
         oof_scores.append(scores)
+        report["search"] = records
+        write_json(args.output / "training.json", report)
     # 只看 train OOF；准确率、NLL 依次比较，再优先更强的正则。
     selected = min(range(len(records)), key=lambda i: (
         -records[i]["oof"]["accuracy"], records[i]["oof"]["nll"], -records[i]["l2"],
     ))
     best_l2 = records[selected]["l2"]
     model, status = fit_linear(features, mask, labels, best_l2, args.maxiter)
-    args.output.mkdir(parents=True, exist_ok=True)
     config = {
-        "protocol": PROTOCOL, "feature_version": FEATURE_VERSION, "feature_dim": FEATURE_DIM,
-        "model": "linear", "enabled_scalar_indices": list(range(16)), "l2": best_l2,
+        "protocol": PROTOCOL, "feature_version": FEATURE_VERSIONS[feature_set], "feature_dim": FEATURE_DIM,
+        "feature_set": feature_set, "model": "linear",
+        "enabled_scalar_indices": list(range(SCALAR_COUNTS[feature_set])), "l2": best_l2,
         "seed": args.seed, "folds": args.folds, "maxiter": args.maxiter,
         "training_split": "train", "training_questions": len(labels),
     }
     asset_bytes = export_model(args.output / "checkpoint", model, config)
     # OOF 与标签只存训练记录目录，不放入推理 checkpoint。
     np.savez(args.output / "oof.npz", scores=oof_scores[selected], labels=labels, folds=fold_ids)
-    sources = [Path(__file__), Path(__file__).with_name("features.py"),
-               Path(__file__).with_name("submission_linear.py")]
-    report = {
-        "created_utc": datetime.now(timezone.utc).isoformat(), "config": config,
+    sources = {Path(__file__).resolve(), Path(sys.argv[0]).resolve(), method.resolve(),
+               *(Path(__file__).with_name(name) for name in
+                 ("training.py", "features.py", "evidence.py", "submission_linear.py"))}
+    code = Path(__file__).resolve().parents[2]
+    report.update({
+        "state": "complete", "config": config, "feature_diagnostics": diagnostics,
+        "fit_count": len(args.l2) * args.folds + 1,
         "train_total": total, "train_conflict": len(labels),
         "search": records, "selected_l2": best_l2, "final_optimizer": status,
         "inference_asset_bytes": asset_bytes, "training_seconds": time.perf_counter() - tick,
         "environment": {"python": sys.version.split()[0], "numpy": np.__version__,
-                        "scipy": scipy.__version__, "platform": platform.platform(), "threads": 4},
-        "source_sha256": {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in sources},
+                        "scipy": scipy.__version__, "platform": platform.platform(), "threads": 1,
+                        "cpu": next((line.split(":", 1)[1].strip() for line in Path("/proc/cpuinfo").read_text().splitlines()
+                                     if line.startswith("model name")), platform.processor())},
+        "source_sha256": {str(p.relative_to(code)): hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(sources)},
         "data_manifest_sha256": hashlib.sha256((args.data_dir / "manifest.json").read_bytes()).hexdigest(),
-    }
+    })
     write_json(args.output / "training.json", report)
     print(json.dumps({"selected_l2": best_l2, "oof": records[selected]["oof"],
                       "asset_bytes": asset_bytes, "training_seconds": report["training_seconds"]},

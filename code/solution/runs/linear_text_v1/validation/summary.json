@@ -1,0 +1,2708 @@
+{
+  "created_utc": "2026-10-19T11:59:17.956099+00:00",
+  "split": "validation",
+  "n": 798,
+  "conflict_n": 355,
+  "baseline_voting_score_equivalent": true,
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.5.3",
+    "cpu": "Intel(R) Core(TM) Ultra 9 275HX",
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.39",
+    "thread_budget_total": 4,
+    "coordinator_threads": 1,
+    "child_threads": 3
+  },
+  "methods": {
+    "baseline": {
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "validation",
+        "correct": 688,
+        "n": 798,
+        "accuracy": 86.2155388471178,
+        "scoring_seconds": 0.021280795001075603
+      },
+      "total_wall_seconds": 0.21749565900245216,
+      "commands": [
+        [
+          "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+          "/home/rvector/DASE7506-MP2/code/predict.py",
+          "--method",
+          "/home/rvector/DASE7506-MP2/code/solution/baselines/submission.py",
+          "--split",
+          "validation",
+          "--output",
+          "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/baseline-predictions.json"
+        ],
+        [
+          "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+          "/home/rvector/DASE7506-MP2/code/score_predictions.py",
+          "--split",
+          "validation",
+          "--predictions",
+          "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/baseline-predictions.json",
+          "--output",
+          "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/baseline-score.json"
+        ]
+      ],
+      "processes": [
+        {
+          "command": [
+            "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+            "/home/rvector/DASE7506-MP2/code/predict.py",
+            "--method",
+            "/home/rvector/DASE7506-MP2/code/solution/baselines/submission.py",
+            "--split",
+            "validation",
+            "--output",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/baseline-predictions.json"
+          ],
+          "stdout": "{\"protocol\": \"dase7506-mp2-open-hard-verifier-v5\", \"split\": \"validation\", \"prediction_seconds\": 0.08262142199964728}\n",
+          "stderr": "",
+          "thread_samples": 119,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 3,
+          "total_peak_threads": 4
+        },
+        {
+          "command": [
+            "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+            "/home/rvector/DASE7506-MP2/code/score_predictions.py",
+            "--split",
+            "validation",
+            "--predictions",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/baseline-predictions.json",
+            "--output",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/baseline-score.json"
+          ],
+          "stdout": "{\n  \"protocol\": \"dase7506-mp2-open-hard-verifier-v5\",\n  \"split\": \"validation\",\n  \"correct\": 688,\n  \"n\": 798,\n  \"accuracy\": 86.2155388471178,\n  \"scoring_seconds\": 0.021280795001075603\n}\n",
+          "stderr": "",
+          "thread_samples": 63,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 3,
+          "total_peak_threads": 4
+        }
+      ],
+      "method_sha256": "360ba032f77136ad6203e370b9df4e4cafb61681ea1965fcbb0e8e5f6288c268",
+      "inference_asset_bytes": 0,
+      "conflict": {
+        "correct": 245,
+        "n": 355,
+        "accuracy": 69.01408450704226
+      },
+      "by_group_count": {
+        "1": {
+          "correct": 443,
+          "n": 443,
+          "accuracy": 100.0
+        },
+        "2": {
+          "correct": 175,
+          "n": 227,
+          "accuracy": 77.09251101321586
+        },
+        "3": {
+          "correct": 65,
+          "n": 108,
+          "accuracy": 60.18518518518518
+        },
+        "4": {
+          "correct": 5,
+          "n": 20,
+          "accuracy": 25.0
+        }
+      },
+      "by_vote_pattern": {
+        "1": {
+          "correct": 3,
+          "n": 3,
+          "accuracy": 100.0
+        },
+        "1+1": {
+          "correct": 8,
+          "n": 14,
+          "accuracy": 57.14285714285714
+        },
+        "1+1+1": {
+          "correct": 11,
+          "n": 20,
+          "accuracy": 55.00000000000001
+        },
+        "1+1+1+1": {
+          "correct": 5,
+          "n": 20,
+          "accuracy": 25.0
+        },
+        "2": {
+          "correct": 11,
+          "n": 11,
+          "accuracy": 100.0
+        },
+        "2+1": {
+          "correct": 24,
+          "n": 28,
+          "accuracy": 85.71428571428571
+        },
+        "2+1+1": {
+          "correct": 54,
+          "n": 88,
+          "accuracy": 61.36363636363637
+        },
+        "2+2": {
+          "correct": 14,
+          "n": 34,
+          "accuracy": 41.17647058823529
+        },
+        "3": {
+          "correct": 50,
+          "n": 50,
+          "accuracy": 100.0
+        },
+        "3+1": {
+          "correct": 129,
+          "n": 151,
+          "accuracy": 85.43046357615894
+        },
+        "4": {
+          "correct": 379,
+          "n": 379,
+          "accuracy": 100.0
+        }
+      },
+      "corrected_vs_baseline": 0,
+      "regressed_vs_baseline": 0,
+      "examples_vs_baseline": {
+        "corrected": [],
+        "regressed": []
+      },
+      "vs_linear": {
+        "corrected": 18,
+        "regressed": 60,
+        "difference_95ci_pp": [
+          -7.393483709273182,
+          -3.132832080200501
+        ],
+        "conflict_difference_95ci_pp": [
+          -16.619718309859156,
+          -7.042253521126761
+        ]
+      },
+      "vs_m1": {
+        "corrected": 15,
+        "regressed": 65,
+        "difference_95ci_pp": [
+          -8.521303258145362,
+          -4.257518796992498
+        ],
+        "conflict_difference_95ci_pp": [
+          -18.880281690140844,
+          -9.577464788732394
+        ]
+      }
+    },
+    "voting": {
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "validation",
+        "correct": 688,
+        "n": 798,
+        "accuracy": 86.2155388471178,
+        "scoring_seconds": 0.021556377003435045
+      },
+      "total_wall_seconds": 0.2093351250005071,
+      "commands": [
+        [
+          "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+          "/home/rvector/DASE7506-MP2/code/predict.py",
+          "--method",
+          "/home/rvector/DASE7506-MP2/code/solution/baselines/submission_voling_only.py",
+          "--split",
+          "validation",
+          "--output",
+          "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/voting-predictions.json"
+        ],
+        [
+          "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+          "/home/rvector/DASE7506-MP2/code/score_predictions.py",
+          "--split",
+          "validation",
+          "--predictions",
+          "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/voting-predictions.json",
+          "--output",
+          "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/voting-score.json"
+        ]
+      ],
+      "processes": [
+        {
+          "command": [
+            "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+            "/home/rvector/DASE7506-MP2/code/predict.py",
+            "--method",
+            "/home/rvector/DASE7506-MP2/code/solution/baselines/submission_voling_only.py",
+            "--split",
+            "validation",
+            "--output",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/voting-predictions.json"
+          ],
+          "stdout": "{\"protocol\": \"dase7506-mp2-open-hard-verifier-v5\", \"split\": \"validation\", \"prediction_seconds\": 0.07446033099404303}\n",
+          "stderr": "",
+          "thread_samples": 109,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 3,
+          "total_peak_threads": 4
+        },
+        {
+          "command": [
+            "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+            "/home/rvector/DASE7506-MP2/code/score_predictions.py",
+            "--split",
+            "validation",
+            "--predictions",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/voting-predictions.json",
+            "--output",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/voting-score.json"
+          ],
+          "stdout": "{\n  \"protocol\": \"dase7506-mp2-open-hard-verifier-v5\",\n  \"split\": \"validation\",\n  \"correct\": 688,\n  \"n\": 798,\n  \"accuracy\": 86.2155388471178,\n  \"scoring_seconds\": 0.021556377003435045\n}\n",
+          "stderr": "",
+          "thread_samples": 65,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 3,
+          "total_peak_threads": 4
+        }
+      ],
+      "method_sha256": "c25078c99476ee50ac989fbaa1a36b51225e34fead921b20a5339df07f8660cd",
+      "inference_asset_bytes": 0,
+      "conflict": {
+        "correct": 245,
+        "n": 355,
+        "accuracy": 69.01408450704226
+      },
+      "by_group_count": {
+        "1": {
+          "correct": 443,
+          "n": 443,
+          "accuracy": 100.0
+        },
+        "2": {
+          "correct": 175,
+          "n": 227,
+          "accuracy": 77.09251101321586
+        },
+        "3": {
+          "correct": 65,
+          "n": 108,
+          "accuracy": 60.18518518518518
+        },
+        "4": {
+          "correct": 5,
+          "n": 20,
+          "accuracy": 25.0
+        }
+      },
+      "by_vote_pattern": {
+        "1": {
+          "correct": 3,
+          "n": 3,
+          "accuracy": 100.0
+        },
+        "1+1": {
+          "correct": 8,
+          "n": 14,
+          "accuracy": 57.14285714285714
+        },
+        "1+1+1": {
+          "correct": 11,
+          "n": 20,
+          "accuracy": 55.00000000000001
+        },
+        "1+1+1+1": {
+          "correct": 5,
+          "n": 20,
+          "accuracy": 25.0
+        },
+        "2": {
+          "correct": 11,
+          "n": 11,
+          "accuracy": 100.0
+        },
+        "2+1": {
+          "correct": 24,
+          "n": 28,
+          "accuracy": 85.71428571428571
+        },
+        "2+1+1": {
+          "correct": 54,
+          "n": 88,
+          "accuracy": 61.36363636363637
+        },
+        "2+2": {
+          "correct": 14,
+          "n": 34,
+          "accuracy": 41.17647058823529
+        },
+        "3": {
+          "correct": 50,
+          "n": 50,
+          "accuracy": 100.0
+        },
+        "3+1": {
+          "correct": 129,
+          "n": 151,
+          "accuracy": 85.43046357615894
+        },
+        "4": {
+          "correct": 379,
+          "n": 379,
+          "accuracy": 100.0
+        }
+      },
+      "corrected_vs_baseline": 0,
+      "regressed_vs_baseline": 0,
+      "examples_vs_baseline": {
+        "corrected": [],
+        "regressed": []
+      },
+      "difference_95ci_pp": [
+        0.0,
+        0.0
+      ],
+      "conflict_difference_95ci_pp": [
+        0.0,
+        0.0
+      ],
+      "vs_linear": {
+        "corrected": 18,
+        "regressed": 60,
+        "difference_95ci_pp": [
+          -7.393483709273182,
+          -3.132832080200501
+        ],
+        "conflict_difference_95ci_pp": [
+          -16.619718309859156,
+          -7.042253521126761
+        ]
+      },
+      "vs_m1": {
+        "corrected": 15,
+        "regressed": 65,
+        "difference_95ci_pp": [
+          -8.521303258145362,
+          -4.257518796992498
+        ],
+        "conflict_difference_95ci_pp": [
+          -18.880281690140844,
+          -9.577464788732394
+        ]
+      }
+    },
+    "embedding": {
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "validation",
+        "correct": 624,
+        "n": 798,
+        "accuracy": 78.19548872180451,
+        "scoring_seconds": 0.02154428000358166
+      },
+      "total_wall_seconds": 0.20813412999996217,
+      "commands": [
+        [
+          "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+          "/home/rvector/DASE7506-MP2/code/predict.py",
+          "--method",
+          "/home/rvector/DASE7506-MP2/code/solution/baselines/submission_emb_only.py",
+          "--split",
+          "validation",
+          "--output",
+          "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/embedding-predictions.json"
+        ],
+        [
+          "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+          "/home/rvector/DASE7506-MP2/code/score_predictions.py",
+          "--split",
+          "validation",
+          "--predictions",
+          "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/embedding-predictions.json",
+          "--output",
+          "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/embedding-score.json"
+        ]
+      ],
+      "processes": [
+        {
+          "command": [
+            "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+            "/home/rvector/DASE7506-MP2/code/predict.py",
+            "--method",
+            "/home/rvector/DASE7506-MP2/code/solution/baselines/submission_emb_only.py",
+            "--split",
+            "validation",
+            "--output",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/embedding-predictions.json"
+          ],
+          "stdout": "{\"protocol\": \"dase7506-mp2-open-hard-verifier-v5\", \"split\": \"validation\", \"prediction_seconds\": 0.07414815099764382}\n",
+          "stderr": "",
+          "thread_samples": 110,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 3,
+          "total_peak_threads": 4
+        },
+        {
+          "command": [
+            "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+            "/home/rvector/DASE7506-MP2/code/score_predictions.py",
+            "--split",
+            "validation",
+            "--predictions",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/embedding-predictions.json",
+            "--output",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/embedding-score.json"
+          ],
+          "stdout": "{\n  \"protocol\": \"dase7506-mp2-open-hard-verifier-v5\",\n  \"split\": \"validation\",\n  \"correct\": 624,\n  \"n\": 798,\n  \"accuracy\": 78.19548872180451,\n  \"scoring_seconds\": 0.02154428000358166\n}\n",
+          "stderr": "",
+          "thread_samples": 65,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 3,
+          "total_peak_threads": 4
+        }
+      ],
+      "method_sha256": "f1b12384f3d2ecdeef0108e1357a1a04f4ab42e8444e42595a075676aa958d0a",
+      "inference_asset_bytes": 0,
+      "conflict": {
+        "correct": 200,
+        "n": 355,
+        "accuracy": 56.33802816901409
+      },
+      "by_group_count": {
+        "1": {
+          "correct": 424,
+          "n": 443,
+          "accuracy": 95.71106094808127
+        },
+        "2": {
+          "correct": 153,
+          "n": 227,
+          "accuracy": 67.40088105726872
+        },
+        "3": {
+          "correct": 45,
+          "n": 108,
+          "accuracy": 41.66666666666667
+        },
+        "4": {
+          "correct": 2,
+          "n": 20,
+          "accuracy": 10.0
+        }
+      },
+      "by_vote_pattern": {
+        "1": {
+          "correct": 1,
+          "n": 3,
+          "accuracy": 33.33333333333333
+        },
+        "1+1": {
+          "correct": 8,
+          "n": 14,
+          "accuracy": 57.14285714285714
+        },
+        "1+1+1": {
+          "correct": 7,
+          "n": 20,
+          "accuracy": 35.0
+        },
+        "1+1+1+1": {
+          "correct": 2,
+          "n": 20,
+          "accuracy": 10.0
+        },
+        "2": {
+          "correct": 4,
+          "n": 11,
+          "accuracy": 36.36363636363637
+        },
+        "2+1": {
+          "correct": 13,
+          "n": 28,
+          "accuracy": 46.42857142857143
+        },
+        "2+1+1": {
+          "correct": 38,
+          "n": 88,
+          "accuracy": 43.18181818181818
+        },
+        "2+2": {
+          "correct": 16,
+          "n": 34,
+          "accuracy": 47.05882352941176
+        },
+        "3": {
+          "correct": 40,
+          "n": 50,
+          "accuracy": 80.0
+        },
+        "3+1": {
+          "correct": 116,
+          "n": 151,
+          "accuracy": 76.82119205298014
+        },
+        "4": {
+          "correct": 379,
+          "n": 379,
+          "accuracy": 100.0
+        }
+      },
+      "corrected_vs_baseline": 29,
+      "regressed_vs_baseline": 93,
+      "examples_vs_baseline": {
+        "corrected": [
+          {
+            "id": "gsm8k:02e6a3586d4118e71421fdc68390a128f9deffd2e36cf200f9d29105c4e0e3e0",
+            "question": "Three different 6th grade classes are combining for a square dancing unit.  If possible, the teachers would like each male student to partner with a female student for the unit.  The first class has 17 males and 13 females, while the second class has 14 males and 18 females, and the third class has 15 males and 17 females.  When the classes are combined, how many students will be unable to partner with a student of the opposite gender?",
+            "reference_answer": "2",
+            "baseline_answer": "48",
+            "selected_answer": "2",
+            "vote_pattern": "2+1+1"
+          },
+          {
+            "id": "gsm8k:d41771a33607bdaf7b3e00726d01e899fdd0d6e8b013369a93bcc90248c0c46b",
+            "question": "Tom buys 20 shares of a stock that costs $3 each.  He sells 10 of those shares for $4 each.  The rest of the shares end up doubling in value.  How much profit does he make?",
+            "reference_answer": "40",
+            "baseline_answer": "100",
+            "selected_answer": "40",
+            "vote_pattern": "2+1+1"
+          },
+          {
+            "id": "gsm8k:0885bbc3b6149850bd8614a610a58bed0b4fcaef7a5ac36668fc784a3a9c6fdf",
+            "question": "Gloria has five times as many dimes as quarters in her graduation money. She decides to put 2/5 of the quarters aside for future use. If she has 350 dimes, calculate the combined number of quarters and dimes she has after putting aside 2/5 of the quarters?",
+            "reference_answer": "392",
+            "baseline_answer": "1050",
+            "selected_answer": "392",
+            "vote_pattern": "1+1"
+          }
+        ],
+        "regressed": [
+          {
+            "id": "gsm8k:44fee03dab209b476ed1a10830570b89a7f85ab73f63ca378aa2525a28d4bdb7",
+            "question": "Joshua bought 25 oranges for $12.50. If he sells each one for 60c, how much profit in cents will he make on each orange?",
+            "reference_answer": "10",
+            "baseline_answer": "10",
+            "selected_answer": "-119/10",
+            "vote_pattern": "2+1+1"
+          },
+          {
+            "id": "gsm8k:b895f301ce87e9351d598ab85eb88637d11ca6e92ef9126519da61383be7d877",
+            "question": "Martin rings the small bell 4 times more than 1/3 as often as the big bell. If he rings both of them a combined total of 52 times, how many times does he ring the big bell?",
+            "reference_answer": "36",
+            "baseline_answer": "36",
+            "selected_answer": null,
+            "vote_pattern": "2+1"
+          },
+          {
+            "id": "gsm8k:2c2325f52ce69361c492b6fe1f76ee3f4914eb39f8396bd06cffce451f1709f4",
+            "question": "Mary was working on a research paper and already had borrowed 5 books from the library.  3 books weren't helpful so she returned those and checked out 5 more books.  3 days later, she went back to the library and returned 2 of those books and checked out 7 more books.  How many books does Mary currently have checked out of the library?",
+            "reference_answer": "12",
+            "baseline_answer": "12",
+            "selected_answer": "7",
+            "vote_pattern": "2+1+1"
+          }
+        ]
+      },
+      "difference_95ci_pp": [
+        -10.776942355889723,
+        -5.263157894736842
+      ],
+      "conflict_difference_95ci_pp": [
+        -17.74647887323944,
+        -7.605633802816901
+      ],
+      "vs_linear": {
+        "corrected": 22,
+        "regressed": 128,
+        "difference_95ci_pp": [
+          -16.040100250626566,
+          -10.275689223057643
+        ],
+        "conflict_difference_95ci_pp": [
+          -30.140845070422532,
+          -18.591549295774648
+        ]
+      },
+      "vs_m1": {
+        "corrected": 20,
+        "regressed": 134,
+        "difference_95ci_pp": [
+          -17.167919799498748,
+          -11.278195488721805
+        ],
+        "conflict_difference_95ci_pp": [
+          -32.11971830985916,
+          -21.12676056338028
+        ]
+      }
+    },
+    "b1": {
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "validation",
+        "correct": 677,
+        "n": 798,
+        "accuracy": 84.83709273182957,
+        "scoring_seconds": 0.0211717919955845
+      },
+      "total_wall_seconds": 0.2292319270054577,
+      "commands": [
+        [
+          "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+          "/home/rvector/DASE7506-MP2/code/predict.py",
+          "--method",
+          "/home/rvector/DASE7506-MP2/code/solution/baselines/submission_tiebreak.py",
+          "--split",
+          "validation",
+          "--output",
+          "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/b1-predictions.json"
+        ],
+        [
+          "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+          "/home/rvector/DASE7506-MP2/code/score_predictions.py",
+          "--split",
+          "validation",
+          "--predictions",
+          "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/b1-predictions.json",
+          "--output",
+          "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/b1-score.json"
+        ]
+      ],
+      "processes": [
+        {
+          "command": [
+            "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+            "/home/rvector/DASE7506-MP2/code/predict.py",
+            "--method",
+            "/home/rvector/DASE7506-MP2/code/solution/baselines/submission_tiebreak.py",
+            "--split",
+            "validation",
+            "--output",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/b1-predictions.json"
+          ],
+          "stdout": "{\"protocol\": \"dase7506-mp2-open-hard-verifier-v5\", \"split\": \"validation\", \"prediction_seconds\": 0.09306435500184307}\n",
+          "stderr": "",
+          "thread_samples": 136,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 3,
+          "total_peak_threads": 4
+        },
+        {
+          "command": [
+            "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+            "/home/rvector/DASE7506-MP2/code/score_predictions.py",
+            "--split",
+            "validation",
+            "--predictions",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/b1-predictions.json",
+            "--output",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/b1-score.json"
+          ],
+          "stdout": "{\n  \"protocol\": \"dase7506-mp2-open-hard-verifier-v5\",\n  \"split\": \"validation\",\n  \"correct\": 677,\n  \"n\": 798,\n  \"accuracy\": 84.83709273182957,\n  \"scoring_seconds\": 0.0211717919955845\n}\n",
+          "stderr": "",
+          "thread_samples": 66,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 3,
+          "total_peak_threads": 4
+        }
+      ],
+      "method_sha256": "836f7730db174d25ea16b00e909b3f64bf396fcf5ae208a318e2b13f128fb9ad",
+      "inference_asset_bytes": 0,
+      "conflict": {
+        "correct": 234,
+        "n": 355,
+        "accuracy": 65.91549295774648
+      },
+      "by_group_count": {
+        "1": {
+          "correct": 443,
+          "n": 443,
+          "accuracy": 100.0
+        },
+        "2": {
+          "correct": 171,
+          "n": 227,
+          "accuracy": 75.33039647577093
+        },
+        "3": {
+          "correct": 61,
+          "n": 108,
+          "accuracy": 56.481481481481474
+        },
+        "4": {
+          "correct": 2,
+          "n": 20,
+          "accuracy": 10.0
+        }
+      },
+      "by_vote_pattern": {
+        "1": {
+          "correct": 3,
+          "n": 3,
+          "accuracy": 100.0
+        },
+        "1+1": {
+          "correct": 5,
+          "n": 14,
+          "accuracy": 35.714285714285715
+        },
+        "1+1+1": {
+          "correct": 7,
+          "n": 20,
+          "accuracy": 35.0
+        },
+        "1+1+1+1": {
+          "correct": 2,
+          "n": 20,
+          "accuracy": 10.0
+        },
+        "2": {
+          "correct": 11,
+          "n": 11,
+          "accuracy": 100.0
+        },
+        "2+1": {
+          "correct": 24,
+          "n": 28,
+          "accuracy": 85.71428571428571
+        },
+        "2+1+1": {
+          "correct": 54,
+          "n": 88,
+          "accuracy": 61.36363636363637
+        },
+        "2+2": {
+          "correct": 13,
+          "n": 34,
+          "accuracy": 38.23529411764706
+        },
+        "3": {
+          "correct": 50,
+          "n": 50,
+          "accuracy": 100.0
+        },
+        "3+1": {
+          "correct": 129,
+          "n": 151,
+          "accuracy": 85.43046357615894
+        },
+        "4": {
+          "correct": 379,
+          "n": 379,
+          "accuracy": 100.0
+        }
+      },
+      "corrected_vs_baseline": 15,
+      "regressed_vs_baseline": 26,
+      "examples_vs_baseline": {
+        "corrected": [
+          {
+            "id": "gsm8k:259982b93458414b42b8fc9c5b109b9788076e7cc0bc1fcb972f2e4ace85f99c",
+            "question": "A frog pond has five frogs living in it. Some frogs laid eggs, and now there are three times as many tadpoles growing into more frogs as there are frogs. Two-thirds of the tadpoles will survive to maturity as frogs. The pond can only sustain eight frogs. How many frogs will have to find a new pond when the tadpoles grow up?",
+            "reference_answer": "7",
+            "baseline_answer": "5",
+            "selected_answer": "7",
+            "vote_pattern": "1+1+1+1"
+          },
+          {
+            "id": "gsm8k:8b60c0bca25430f3c9b01b0ba736e3145a74460f04bd0d1a1dae16025118cf43",
+            "question": "There are 3 kids waiting for the swings and twice as many kids waiting for the slide. If each kid waits 2 minutes for the swings and 15 seconds for the slide, how many seconds shorter is the shorter wait?",
+            "reference_answer": "270",
+            "baseline_answer": "105",
+            "selected_answer": "270",
+            "vote_pattern": "2+2"
+          },
+          {
+            "id": "gsm8k:2ef626a1b85202880b537be408afd58a1efe6f3fe43c4bd0c7419d2a6b390e2d",
+            "question": "A local park has 70 pigeons that call the park home. Half of the pigeons are black, and 20 percent of the black pigeons are male.  How many more black female pigeons are there than black male pigeons?",
+            "reference_answer": "21",
+            "baseline_answer": "28",
+            "selected_answer": "21",
+            "vote_pattern": "2+2"
+          }
+        ],
+        "regressed": [
+          {
+            "id": "gsm8k:58ca01d045bf958fcf844ddf06abc6bd686c8892b207b0d4e6881f7d000fafd7",
+            "question": "Lizette scored 92 on her third quiz giving her an average of 94. What is Lizette's average in her first two quizzes?",
+            "reference_answer": "95",
+            "baseline_answer": "95",
+            "selected_answer": "190",
+            "vote_pattern": "1+1+1+1"
+          },
+          {
+            "id": "gsm8k:71405c5e3fe9595dd29773dfb06725b8c2be9cf7735b679d447ad371bab3f3c8",
+            "question": "Martha is making centerpieces for her Thanksgiving dinner. There are six centerpieces, and each centerpiece uses 8 roses, twice as many orchids as roses, and a certain number of lilies. If Martha wants to spend $2700 total, and each flower costs $15, how many lilies will she put in each centerpiece?",
+            "reference_answer": "6",
+            "baseline_answer": "6",
+            "selected_answer": "164",
+            "vote_pattern": "1+1+1"
+          },
+          {
+            "id": "gsm8k:733c2ed7820a3d0de5448744f970515a50ffbbcad6769f064efc78c7f15280a3",
+            "question": "You can buy 4 apples or 1 watermelon for the same price. You bought 36 fruits evenly split between oranges, apples and watermelons, and the price of 1 orange is $0.50. How much does 1 apple cost if your total bill was $66?",
+            "reference_answer": "1",
+            "baseline_answer": "1",
+            "selected_answer": "133/100",
+            "vote_pattern": "1+1+1"
+          }
+        ]
+      },
+      "difference_95ci_pp": [
+        -2.882205513784461,
+        0.12531328320802004
+      ],
+      "conflict_difference_95ci_pp": [
+        -6.485915492957746,
+        0.28169014084507044
+      ],
+      "vs_linear": {
+        "corrected": 17,
+        "regressed": 70,
+        "difference_95ci_pp": [
+          -8.771929824561402,
+          -4.511278195488721
+        ],
+        "conflict_difference_95ci_pp": [
+          -19.718309859154928,
+          -10.140845070422536
+        ]
+      },
+      "vs_m1": {
+        "corrected": 12,
+        "regressed": 73,
+        "difference_95ci_pp": [
+          -9.774436090225564,
+          -5.513784461152882
+        ],
+        "conflict_difference_95ci_pp": [
+          -22.253521126760564,
+          -12.394366197183098
+        ]
+      }
+    },
+    "b2": {
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "validation",
+        "correct": 610,
+        "n": 798,
+        "accuracy": 76.44110275689223,
+        "scoring_seconds": 0.022068644997489173
+      },
+      "total_wall_seconds": 0.23654414299380733,
+      "commands": [
+        [
+          "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+          "/home/rvector/DASE7506-MP2/code/predict.py",
+          "--method",
+          "/home/rvector/DASE7506-MP2/code/solution/baselines/submission_group_center.py",
+          "--split",
+          "validation",
+          "--output",
+          "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/b2-predictions.json"
+        ],
+        [
+          "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+          "/home/rvector/DASE7506-MP2/code/score_predictions.py",
+          "--split",
+          "validation",
+          "--predictions",
+          "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/b2-predictions.json",
+          "--output",
+          "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/b2-score.json"
+        ]
+      ],
+      "processes": [
+        {
+          "command": [
+            "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+            "/home/rvector/DASE7506-MP2/code/predict.py",
+            "--method",
+            "/home/rvector/DASE7506-MP2/code/solution/baselines/submission_group_center.py",
+            "--split",
+            "validation",
+            "--output",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/b2-predictions.json"
+          ],
+          "stdout": "{\"protocol\": \"dase7506-mp2-open-hard-verifier-v5\", \"split\": \"validation\", \"prediction_seconds\": 0.09135500700358534}\n",
+          "stderr": "",
+          "thread_samples": 133,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 3,
+          "total_peak_threads": 4
+        },
+        {
+          "command": [
+            "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+            "/home/rvector/DASE7506-MP2/code/score_predictions.py",
+            "--split",
+            "validation",
+            "--predictions",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/b2-predictions.json",
+            "--output",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/b2-score.json"
+          ],
+          "stdout": "{\n  \"protocol\": \"dase7506-mp2-open-hard-verifier-v5\",\n  \"split\": \"validation\",\n  \"correct\": 610,\n  \"n\": 798,\n  \"accuracy\": 76.44110275689223,\n  \"scoring_seconds\": 0.022068644997489173\n}\n",
+          "stderr": "",
+          "thread_samples": 78,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 3,
+          "total_peak_threads": 4
+        }
+      ],
+      "method_sha256": "8aec2b59b914519a70245600b71d117eaf1532a3c85a8d4c24a865b2bdf05858",
+      "inference_asset_bytes": 0,
+      "conflict": {
+        "correct": 167,
+        "n": 355,
+        "accuracy": 47.04225352112676
+      },
+      "by_group_count": {
+        "1": {
+          "correct": 443,
+          "n": 443,
+          "accuracy": 100.0
+        },
+        "2": {
+          "correct": 127,
+          "n": 227,
+          "accuracy": 55.947136563876654
+        },
+        "3": {
+          "correct": 38,
+          "n": 108,
+          "accuracy": 35.18518518518518
+        },
+        "4": {
+          "correct": 2,
+          "n": 20,
+          "accuracy": 10.0
+        }
+      },
+      "by_vote_pattern": {
+        "1": {
+          "correct": 3,
+          "n": 3,
+          "accuracy": 100.0
+        },
+        "1+1": {
+          "correct": 5,
+          "n": 14,
+          "accuracy": 35.714285714285715
+        },
+        "1+1+1": {
+          "correct": 7,
+          "n": 20,
+          "accuracy": 35.0
+        },
+        "1+1+1+1": {
+          "correct": 2,
+          "n": 20,
+          "accuracy": 10.0
+        },
+        "2": {
+          "correct": 11,
+          "n": 11,
+          "accuracy": 100.0
+        },
+        "2+1": {
+          "correct": 18,
+          "n": 28,
+          "accuracy": 64.28571428571429
+        },
+        "2+1+1": {
+          "correct": 31,
+          "n": 88,
+          "accuracy": 35.22727272727273
+        },
+        "2+2": {
+          "correct": 13,
+          "n": 34,
+          "accuracy": 38.23529411764706
+        },
+        "3": {
+          "correct": 50,
+          "n": 50,
+          "accuracy": 100.0
+        },
+        "3+1": {
+          "correct": 91,
+          "n": 151,
+          "accuracy": 60.264900662251655
+        },
+        "4": {
+          "correct": 379,
+          "n": 379,
+          "accuracy": 100.0
+        }
+      },
+      "corrected_vs_baseline": 35,
+      "regressed_vs_baseline": 113,
+      "examples_vs_baseline": {
+        "corrected": [
+          {
+            "id": "gsm8k:02e6a3586d4118e71421fdc68390a128f9deffd2e36cf200f9d29105c4e0e3e0",
+            "question": "Three different 6th grade classes are combining for a square dancing unit.  If possible, the teachers would like each male student to partner with a female student for the unit.  The first class has 17 males and 13 females, while the second class has 14 males and 18 females, and the third class has 15 males and 17 females.  When the classes are combined, how many students will be unable to partner with a student of the opposite gender?",
+            "reference_answer": "2",
+            "baseline_answer": "48",
+            "selected_answer": "2",
+            "vote_pattern": "2+1+1"
+          },
+          {
+            "id": "gsm8k:d41771a33607bdaf7b3e00726d01e899fdd0d6e8b013369a93bcc90248c0c46b",
+            "question": "Tom buys 20 shares of a stock that costs $3 each.  He sells 10 of those shares for $4 each.  The rest of the shares end up doubling in value.  How much profit does he make?",
+            "reference_answer": "40",
+            "baseline_answer": "100",
+            "selected_answer": "40",
+            "vote_pattern": "2+1+1"
+          },
+          {
+            "id": "gsm8k:9bb5fbe86fef3370a75fd8d35c55e52bb22a8726cfeacedb042e6f1ae65222d8",
+            "question": "Erik's dog can run 24 miles per hour. It is chasing a rabbit that can run 15 miles per hour. The rabbit has a head start of .6 miles. How many minutes does it take for the dog to catch up to the rabbit?",
+            "reference_answer": "4",
+            "baseline_answer": "8",
+            "selected_answer": "4",
+            "vote_pattern": "3+1"
+          }
+        ],
+        "regressed": [
+          {
+            "id": "gsm8k:44fee03dab209b476ed1a10830570b89a7f85ab73f63ca378aa2525a28d4bdb7",
+            "question": "Joshua bought 25 oranges for $12.50. If he sells each one for 60c, how much profit in cents will he make on each orange?",
+            "reference_answer": "10",
+            "baseline_answer": "10",
+            "selected_answer": "-119/10",
+            "vote_pattern": "2+1+1"
+          },
+          {
+            "id": "gsm8k:2c2325f52ce69361c492b6fe1f76ee3f4914eb39f8396bd06cffce451f1709f4",
+            "question": "Mary was working on a research paper and already had borrowed 5 books from the library.  3 books weren't helpful so she returned those and checked out 5 more books.  3 days later, she went back to the library and returned 2 of those books and checked out 7 more books.  How many books does Mary currently have checked out of the library?",
+            "reference_answer": "12",
+            "baseline_answer": "12",
+            "selected_answer": "7",
+            "vote_pattern": "2+1+1"
+          },
+          {
+            "id": "gsm8k:58ca01d045bf958fcf844ddf06abc6bd686c8892b207b0d4e6881f7d000fafd7",
+            "question": "Lizette scored 92 on her third quiz giving her an average of 94. What is Lizette's average in her first two quizzes?",
+            "reference_answer": "95",
+            "baseline_answer": "95",
+            "selected_answer": "190",
+            "vote_pattern": "1+1+1+1"
+          }
+        ]
+      },
+      "difference_95ci_pp": [
+        -12.656641604010025,
+        -6.8922305764411025
+      ],
+      "conflict_difference_95ci_pp": [
+        -27.8943661971831,
+        -15.774647887323944
+      ],
+      "vs_linear": {
+        "corrected": 30,
+        "regressed": 150,
+        "difference_95ci_pp": [
+          -18.045112781954884,
+          -11.904761904761903
+        ],
+        "conflict_difference_95ci_pp": [
+          -40.0,
+          -27.042253521126757
+        ]
+      },
+      "vs_m1": {
+        "corrected": 27,
+        "regressed": 155,
+        "difference_95ci_pp": [
+          -19.047619047619047,
+          -13.032581453634084
+        ],
+        "conflict_difference_95ci_pp": [
+          -41.971830985915496,
+          -29.859154929577464
+        ]
+      }
+    },
+    "linear": {
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "validation",
+        "correct": 730,
+        "n": 798,
+        "accuracy": 91.47869674185463,
+        "scoring_seconds": 0.021605811001791153
+      },
+      "total_wall_seconds": 0.259153614002571,
+      "commands": [
+        [
+          "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+          "/home/rvector/DASE7506-MP2/code/predict.py",
+          "--method",
+          "/home/rvector/DASE7506-MP2/code/solution/group_ranker/submission_linear.py",
+          "--split",
+          "validation",
+          "--output",
+          "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/linear-predictions.json",
+          "--checkpoint",
+          "/home/rvector/DASE7506-MP2/code/solution/runs/linear_v1/checkpoint"
+        ],
+        [
+          "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+          "/home/rvector/DASE7506-MP2/code/score_predictions.py",
+          "--split",
+          "validation",
+          "--predictions",
+          "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/linear-predictions.json",
+          "--output",
+          "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/linear-score.json"
+        ]
+      ],
+      "processes": [
+        {
+          "command": [
+            "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+            "/home/rvector/DASE7506-MP2/code/predict.py",
+            "--method",
+            "/home/rvector/DASE7506-MP2/code/solution/group_ranker/submission_linear.py",
+            "--split",
+            "validation",
+            "--output",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/linear-predictions.json",
+            "--checkpoint",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/linear_v1/checkpoint"
+          ],
+          "stdout": "{\"protocol\": \"dase7506-mp2-open-hard-verifier-v5\", \"split\": \"validation\", \"prediction_seconds\": 0.12212847499904456}\n",
+          "stderr": "",
+          "thread_samples": 162,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 3,
+          "total_peak_threads": 4
+        },
+        {
+          "command": [
+            "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+            "/home/rvector/DASE7506-MP2/code/score_predictions.py",
+            "--split",
+            "validation",
+            "--predictions",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/linear-predictions.json",
+            "--output",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/linear-score.json"
+          ],
+          "stdout": "{\n  \"protocol\": \"dase7506-mp2-open-hard-verifier-v5\",\n  \"split\": \"validation\",\n  \"correct\": 730,\n  \"n\": 798,\n  \"accuracy\": 91.47869674185463,\n  \"scoring_seconds\": 0.021605811001791153\n}\n",
+          "stderr": "",
+          "thread_samples": 68,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 3,
+          "total_peak_threads": 4
+        }
+      ],
+      "method_sha256": "978d007e581558ee17ef8945b08f5ce978274667a345e566beaf678fe61744e4",
+      "inference_asset_bytes": 28771,
+      "enabled_input_dimensions": 2064,
+      "train_oof": {
+        "overall": {
+          "correct": 1715,
+          "n": 2114,
+          "accuracy": 81.12582781456953,
+          "nll": 0.476703089726901
+        },
+        "by_group_count": {
+          "2": {
+            "correct": 1175,
+            "n": 1338,
+            "accuracy": 87.81763826606877
+          },
+          "3": {
+            "correct": 446,
+            "n": 608,
+            "accuracy": 73.35526315789474
+          },
+          "4": {
+            "correct": 94,
+            "n": 168,
+            "accuracy": 55.952380952380956
+          }
+        },
+        "by_vote_pattern": {
+          "1+1": {
+            "correct": 29,
+            "n": 37,
+            "accuracy": 78.37837837837837
+          },
+          "1+1+1": {
+            "correct": 74,
+            "n": 112,
+            "accuracy": 66.07142857142857
+          },
+          "1+1+1+1": {
+            "correct": 94,
+            "n": 168,
+            "accuracy": 55.952380952380956
+          },
+          "2+1": {
+            "correct": 160,
+            "n": 188,
+            "accuracy": 85.1063829787234
+          },
+          "2+1+1": {
+            "correct": 372,
+            "n": 496,
+            "accuracy": 75.0
+          },
+          "2+2": {
+            "correct": 194,
+            "n": 228,
+            "accuracy": 85.08771929824562
+          },
+          "3+1": {
+            "correct": 792,
+            "n": 885,
+            "accuracy": 89.49152542372882
+          }
+        },
+        "file_sha256": "d433b58efad5c26b99f3c88a53c4f3409d89ca394384832943f43ce1a9027e6d"
+      },
+      "conflict": {
+        "correct": 287,
+        "n": 355,
+        "accuracy": 80.84507042253522
+      },
+      "by_group_count": {
+        "1": {
+          "correct": 443,
+          "n": 443,
+          "accuracy": 100.0
+        },
+        "2": {
+          "correct": 200,
+          "n": 227,
+          "accuracy": 88.10572687224669
+        },
+        "3": {
+          "correct": 74,
+          "n": 108,
+          "accuracy": 68.51851851851852
+        },
+        "4": {
+          "correct": 13,
+          "n": 20,
+          "accuracy": 65.0
+        }
+      },
+      "by_vote_pattern": {
+        "1": {
+          "correct": 3,
+          "n": 3,
+          "accuracy": 100.0
+        },
+        "1+1": {
+          "correct": 11,
+          "n": 14,
+          "accuracy": 78.57142857142857
+        },
+        "1+1+1": {
+          "correct": 12,
+          "n": 20,
+          "accuracy": 60.0
+        },
+        "1+1+1+1": {
+          "correct": 13,
+          "n": 20,
+          "accuracy": 65.0
+        },
+        "2": {
+          "correct": 11,
+          "n": 11,
+          "accuracy": 100.0
+        },
+        "2+1": {
+          "correct": 26,
+          "n": 28,
+          "accuracy": 92.85714285714286
+        },
+        "2+1+1": {
+          "correct": 62,
+          "n": 88,
+          "accuracy": 70.45454545454545
+        },
+        "2+2": {
+          "correct": 26,
+          "n": 34,
+          "accuracy": 76.47058823529412
+        },
+        "3": {
+          "correct": 50,
+          "n": 50,
+          "accuracy": 100.0
+        },
+        "3+1": {
+          "correct": 137,
+          "n": 151,
+          "accuracy": 90.72847682119205
+        },
+        "4": {
+          "correct": 379,
+          "n": 379,
+          "accuracy": 100.0
+        }
+      },
+      "corrected_vs_baseline": 60,
+      "regressed_vs_baseline": 18,
+      "examples_vs_baseline": {
+        "corrected": [
+          {
+            "id": "gsm8k:e0bce5638f28ceb61a610767278059aec4a642fdcd584761a2df8491c7ef6c46",
+            "question": "Jay went to watch a singer in a one hour 20 minutes concert.  If there was a 10-minute intermission, and all the songs were 5 minutes except for one song that lasted 10 minutes, how many songs did she sing?",
+            "reference_answer": "13",
+            "baseline_answer": "16",
+            "selected_answer": "13",
+            "vote_pattern": "1+1+1+1"
+          },
+          {
+            "id": "gsm8k:8278949f5804b3684c922e60454437d60504a36370de6ec93d69445f5bfadb74",
+            "question": "Eddy’s spider plant produces 2 baby plants 2 times a year.  After 4 years, how many baby plants will the mother plant have produced?",
+            "reference_answer": "16",
+            "baseline_answer": "4",
+            "selected_answer": "16",
+            "vote_pattern": "2+1+1"
+          },
+          {
+            "id": "gsm8k:b4dc0fdfacb68de5097fa404c8c8d455bd99dfbd4bbfb1d393dd5c04d7356c0f",
+            "question": "Tanika is selling boxes of crackers for her scout troop's fund-raiser. On Saturday, she sold 60 boxes. On Sunday, she sold 50% more than on Saturday. How many boxes did she sell, in total, over the two days?",
+            "reference_answer": "150",
+            "baseline_answer": "90",
+            "selected_answer": "150",
+            "vote_pattern": "3+1"
+          }
+        ],
+        "regressed": [
+          {
+            "id": "gsm8k:3c301203f5cbef525fc8d959430497548e7f5dbddc51cc5e8dc8ea953416effc",
+            "question": "Tony paid $7 for 2 dozen apples and 1 bunch of bananas. Arnold paid $5 for 1 dozen apples and 1 bunch of bananas. How much does a bunch of bananas cost?",
+            "reference_answer": "3",
+            "baseline_answer": "3",
+            "selected_answer": "241/50",
+            "vote_pattern": "3+1"
+          },
+          {
+            "id": "gsm8k:733c2ed7820a3d0de5448744f970515a50ffbbcad6769f064efc78c7f15280a3",
+            "question": "You can buy 4 apples or 1 watermelon for the same price. You bought 36 fruits evenly split between oranges, apples and watermelons, and the price of 1 orange is $0.50. How much does 1 apple cost if your total bill was $66?",
+            "reference_answer": "1",
+            "baseline_answer": "1",
+            "selected_answer": "1/10",
+            "vote_pattern": "1+1+1"
+          },
+          {
+            "id": "gsm8k:f786810eeb3814ef511d6d35ad780d720f852f764c260218e030b01027e64be8",
+            "question": "Helga went shopping for a new pair of shoes. At the first store, she tried on 7 pairs of shoes. At the second store, she tried on 2 more pairs than at the first store. At the third store, she did not try on any shoes, but she did buy a scarf.  But at the fourth store, she tried on twice as many pairs of shoes as she did at all three other stores combined, before finally choosing a pair to buy.  What is the total number of pairs of shoes Helga tried on before buying her new shoes?",
+            "reference_answer": "48",
+            "baseline_answer": "48",
+            "selected_answer": "32",
+            "vote_pattern": "2+1+1"
+          }
+        ]
+      },
+      "difference_95ci_pp": [
+        3.132832080200501,
+        7.393483709273182
+      ],
+      "conflict_difference_95ci_pp": [
+        7.042253521126761,
+        16.619718309859156
+      ],
+      "vs_m1": {
+        "corrected": 10,
+        "regressed": 18,
+        "difference_95ci_pp": [
+          -2.380952380952381,
+          0.2506265664160401
+        ],
+        "conflict_difference_95ci_pp": [
+          -5.352112676056338,
+          0.5633802816901409
+        ]
+      }
+    },
+    "m1": {
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "validation",
+        "correct": 738,
+        "n": 798,
+        "accuracy": 92.4812030075188,
+        "scoring_seconds": 0.02113601800374454
+      },
+      "total_wall_seconds": 0.38539088999823434,
+      "commands": [
+        [
+          "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+          "/home/rvector/DASE7506-MP2/code/predict.py",
+          "--method",
+          "/home/rvector/DASE7506-MP2/code/solution/group_ranker/submission_mlp.py",
+          "--split",
+          "validation",
+          "--output",
+          "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/m1-predictions.json",
+          "--checkpoint",
+          "/home/rvector/DASE7506-MP2/code/solution/runs/mlp_text_v1/checkpoint"
+        ],
+        [
+          "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+          "/home/rvector/DASE7506-MP2/code/score_predictions.py",
+          "--split",
+          "validation",
+          "--predictions",
+          "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/m1-predictions.json",
+          "--output",
+          "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/m1-score.json"
+        ]
+      ],
+      "processes": [
+        {
+          "command": [
+            "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+            "/home/rvector/DASE7506-MP2/code/predict.py",
+            "--method",
+            "/home/rvector/DASE7506-MP2/code/solution/group_ranker/submission_mlp.py",
+            "--split",
+            "validation",
+            "--output",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/m1-predictions.json",
+            "--checkpoint",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/mlp_text_v1/checkpoint"
+          ],
+          "stdout": "{\"protocol\": \"dase7506-mp2-open-hard-verifier-v5\", \"split\": \"validation\", \"prediction_seconds\": 0.24862298100197222}\n",
+          "stderr": "",
+          "thread_samples": 268,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 3,
+          "total_peak_threads": 4
+        },
+        {
+          "command": [
+            "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+            "/home/rvector/DASE7506-MP2/code/score_predictions.py",
+            "--split",
+            "validation",
+            "--predictions",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/m1-predictions.json",
+            "--output",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/m1-score.json"
+          ],
+          "stdout": "{\n  \"protocol\": \"dase7506-mp2-open-hard-verifier-v5\",\n  \"split\": \"validation\",\n  \"correct\": 738,\n  \"n\": 798,\n  \"accuracy\": 92.4812030075188,\n  \"scoring_seconds\": 0.02113601800374454\n}\n",
+          "stderr": "",
+          "thread_samples": 68,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 3,
+          "total_peak_threads": 4
+        }
+      ],
+      "method_sha256": "cb8e8df149dc21ad9b7dd39c92b0f5dee34c7eda55283a92f908a0626979486b",
+      "inference_asset_bytes": 560937,
+      "profile_replay": {
+        "feature_seconds": 0.15639720197214046,
+        "forward_seconds": 0.00401523999607889,
+        "questions": 355,
+        "valid_candidates": 1344,
+        "evidence_seconds": 0.10858729489700636
+      },
+      "config": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "feature_version": "answer-group-text-v1",
+        "feature_set": "text",
+        "feature_dim": 2088,
+        "model": "mlp",
+        "hidden": [
+          64,
+          16
+        ],
+        "weight_decay": 0.01,
+        "enabled_scalar_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31
+        ],
+        "seed": 7506,
+        "fold_seed": 7506,
+        "folds": 5,
+        "epochs": 5,
+        "optimizer": "AdamW",
+        "learning_rate": 0.001,
+        "dropout": 0.1,
+        "batch_size_questions": 64,
+        "gradient_clip": 1.0,
+        "training_split": "train",
+        "training_questions": 2114
+      },
+      "enabled_input_dimensions": 2080,
+      "train_oof": {
+        "overall": {
+          "correct": 1692,
+          "n": 2114,
+          "accuracy": 80.03784295175024,
+          "nll": 0.5040590274648488
+        },
+        "by_group_count": {
+          "2": {
+            "correct": 1159,
+            "n": 1338,
+            "accuracy": 86.62182361733932
+          },
+          "3": {
+            "correct": 438,
+            "n": 608,
+            "accuracy": 72.03947368421053
+          },
+          "4": {
+            "correct": 95,
+            "n": 168,
+            "accuracy": 56.547619047619044
+          }
+        },
+        "by_vote_pattern": {
+          "1+1": {
+            "correct": 26,
+            "n": 37,
+            "accuracy": 70.27027027027027
+          },
+          "1+1+1": {
+            "correct": 62,
+            "n": 112,
+            "accuracy": 55.35714285714286
+          },
+          "1+1+1+1": {
+            "correct": 95,
+            "n": 168,
+            "accuracy": 56.547619047619044
+          },
+          "2+1": {
+            "correct": 164,
+            "n": 188,
+            "accuracy": 87.2340425531915
+          },
+          "2+1+1": {
+            "correct": 376,
+            "n": 496,
+            "accuracy": 75.80645161290323
+          },
+          "2+2": {
+            "correct": 194,
+            "n": 228,
+            "accuracy": 85.08771929824562
+          },
+          "3+1": {
+            "correct": 775,
+            "n": 885,
+            "accuracy": 87.57062146892656
+          }
+        },
+        "file_sha256": "ffb5de43d88a4b8424f18a3934876c4f361be5eb876d030f510fed23b1ec7f03"
+      },
+      "conflict": {
+        "correct": 295,
+        "n": 355,
+        "accuracy": 83.09859154929578
+      },
+      "by_group_count": {
+        "1": {
+          "correct": 443,
+          "n": 443,
+          "accuracy": 100.0
+        },
+        "2": {
+          "correct": 203,
+          "n": 227,
+          "accuracy": 89.42731277533039
+        },
+        "3": {
+          "correct": 78,
+          "n": 108,
+          "accuracy": 72.22222222222221
+        },
+        "4": {
+          "correct": 14,
+          "n": 20,
+          "accuracy": 70.0
+        }
+      },
+      "by_vote_pattern": {
+        "1": {
+          "correct": 3,
+          "n": 3,
+          "accuracy": 100.0
+        },
+        "1+1": {
+          "correct": 12,
+          "n": 14,
+          "accuracy": 85.71428571428571
+        },
+        "1+1+1": {
+          "correct": 10,
+          "n": 20,
+          "accuracy": 50.0
+        },
+        "1+1+1+1": {
+          "correct": 14,
+          "n": 20,
+          "accuracy": 70.0
+        },
+        "2": {
+          "correct": 11,
+          "n": 11,
+          "accuracy": 100.0
+        },
+        "2+1": {
+          "correct": 26,
+          "n": 28,
+          "accuracy": 92.85714285714286
+        },
+        "2+1+1": {
+          "correct": 68,
+          "n": 88,
+          "accuracy": 77.27272727272727
+        },
+        "2+2": {
+          "correct": 27,
+          "n": 34,
+          "accuracy": 79.41176470588235
+        },
+        "3": {
+          "correct": 50,
+          "n": 50,
+          "accuracy": 100.0
+        },
+        "3+1": {
+          "correct": 138,
+          "n": 151,
+          "accuracy": 91.3907284768212
+        },
+        "4": {
+          "correct": 379,
+          "n": 379,
+          "accuracy": 100.0
+        }
+      },
+      "confidence": {
+        "nll": 0.21270118907188396,
+        "conflict_nll": 0.478128306702432,
+        "conflict_mean_max_probability": 0.8528984789302865,
+        "conflict_mean_probability_margin": 0.7268835967434281,
+        "conflict_mean_score_margin": 3.210117646959991,
+        "conflict_confidence_bins": [
+          {
+            "low_inclusive": 0,
+            "high": 0.5,
+            "correct": 5,
+            "n": 10,
+            "accuracy": 50.0,
+            "mean_confidence": 0.44104761773071893
+          },
+          {
+            "low_inclusive": 0.5,
+            "high": 0.7,
+            "correct": 40,
+            "n": 63,
+            "accuracy": 63.49206349206349,
+            "mean_confidence": 0.5904466553516631
+          },
+          {
+            "low_inclusive": 0.7,
+            "high": 0.85,
+            "correct": 43,
+            "n": 56,
+            "accuracy": 76.78571428571429,
+            "mean_confidence": 0.7787625341700279
+          },
+          {
+            "low_inclusive": 0.85,
+            "high": 0.95,
+            "correct": 54,
+            "n": 67,
+            "accuracy": 80.59701492537313,
+            "mean_confidence": 0.9068696706534561
+          },
+          {
+            "low_inclusive": 0.95,
+            "high": 1.0,
+            "correct": 153,
+            "n": 159,
+            "accuracy": 96.22641509433963,
+            "mean_confidence": 0.9861595893615508
+          }
+        ]
+      },
+      "corrected_vs_baseline": 65,
+      "regressed_vs_baseline": 15,
+      "examples_vs_baseline": {
+        "corrected": [
+          {
+            "id": "gsm8k:e0bce5638f28ceb61a610767278059aec4a642fdcd584761a2df8491c7ef6c46",
+            "question": "Jay went to watch a singer in a one hour 20 minutes concert.  If there was a 10-minute intermission, and all the songs were 5 minutes except for one song that lasted 10 minutes, how many songs did she sing?",
+            "reference_answer": "13",
+            "baseline_answer": "16",
+            "selected_answer": "13",
+            "vote_pattern": "1+1+1+1"
+          },
+          {
+            "id": "gsm8k:8278949f5804b3684c922e60454437d60504a36370de6ec93d69445f5bfadb74",
+            "question": "Eddy’s spider plant produces 2 baby plants 2 times a year.  After 4 years, how many baby plants will the mother plant have produced?",
+            "reference_answer": "16",
+            "baseline_answer": "4",
+            "selected_answer": "16",
+            "vote_pattern": "2+1+1"
+          },
+          {
+            "id": "gsm8k:d41771a33607bdaf7b3e00726d01e899fdd0d6e8b013369a93bcc90248c0c46b",
+            "question": "Tom buys 20 shares of a stock that costs $3 each.  He sells 10 of those shares for $4 each.  The rest of the shares end up doubling in value.  How much profit does he make?",
+            "reference_answer": "40",
+            "baseline_answer": "100",
+            "selected_answer": "40",
+            "vote_pattern": "2+1+1"
+          }
+        ],
+        "regressed": [
+          {
+            "id": "gsm8k:4ba7df16b233b5dfee1e33cd5aacce9ff23be68fae0e800100b1d5652abc2ab6",
+            "question": "John takes 3 naps a week.  Each nap is 2 hours long.  In 70 days how many hours of naps does he take?",
+            "reference_answer": "60",
+            "baseline_answer": "60",
+            "selected_answer": "420",
+            "vote_pattern": "2+2"
+          },
+          {
+            "id": "gsm8k:733c2ed7820a3d0de5448744f970515a50ffbbcad6769f064efc78c7f15280a3",
+            "question": "You can buy 4 apples or 1 watermelon for the same price. You bought 36 fruits evenly split between oranges, apples and watermelons, and the price of 1 orange is $0.50. How much does 1 apple cost if your total bill was $66?",
+            "reference_answer": "1",
+            "baseline_answer": "1",
+            "selected_answer": "1/10",
+            "vote_pattern": "1+1+1"
+          },
+          {
+            "id": "gsm8k:53720078a6bffa4e141a7bf22a1e6a86239cb349bca7fe908c4fbccd6c1bc290",
+            "question": "Jason and Jeremy want to paint their wall white and agreed to split the cost of the paint. A gallon of paint costs $45 and can cover up to 400 square feet. How much will each of them contribute to the cost of the paint if their walls have a total area of 1600 square feet and will need a second coat?",
+            "reference_answer": "180",
+            "baseline_answer": "180",
+            "selected_answer": "90",
+            "vote_pattern": "1+1+1"
+          }
+        ]
+      },
+      "difference_95ci_pp": [
+        4.257518796992481,
+        8.521303258145362
+      ],
+      "conflict_difference_95ci_pp": [
+        9.577464788732394,
+        18.88028169014081
+      ],
+      "vs_linear": {
+        "corrected": 18,
+        "regressed": 10,
+        "difference_95ci_pp": [
+          -0.2506265664160401,
+          2.380952380952381
+        ],
+        "conflict_difference_95ci_pp": [
+          -0.5633802816901409,
+          5.352112676056338
+        ]
+      }
+    },
+    "linear_text": {
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "validation",
+        "correct": 731,
+        "n": 798,
+        "accuracy": 91.60401002506266,
+        "scoring_seconds": 0.021277874999213964
+      },
+      "total_wall_seconds": 0.3823126580027747,
+      "commands": [
+        [
+          "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+          "/home/rvector/DASE7506-MP2/code/predict.py",
+          "--method",
+          "/home/rvector/DASE7506-MP2/code/solution/linear_text/submission.py",
+          "--split",
+          "validation",
+          "--output",
+          "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/linear_text-predictions.json",
+          "--checkpoint",
+          "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/checkpoint"
+        ],
+        [
+          "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+          "/home/rvector/DASE7506-MP2/code/score_predictions.py",
+          "--split",
+          "validation",
+          "--predictions",
+          "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/linear_text-predictions.json",
+          "--output",
+          "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/linear_text-score.json"
+        ]
+      ],
+      "processes": [
+        {
+          "command": [
+            "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+            "/home/rvector/DASE7506-MP2/code/predict.py",
+            "--method",
+            "/home/rvector/DASE7506-MP2/code/solution/linear_text/submission.py",
+            "--split",
+            "validation",
+            "--output",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/linear_text-predictions.json",
+            "--checkpoint",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/checkpoint"
+          ],
+          "stdout": "{\"protocol\": \"dase7506-mp2-open-hard-verifier-v5\", \"split\": \"validation\", \"prediction_seconds\": 0.24361772900010692}\n",
+          "stderr": "",
+          "thread_samples": 272,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 3,
+          "total_peak_threads": 4
+        },
+        {
+          "command": [
+            "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+            "/home/rvector/DASE7506-MP2/code/score_predictions.py",
+            "--split",
+            "validation",
+            "--predictions",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/linear_text-predictions.json",
+            "--output",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/linear_text-score.json"
+          ],
+          "stdout": "{\n  \"protocol\": \"dase7506-mp2-open-hard-verifier-v5\",\n  \"split\": \"validation\",\n  \"correct\": 731,\n  \"n\": 798,\n  \"accuracy\": 91.60401002506266,\n  \"scoring_seconds\": 0.021277874999213964\n}\n",
+          "stderr": "",
+          "thread_samples": 68,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 3,
+          "total_peak_threads": 4
+        }
+      ],
+      "method_sha256": "e1e315b7f1f603ff7732d1c880362bd228c4e61ba4f09b6dda56aa4a2ce0af40",
+      "inference_asset_bytes": 28923,
+      "profile_replay": {
+        "feature_seconds": 0.154594783030916,
+        "forward_seconds": 0.0018564409983810037,
+        "questions": 355,
+        "valid_candidates": 1344,
+        "evidence_seconds": 0.10795791106647812
+      },
+      "config": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "feature_version": "answer-group-text-v1",
+        "feature_dim": 2088,
+        "feature_set": "text",
+        "model": "linear",
+        "enabled_scalar_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31
+        ],
+        "l2": 0.01,
+        "seed": 7506,
+        "folds": 5,
+        "maxiter": 300,
+        "training_split": "train",
+        "training_questions": 2114
+      },
+      "enabled_input_dimensions": 2080,
+      "train_oof": {
+        "overall": {
+          "correct": 1716,
+          "n": 2114,
+          "accuracy": 81.17313150425733,
+          "nll": 0.466175076747398
+        },
+        "by_group_count": {
+          "2": {
+            "correct": 1178,
+            "n": 1338,
+            "accuracy": 88.04185351270553
+          },
+          "3": {
+            "correct": 444,
+            "n": 608,
+            "accuracy": 73.02631578947368
+          },
+          "4": {
+            "correct": 94,
+            "n": 168,
+            "accuracy": 55.952380952380956
+          }
+        },
+        "by_vote_pattern": {
+          "1+1": {
+            "correct": 30,
+            "n": 37,
+            "accuracy": 81.08108108108108
+          },
+          "1+1+1": {
+            "correct": 71,
+            "n": 112,
+            "accuracy": 63.39285714285714
+          },
+          "1+1+1+1": {
+            "correct": 94,
+            "n": 168,
+            "accuracy": 55.952380952380956
+          },
+          "2+1": {
+            "correct": 159,
+            "n": 188,
+            "accuracy": 84.57446808510637
+          },
+          "2+1+1": {
+            "correct": 373,
+            "n": 496,
+            "accuracy": 75.20161290322581
+          },
+          "2+2": {
+            "correct": 194,
+            "n": 228,
+            "accuracy": 85.08771929824562
+          },
+          "3+1": {
+            "correct": 795,
+            "n": 885,
+            "accuracy": 89.83050847457628
+          }
+        },
+        "file_sha256": "4e21a6048a8806a41a1748fb0f82879de42a5551d9ed532af88a29e5dec9a2bb"
+      },
+      "conflict": {
+        "correct": 288,
+        "n": 355,
+        "accuracy": 81.12676056338029
+      },
+      "by_group_count": {
+        "1": {
+          "correct": 443,
+          "n": 443,
+          "accuracy": 100.0
+        },
+        "2": {
+          "correct": 199,
+          "n": 227,
+          "accuracy": 87.66519823788546
+        },
+        "3": {
+          "correct": 76,
+          "n": 108,
+          "accuracy": 70.37037037037037
+        },
+        "4": {
+          "correct": 13,
+          "n": 20,
+          "accuracy": 65.0
+        }
+      },
+      "by_vote_pattern": {
+        "1": {
+          "correct": 3,
+          "n": 3,
+          "accuracy": 100.0
+        },
+        "1+1": {
+          "correct": 10,
+          "n": 14,
+          "accuracy": 71.42857142857143
+        },
+        "1+1+1": {
+          "correct": 12,
+          "n": 20,
+          "accuracy": 60.0
+        },
+        "1+1+1+1": {
+          "correct": 13,
+          "n": 20,
+          "accuracy": 65.0
+        },
+        "2": {
+          "correct": 11,
+          "n": 11,
+          "accuracy": 100.0
+        },
+        "2+1": {
+          "correct": 27,
+          "n": 28,
+          "accuracy": 96.42857142857143
+        },
+        "2+1+1": {
+          "correct": 64,
+          "n": 88,
+          "accuracy": 72.72727272727273
+        },
+        "2+2": {
+          "correct": 26,
+          "n": 34,
+          "accuracy": 76.47058823529412
+        },
+        "3": {
+          "correct": 50,
+          "n": 50,
+          "accuracy": 100.0
+        },
+        "3+1": {
+          "correct": 136,
+          "n": 151,
+          "accuracy": 90.06622516556291
+        },
+        "4": {
+          "correct": 379,
+          "n": 379,
+          "accuracy": 100.0
+        }
+      },
+      "confidence": {
+        "nll": 0.20613906811704347,
+        "conflict_nll": 0.4633773981898611,
+        "conflict_mean_max_probability": 0.8509567217537725,
+        "conflict_mean_probability_margin": 0.7224292074409296,
+        "conflict_mean_score_margin": 2.9675137763292017,
+        "conflict_confidence_bins": [
+          {
+            "low_inclusive": 0,
+            "high": 0.5,
+            "correct": 4,
+            "n": 12,
+            "accuracy": 33.33333333333333,
+            "mean_confidence": 0.46865667895162505
+          },
+          {
+            "low_inclusive": 0.5,
+            "high": 0.7,
+            "correct": 35,
+            "n": 60,
+            "accuracy": 58.333333333333336,
+            "mean_confidence": 0.6097623266315699
+          },
+          {
+            "low_inclusive": 0.7,
+            "high": 0.85,
+            "correct": 46,
+            "n": 63,
+            "accuracy": 73.01587301587301,
+            "mean_confidence": 0.7757043193346402
+          },
+          {
+            "low_inclusive": 0.85,
+            "high": 0.95,
+            "correct": 62,
+            "n": 73,
+            "accuracy": 84.93150684931507,
+            "mean_confidence": 0.9063096279857233
+          },
+          {
+            "low_inclusive": 0.95,
+            "high": 1.0,
+            "correct": 141,
+            "n": 147,
+            "accuracy": 95.91836734693877,
+            "mean_confidence": 0.9853744320832339
+          }
+        ]
+      },
+      "corrected_vs_baseline": 64,
+      "regressed_vs_baseline": 21,
+      "examples_vs_baseline": {
+        "corrected": [
+          {
+            "id": "gsm8k:e0bce5638f28ceb61a610767278059aec4a642fdcd584761a2df8491c7ef6c46",
+            "question": "Jay went to watch a singer in a one hour 20 minutes concert.  If there was a 10-minute intermission, and all the songs were 5 minutes except for one song that lasted 10 minutes, how many songs did she sing?",
+            "reference_answer": "13",
+            "baseline_answer": "16",
+            "selected_answer": "13",
+            "vote_pattern": "1+1+1+1"
+          },
+          {
+            "id": "gsm8k:8278949f5804b3684c922e60454437d60504a36370de6ec93d69445f5bfadb74",
+            "question": "Eddy’s spider plant produces 2 baby plants 2 times a year.  After 4 years, how many baby plants will the mother plant have produced?",
+            "reference_answer": "16",
+            "baseline_answer": "4",
+            "selected_answer": "16",
+            "vote_pattern": "2+1+1"
+          },
+          {
+            "id": "gsm8k:b4dc0fdfacb68de5097fa404c8c8d455bd99dfbd4bbfb1d393dd5c04d7356c0f",
+            "question": "Tanika is selling boxes of crackers for her scout troop's fund-raiser. On Saturday, she sold 60 boxes. On Sunday, she sold 50% more than on Saturday. How many boxes did she sell, in total, over the two days?",
+            "reference_answer": "150",
+            "baseline_answer": "90",
+            "selected_answer": "150",
+            "vote_pattern": "3+1"
+          }
+        ],
+        "regressed": [
+          {
+            "id": "gsm8k:4ba7df16b233b5dfee1e33cd5aacce9ff23be68fae0e800100b1d5652abc2ab6",
+            "question": "John takes 3 naps a week.  Each nap is 2 hours long.  In 70 days how many hours of naps does he take?",
+            "reference_answer": "60",
+            "baseline_answer": "60",
+            "selected_answer": "420",
+            "vote_pattern": "2+2"
+          },
+          {
+            "id": "gsm8k:c7e31f077e16c06ce1854ed8edc5aaf8be1c629e558c151b7d32b78cb867f158",
+            "question": "Megan bought 2 dozen eggs. As she was walking to her car, she dropped a tray of eggs. 3 eggs broke, and twice as many cracked. What is the difference between the eggs that are still in perfect condition and those that are cracked?",
+            "reference_answer": "9",
+            "baseline_answer": "9",
+            "selected_answer": "6",
+            "vote_pattern": "1+1+1"
+          },
+          {
+            "id": "gsm8k:3c301203f5cbef525fc8d959430497548e7f5dbddc51cc5e8dc8ea953416effc",
+            "question": "Tony paid $7 for 2 dozen apples and 1 bunch of bananas. Arnold paid $5 for 1 dozen apples and 1 bunch of bananas. How much does a bunch of bananas cost?",
+            "reference_answer": "3",
+            "baseline_answer": "3",
+            "selected_answer": "241/50",
+            "vote_pattern": "3+1"
+          }
+        ]
+      },
+      "difference_95ci_pp": [
+        3.132832080200501,
+        7.644110275689223
+      ],
+      "conflict_difference_95ci_pp": [
+        7.323943661971831,
+        17.183098591549296
+      ],
+      "vs_linear": {
+        "corrected": 6,
+        "regressed": 5,
+        "difference_95ci_pp": [
+          -0.6296992481203005,
+          1.0025062656641603
+        ],
+        "conflict_difference_95ci_pp": [
+          -1.6901408450704223,
+          1.971830985915493
+        ]
+      },
+      "vs_m1": {
+        "corrected": 10,
+        "regressed": 17,
+        "difference_95ci_pp": [
+          -2.1303258145363406,
+          0.37593984962406013
+        ],
+        "conflict_difference_95ci_pp": [
+          -4.788732394366197,
+          0.8450704225352111
+        ]
+      }
+    },
+    "ensemble": {
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "validation",
+        "correct": 740,
+        "n": 798,
+        "accuracy": 92.73182957393483,
+        "scoring_seconds": 0.022218149999389425
+      },
+      "total_wall_seconds": 0.39003066399891395,
+      "commands": [
+        [
+          "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+          "/home/rvector/DASE7506-MP2/code/predict.py",
+          "--method",
+          "/home/rvector/DASE7506-MP2/code/solution/group_ranker/submission_ensemble.py",
+          "--split",
+          "validation",
+          "--output",
+          "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/ensemble-predictions.json",
+          "--checkpoint",
+          "/home/rvector/DASE7506-MP2/code/solution/runs/ensemble_v1/checkpoint"
+        ],
+        [
+          "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+          "/home/rvector/DASE7506-MP2/code/score_predictions.py",
+          "--split",
+          "validation",
+          "--predictions",
+          "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/ensemble-predictions.json",
+          "--output",
+          "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/ensemble-score.json"
+        ]
+      ],
+      "processes": [
+        {
+          "command": [
+            "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+            "/home/rvector/DASE7506-MP2/code/predict.py",
+            "--method",
+            "/home/rvector/DASE7506-MP2/code/solution/group_ranker/submission_ensemble.py",
+            "--split",
+            "validation",
+            "--output",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/ensemble-predictions.json",
+            "--checkpoint",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/ensemble_v1/checkpoint"
+          ],
+          "stdout": "{\"protocol\": \"dase7506-mp2-open-hard-verifier-v5\", \"split\": \"validation\", \"prediction_seconds\": 0.25346815699595027}\n",
+          "stderr": "",
+          "thread_samples": 276,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 3,
+          "total_peak_threads": 4
+        },
+        {
+          "command": [
+            "/home/rvector/DASE7506-MP2/code/.venv/bin/python",
+            "/home/rvector/DASE7506-MP2/code/score_predictions.py",
+            "--split",
+            "validation",
+            "--predictions",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/ensemble-predictions.json",
+            "--output",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/linear_text_v1/validation/ensemble-score.json"
+          ],
+          "stdout": "{\n  \"protocol\": \"dase7506-mp2-open-hard-verifier-v5\",\n  \"split\": \"validation\",\n  \"correct\": 740,\n  \"n\": 798,\n  \"accuracy\": 92.73182957393483,\n  \"scoring_seconds\": 0.022218149999389425\n}\n",
+          "stderr": "",
+          "thread_samples": 68,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 3,
+          "total_peak_threads": 4
+        }
+      ],
+      "method_sha256": "11ed0f0b7b0d90baee33dc9d57873fcf990ecc2802fc99597b08179b96846d85",
+      "inference_asset_bytes": 590639,
+      "profile_replay": {
+        "feature_seconds": 0.1553876669568126,
+        "forward_seconds": 0.010701297003834043,
+        "questions": 355,
+        "valid_candidates": 1344,
+        "evidence_seconds": 0.10854586405184818
+      },
+      "config": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "model": "equal-probability-v1",
+        "weights": [
+          0.5,
+          0.5
+        ],
+        "components": [
+          "linear",
+          "mlp"
+        ],
+        "temperature": 1.0,
+        "aggregation": "per-question answer-group probabilities"
+      },
+      "enabled_input_dimensions": 2080,
+      "train_oof": {
+        "overall": {
+          "correct": 1717,
+          "n": 2114,
+          "accuracy": 81.22043519394512,
+          "nll": 0.46369870301663174
+        },
+        "by_group_count": {
+          "2": {
+            "correct": 1173,
+            "n": 1338,
+            "accuracy": 87.66816143497758
+          },
+          "3": {
+            "correct": 447,
+            "n": 608,
+            "accuracy": 73.51973684210526
+          },
+          "4": {
+            "correct": 97,
+            "n": 168,
+            "accuracy": 57.738095238095234
+          }
+        },
+        "by_vote_pattern": {
+          "1+1": {
+            "correct": 28,
+            "n": 37,
+            "accuracy": 75.67567567567568
+          },
+          "1+1+1": {
+            "correct": 69,
+            "n": 112,
+            "accuracy": 61.60714285714286
+          },
+          "1+1+1+1": {
+            "correct": 97,
+            "n": 168,
+            "accuracy": 57.738095238095234
+          },
+          "2+1": {
+            "correct": 161,
+            "n": 188,
+            "accuracy": 85.63829787234043
+          },
+          "2+1+1": {
+            "correct": 378,
+            "n": 496,
+            "accuracy": 76.20967741935483
+          },
+          "2+2": {
+            "correct": 196,
+            "n": 228,
+            "accuracy": 85.96491228070175
+          },
+          "3+1": {
+            "correct": 788,
+            "n": 885,
+            "accuracy": 89.03954802259886
+          }
+        },
+        "file_sha256": "65a675d23b00ef5884fb563be7bc24ba1d710c64ba8d25c000f6c202dbc48c3f"
+      },
+      "conflict": {
+        "correct": 297,
+        "n": 355,
+        "accuracy": 83.66197183098592
+      },
+      "by_group_count": {
+        "1": {
+          "correct": 443,
+          "n": 443,
+          "accuracy": 100.0
+        },
+        "2": {
+          "correct": 206,
+          "n": 227,
+          "accuracy": 90.7488986784141
+        },
+        "3": {
+          "correct": 77,
+          "n": 108,
+          "accuracy": 71.29629629629629
+        },
+        "4": {
+          "correct": 14,
+          "n": 20,
+          "accuracy": 70.0
+        }
+      },
+      "by_vote_pattern": {
+        "1": {
+          "correct": 3,
+          "n": 3,
+          "accuracy": 100.0
+        },
+        "1+1": {
+          "correct": 12,
+          "n": 14,
+          "accuracy": 85.71428571428571
+        },
+        "1+1+1": {
+          "correct": 11,
+          "n": 20,
+          "accuracy": 55.00000000000001
+        },
+        "1+1+1+1": {
+          "correct": 14,
+          "n": 20,
+          "accuracy": 70.0
+        },
+        "2": {
+          "correct": 11,
+          "n": 11,
+          "accuracy": 100.0
+        },
+        "2+1": {
+          "correct": 27,
+          "n": 28,
+          "accuracy": 96.42857142857143
+        },
+        "2+1+1": {
+          "correct": 66,
+          "n": 88,
+          "accuracy": 75.0
+        },
+        "2+2": {
+          "correct": 28,
+          "n": 34,
+          "accuracy": 82.35294117647058
+        },
+        "3": {
+          "correct": 50,
+          "n": 50,
+          "accuracy": 100.0
+        },
+        "3+1": {
+          "correct": 139,
+          "n": 151,
+          "accuracy": 92.05298013245033
+        },
+        "4": {
+          "correct": 379,
+          "n": 379,
+          "accuracy": 100.0
+        }
+      },
+      "confidence": {
+        "nll": 0.20286124239224926,
+        "conflict_nll": 0.4560092152929998,
+        "conflict_mean_max_probability": 0.8433143056128407,
+        "conflict_mean_probability_margin": 0.7099331946418336,
+        "conflict_mean_score_margin": 2.832210749312557,
+        "conflict_confidence_bins": [
+          {
+            "low_inclusive": 0,
+            "high": 0.5,
+            "correct": 8,
+            "n": 15,
+            "accuracy": 53.333333333333336,
+            "mean_confidence": 0.44109354805813455
+          },
+          {
+            "low_inclusive": 0.5,
+            "high": 0.7,
+            "correct": 37,
+            "n": 56,
+            "accuracy": 66.07142857142857,
+            "mean_confidence": 0.5995149792818996
+          },
+          {
+            "low_inclusive": 0.7,
+            "high": 0.85,
+            "correct": 52,
+            "n": 67,
+            "accuracy": 77.61194029850746,
+            "mean_confidence": 0.7729840802786819
+          },
+          {
+            "low_inclusive": 0.85,
+            "high": 0.95,
+            "correct": 64,
+            "n": 77,
+            "accuracy": 83.11688311688312,
+            "mean_confidence": 0.9030461653538282
+          },
+          {
+            "low_inclusive": 0.95,
+            "high": 1.0,
+            "correct": 136,
+            "n": 140,
+            "accuracy": 97.14285714285714,
+            "mean_confidence": 0.9847346308641681
+          }
+        ]
+      },
+      "corrected_vs_baseline": 65,
+      "regressed_vs_baseline": 13,
+      "examples_vs_baseline": {
+        "corrected": [
+          {
+            "id": "gsm8k:e0bce5638f28ceb61a610767278059aec4a642fdcd584761a2df8491c7ef6c46",
+            "question": "Jay went to watch a singer in a one hour 20 minutes concert.  If there was a 10-minute intermission, and all the songs were 5 minutes except for one song that lasted 10 minutes, how many songs did she sing?",
+            "reference_answer": "13",
+            "baseline_answer": "16",
+            "selected_answer": "13",
+            "vote_pattern": "1+1+1+1"
+          },
+          {
+            "id": "gsm8k:8278949f5804b3684c922e60454437d60504a36370de6ec93d69445f5bfadb74",
+            "question": "Eddy’s spider plant produces 2 baby plants 2 times a year.  After 4 years, how many baby plants will the mother plant have produced?",
+            "reference_answer": "16",
+            "baseline_answer": "4",
+            "selected_answer": "16",
+            "vote_pattern": "2+1+1"
+          },
+          {
+            "id": "gsm8k:d07f6e690fc8e7796b918127e053bebecf39528189b6473517740386980cd25d",
+            "question": "Tim hires two bodyguards.  They each charge $20 an hour.  He hires them for 8 hour per day.  How much does he pay them in a week if he hires them 7 days a week?",
+            "reference_answer": "2240",
+            "baseline_answer": "1120",
+            "selected_answer": "2240",
+            "vote_pattern": "3+1"
+          }
+        ],
+        "regressed": [
+          {
+            "id": "gsm8k:4ba7df16b233b5dfee1e33cd5aacce9ff23be68fae0e800100b1d5652abc2ab6",
+            "question": "John takes 3 naps a week.  Each nap is 2 hours long.  In 70 days how many hours of naps does he take?",
+            "reference_answer": "60",
+            "baseline_answer": "60",
+            "selected_answer": "420",
+            "vote_pattern": "2+2"
+          },
+          {
+            "id": "gsm8k:733c2ed7820a3d0de5448744f970515a50ffbbcad6769f064efc78c7f15280a3",
+            "question": "You can buy 4 apples or 1 watermelon for the same price. You bought 36 fruits evenly split between oranges, apples and watermelons, and the price of 1 orange is $0.50. How much does 1 apple cost if your total bill was $66?",
+            "reference_answer": "1",
+            "baseline_answer": "1",
+            "selected_answer": "1/10",
+            "vote_pattern": "1+1+1"
+          },
+          {
+            "id": "gsm8k:53720078a6bffa4e141a7bf22a1e6a86239cb349bca7fe908c4fbccd6c1bc290",
+            "question": "Jason and Jeremy want to paint their wall white and agreed to split the cost of the paint. A gallon of paint costs $45 and can cover up to 400 square feet. How much will each of them contribute to the cost of the paint if their walls have a total area of 1600 square feet and will need a second coat?",
+            "reference_answer": "180",
+            "baseline_answer": "180",
+            "selected_answer": "90",
+            "vote_pattern": "1+1+1"
+          }
+        ]
+      },
+      "difference_95ci_pp": [
+        4.385964912280701,
+        8.646616541353383
+      ],
+      "conflict_difference_95ci_pp": [
+        10.140845070422536,
+        19.161971830985877
+      ],
+      "vs_linear": {
+        "corrected": 14,
+        "regressed": 4,
+        "difference_95ci_pp": [
+          0.2506265664160401,
+          2.380952380952381
+        ],
+        "conflict_difference_95ci_pp": [
+          0.5633802816901409,
+          5.070422535211268
+        ]
+      },
+      "vs_m1": {
+        "corrected": 7,
+        "regressed": 5,
+        "difference_95ci_pp": [
+          -0.6265664160401002,
+          1.1278195488721803
+        ],
+        "conflict_difference_95ci_pp": [
+          -1.4084507042253522,
+          2.535211267605634
+        ]
+      }
+    }
+  },
+  "checkpoint_sha256": {
+    "linear": {
+      "config.json": "136063546d7e1ccfcc39a8b707691204e321fd8fd53a508d34225e3a862fb033",
+      "asset_manifest.json": "d39394a7cec192916d89f9f69ee0dbc469012480cd639b45e43e8dbd35f9444b",
+      "model.npz": "b8656b760268f74203f26a3a7204843bd3e4b77e735c1ed21e39cb843c1ea3e5"
+    },
+    "m1": {
+      "config.json": "1c042f6347f02584e4f2d97495257678090d48da9ab5b96d0eb5d40115b6722e",
+      "asset_manifest.json": "2af4fceb7486d83bd281427754a461dc20dc86e455d2914702a7965146bd36af",
+      "model.npz": "19a8bdc5d12865df401a66e588b1be58409cd0753c662806268901062dbcdca9"
+    },
+    "linear_text": {
+      "config.json": "5d39a1a9f059f9066e73ac990143b317811dd22baaeb03d7a74585387a4013e6",
+      "asset_manifest.json": "d50d059676c2b603e11c6c63c672c386226e2da16f9dd5bc96ea18e55063c414",
+      "model.npz": "ff3cb482b79f33fe27072c1a465bbea9cc9cb57e30e04dc572205ef1bff84bc9"
+    },
+    "ensemble": {
+      "config.json": "a0bbf1a3b3c46cc4b11ba769e3a6f1c94b93d2840e9f7915cf77bd746006ccd9",
+      "asset_manifest.json": "c811e72b1c6fc79ff31d38764c901de2e8aa21a615fe1d489af0fc6bfcb9f635",
+      "linear/config.json": "136063546d7e1ccfcc39a8b707691204e321fd8fd53a508d34225e3a862fb033",
+      "linear/asset_manifest.json": "d39394a7cec192916d89f9f69ee0dbc469012480cd639b45e43e8dbd35f9444b",
+      "linear/model.npz": "b8656b760268f74203f26a3a7204843bd3e4b77e735c1ed21e39cb843c1ea3e5",
+      "mlp/config.json": "1c042f6347f02584e4f2d97495257678090d48da9ab5b96d0eb5d40115b6722e",
+      "mlp/asset_manifest.json": "2af4fceb7486d83bd281427754a461dc20dc86e455d2914702a7965146bd36af",
+      "mlp/model.npz": "19a8bdc5d12865df401a66e588b1be58409cd0753c662806268901062dbcdca9"
+    }
+  },
+  "source_sha256": {
+    "solution/__init__.py": "f96fb2e99c9bccb49c392355614c70fe2d9cd1f1c9a4fcb5fa7d688bdb451a28",
+    "solution/evaluate.py": "c26a6b73d5ef447016508f659772ee9e852d0c795baebead99b3516176b4b94d",
+    "solution/baselines/submission.py": "360ba032f77136ad6203e370b9df4e4cafb61681ea1965fcbb0e8e5f6288c268",
+    "solution/baselines/submission_emb_only.py": "f1b12384f3d2ecdeef0108e1357a1a04f4ab42e8444e42595a075676aa958d0a",
+    "solution/baselines/submission_group_center.py": "8aec2b59b914519a70245600b71d117eaf1532a3c85a8d4c24a865b2bdf05858",
+    "solution/baselines/submission_tiebreak.py": "836f7730db174d25ea16b00e909b3f64bf396fcf5ae208a318e2b13f128fb9ad",
+    "solution/baselines/submission_voling_only.py": "c25078c99476ee50ac989fbaa1a36b51225e34fead921b20a5339df07f8660cd",
+    "solution/group_ranker/__init__.py": "004736c19147e3623f71ff02762c85488e48821eebac5be4872478c28e1bcfaa",
+    "solution/group_ranker/evidence.py": "6c5c7c8985cfa097ccabd52f28b1eff426b81f36e87564b8cecc89de79007b4d",
+    "solution/group_ranker/features.py": "ff6e76bd7fd9afa23d77ccb2e06f7b095e7186fd0f55807093244f91a77ce2e9",
+    "solution/group_ranker/mlp.py": "d16fe03fdd3b2454d3eec623224b33e80b1545222936c01c2818b2e206a3bef4",
+    "solution/group_ranker/submission_ensemble.py": "11ed0f0b7b0d90baee33dc9d57873fcf990ecc2802fc99597b08179b96846d85",
+    "solution/group_ranker/submission_linear.py": "978d007e581558ee17ef8945b08f5ce978274667a345e566beaf678fe61744e4",
+    "solution/group_ranker/submission_mlp.py": "cb8e8df149dc21ad9b7dd39c92b0f5dee34c7eda55283a92f908a0626979486b",
+    "solution/group_ranker/test_ensemble.py": "3217a7134f00a6ce8490e857528afb27cec8e2cba19a234f48d34c98040eb501",
+    "solution/group_ranker/test_group_ranker.py": "dfd1c8a39428baf9a65a0d5eba2f7c3046630cc16d80b3f45e8d212cc969f903",
+    "solution/group_ranker/train_linear.py": "99fc6be83e04e7c6bf17e946c1c1a2d8a2f68b732e1f6856b82b2a5a071649c3",
+    "solution/group_ranker/train_mlp.py": "1b4fdc0755b082517042aa239887b56d27f2e11f47fa6ad47d0bf30c31f22962",
+    "solution/group_ranker/training.py": "0792f9a0f0229731be469a6fcaeb8aebca5f0591515b7ebfab55d185ed1c359c",
+    "solution/linear_text/__init__.py": "750c106bb302b36aa700b1669983cc161e86f56167ea0a536ecc47e9fbde9c5a",
+    "solution/linear_text/submission.py": "e1e315b7f1f603ff7732d1c880362bd228c4e61ba4f09b6dda56aa4a2ce0af40",
+    "solution/linear_text/test_linear_text.py": "0a6c277ea944887041bc4a1e4186b415f8d542d78e46d040697c683ee1960baa",
+    "solution/linear_text/train.py": "aaeeb02f5a5524c1a65b175258998c065217afeaa9d0e916bb2b7c1c5e8aff2d"
+  },
+  "data_manifest_sha256": "8b3721d458e48c87eab3a28f660e663981b10617b6e7321123c6ff30b1fbe825",
+  "selection": {
+    "method": "ensemble",
+    "checkpoint": "/home/rvector/DASE7506-MP2/code/solution/runs/ensemble_v1/checkpoint",
+    "rule": "完整 validation 准确率；同分优先更少启用维度、更少资产、更短完整耗时、固定名称",
+    "scope": "仅 train OOF/validation 的开发比较；本轮未读取 test 参考或重跑 test，既有 test 已接触"
+  }
+}

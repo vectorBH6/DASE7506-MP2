@@ -1,0 +1,37 @@
+{
+  "created_utc": "2026-10-21T04:11:42.025315+00:00",
+  "training_split": "train",
+  "base_mlp": "solution/runs/mlp_text_v1/checkpoint/config.json",
+  "base_linear": "solution/runs/linear_v1/checkpoint",
+  "hidden": [
+    [
+      128,
+      32
+    ],
+    [
+      256,
+      64
+    ]
+  ],
+  "fixed": {
+    "seed": 7506,
+    "fold_seed": 7506,
+    "folds": 5,
+    "learning_rate": 0.001,
+    "weight_decay": 0.01,
+    "dropout": 0.1,
+    "batch_questions": 64,
+    "patience": 15,
+    "max_epochs": 150,
+    "ensemble_weights": [
+      0.5,
+      0.5
+    ],
+    "temperature": 1.0
+  },
+  "selection_rule": "完整 validation 准确率；同分依次比较启用维数、未压缩资产、完整本机耗时、固定名称。比较四个新方法与旧 validation 选型；test 不参与。",
+  "test_policy": "四个新方法均在 test 前冻结；test 仅补充报告，不据 test 修改宽度、训练轮数、参数、种子、融合或选型。此前已有 test 已见，属于事后扩展，不称新的盲测。",
+  "new_seed_search": false,
+  "external_data": false,
+  "new_venv": false
+}

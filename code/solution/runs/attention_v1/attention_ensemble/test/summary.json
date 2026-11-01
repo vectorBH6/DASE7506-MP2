@@ -1,0 +1,264 @@
+{
+  "official": {
+    "protocol": "dase7506-mp2-open-hard-verifier-v5",
+    "split": "test",
+    "correct": 381,
+    "n": 467,
+    "accuracy": 81.5845824411135,
+    "scoring_seconds": 0.01280210600089049
+  },
+  "total_wall_seconds": 0.47839921999911894,
+  "processes": [
+    {
+      "command": [
+        "/home/rvector/DASE7506-MP2/code/solution/.venv/bin/python",
+        "predict.py",
+        "--method",
+        "solution/attention_ranker/submission.py",
+        "--checkpoint",
+        "solution/runs/attention_v1/attention_ensemble/checkpoint",
+        "--split",
+        "test",
+        "--output",
+        "solution/runs/attention_v1/attention_ensemble/test/predictions.json"
+      ],
+      "stdout": "{\"protocol\": \"dase7506-mp2-open-hard-verifier-v5\", \"split\": \"test\", \"prediction_seconds\": 0.3366093139993609}\n",
+      "stderr": "",
+      "thread_samples": 355,
+      "coordinator_peak_threads": 1,
+      "child_peak_threads": 3,
+      "total_peak_threads": 4
+    },
+    {
+      "command": [
+        "/home/rvector/DASE7506-MP2/code/solution/.venv/bin/python",
+        "score_predictions.py",
+        "--split",
+        "test",
+        "--predictions",
+        "solution/runs/attention_v1/attention_ensemble/test/predictions.json",
+        "--output",
+        "solution/runs/attention_v1/attention_ensemble/test/score.json"
+      ],
+      "stdout": "{\n  \"protocol\": \"dase7506-mp2-open-hard-verifier-v5\",\n  \"split\": \"test\",\n  \"correct\": 381,\n  \"n\": 467,\n  \"accuracy\": 81.5845824411135,\n  \"scoring_seconds\": 0.01280210600089049\n}\n",
+      "stderr": "",
+      "thread_samples": 70,
+      "coordinator_peak_threads": 1,
+      "child_peak_threads": 3,
+      "total_peak_threads": 4
+    }
+  ],
+  "inference_asset_bytes": 723686,
+  "checkpoint": "solution/runs/attention_v1/attention_ensemble/checkpoint",
+  "measurement": "新预测进程和独立评分进程的外部计时；含启动、导入、哈希、加载、预处理、全部成员、输出与预测冻结；缓存未控制。",
+  "freeze_id": "4f83521790ebd5c873f652523f36524dc890462bab6b33bea2b106c50b4b97d8",
+  "freeze_manifest_sha256": "5af10b8f2eaacb77b5101d7a450d6af8e67e3362b2947b9b1e653d6bd78bb6d6",
+  "analysis": {
+    "conflict": {
+      "correct": 381,
+      "n": 467,
+      "accuracy": 81.5845824411135
+    },
+    "by_group_count": {
+      "2": {
+        "correct": 268,
+        "n": 303,
+        "accuracy": 88.44884488448845
+      },
+      "3": {
+        "correct": 91,
+        "n": 126,
+        "accuracy": 72.22222222222221
+      },
+      "4": {
+        "correct": 22,
+        "n": 38,
+        "accuracy": 57.89473684210527
+      }
+    },
+    "confidence": {
+      "nll": 0.4533696358636797,
+      "conflict_nll": 0.4533696358636797,
+      "conflict_mean_max_probability": 0.8048587106760352,
+      "conflict_mean_probability_margin": 0.6439464042641221,
+      "conflict_mean_score_margin": 2.326727813868447,
+      "calibration": {
+        "overall": {
+          "n": 467,
+          "nll": 0.4533696358636797,
+          "brier": 0.2646787048259074,
+          "ece_10_bins": 0.030263767614928848
+        },
+        "conflict": {
+          "n": 467,
+          "nll": 0.4533696358636797,
+          "brier": 0.2646787048259074,
+          "ece_10_bins": 0.030263767614928848
+        },
+        "by_group_count": {
+          "2": {
+            "n": 303,
+            "nll": 0.2959022824778675,
+            "brier": 0.18126589579265054,
+            "ece_10_bins": 0.022092588012610975
+          },
+          "3": {
+            "n": 126,
+            "nll": 0.6455654697660145,
+            "brier": 0.3731484390220369,
+            "ece_10_bins": 0.08447328556622527
+          },
+          "4": {
+            "n": 38,
+            "nll": 1.0716836622901769,
+            "brier": 0.5701233003091849,
+            "ece_10_bins": 0.08200677841894632
+          }
+        },
+        "definitions": "NLL 为逐题交叉熵；Brier 为组概率与 one-hot 的平方差之和；ECE 为最高组概率的十个等宽桶加权绝对偏差，非校准保证"
+      },
+      "conflict_confidence_bins": [
+        {
+          "low_inclusive": 0,
+          "high": 0.5,
+          "correct": 17,
+          "n": 39,
+          "accuracy": 43.58974358974359,
+          "mean_confidence": 0.4465595047137171
+        },
+        {
+          "low_inclusive": 0.5,
+          "high": 0.7,
+          "correct": 54,
+          "n": 91,
+          "accuracy": 59.34065934065934,
+          "mean_confidence": 0.600796250215838
+        },
+        {
+          "low_inclusive": 0.7,
+          "high": 0.85,
+          "correct": 75,
+          "n": 92,
+          "accuracy": 81.52173913043478,
+          "mean_confidence": 0.7727539505193348
+        },
+        {
+          "low_inclusive": 0.85,
+          "high": 0.95,
+          "correct": 93,
+          "n": 100,
+          "accuracy": 93.0,
+          "mean_confidence": 0.9037238267875607
+        },
+        {
+          "low_inclusive": 0.95,
+          "high": 1.0,
+          "correct": 142,
+          "n": 145,
+          "accuracy": 97.93103448275862,
+          "mean_confidence": 0.9814827055565335
+        }
+      ]
+    },
+    "profile_replay": {
+      "feature_seconds": 0.22855205598534667,
+      "forward_seconds": 0.04767916700075148
+    },
+    "comparisons": {
+      "gated": {
+        "corrected": 20,
+        "regressed": 13,
+        "net_correct": 7,
+        "difference_pp": 1.4989293361884368,
+        "difference_95ci_pp": [
+          -0.8565310492505354,
+          3.854389721627409
+        ],
+        "bootstrap_seed": 7506,
+        "bootstrap_draws": 2000,
+        "multiple_comparison_adjustment": false
+      },
+      "attention": {
+        "corrected": 18,
+        "regressed": 9,
+        "net_correct": 9,
+        "difference_pp": 1.9271948608137044,
+        "difference_95ci_pp": [
+          -0.21413276231263384,
+          4.068522483940043
+        ],
+        "bootstrap_seed": 7506,
+        "bootstrap_draws": 2000,
+        "multiple_comparison_adjustment": false
+      },
+      "gated_ensemble": {
+        "corrected": 10,
+        "regressed": 8,
+        "net_correct": 2,
+        "difference_pp": 0.4282655246252677,
+        "difference_95ci_pp": [
+          -1.284796573875803,
+          2.141327623126338
+        ],
+        "bootstrap_seed": 7506,
+        "bootstrap_draws": 2000,
+        "multiple_comparison_adjustment": false
+      },
+      "m1_original": {
+        "corrected": 18,
+        "regressed": 9,
+        "net_correct": 9,
+        "difference_pp": 1.9271948608137044,
+        "difference_95ci_pp": [
+          -0.21413276231263384,
+          4.282655246252676
+        ],
+        "bootstrap_seed": 7506,
+        "bootstrap_draws": 2000,
+        "multiple_comparison_adjustment": false
+      },
+      "ensemble_original": {
+        "corrected": 10,
+        "regressed": 6,
+        "net_correct": 4,
+        "difference_pp": 0.8565310492505354,
+        "difference_95ci_pp": [
+          -0.8565310492505354,
+          2.569593147751606
+        ],
+        "bootstrap_seed": 7506,
+        "bootstrap_draws": 2000,
+        "multiple_comparison_adjustment": false
+      },
+      "linear": {
+        "corrected": 19,
+        "regressed": 13,
+        "net_correct": 6,
+        "difference_pp": 1.284796573875803,
+        "difference_95ci_pp": [
+          -1.070663811563169,
+          3.640256959314775
+        ],
+        "bootstrap_seed": 7506,
+        "bootstrap_draws": 2000,
+        "multiple_comparison_adjustment": false
+      }
+    }
+  },
+  "train_oof": {
+    "correct": 1704,
+    "n": 2114,
+    "accuracy": 80.60548722800378,
+    "nll": 0.46886257691747646
+  },
+  "frozen_files_unchanged": true,
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "1.26.4",
+    "cpu": "Intel(R) Core(TM) Ultra 9 275HX",
+    "thread_budget_total": 4,
+    "coordinator_threads": 1,
+    "child_threads": 3
+  },
+  "scope": "此前已有 test 已见。本轮各模型在 test 前冻结，预测文件评分前锁定；test 仅最终评分和描述，不据 test 调参、换种子、增加规则、修改融合或重选模型。属于事后扩展，不称新盲测。"
+}

@@ -1,0 +1,333 @@
+{
+  "created_utc": "2026-10-21T04:15:13.477878+00:00",
+  "plan": {
+    "created_utc": "2026-10-21T04:11:42.025315+00:00",
+    "training_split": "train",
+    "base_mlp": "solution/runs/mlp_text_v1/checkpoint/config.json",
+    "base_linear": "solution/runs/linear_v1/checkpoint",
+    "hidden": [
+      [
+        128,
+        32
+      ],
+      [
+        256,
+        64
+      ]
+    ],
+    "fixed": {
+      "seed": 7506,
+      "fold_seed": 7506,
+      "folds": 5,
+      "learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "dropout": 0.1,
+      "batch_questions": 64,
+      "patience": 15,
+      "max_epochs": 150,
+      "ensemble_weights": [
+        0.5,
+        0.5
+      ],
+      "temperature": 1.0
+    },
+    "selection_rule": "完整 validation 准确率；同分依次比较启用维数、未压缩资产、完整本机耗时、固定名称。比较四个新方法与旧 validation 选型；test 不参与。",
+    "test_policy": "四个新方法均在 test 前冻结；test 仅补充报告，不据 test 修改宽度、训练轮数、参数、种子、融合或选型。此前已有 test 已见，属于事后扩展，不称新的盲测。",
+    "new_seed_search": false,
+    "external_data": false,
+    "new_venv": false
+  },
+  "validation_selection": {
+    "created_utc": "2026-10-21T04:15:10.526253+00:00",
+    "selected": "ensemble_v1",
+    "rule": "完整 validation 准确率；同分依次比较启用维数、未压缩资产、完整本机耗时、固定名称。比较四个新方法与旧 validation 选型；test 不参与。",
+    "candidates": {
+      "m1_128": {
+        "official": {
+          "protocol": "dase7506-mp2-open-hard-verifier-v5",
+          "split": "validation",
+          "correct": 735,
+          "n": 798,
+          "accuracy": 92.10526315789474,
+          "scoring_seconds": 0.02032937300100457
+        },
+        "enabled_input_dimensions": 2080,
+        "inference_asset_bytes": 1108256,
+        "total_wall_seconds": 0.40707587399992917
+      },
+      "ensemble_128": {
+        "official": {
+          "protocol": "dase7506-mp2-open-hard-verifier-v5",
+          "split": "validation",
+          "correct": 740,
+          "n": 798,
+          "accuracy": 92.73182957393483,
+          "scoring_seconds": 0.02046311300000525
+        },
+        "enabled_input_dimensions": 2080,
+        "inference_asset_bytes": 1137958,
+        "total_wall_seconds": 0.41817469299894583
+      },
+      "m1_256": {
+        "official": {
+          "protocol": "dase7506-mp2-open-hard-verifier-v5",
+          "split": "validation",
+          "correct": 733,
+          "n": 798,
+          "accuracy": 91.8546365914787,
+          "scoring_seconds": 0.020868979998340365
+        },
+        "enabled_input_dimensions": 2080,
+        "inference_asset_bytes": 2227232,
+        "total_wall_seconds": 0.41168179099986446
+      },
+      "ensemble_256": {
+        "official": {
+          "protocol": "dase7506-mp2-open-hard-verifier-v5",
+          "split": "validation",
+          "correct": 740,
+          "n": 798,
+          "accuracy": 92.73182957393483,
+          "scoring_seconds": 0.02049020900085452
+        },
+        "enabled_input_dimensions": 2080,
+        "inference_asset_bytes": 2256934,
+        "total_wall_seconds": 0.4214404630001809
+      },
+      "ensemble_v1": {
+        "official": {
+          "protocol": "dase7506-mp2-open-hard-verifier-v5",
+          "split": "validation",
+          "correct": 740,
+          "n": 798,
+          "accuracy": 92.73182957393483,
+          "scoring_seconds": 0.021322050000890158
+        },
+        "enabled_input_dimensions": 2080,
+        "inference_asset_bytes": 590639,
+        "total_wall_seconds": 0.38915357099904213
+      }
+    },
+    "all_new_test_scores_not_yet_run": true,
+    "scope": "按 validation 锁定本轮选择；历史 test 已见，不称新盲测。"
+  },
+  "test_used_for_selection": false,
+  "fit_count": 12,
+  "training_seconds": 23.183309009000368,
+  "historical_artifact_count": 329,
+  "historical_artifacts_unchanged": true,
+  "methods": {
+    "m1_128": {
+      "validation": {
+        "official": {
+          "protocol": "dase7506-mp2-open-hard-verifier-v5",
+          "split": "validation",
+          "correct": 735,
+          "n": 798,
+          "accuracy": 92.10526315789474,
+          "scoring_seconds": 0.02032937300100457
+        },
+        "enabled_input_dimensions": 2080,
+        "inference_asset_bytes": 1108256,
+        "total_wall_seconds": 0.40707587399992917
+      },
+      "test": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "test",
+        "correct": 364,
+        "n": 467,
+        "accuracy": 77.94432548179871,
+        "scoring_seconds": 0.013071913999738172
+      },
+      "test_seconds": 0.43391668500044034,
+      "inference_asset_bytes": 1108256,
+      "vs_original_member": {
+        "corrected": 9,
+        "regressed": 17,
+        "net_correct": -8,
+        "difference_pp": -1.7130620985010707,
+        "paired_bootstrap_95ci_pp": [
+          -4.068522483940043,
+          0.4282655246252677
+        ],
+        "bootstrap_draws": 2000,
+        "bootstrap_seed": 7506,
+        "multiple_comparison_adjustment": false,
+        "official": {
+          "protocol": "dase7506-mp2-open-hard-verifier-v5",
+          "split": "test",
+          "correct": 372,
+          "n": 467,
+          "accuracy": 79.65738758029978,
+          "scoring_seconds": 0.013542243003030308
+        },
+        "predictions_sha256": "3ad7d2a98157242c507c8aaedb6878abcb48cc1f10b2043ec7101064f24633a8"
+      },
+      "eligibility": {
+        "local_under_30_seconds": true,
+        "observed_total_threads_at_most_4": true,
+        "assets_within_16_mib": true,
+        "reference_cpu_verified": false
+      }
+    },
+    "ensemble_128": {
+      "validation": {
+        "official": {
+          "protocol": "dase7506-mp2-open-hard-verifier-v5",
+          "split": "validation",
+          "correct": 740,
+          "n": 798,
+          "accuracy": 92.73182957393483,
+          "scoring_seconds": 0.02046311300000525
+        },
+        "enabled_input_dimensions": 2080,
+        "inference_asset_bytes": 1137958,
+        "total_wall_seconds": 0.41817469299894583
+      },
+      "test": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "test",
+        "correct": 374,
+        "n": 467,
+        "accuracy": 80.08565310492506,
+        "scoring_seconds": 0.013469351000821916
+      },
+      "test_seconds": 0.4426452879997669,
+      "inference_asset_bytes": 1137958,
+      "vs_original_member": {
+        "corrected": 5,
+        "regressed": 8,
+        "net_correct": -3,
+        "difference_pp": -0.6423982869379015,
+        "paired_bootstrap_95ci_pp": [
+          -2.141327623126338,
+          0.8565310492505354
+        ],
+        "bootstrap_draws": 2000,
+        "bootstrap_seed": 7506,
+        "multiple_comparison_adjustment": false,
+        "official": {
+          "protocol": "dase7506-mp2-open-hard-verifier-v5",
+          "split": "test",
+          "correct": 377,
+          "n": 467,
+          "accuracy": 80.72805139186295,
+          "scoring_seconds": 0.013436297005682718
+        },
+        "predictions_sha256": "85b379930b9ac05ec9d04152bb4a4219d713633e1d6521b8beb23f8b8ef74727"
+      },
+      "eligibility": {
+        "local_under_30_seconds": true,
+        "observed_total_threads_at_most_4": true,
+        "assets_within_16_mib": true,
+        "reference_cpu_verified": false
+      }
+    },
+    "m1_256": {
+      "validation": {
+        "official": {
+          "protocol": "dase7506-mp2-open-hard-verifier-v5",
+          "split": "validation",
+          "correct": 733,
+          "n": 798,
+          "accuracy": 91.8546365914787,
+          "scoring_seconds": 0.020868979998340365
+        },
+        "enabled_input_dimensions": 2080,
+        "inference_asset_bytes": 2227232,
+        "total_wall_seconds": 0.41168179099986446
+      },
+      "test": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "test",
+        "correct": 370,
+        "n": 467,
+        "accuracy": 79.22912205567452,
+        "scoring_seconds": 0.013165566999305156
+      },
+      "test_seconds": 0.4355762169998343,
+      "inference_asset_bytes": 2227232,
+      "vs_original_member": {
+        "corrected": 13,
+        "regressed": 15,
+        "net_correct": -2,
+        "difference_pp": -0.4282655246252677,
+        "paired_bootstrap_95ci_pp": [
+          -2.569593147751606,
+          1.7130620985010707
+        ],
+        "bootstrap_draws": 2000,
+        "bootstrap_seed": 7506,
+        "multiple_comparison_adjustment": false,
+        "official": {
+          "protocol": "dase7506-mp2-open-hard-verifier-v5",
+          "split": "test",
+          "correct": 372,
+          "n": 467,
+          "accuracy": 79.65738758029978,
+          "scoring_seconds": 0.013542243003030308
+        },
+        "predictions_sha256": "3ad7d2a98157242c507c8aaedb6878abcb48cc1f10b2043ec7101064f24633a8"
+      },
+      "eligibility": {
+        "local_under_30_seconds": true,
+        "observed_total_threads_at_most_4": true,
+        "assets_within_16_mib": true,
+        "reference_cpu_verified": false
+      }
+    },
+    "ensemble_256": {
+      "validation": {
+        "official": {
+          "protocol": "dase7506-mp2-open-hard-verifier-v5",
+          "split": "validation",
+          "correct": 740,
+          "n": 798,
+          "accuracy": 92.73182957393483,
+          "scoring_seconds": 0.02049020900085452
+        },
+        "enabled_input_dimensions": 2080,
+        "inference_asset_bytes": 2256934,
+        "total_wall_seconds": 0.4214404630001809
+      },
+      "test": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "test",
+        "correct": 375,
+        "n": 467,
+        "accuracy": 80.29978586723769,
+        "scoring_seconds": 0.012737547000142513
+      },
+      "test_seconds": 0.44787089500096045,
+      "inference_asset_bytes": 2256934,
+      "vs_original_member": {
+        "corrected": 8,
+        "regressed": 10,
+        "net_correct": -2,
+        "difference_pp": -0.4282655246252677,
+        "paired_bootstrap_95ci_pp": [
+          -2.141327623126338,
+          1.284796573875803
+        ],
+        "bootstrap_draws": 2000,
+        "bootstrap_seed": 7506,
+        "multiple_comparison_adjustment": false,
+        "official": {
+          "protocol": "dase7506-mp2-open-hard-verifier-v5",
+          "split": "test",
+          "correct": 377,
+          "n": 467,
+          "accuracy": 80.72805139186295,
+          "scoring_seconds": 0.013436297005682718
+        },
+        "predictions_sha256": "85b379930b9ac05ec9d04152bb4a4219d713633e1d6521b8beb23f8b8ef74727"
+      },
+      "eligibility": {
+        "local_under_30_seconds": true,
+        "observed_total_threads_at_most_4": true,
+        "assets_within_16_mib": true,
+        "reference_cpu_verified": false
+      }
+    }
+  }
+}

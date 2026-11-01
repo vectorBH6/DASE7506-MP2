@@ -1,0 +1,19 @@
+{
+  "fit_count": 0,
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "temperature": 1.0,
+  "inference_asset_bytes": 723682,
+  "oof": {
+    "correct": 1702,
+    "n": 2114,
+    "accuracy": 80.51087984862819,
+    "nll": 0.4747694279029423
+  },
+  "component_paths": {
+    "linear": "/home/rvector/DASE7506-MP2/code/solution/runs/linear_v1/checkpoint",
+    "ranker": "/home/rvector/DASE7506-MP2/code/solution/runs/attention_v1/gated/checkpoint"
+  }
+}

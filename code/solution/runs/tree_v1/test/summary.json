@@ -1,0 +1,365 @@
+{
+  "freeze_id": "f92188e14813b23dd58a3fe8def135ac57f1b61ad02f7c4f6342cb0ff9cb25ee",
+  "freeze_manifest_sha256": "9df203d8a4cc132852b495c0de5e22b5267ba39bde66c18779263bec7f7269ea",
+  "started_utc": "2026-10-19T12:55:51.873064+00:00",
+  "finished_utc": "2026-10-19T12:55:52.307520+00:00",
+  "split": "test",
+  "method": "solution/tree_ranker/submission.py",
+  "official": {
+    "protocol": "dase7506-mp2-open-hard-verifier-v5",
+    "split": "test",
+    "correct": 352,
+    "n": 467,
+    "accuracy": 75.37473233404711,
+    "scoring_seconds": 0.013407976002781652
+  },
+  "total_wall_seconds": 0.43209414300508797,
+  "processes": [
+    {
+      "command": [
+        "/home/rvector/DASE7506-MP2/code/solution/.venv/bin/python",
+        "predict.py",
+        "--method",
+        "solution/tree_ranker/submission.py",
+        "--checkpoint",
+        "solution/runs/tree_v1/checkpoint",
+        "--split",
+        "test",
+        "--output",
+        "solution/runs/tree_v1/test/predictions.json"
+      ],
+      "stdout": "{\"protocol\": \"dase7506-mp2-open-hard-verifier-v5\", \"split\": \"test\", \"prediction_seconds\": 0.2874723549975897}\n",
+      "stderr": "",
+      "thread_samples": 301,
+      "coordinator_peak_threads": 1,
+      "child_peak_threads": 3,
+      "total_peak_threads": 4,
+      "wall_seconds": 0.35522273399692494,
+      "cpu_user_seconds": 0.370589,
+      "cpu_system_seconds": 0.15825099999999998
+    },
+    {
+      "command": [
+        "/home/rvector/DASE7506-MP2/code/solution/.venv/bin/python",
+        "score_predictions.py",
+        "--split",
+        "test",
+        "--predictions",
+        "solution/runs/tree_v1/test/predictions.json",
+        "--output",
+        "solution/runs/tree_v1/test/score.json"
+      ],
+      "stdout": "{\n  \"protocol\": \"dase7506-mp2-open-hard-verifier-v5\",\n  \"split\": \"test\",\n  \"correct\": 352,\n  \"n\": 467,\n  \"accuracy\": 75.37473233404711,\n  \"scoring_seconds\": 0.013407976002781652\n}\n",
+      "stderr": "",
+      "thread_samples": 64,
+      "coordinator_peak_threads": 1,
+      "child_peak_threads": 3,
+      "total_peak_threads": 4,
+      "wall_seconds": 0.07670412400329951,
+      "cpu_user_seconds": 0.08518499999999996,
+      "cpu_system_seconds": 0.10222200000000001
+    }
+  ],
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "1.26.4",
+    "cpu": "Intel(R) Core(TM) Ultra 9 275HX",
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.39",
+    "python_executable": "/home/rvector/DASE7506-MP2/code/solution/.venv/bin/python",
+    "pythonpath_removed": true,
+    "thread_budget_total": 4,
+    "coordinator_threads": 1,
+    "child_threads": 3,
+    "child_thread_environment": {
+      "OMP_NUM_THREADS": "3",
+      "OPENBLAS_NUM_THREADS": "3",
+      "MKL_NUM_THREADS": "3",
+      "BLIS_NUM_THREADS": "3"
+    }
+  },
+  "measurement": "两个顺序新进程的外部计时，包含启动、导入、资产/数据哈希校验、载入、特征、标准化、NumPy 树前向、写文件、预测冻结记录及独立评分；缓存未控制。",
+  "inference_asset_bytes": 117722,
+  "frozen_files_unchanged": true,
+  "scope": "既有方法 test 成绩已知，本轮为固定浅树的事后冻结官方评分，不称新的盲测；不得用 test 调树数、深度、特征、损失、种子、融合或选型，不构建答案查表。",
+  "eligibility": {
+    "local_under_30_seconds": true,
+    "observed_total_threads_at_most_4": true,
+    "assets_within_16_mib": true,
+    "reference_cpu_verified": false
+  },
+  "artifact_sha256": {
+    "predictions.json": "dcffad2f24bc77fc6585f890a891e5b21efaf21b62156d0ae470a4fc4d7b96d8",
+    "score.json": "884a2a178daaa08201416971bd0233becd73246848a451b16244349b653152aa",
+    "prediction_freeze.json": "4946462243610ec7cc9e39a891e3ab8c3f985a4d850c47f3a04210a8eaa77b23"
+  },
+  "complete_test_bank": true,
+  "analysis": {
+    "purpose": "冻结后的描述性评分与比较，不用于 test 训练、调参、选型或构建规则；既有 test 已接触，不是新盲测",
+    "complete_test_bank": true,
+    "correct": 352,
+    "wrong": 115,
+    "by_group_count": {
+      "2": {
+        "correct": 249,
+        "n": 303,
+        "accuracy": 82.17821782178217
+      },
+      "3": {
+        "correct": 85,
+        "n": 126,
+        "accuracy": 67.46031746031747
+      },
+      "4": {
+        "correct": 18,
+        "n": 38,
+        "accuracy": 47.368421052631575
+      }
+    },
+    "by_vote_pattern": {
+      "1+1": {
+        "correct": 13,
+        "n": 18,
+        "accuracy": 72.22222222222221
+      },
+      "1+1+1": {
+        "correct": 18,
+        "n": 24,
+        "accuracy": 75.0
+      },
+      "1+1+1+1": {
+        "correct": 18,
+        "n": 38,
+        "accuracy": 47.368421052631575
+      },
+      "2+1": {
+        "correct": 41,
+        "n": 50,
+        "accuracy": 82.0
+      },
+      "2+1+1": {
+        "correct": 67,
+        "n": 102,
+        "accuracy": 65.68627450980392
+      },
+      "2+2": {
+        "correct": 24,
+        "n": 39,
+        "accuracy": 61.53846153846154
+      },
+      "3+1": {
+        "correct": 171,
+        "n": 196,
+        "accuracy": 87.24489795918367
+      }
+    },
+    "vs_linear": {
+      "historical_official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "test",
+        "correct": 375,
+        "n": 467,
+        "accuracy": 80.29978586723769,
+        "scoring_seconds": 0.012926933999551693
+      },
+      "corrected": 27,
+      "regressed": 50,
+      "net_correct": -23,
+      "difference_pp": -4.925053533190578,
+      "paired_bootstrap_95ci_pp": [
+        -8.565310492505352,
+        -1.4989293361884368
+      ],
+      "bootstrap_seed": 7506,
+      "bootstrap_draws": 2000,
+      "historical_predictions_sha256": "77f21128d008467eb739bc7597e02c68c5dbc21eeeb9868b69b53e2304e44a7f"
+    },
+    "vs_m1": {
+      "historical_official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "test",
+        "correct": 372,
+        "n": 467,
+        "accuracy": 79.65738758029978,
+        "scoring_seconds": 0.013542243003030308
+      },
+      "corrected": 18,
+      "regressed": 38,
+      "net_correct": -20,
+      "difference_pp": -4.282655246252676,
+      "paired_bootstrap_95ci_pp": [
+        -7.285867237687365,
+        -1.284796573875803
+      ],
+      "bootstrap_seed": 7506,
+      "bootstrap_draws": 2000,
+      "historical_predictions_sha256": "3ad7d2a98157242c507c8aaedb6878abcb48cc1f10b2043ec7101064f24633a8"
+    },
+    "vs_ensemble": {
+      "historical_official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "test",
+        "correct": 377,
+        "n": 467,
+        "accuracy": 80.72805139186295,
+        "scoring_seconds": 0.013436297005682718
+      },
+      "corrected": 19,
+      "regressed": 44,
+      "net_correct": -25,
+      "difference_pp": -5.353319057815846,
+      "paired_bootstrap_95ci_pp": [
+        -8.565310492505352,
+        -2.141327623126338
+      ],
+      "bootstrap_seed": 7506,
+      "bootstrap_draws": 2000,
+      "historical_predictions_sha256": "85b379930b9ac05ec9d04152bb4a4219d713633e1d6521b8beb23f8b8ef74727"
+    },
+    "vs_linear_text": {
+      "historical_official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "test",
+        "correct": 378,
+        "n": 467,
+        "accuracy": 80.94218415417559,
+        "scoring_seconds": 0.013096173999656457
+      },
+      "corrected": 24,
+      "regressed": 50,
+      "net_correct": -26,
+      "difference_pp": -5.567451820128479,
+      "paired_bootstrap_95ci_pp": [
+        -8.993576017130621,
+        -2.1359743040685513
+      ],
+      "bootstrap_seed": 7506,
+      "bootstrap_draws": 2000,
+      "historical_predictions_sha256": "1dc08132d73f57c61757da767de82f00ee9a0c5d8af3bf130ed4ed90e78b8b94"
+    },
+    "vs_calibrated": {
+      "historical_official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "test",
+        "correct": 378,
+        "n": 467,
+        "accuracy": 80.94218415417559,
+        "scoring_seconds": 0.013057697004114743
+      },
+      "corrected": 18,
+      "regressed": 44,
+      "net_correct": -26,
+      "difference_pp": -5.567451820128479,
+      "paired_bootstrap_95ci_pp": [
+        -8.779443254817988,
+        -2.569593147751606
+      ],
+      "bootstrap_seed": 7506,
+      "bootstrap_draws": 2000,
+      "historical_predictions_sha256": "80f2e3fbd0d6e4464a76299610762a4150c80ce3f9e9e0d29c90f96824d89d13"
+    },
+    "probability_metrics": {
+      "scope": "官方评分之后的单独无训练重放，计时不计入正式预测加评分记录；softmax 未校准",
+      "tree": {
+        "nll": 0.579725715273382,
+        "conflict_nll": 0.579725715273382,
+        "conflict_mean_max_probability": 0.6963741076983674,
+        "conflict_mean_probability_margin": 0.46731871741625963,
+        "conflict_mean_score_margin": 1.181779275902596,
+        "calibration": {
+          "overall": {
+            "n": 467,
+            "nll": 0.579725715273382,
+            "brier": 0.34218754663071227,
+            "ece_10_bins": 0.07710831605719438
+          },
+          "conflict": {
+            "n": 467,
+            "nll": 0.579725715273382,
+            "brier": 0.34218754663071227,
+            "ece_10_bins": 0.07710831605719438
+          },
+          "by_group_count": {
+            "2": {
+              "n": 303,
+              "nll": 0.3986346410312387,
+              "brier": 0.24417045749639446,
+              "ece_10_bins": 0.07034959462012313
+            },
+            "3": {
+              "n": 126,
+              "nll": 0.8192706780607508,
+              "brier": 0.4790223113117177,
+              "ece_10_bins": 0.08813702293462261
+            },
+            "4": {
+              "n": 38,
+              "nll": 1.2294080885407765,
+              "brier": 0.6700295902594385,
+              "ece_10_bins": 0.13693247607358278
+            }
+          },
+          "definitions": "NLL 为逐题交叉熵；Brier 为组概率与 one-hot 的平方差之和；ECE 为最高组概率的十个等宽桶加权绝对偏差，非校准保证"
+        },
+        "conflict_confidence_bins": [
+          {
+            "low_inclusive": 0,
+            "high": 0.5,
+            "correct": 37,
+            "n": 71,
+            "accuracy": 52.112676056338024,
+            "mean_confidence": 0.37219247605069933
+          },
+          {
+            "low_inclusive": 0.5,
+            "high": 0.7,
+            "correct": 71,
+            "n": 122,
+            "accuracy": 58.19672131147541,
+            "mean_confidence": 0.6033576541415042
+          },
+          {
+            "low_inclusive": 0.7,
+            "high": 0.85,
+            "correct": 150,
+            "n": 177,
+            "accuracy": 84.7457627118644,
+            "mean_confidence": 0.7859862864089316
+          },
+          {
+            "low_inclusive": 0.85,
+            "high": 0.95,
+            "correct": 92,
+            "n": 95,
+            "accuracy": 96.84210526315789,
+            "mean_confidence": 0.885748178301814
+          },
+          {
+            "low_inclusive": 0.95,
+            "high": 1.0,
+            "correct": 2,
+            "n": 2,
+            "accuracy": 100.0,
+            "mean_confidence": 0.9528795286106044
+          }
+        ]
+      }
+    },
+    "validation": {
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "validation",
+        "correct": 718,
+        "n": 798,
+        "accuracy": 89.97493734335839,
+        "scoring_seconds": 0.021490391001862008
+      },
+      "pre_test_selection": {
+        "method": "ensemble",
+        "checkpoint": "/home/rvector/DASE7506-MP2/code/solution/runs/ensemble_v1/checkpoint",
+        "rule": "完整 validation 准确率；同分优先更少启用维度、更少资产、更短完整耗时、固定名称",
+        "scope": "树仅在 train 五折 OOF 选深度和轮数，全量 train 重训；validation 比较；既有 test 已接触，本轮不读取 test 参考或运行 test"
+      },
+      "selection_unchanged_by_test": true
+    }
+  }
+}

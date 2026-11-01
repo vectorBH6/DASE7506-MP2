@@ -1,0 +1,11 @@
+{
+  "sha256": {
+    "config.json": "69b56811ae068f934e3c45f14261b81954130f224af9ddc3db24c4c1cf470e34",
+    "ranker/config.json": "8bdf1979fc7b1f87716b642002510533cd68f700771b85f7f2dc799ced965cd7",
+    "ranker/asset_manifest.json": "a6d79b2c2d8aa9fbec728d3b86a94164fded45015a4923f49f732a10fa715e76",
+    "ranker/model.npz": "3d9fd47d43ff223356a41600b431af73013c939c11e84dd584baa3dd7f0d2be3",
+    "linear/config.json": "136063546d7e1ccfcc39a8b707691204e321fd8fd53a508d34225e3a862fb033",
+    "linear/asset_manifest.json": "d39394a7cec192916d89f9f69ee0dbc469012480cd639b45e43e8dbd35f9444b",
+    "linear/model.npz": "b8656b760268f74203f26a3a7204843bd3e4b77e735c1ed21e39cb843c1ea3e5"
+  }
+}
