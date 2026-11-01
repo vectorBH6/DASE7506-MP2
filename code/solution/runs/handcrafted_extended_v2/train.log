@@ -1,0 +1,13 @@
+lexical, L2=0.01: {'correct': 1752, 'n': 2114, 'accuracy': 82.87606433301798, 'nll': 0.42155730809231196}; converged=True
+lexical, L2=0.03: {'correct': 1761, 'n': 2114, 'accuracy': 83.30179754020814, 'nll': 0.4079942828451283}; converged=True
+lexical, L2=0.1: {'correct': 1743, 'n': 2114, 'accuracy': 82.45033112582782, 'nll': 0.4209931253638023}; converged=True
+trace, L2=0.01: {'correct': 1749, 'n': 2114, 'accuracy': 82.73415326395458, 'nll': 0.4433266248111026}; converged=True
+trace, L2=0.03: {'correct': 1746, 'n': 2114, 'accuracy': 82.5922421948912, 'nll': 0.42852962472036576}; converged=True
+trace, L2=0.1: {'correct': 1735, 'n': 2114, 'accuracy': 82.07190160832545, 'nll': 0.44097937384616936}; converged=True
+combined, L2=0.01: {'correct': 1763, 'n': 2114, 'accuracy': 83.39640491958373, 'nll': 0.42042750079287783}; converged=True
+combined, L2=0.03: {'correct': 1757, 'n': 2114, 'accuracy': 83.11258278145695, 'nll': 0.4056499835522955}; converged=True
+combined, L2=0.1: {'correct': 1749, 'n': 2114, 'accuracy': 82.73415326395458, 'nll': 0.417247263359667}; converged=True
+contextual, L2=0.01: {'correct': 1756, 'n': 2114, 'accuracy': 83.06527909176916, 'nll': 0.4225082076039663}; converged=True
+contextual, L2=0.03: {'correct': 1756, 'n': 2114, 'accuracy': 83.06527909176916, 'nll': 0.40378609020723144}; converged=True
+contextual, L2=0.1: {'correct': 1754, 'n': 2114, 'accuracy': 82.97067171239357, 'nll': 0.41193040612313464}; converged=True
+Training finished in 91.0s

@@ -1,0 +1,16 @@
+{
+  "created_utc": "2026-10-25T07:05:32.030010+00:00",
+  "pages": 8,
+  "all_pages_rendered_and_visually_reviewed": true,
+  "visual_review": "All eight 100-dpi PNG renders inspected; no clipping, overlap, broken headers or table cells.",
+  "page_numbers_and_identity_checked": true,
+  "numeric_record_checks_passed": true,
+  "bash_blocks_syntax_checked": 2,
+  "source_and_image_links_checked": true,
+  "frozen_code_and_weights_files_verified": 45,
+  "original_frozen_source_archive_verified": true,
+  "official_score_unchanged": true,
+  "test_references_used_for_report_analysis": false,
+  "report_sha256": "01051155fa20a6e14119674c28f4fb8b024747d2f31347f0fc630354d0dbd849",
+  "scope": "Reporting only; no retraining, hyperparameter search or new test selection."
+}

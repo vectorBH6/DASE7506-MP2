@@ -1,0 +1,33 @@
+{
+  "created_utc": "2026-10-25T06:34:54.434679+00:00",
+  "purpose": "User requested baseline and linear test accuracies for the README. These are fixed, existing implementations; no training, parameter search or reselection.",
+  "methods": {
+    "baseline": {
+      "method": "solution/baselines/submission.py",
+      "checkpoint": null
+    },
+    "voting": {
+      "method": "solution/baselines/submission_voling_only.py",
+      "checkpoint": null
+    },
+    "embedding": {
+      "method": "solution/baselines/submission_emb_only.py",
+      "checkpoint": null
+    },
+    "expanded_linear": {
+      "method": "solution/residual_ranker/submission.py",
+      "checkpoint": "solution/runs/residual_features_v1/expanded_linear/checkpoint"
+    }
+  },
+  "test_history_known": true,
+  "final_model_unchanged": "solution/runs/handcrafted_extended_v2/models/lexical/checkpoint",
+  "final_freeze_id": "f77196da60e07a6279161d7c6fed6455d30657eeb757d0c2a2d2aba1239a771a",
+  "policy": "Report every listed method. Do not use these scores to change the selected final model.",
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "1.26.4",
+    "cpu": "Intel(R) Core(TM) Ultra 9 275HX",
+    "child_thread_limit": 3,
+    "coordinator_thread_limit": 1
+  }
+}

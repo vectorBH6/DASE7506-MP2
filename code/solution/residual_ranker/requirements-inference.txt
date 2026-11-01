@@ -1,0 +1,3 @@
+# Verified inference environment for the frozen lexical checkpoint.
+# Run with Python 3.12; training dependencies remain in ../requirements-train.txt.
+numpy==1.26.4

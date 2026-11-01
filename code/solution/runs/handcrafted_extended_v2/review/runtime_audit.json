@@ -1,0 +1,29 @@
+{
+  "no_bank_or_reference_reopens": true,
+  "network_or_subprocess_attempts": [],
+  "only_checkpoint_assets_read": [
+    "asset_manifest.json",
+    "config.json",
+    "model.npz"
+  ],
+  "id_absence_and_renaming_invariant": true,
+  "row_order_invariant": true,
+  "bank_sizes_tested": {
+    "0": true,
+    "1": true,
+    "7": true,
+    "129": true
+  },
+  "novel_synthetic_question_accepted": true,
+  "scipy_imported": false,
+  "assets_bytes": 29766,
+  "array_bytes": 27456,
+  "npz_compression_types": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "numpy": "1.26.4",
+  "python": "3.12.3"
+}

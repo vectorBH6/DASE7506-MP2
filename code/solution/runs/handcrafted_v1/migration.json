@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-10-25T05:09:39.536688+00:00",
+  "reason": "Separate handcrafted ranker from basic group_ranker without changing features, weights or predictions.",
+  "new_package": "solution.handcrafted_ranker",
+  "basic_package": "solution.group_ranker",
+  "basic_modules_restored_to_commit": "0e5576e60cb028a5cc62e88199e3c24cb539e2ac",
+  "historical_freeze_id": "67ac6c3bf42cae444911b970ae747c6b4a672b74e543490d6315685bab855ebd",
+  "historical_artifacts_unchanged": true,
+  "historical_source_archive_hash_matches": true,
+  "historical_archive_file_hashes_checked": 22,
+  "selected_checkpoint_hashes_unchanged": true,
+  "arithmetic_module_bytes_unchanged": true,
+  "all_four_feature_sets_bitwise_equal_to_frozen_implementation": {
+    "validation": 798,
+    "test": 467
+  },
+  "handcrafted_validation_choices_equal_all_four_variants": true,
+  "selected_test_choices_equal": true,
+  "basic_validation_and_test_choices_equal": true,
+  "unit_tests_passed": 17,
+  "new_prediction_method": "solution/handcrafted_ranker/submission_linear.py",
+  "new_experiment_module": "solution.handcrafted_ranker.experiment",
+  "current_source_sha256": {
+    "solution/handcrafted_ranker/README.md": "21f0f216bb18db3b5a70185fa110d2316ff70c97a3c7098a693dbbe42114842d",
+    "solution/handcrafted_ranker/__init__.py": "a751ebceb9f57ddf96806b50bcaadb2fd48697a59256b75964c119ea4a8e3667",
+    "solution/handcrafted_ranker/arithmetic.py": "3cfbfb7b1de23ed68a89da905ccc82b2902923a1f3208e4b4f9791059395815a",
+    "solution/handcrafted_ranker/experiment.py": "0aac052fa05ec1b58ca18b30da160e73ca118a5399cc0705df13d4880bac35f8",
+    "solution/handcrafted_ranker/features.py": "fa0a1250f5244bd4bbba81f39042ed2b26d6d158bca0f9b744fa00fcd5b16be2",
+    "solution/handcrafted_ranker/submission_linear.py": "acf14120439c00b221ecb6e3045367380dddcae1b09d256347b9b9122a426ac9",
+    "solution/handcrafted_ranker/test_handcrafted.py": "3e37bc6ce36b1438ef4a1da51fa89dc46c5d296f17ed69d83794dad2d35541b3",
+    "solution/handcrafted_ranker/train_linear.py": "8d4fa33cd91ab39d988e45a8b722d96ead80c21e5a46fcf3172c0a45276c2214",
+    "solution/group_ranker/features.py": "276d2e0183fc68979fc716a354e1647cbf7ba2c6e586ddd8b9fb2fc8438717a2",
+    "solution/group_ranker/train_linear.py": "a4d60652c9563dbfc3ede31e80eb7d7b6c17450de499f0cff228a9ba46e087eb",
+    "solution/group_ranker/submission_linear.py": "798b6cc85e0385aed9a529c1cb2f4f72657fa5004f33d54107c4b43bc9fb6fa0"
+  }
+}

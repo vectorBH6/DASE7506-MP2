@@ -20,18 +20,16 @@
 code/
 ├── common.py、predict.py、score_predictions.py、data/ …  # 课程原始文件
 └── solution/                  # 作业实现，按功能组织
-    ├── baselines/             # 原基线、两项原消融、B1 平票与 B2 组中心性
-    ├── group_ranker/          # 共享特征/训练工具，线性、MLP、等权融合与检查
-    ├── linear_text/           # L1 薄训练/预测入口与检查，复用 group_ranker
-    ├── calibrated_ensemble/   # train OOF 温度拟合、薄预测入口与检查
-    ├── tree_ranker/           # 同 M1 特征的浅树排序，训练 CatBoost、推理 NumPy
-    ├── attention_ranker/      # 等参数门控/单层注意力、L0 融合及独立实验编排
+    ├── baselines/             # 原基线、纯投票、纯 embedding
+    ├── group_ranker/          # 基础答案组特征、线性训练与预测
+    ├── handcrafted_ranker/    # 手工算术特征扩展、训练、实验、测试与说明
+    ├── residual_ranker/       # 小型非线性残差头与条件手工特征扩展
     ├── evaluate.py            # 调用官方工具，统一验证与记录
     ├── requirements-train.txt
     └── runs/<实验名>/         # checkpoint/、训练记录、validation/、冻结后的 test/
 ```
 
-源码在 `solution/` 中复用和扩展；每轮产物集中到对应实验目录，已有记录不覆盖。`runs/` 中的权重、OOF、训练／评测记录与冻结源码随仓库提交；虚拟环境、缓存与报告临时文件继续忽略。历史 JSON 保留生成时的命令和路径。
+源码在 `solution/` 中复用和扩展；每轮产物集中到对应实验目录，已有记录不覆盖。新实验与虚拟环境默认由 Git 忽略；最终 `handcrafted_extended_v2`、原 `linear_v1` 及报告引用的历史对照记录作为复现快照随仓库提交。最终推理使用 `handcrafted_extended_v2/models/lexical/checkpoint`。历史 JSON 保留生成时的命令和路径。
 
 官方 `common.py` 负责数据与答案解析，`predict.py`、`score_predictions.py` 负责独立预测与评分；本目录只实现算法、训练和实验编排。
 
@@ -183,13 +181,7 @@ export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 BLIS_NUM_THREA
 solution/.venv/bin/python -m unittest solution.group_ranker.test_group_ranker solution.group_ranker.test_ensemble solution.linear_text.test_linear_text solution.calibrated_ensemble.test_calibration solution.tree_ranker.test_tree_ranker -v
 ```
 
-检查覆盖线性、MLP、特征消融与算术边界；历史纯 NumPy 检查只跳过需要 SciPy 的线性梯度检查，MLP 的 CE/pairwise 梯度差分仍执行。训练本身采用 NumPy，因此前向一致性采用独立的逐组标量计算核对批量前向。候选置换比较映射后的解析答案；“同组代表替换”只要求官方最终数值评分不变，不要求改写候选正文后特征不变。
-
-最终推理入口为 `solution/group_ranker/submission_ensemble.py`；线性、MLP 和探索性注意力入口各自保留，均实现 `predict(bank, arrays, checkpoint)`，为每题返回一个 0–3 的 Python 整数。作业允许自定义文件名，通过 `--method` 传入；官方 `submission.py` 保留原始占位接口。
-
-L1 的官方方法文件为 `solution/linear_text/submission.py`。其 checkpoint 显式要求文本 schema，基础线性入口会拒绝该权重，避免特征与模型错配。
-
-校准融合的官方方法文件为 `solution/calibrated_ensemble/submission.py`，与原融合共用特征、两个成员及前向；独立 schema 防止把校准 checkpoint 当作温度 1 使用。推理仅加载自包含 checkpoint，不读取 OOF 或参考答案。
+纯 NumPy 环境会跳过训练梯度检查。基础方案的推理入口是 `solution/group_ranker/submission_linear.py`，实现 `predict(bank, arrays, checkpoint)`，为每题返回一个 0–3 的 Python 整数。作业允许自定义文件名，通过 `--method` 传入；官方 `submission.py` 保留原始占位接口。
 
 直接使用官方工具时，预留 1 线程给外层编排，并顺序运行预测、评分：
 
@@ -520,4 +512,51 @@ done
 
 复现历史单模型时使用各自冻结源码：线性的方法为 `submission_linear.py`、checkpoint 为 `solution/runs/linear_v1/checkpoint`；M1 为 `submission_mlp.py`、`solution/runs/mlp_text_v1/checkpoint`。使用新的输出目录；历史 JSON 保留原始完整命令。源码持续演进，历史精确版本由各自 `source.tar` 和 SHA-256 清单标识。
 
-仓库一并维护 L0、M1、最终融合和其他实验的 checkpoint、训练／评测记录与冻结源码，`runs/` 不再整目录忽略。正式报告及 AI 辅助说明见 [report/](../../report/report.md)。正式提交应使用可公开访问的匹配仓库版本与权重链接，并完成参考机资格确认、保留数据许可。
+原始记录集中在 `runs/linear_v1/`，历史基线记录在本地 `runs/baselines/`。仓库包含 `linear_v1` 的匹配 checkpoint 和冻结记录；新实验产物继续默认忽略。正式提交还需确认代码版本与权重匹配，并完成参考机测时、至多 10 页报告及实际 AI 辅助与复用披露；保留数据许可。
+
+## 手工特征消融
+
+新增 8 维组特征及四配置实验见 [handcrafted_ranker/README.md](handcrafted_ranker/README.md)。`group_ranker/` 保留基础方案；扩展方案使用独立入口，并根据 checkpoint 配置选择手工特征。
+
+```bash
+python3 -m unittest solution.group_ranker.test_group_ranker solution.handcrafted_ranker.test_handcrafted -v
+python3 -m solution.handcrafted_ranker.experiment --output solution/runs/handcrafted_v2 --test
+```
+
+本轮记录：[handcrafted_v1/REPORT.md](runs/handcrafted_v1/REPORT.md)。已有实验目录不会覆盖；`--test` 在验证集选型后仅测试一个冻结方案。
+
+## 提交前优化结果
+
+三阶段有限搜索已完成，详见 [handcrafted_opt_v1/REPORT.md](runs/handcrafted_opt_v1/REPORT.md)：扩大 L2、分块正则化和两项交互特征均未超过原 6 维算术方案，因此按验证集/OOF 规则保留 math，L2=0.01、手工块倍率=1。
+
+该轮选定预测入口为 solution/handcrafted_ranker/submission_linear.py，checkpoint 为 solution/runs/handcrafted_v1/math/checkpoint。官方 test 再次复现 384/467，accuracy=82.22698072805139%；本轮完整预测加评分约 0.523 秒，推理资产 28,850 字节，参考 CPU 尚未验证。
+
+23 项测试通过；本轮 source.tar 包含新目录源码和选定权重，freeze.json 保留匹配哈希。新 runs 默认被 Git 忽略，最终交付需包含选定 checkpoint 和评测记录。原 linear_v1 仍可通过基础 group_ranker 入口复现。
+
+## 非线性残差与手工扩展
+
+新增独立目录 [residual_ranker/README.md](residual_ranker/README.md)。预设四组小型残差网络；若 validation 无增益，则自动运行 16 维手工指标扩展。按训练 OOF/validation 选一个模型，再冻结 test。
+
+    python3 -m solution.residual_ranker.experiment --output solution/runs/residual_v2 --test
+
+本轮记录：[residual_v1/REPORT.md](runs/residual_v1/REPORT.md)。旧模型和实验产物保持归档。
+
+## 上一轮选定结果：83.08351%
+
+最终复现说明见 [residual_ranker/RESULTS.md](residual_ranker/RESULTS.md)，详细对照见 [residual_features_v1/REPORT.md](runs/residual_features_v1/REPORT.md)。选定模型为 expanded_residual_r01，官方 test 388/467，accuracy=83.08351177730192%，比原 6 维方案多对 4 题。
+
+预测入口：solution/residual_ranker/submission.py；checkpoint：solution/runs/residual_features_v1/expanded_residual_r01/checkpoint。本机完整预测加评分约 0.800 秒，推理资产 31,188 字节；参考 CPU 尚未验证。27 项测试及实际模型预测重放、候选重排检查通过。
+
+首次残差模型未提高的结果仍保留在 residual_v1，后续独立手工特征对照及收紧的 OOF/收敛资格均有单独预设计划，没有改写历史记录。新 runs 受 Git 忽略，最终交付需包含选定 checkpoint 和匹配源码。
+
+## 当前选定结果：84.15418%
+
+本轮新增24个候选级信号，实验词法、算术追踪、组合及组内标准化/交互四种方案。最后选中较小的lexical：新增24列组特征，总维度2112，线性L2=0.03。选型依据仅为train OOF和validation，冻结后官方test为 **393/467，84.15417559%**，比上一版多对5题。
+
+Train OOF 1761/2114（83.30%），validation 751/798（94.11%，比上一版多17题）。完整80列扩展没有胜出。新增信号也包含答案数值形态先验，尚未逐项消融，不能将收益单独归因于语义匹配。
+
+预测入口：solution/residual_ranker/extended_submission.py；checkpoint：solution/runs/handcrafted_extended_v2/models/lexical/checkpoint。本机完整预测加评分1.166秒，推理资产29,766字节；参考CPU尚未验证。
+
+31项测试、真实预测重放、候选重排和批次一致性检查通过；45个冻结文件及源码包哈希通过。原group_ranker和此前模型源码/权重保持原样。新runs默认受Git忽略，提交需包含匹配checkpoint和代码。
+
+[当前复现说明](residual_ranker/RESULTS.md) · [新增特征定义](residual_ranker/EXTENDED.md) · [消融报告](runs/handcrafted_extended_v2/REPORT.md) · [官方评分](runs/handcrafted_extended_v2/test/score.json) · [源码与权重包](runs/handcrafted_extended_v2/source.tar)

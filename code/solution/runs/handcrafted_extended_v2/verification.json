@@ -1,0 +1,65 @@
+{
+  "inference_imports_scipy": false,
+  "splits": {
+    "validation": {
+      "questions": 798,
+      "replay_identical": true,
+      "permuted_selected_answers_identical": true,
+      "conflict_feature_matrices_bitwise_identical": 355,
+      "batching_identical": true,
+      "inputs_unmodified": true
+    },
+    "test": {
+      "questions": 467,
+      "replay_identical": true,
+      "permuted_selected_answers_identical": true,
+      "conflict_feature_matrices_bitwise_identical": 467,
+      "batching_identical": true,
+      "inputs_unmodified": true
+    }
+  },
+  "freeze": {
+    "files_verified": 45,
+    "source_archive_verified": true,
+    "freeze_id": "f77196da60e07a6279161d7c6fed6455d30657eeb757d0c2a2d2aba1239a771a"
+  },
+  "historical_freezes": {
+    "residual_features_v1": true,
+    "residual_v1": true
+  },
+  "largest_new_standardized_coefficients": [
+    {
+      "name": "max_answer_nonnegative_integer",
+      "weight": 0.3790079653263092
+    },
+    {
+      "name": "mean_answer_nonnegative_integer",
+      "weight": 0.3790079653263092
+    },
+    {
+      "name": "mean_novel_body_number_fraction",
+      "weight": 0.12840266525745392
+    },
+    {
+      "name": "max_novel_body_number_fraction",
+      "weight": 0.10584285110235214
+    },
+    {
+      "name": "mean_focus_lastline_recall",
+      "weight": -0.08570204675197601
+    },
+    {
+      "name": "max_log_nonempty_lines",
+      "weight": 0.07006385177373886
+    },
+    {
+      "name": "mean_log_raw_equals",
+      "weight": 0.06346520781517029
+    },
+    {
+      "name": "mean_log_answer_mentions",
+      "weight": -0.06207083538174629
+    }
+  ],
+  "inference_still_without_scipy": true
+}

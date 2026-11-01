@@ -1,0 +1,26 @@
+l2=0.0001, fold=0: {'fold': 0, 'correct': 325, 'n': 426, 'accuracy': 76.29107981220658, 'nll': 1.0593217517495201, 'converged': True, 'iterations': 203, 'objective': 0.033874284230973814, 'message': 'CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL'}
+l2=0.0001, fold=1: {'fold': 1, 'correct': 335, 'n': 425, 'accuracy': 78.82352941176471, 'nll': 1.0227927454810775, 'converged': True, 'iterations': 190, 'objective': 0.03415871489482185, 'message': 'CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL'}
+l2=0.0001, fold=2: {'fold': 2, 'correct': 330, 'n': 423, 'accuracy': 78.01418439716312, 'nll': 1.086572159647217, 'converged': True, 'iterations': 187, 'objective': 0.03374322929350444, 'message': 'CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL'}
+l2=0.0001, fold=3: {'fold': 3, 'correct': 333, 'n': 420, 'accuracy': 79.28571428571429, 'nll': 1.0044825157391988, 'converged': True, 'iterations': 200, 'objective': 0.03563579066348451, 'message': 'CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL'}
+l2=0.0001, fold=4: {'fold': 4, 'correct': 343, 'n': 420, 'accuracy': 81.66666666666667, 'nll': 0.965507305267467, 'converged': True, 'iterations': 199, 'objective': 0.035016385836153796, 'message': 'CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL'}
+l2=0.001, fold=0: {'fold': 0, 'correct': 333, 'n': 426, 'accuracy': 78.16901408450704, 'nll': 0.6823702242241331, 'converged': True, 'iterations': 143, 'objective': 0.12335654583491237, 'message': 'CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH'}
+l2=0.001, fold=1: {'fold': 1, 'correct': 340, 'n': 425, 'accuracy': 80.0, 'nll': 0.6437390436668697, 'converged': True, 'iterations': 141, 'objective': 0.12479844703290584, 'message': 'CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH'}
+l2=0.001, fold=2: {'fold': 2, 'correct': 336, 'n': 423, 'accuracy': 79.43262411347517, 'nll': 0.6858867771552205, 'converged': True, 'iterations': 138, 'objective': 0.1235368866265015, 'message': 'CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH'}
+l2=0.001, fold=3: {'fold': 3, 'correct': 340, 'n': 420, 'accuracy': 80.95238095238095, 'nll': 0.6156753492772252, 'converged': True, 'iterations': 148, 'objective': 0.12920500674208565, 'message': 'CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH'}
+l2=0.001, fold=4: {'fold': 4, 'correct': 347, 'n': 420, 'accuracy': 82.61904761904762, 'nll': 0.6115975943151816, 'converged': True, 'iterations': 144, 'objective': 0.12759584434669552, 'message': 'CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH'}
+l2=0.01, fold=0: {'fold': 0, 'correct': 338, 'n': 426, 'accuracy': 79.34272300469483, 'nll': 0.5031593454145509, 'converged': True, 'iterations': 69, 'objective': 0.2847759671190503, 'message': 'CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH'}
+l2=0.01, fold=1: {'fold': 1, 'correct': 350, 'n': 425, 'accuracy': 82.3529411764706, 'nll': 0.4489059326344156, 'converged': True, 'iterations': 66, 'objective': 0.2922089004071828, 'message': 'CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH'}
+l2=0.01, fold=2: {'fold': 2, 'correct': 345, 'n': 423, 'accuracy': 81.56028368794327, 'nll': 0.48099416867653083, 'converged': True, 'iterations': 72, 'objective': 0.2887822385144155, 'message': 'CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH'}
+l2=0.01, fold=3: {'fold': 3, 'correct': 352, 'n': 420, 'accuracy': 83.80952380952381, 'nll': 0.4264361094923386, 'converged': True, 'iterations': 78, 'objective': 0.29797454426844744, 'message': 'CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH'}
+l2=0.01, fold=4: {'fold': 4, 'correct': 350, 'n': 420, 'accuracy': 83.33333333333333, 'nll': 0.4481485695215578, 'converged': True, 'iterations': 75, 'objective': 0.2951691071601106, 'message': 'CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH'}
+{
+  "selected_l2": 0.01,
+  "oof": {
+    "correct": 1735,
+    "n": 2114,
+    "accuracy": 82.07190160832545,
+    "nll": 0.4616447497881903
+  },
+  "asset_bytes": 28866,
+  "training_seconds": 50.14135359400825
+}

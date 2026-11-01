@@ -1,0 +1,55 @@
+{
+  "official": {
+    "protocol": "dase7506-mp2-open-hard-verifier-v5",
+    "split": "validation",
+    "correct": 748,
+    "n": 798,
+    "accuracy": 93.734335839599,
+    "scoring_seconds": 0.021336684003472328
+  },
+  "total_wall_seconds": 0.9647945610049646,
+  "processes": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "predict.py",
+        "--method",
+        "solution/residual_ranker/extended_submission.py",
+        "--checkpoint",
+        "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_extended_v2/models/combined/checkpoint",
+        "--split",
+        "validation",
+        "--output",
+        "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_extended_v2/combined/validation/predictions.json"
+      ],
+      "wall_seconds": 0.8802918480068911,
+      "coordinator_peak_threads": 1,
+      "child_peak_threads": 1,
+      "total_peak_threads": 2,
+      "returncode": 0,
+      "stdout": "{\"protocol\": \"dase7506-mp2-open-hard-verifier-v5\", \"split\": \"validation\", \"prediction_seconds\": 0.8148576829989906}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "score_predictions.py",
+        "--split",
+        "validation",
+        "--predictions",
+        "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_extended_v2/combined/validation/predictions.json",
+        "--output",
+        "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_extended_v2/combined/validation/score.json"
+      ],
+      "wall_seconds": 0.08440077700652182,
+      "coordinator_peak_threads": 1,
+      "child_peak_threads": 1,
+      "total_peak_threads": 2,
+      "returncode": 0,
+      "stdout": "{\n  \"protocol\": \"dase7506-mp2-open-hard-verifier-v5\",\n  \"split\": \"validation\",\n  \"correct\": 748,\n  \"n\": 798,\n  \"accuracy\": 93.734335839599,\n  \"scoring_seconds\": 0.021336684003472328\n}\n",
+      "stderr": ""
+    }
+  ],
+  "total_peak_threads": 2,
+  "inference_asset_bytes": 30965
+}

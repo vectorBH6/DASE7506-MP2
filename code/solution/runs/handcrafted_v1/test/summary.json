@@ -1,0 +1,61 @@
+{
+  "split": "test",
+  "official": {
+    "protocol": "dase7506-mp2-open-hard-verifier-v5",
+    "split": "test",
+    "correct": 384,
+    "n": 467,
+    "accuracy": 82.22698072805139,
+    "scoring_seconds": 0.013785950999590568
+  },
+  "total_wall_seconds": 0.5202847519976785,
+  "processes": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "predict.py",
+        "--method",
+        "solution/group_ranker/submission_linear.py",
+        "--checkpoint",
+        "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_v1/math/checkpoint",
+        "--split",
+        "test",
+        "--output",
+        "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_v1/test/predictions.json"
+      ],
+      "wall_seconds": 0.44410204100131523,
+      "coordinator_peak_threads": 1,
+      "child_peak_threads": 1,
+      "total_peak_threads": 2,
+      "returncode": 0,
+      "stdout": "{\"protocol\": \"dase7506-mp2-open-hard-verifier-v5\", \"split\": \"test\", \"prediction_seconds\": 0.3789901620039018}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "score_predictions.py",
+        "--split",
+        "test",
+        "--predictions",
+        "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_v1/test/predictions.json",
+        "--output",
+        "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_v1/test/score.json"
+      ],
+      "wall_seconds": 0.07610274299804587,
+      "coordinator_peak_threads": 1,
+      "child_peak_threads": 1,
+      "total_peak_threads": 2,
+      "returncode": 0,
+      "stdout": "{\n  \"protocol\": \"dase7506-mp2-open-hard-verifier-v5\",\n  \"split\": \"test\",\n  \"correct\": 384,\n  \"n\": 467,\n  \"accuracy\": 82.22698072805139,\n  \"scoring_seconds\": 0.013785950999590568\n}\n",
+      "stderr": ""
+    }
+  ],
+  "total_peak_threads": 2,
+  "inference_asset_bytes": 28850,
+  "freeze_id": "67ac6c3bf42cae444911b970ae747c6b4a672b74e543490d6315685bab855ebd",
+  "frozen_files_unchanged": true,
+  "reference_cpu_verified": false,
+  "local_under_30_seconds": true,
+  "assets_within_16_mib": true
+}

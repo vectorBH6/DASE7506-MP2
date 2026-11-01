@@ -1,0 +1,37 @@
+{
+  "pdf_pages": 8,
+  "sections": [
+    {
+      "section": "1. Algorithm and research question",
+      "estimated_height_pt": 713.7
+    },
+    {
+      "section": "2. Representation and training objective",
+      "estimated_height_pt": 724.0
+    },
+    {
+      "section": "3. Experimental protocol and main results",
+      "estimated_height_pt": 732.3
+    },
+    {
+      "section": "4. Feature ablations and unsuccessful ideas",
+      "estimated_height_pt": 656.5
+    },
+    {
+      "section": "5. Validation analysis and uncertainty",
+      "estimated_height_pt": 639.0
+    },
+    {
+      "section": "6. What the model learns, and where it fails",
+      "estimated_height_pt": 615.0
+    },
+    {
+      "section": "7. Resources and exact reproduction",
+      "estimated_height_pt": 728.8
+    },
+    {
+      "section": "8. Interpretation, integrity and conclusion",
+      "estimated_height_pt": 727.5
+    }
+  ]
+}

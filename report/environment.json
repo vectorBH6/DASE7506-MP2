@@ -1,0 +1,9 @@
+{
+  "python": "3.12.3",
+  "numpy": "1.26.4",
+  "matplotlib": "3.8.4",
+  "Pillow": "10.2.0",
+  "reportlab": "5.1.0",
+  "pypdf": "6.21.2",
+  "font_family": "DejaVu Sans (embedded in PDF)"
+}

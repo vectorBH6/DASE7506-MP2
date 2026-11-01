@@ -1,0 +1,15 @@
+{
+  "selected": "expanded_residual_r01",
+  "checkpoint": "solution/runs/residual_features_v1/expanded_residual_r01/checkpoint",
+  "method": "solution/residual_ranker/submission.py",
+  "eligibility": "All fold optimizers and final optimizer converged, and train OOF correct >= incumbent 1736/2114. Incumbent always eligible.",
+  "policy": "Among eligible models: validation correct descending; train OOF accuracy descending; train OOF NLL ascending; fewer parameters; fixed order.",
+  "validation": {
+    "protocol": "dase7506-mp2-open-hard-verifier-v5",
+    "split": "validation",
+    "correct": 734,
+    "n": 798,
+    "accuracy": 91.97994987468671,
+    "scoring_seconds": 0.021908501992584206
+  }
+}

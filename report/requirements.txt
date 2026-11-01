@@ -1,4 +1,5 @@
 numpy==1.26.4
-matplotlib==3.11.2
-reportlab==5.0.1
-pypdf==6.21.1
+matplotlib==3.8.4
+Pillow==10.2.0
+reportlab==5.1.0
+pypdf==6.21.2

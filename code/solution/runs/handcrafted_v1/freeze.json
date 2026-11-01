@@ -1,0 +1,32 @@
+{
+  "created_utc": "2026-10-25T05:00:26.524365+00:00",
+  "selection_basis": "Validation correct descending; train OOF accuracy descending; train OOF NLL ascending; fewer extra features; variant order. Fixed before training; no test access for selection.",
+  "sha256": {
+    "common.py": "aecd10f7ff2e9e82ac5673d34d576e122caac51d2caaa7c7a8aa05906da51f6c",
+    "predict.py": "e7a627fbdc9ef8d4ab3189a6fa5ac02d56ae703ccd1a81507aea0bd66e042162",
+    "requirements.txt": "5c12d85e7c08038d1dd9ffbf8119d12ce808885230a47e2bf65dcd9f114659d5",
+    "score_predictions.py": "fe12b809b82117aea722e5dfef7a55a88950a7cf50c49ec2ea007ea847959960",
+    "solution/__init__.py": "f96fb2e99c9bccb49c392355614c70fe2d9cd1f1c9a4fcb5fa7d688bdb451a28",
+    "solution/baselines/submission.py": "360ba032f77136ad6203e370b9df4e4cafb61681ea1965fcbb0e8e5f6288c268",
+    "solution/baselines/submission_emb_only.py": "f1b12384f3d2ecdeef0108e1357a1a04f4ab42e8444e42595a075676aa958d0a",
+    "solution/baselines/submission_voling_only.py": "c25078c99476ee50ac989fbaa1a36b51225e34fead921b20a5339df07f8660cd",
+    "solution/evaluate.py": "2f37bf118ec2b0f10267fb740bad6da9a4e527908c67a2164024fde686de1647",
+    "solution/group_ranker/__init__.py": "004736c19147e3623f71ff02762c85488e48821eebac5be4872478c28e1bcfaa",
+    "solution/group_ranker/experiment_handcrafted.py": "78cb291b388ee01c5a2be32f41bd1b1317b0d7ce3a06e620e2523483ece8a87a",
+    "solution/group_ranker/features.py": "60201c4530799b8913a6bcec27c6301c8fbca88fd4689d7d73e105848eae3fbb",
+    "solution/group_ranker/handcrafted.py": "3cfbfb7b1de23ed68a89da905ccc82b2902923a1f3208e4b4f9791059395815a",
+    "solution/group_ranker/submission_linear.py": "400eb573eec4fe9e6f88fcfb9afeaf77d6d0e818452ac885600a2a95b57b8097",
+    "solution/group_ranker/test_group_ranker.py": "753239cdc396590dd50024d5bb089917a037194983f951cee22e5477f2f5fac2",
+    "solution/group_ranker/test_handcrafted.py": "64b68e3722966393105674f2cf984a3910caaad881841131f6d93690ca032113",
+    "solution/group_ranker/train_linear.py": "89dd0f543d38c320db419ae6b67b9ff196ccf59733ad4bcf632087435ece9214",
+    "solution/runs/handcrafted_v1/math/checkpoint/asset_manifest.json": "50aea002e2febebcb95d8474338efe9088bf78cc49b862c135cad19b364992b2",
+    "solution/runs/handcrafted_v1/math/checkpoint/config.json": "3827920a021d99b8f808f3768deb446dc8c3617597857ad9a2c140ed6c0a19a8",
+    "solution/runs/handcrafted_v1/math/checkpoint/model.npz": "6ca0c223b9a48eb9ee3b27f7a30f41495fed378973068858648faaddd6eb909f",
+    "solution/runs/handcrafted_v1/plan.json": "a1892ecb5f2bdc19524486e816864f8bc2047fa6d9593cf21f9c5e816b957e8e",
+    "solution/runs/handcrafted_v1/selection.json": "009bd081448557c51ad8d5538d9dc9530f95f56d6f61d30d0485a707fa6fae9d"
+  },
+  "checkpoint": "solution/runs/handcrafted_v1/math/checkpoint",
+  "test_policy": "Only the selected method; no post-test tuning or reselection.",
+  "freeze_id": "67ac6c3bf42cae444911b970ae747c6b4a672b74e543490d6315685bab855ebd",
+  "source_archive_sha256": "7d14e90c78c5de8d27d72a6060f1508cd8ffdc0f48f084733daa7eed4a669cd5"
+}

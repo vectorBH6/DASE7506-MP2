@@ -1,0 +1,7 @@
+{
+  "selected": "lexical",
+  "method": "solution/residual_ranker/extended_submission.py",
+  "checkpoint": "solution/runs/handcrafted_extended_v2/models/lexical/checkpoint",
+  "eligibility": "Selected five folds and final optimization converged; train OOF correct >= incumbent 1745/2114. Incumbent always eligible.",
+  "policy": "Eligible models only: validation correct descending, train OOF correct descending, OOF NLL ascending, fewer parameters, fixed order."
+}

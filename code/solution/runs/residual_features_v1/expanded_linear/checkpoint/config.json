@@ -1,0 +1,14 @@
+{
+  "protocol": "dase7506-mp2-open-hard-verifier-v5",
+  "feature_version": "answer-group-residual-v1",
+  "feature_dim": 2088,
+  "feature_schema": "expanded",
+  "hidden": 0,
+  "linear_l2": 0.01,
+  "residual_l2": 0.01,
+  "seed": 7506,
+  "folds": 5,
+  "maxiter": 300,
+  "training_split": "train",
+  "training_questions": 2114
+}

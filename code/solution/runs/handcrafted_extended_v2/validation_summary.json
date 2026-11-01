@@ -1,0 +1,393 @@
+{
+  "methods": {
+    "incumbent": {
+      "train_oof": {
+        "correct": 1745,
+        "n": 2114,
+        "accuracy": 82.5449385052034,
+        "nll": 0.44576658300194555
+      },
+      "eligible": true,
+      "all_optimizers_converged": true,
+      "parameter_count": 2424,
+      "method": "solution/residual_ranker/submission.py",
+      "checkpoint": "solution/runs/residual_features_v1/expanded_residual_r01/checkpoint",
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "validation",
+        "correct": 734,
+        "n": 798,
+        "accuracy": 91.97994987468671,
+        "scoring_seconds": 0.02110449899919331
+      },
+      "total_wall_seconds": 0.672097170012421,
+      "processes": [
+        {
+          "command": [
+            "/usr/bin/python3",
+            "predict.py",
+            "--method",
+            "solution/residual_ranker/submission.py",
+            "--checkpoint",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/residual_features_v1/expanded_residual_r01/checkpoint",
+            "--split",
+            "validation",
+            "--output",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_extended_v2/incumbent/validation/predictions.json"
+          ],
+          "wall_seconds": 0.5890105119906366,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 1,
+          "total_peak_threads": 2,
+          "returncode": 0,
+          "stdout": "{\"protocol\": \"dase7506-mp2-open-hard-verifier-v5\", \"split\": \"validation\", \"prediction_seconds\": 0.5248699380026665}\n",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "/usr/bin/python3",
+            "score_predictions.py",
+            "--split",
+            "validation",
+            "--predictions",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_extended_v2/incumbent/validation/predictions.json",
+            "--output",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_extended_v2/incumbent/validation/score.json"
+          ],
+          "wall_seconds": 0.08299396200163756,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 1,
+          "total_peak_threads": 2,
+          "returncode": 0,
+          "stdout": "{\n  \"protocol\": \"dase7506-mp2-open-hard-verifier-v5\",\n  \"split\": \"validation\",\n  \"correct\": 734,\n  \"n\": 798,\n  \"accuracy\": 91.97994987468671,\n  \"scoring_seconds\": 0.02110449899919331\n}\n",
+          "stderr": ""
+        }
+      ],
+      "total_peak_threads": 2,
+      "inference_asset_bytes": 31188,
+      "conflict": {
+        "correct": 291,
+        "n": 355,
+        "accuracy": 81.97183098591549
+      },
+      "corrected_vs_incumbent": 0,
+      "regressed_vs_incumbent": 0,
+      "difference_95ci_pp": [
+        0.0,
+        0.0
+      ]
+    },
+    "lexical": {
+      "train_oof": {
+        "correct": 1761,
+        "n": 2114,
+        "accuracy": 83.30179754020814,
+        "nll": 0.4079942828451283
+      },
+      "all_optimizers_converged": true,
+      "eligible": true,
+      "l2": 0.03,
+      "parameter_count": 2112,
+      "method": "solution/residual_ranker/extended_submission.py",
+      "checkpoint": "solution/runs/handcrafted_extended_v2/models/lexical/checkpoint",
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "validation",
+        "correct": 751,
+        "n": 798,
+        "accuracy": 94.11027568922306,
+        "scoring_seconds": 0.02154696499928832
+      },
+      "total_wall_seconds": 0.9670328939973842,
+      "processes": [
+        {
+          "command": [
+            "/usr/bin/python3",
+            "predict.py",
+            "--method",
+            "solution/residual_ranker/extended_submission.py",
+            "--checkpoint",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_extended_v2/models/lexical/checkpoint",
+            "--split",
+            "validation",
+            "--output",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_extended_v2/lexical/validation/predictions.json"
+          ],
+          "wall_seconds": 0.8803877540049143,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 1,
+          "total_peak_threads": 2,
+          "returncode": 0,
+          "stdout": "{\"protocol\": \"dase7506-mp2-open-hard-verifier-v5\", \"split\": \"validation\", \"prediction_seconds\": 0.808856524003204}\n",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "/usr/bin/python3",
+            "score_predictions.py",
+            "--split",
+            "validation",
+            "--predictions",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_extended_v2/lexical/validation/predictions.json",
+            "--output",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_extended_v2/lexical/validation/score.json"
+          ],
+          "wall_seconds": 0.08656149600574281,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 1,
+          "total_peak_threads": 2,
+          "returncode": 0,
+          "stdout": "{\n  \"protocol\": \"dase7506-mp2-open-hard-verifier-v5\",\n  \"split\": \"validation\",\n  \"correct\": 751,\n  \"n\": 798,\n  \"accuracy\": 94.11027568922306,\n  \"scoring_seconds\": 0.02154696499928832\n}\n",
+          "stderr": ""
+        }
+      ],
+      "total_peak_threads": 2,
+      "inference_asset_bytes": 29766,
+      "conflict": {
+        "correct": 308,
+        "n": 355,
+        "accuracy": 86.76056338028168
+      },
+      "corrected_vs_incumbent": 21,
+      "regressed_vs_incumbent": 4,
+      "difference_95ci_pp": [
+        0.8771929824561403,
+        3.3834586466165413
+      ]
+    },
+    "trace": {
+      "train_oof": {
+        "correct": 1749,
+        "n": 2114,
+        "accuracy": 82.73415326395458,
+        "nll": 0.4433266248111026
+      },
+      "all_optimizers_converged": true,
+      "eligible": true,
+      "l2": 0.01,
+      "parameter_count": 2112,
+      "method": "solution/residual_ranker/extended_submission.py",
+      "checkpoint": "solution/runs/handcrafted_extended_v2/models/trace/checkpoint",
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "validation",
+        "correct": 737,
+        "n": 798,
+        "accuracy": 92.35588972431077,
+        "scoring_seconds": 0.021311006988980807
+      },
+      "total_wall_seconds": 0.9589759619993856,
+      "processes": [
+        {
+          "command": [
+            "/usr/bin/python3",
+            "predict.py",
+            "--method",
+            "solution/residual_ranker/extended_submission.py",
+            "--checkpoint",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_extended_v2/models/trace/checkpoint",
+            "--split",
+            "validation",
+            "--output",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_extended_v2/trace/validation/predictions.json"
+          ],
+          "wall_seconds": 0.8743124449974857,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 1,
+          "total_peak_threads": 2,
+          "returncode": 0,
+          "stdout": "{\"protocol\": \"dase7506-mp2-open-hard-verifier-v5\", \"split\": \"validation\", \"prediction_seconds\": 0.8083018140023341}\n",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "/usr/bin/python3",
+            "score_predictions.py",
+            "--split",
+            "validation",
+            "--predictions",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_extended_v2/trace/validation/predictions.json",
+            "--output",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_extended_v2/trace/validation/score.json"
+          ],
+          "wall_seconds": 0.08458160700683948,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 1,
+          "total_peak_threads": 2,
+          "returncode": 0,
+          "stdout": "{\n  \"protocol\": \"dase7506-mp2-open-hard-verifier-v5\",\n  \"split\": \"validation\",\n  \"correct\": 737,\n  \"n\": 798,\n  \"accuracy\": 92.35588972431077,\n  \"scoring_seconds\": 0.021311006988980807\n}\n",
+          "stderr": ""
+        }
+      ],
+      "total_peak_threads": 2,
+      "inference_asset_bytes": 29848,
+      "conflict": {
+        "correct": 294,
+        "n": 355,
+        "accuracy": 82.8169014084507
+      },
+      "corrected_vs_incumbent": 4,
+      "regressed_vs_incumbent": 1,
+      "difference_95ci_pp": [
+        -0.12531328320802004,
+        1.0025062656641603
+      ]
+    },
+    "combined": {
+      "train_oof": {
+        "correct": 1763,
+        "n": 2114,
+        "accuracy": 83.39640491958373,
+        "nll": 0.42042750079287783
+      },
+      "all_optimizers_converged": true,
+      "eligible": true,
+      "l2": 0.01,
+      "parameter_count": 2136,
+      "method": "solution/residual_ranker/extended_submission.py",
+      "checkpoint": "solution/runs/handcrafted_extended_v2/models/combined/checkpoint",
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "validation",
+        "correct": 748,
+        "n": 798,
+        "accuracy": 93.734335839599,
+        "scoring_seconds": 0.021336684003472328
+      },
+      "total_wall_seconds": 0.9647945610049646,
+      "processes": [
+        {
+          "command": [
+            "/usr/bin/python3",
+            "predict.py",
+            "--method",
+            "solution/residual_ranker/extended_submission.py",
+            "--checkpoint",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_extended_v2/models/combined/checkpoint",
+            "--split",
+            "validation",
+            "--output",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_extended_v2/combined/validation/predictions.json"
+          ],
+          "wall_seconds": 0.8802918480068911,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 1,
+          "total_peak_threads": 2,
+          "returncode": 0,
+          "stdout": "{\"protocol\": \"dase7506-mp2-open-hard-verifier-v5\", \"split\": \"validation\", \"prediction_seconds\": 0.8148576829989906}\n",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "/usr/bin/python3",
+            "score_predictions.py",
+            "--split",
+            "validation",
+            "--predictions",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_extended_v2/combined/validation/predictions.json",
+            "--output",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_extended_v2/combined/validation/score.json"
+          ],
+          "wall_seconds": 0.08440077700652182,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 1,
+          "total_peak_threads": 2,
+          "returncode": 0,
+          "stdout": "{\n  \"protocol\": \"dase7506-mp2-open-hard-verifier-v5\",\n  \"split\": \"validation\",\n  \"correct\": 748,\n  \"n\": 798,\n  \"accuracy\": 93.734335839599,\n  \"scoring_seconds\": 0.021336684003472328\n}\n",
+          "stderr": ""
+        }
+      ],
+      "total_peak_threads": 2,
+      "inference_asset_bytes": 30965,
+      "conflict": {
+        "correct": 305,
+        "n": 355,
+        "accuracy": 85.91549295774648
+      },
+      "corrected_vs_incumbent": 16,
+      "regressed_vs_incumbent": 2,
+      "difference_95ci_pp": [
+        0.7518796992481203,
+        2.882205513784461
+      ]
+    },
+    "contextual": {
+      "train_oof": {
+        "correct": 1756,
+        "n": 2114,
+        "accuracy": 83.06527909176916,
+        "nll": 0.40378609020723144
+      },
+      "all_optimizers_converged": true,
+      "eligible": true,
+      "l2": 0.03,
+      "parameter_count": 2168,
+      "method": "solution/residual_ranker/extended_submission.py",
+      "checkpoint": "solution/runs/handcrafted_extended_v2/models/contextual/checkpoint",
+      "official": {
+        "protocol": "dase7506-mp2-open-hard-verifier-v5",
+        "split": "validation",
+        "correct": 751,
+        "n": 798,
+        "accuracy": 94.11027568922306,
+        "scoring_seconds": 0.021974500006763265
+      },
+      "total_wall_seconds": 0.9751914340013172,
+      "processes": [
+        {
+          "command": [
+            "/usr/bin/python3",
+            "predict.py",
+            "--method",
+            "solution/residual_ranker/extended_submission.py",
+            "--checkpoint",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_extended_v2/models/contextual/checkpoint",
+            "--split",
+            "validation",
+            "--output",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_extended_v2/contextual/validation/predictions.json"
+          ],
+          "wall_seconds": 0.8886684169992805,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 1,
+          "total_peak_threads": 2,
+          "returncode": 0,
+          "stdout": "{\"protocol\": \"dase7506-mp2-open-hard-verifier-v5\", \"split\": \"validation\", \"prediction_seconds\": 0.8192171340051573}\n",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "/usr/bin/python3",
+            "score_predictions.py",
+            "--split",
+            "validation",
+            "--predictions",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_extended_v2/contextual/validation/predictions.json",
+            "--output",
+            "/home/rvector/DASE7506-MP2/code/solution/runs/handcrafted_extended_v2/contextual/validation/score.json"
+          ],
+          "wall_seconds": 0.08641434099990875,
+          "coordinator_peak_threads": 1,
+          "child_peak_threads": 1,
+          "total_peak_threads": 2,
+          "returncode": 0,
+          "stdout": "{\n  \"protocol\": \"dase7506-mp2-open-hard-verifier-v5\",\n  \"split\": \"validation\",\n  \"correct\": 751,\n  \"n\": 798,\n  \"accuracy\": 94.11027568922306,\n  \"scoring_seconds\": 0.021974500006763265\n}\n",
+          "stderr": ""
+        }
+      ],
+      "total_peak_threads": 2,
+      "inference_asset_bytes": 32610,
+      "conflict": {
+        "correct": 308,
+        "n": 355,
+        "accuracy": 86.76056338028168
+      },
+      "corrected_vs_incumbent": 21,
+      "regressed_vs_incumbent": 4,
+      "difference_95ci_pp": [
+        1.0025062656641603,
+        3.3834586466165413
+      ]
+    }
+  }
+}

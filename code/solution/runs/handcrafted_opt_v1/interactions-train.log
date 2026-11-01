@@ -1,0 +1,26 @@
+l2=0.01, multiplier=0.3, fold=0: {'fold': 0, 'correct': 338, 'n': 426, 'accuracy': 79.34272300469483, 'nll': 0.5071618807637472, 'converged': True, 'iterations': 102, 'objective': 0.2840522805097769, 'message': 'CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH'}
+l2=0.01, multiplier=0.3, fold=1: {'fold': 1, 'correct': 349, 'n': 425, 'accuracy': 82.11764705882354, 'nll': 0.4502424804504176, 'converged': True, 'iterations': 97, 'objective': 0.2920788793236335, 'message': 'CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH'}
+l2=0.01, multiplier=0.3, fold=2: {'fold': 2, 'correct': 345, 'n': 423, 'accuracy': 81.56028368794327, 'nll': 0.4834894739876621, 'converged': True, 'iterations': 95, 'objective': 0.28853354199170533, 'message': 'CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH'}
+l2=0.01, multiplier=0.3, fold=3: {'fold': 3, 'correct': 352, 'n': 420, 'accuracy': 83.80952380952381, 'nll': 0.42855251034372793, 'converged': True, 'iterations': 93, 'objective': 0.29753698011608315, 'message': 'CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH'}
+l2=0.01, multiplier=0.3, fold=4: {'fold': 4, 'correct': 346, 'n': 420, 'accuracy': 82.38095238095238, 'nll': 0.4476383486443839, 'converged': True, 'iterations': 78, 'objective': 0.29532804002711144, 'message': 'CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH'}
+l2=0.01, multiplier=1, fold=0: {'fold': 0, 'correct': 338, 'n': 426, 'accuracy': 79.34272300469483, 'nll': 0.5054430677472539, 'converged': True, 'iterations': 75, 'objective': 0.28541912260333446, 'message': 'CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH'}
+l2=0.01, multiplier=1, fold=1: {'fold': 1, 'correct': 349, 'n': 425, 'accuracy': 82.11764705882354, 'nll': 0.45198614793552094, 'converged': True, 'iterations': 77, 'objective': 0.2929384921443827, 'message': 'CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH'}
+l2=0.01, multiplier=1, fold=2: {'fold': 2, 'correct': 345, 'n': 423, 'accuracy': 81.56028368794327, 'nll': 0.48073389830771934, 'converged': True, 'iterations': 74, 'objective': 0.2899760290020005, 'message': 'CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH'}
+l2=0.01, multiplier=1, fold=3: {'fold': 3, 'correct': 352, 'n': 420, 'accuracy': 83.80952380952381, 'nll': 0.4307840026625889, 'converged': True, 'iterations': 74, 'objective': 0.2983475839040436, 'message': 'CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH'}
+l2=0.01, multiplier=1, fold=4: {'fold': 4, 'correct': 347, 'n': 420, 'accuracy': 82.61904761904762, 'nll': 0.44669263827611005, 'converged': True, 'iterations': 71, 'objective': 0.29645990449525994, 'message': 'CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH'}
+l2=0.01, multiplier=3, fold=0: {'fold': 0, 'correct': 337, 'n': 426, 'accuracy': 79.10798122065728, 'nll': 0.5034881113740163, 'converged': True, 'iterations': 73, 'objective': 0.28742879460414245, 'message': 'CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH'}
+l2=0.01, multiplier=3, fold=1: {'fold': 1, 'correct': 348, 'n': 425, 'accuracy': 81.88235294117646, 'nll': 0.45507212644338724, 'converged': True, 'iterations': 80, 'objective': 0.29418829491206977, 'message': 'CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH'}
+l2=0.01, multiplier=3, fold=2: {'fold': 2, 'correct': 342, 'n': 423, 'accuracy': 80.85106382978724, 'nll': 0.4788803481380749, 'converged': True, 'iterations': 74, 'objective': 0.2919124383983812, 'message': 'CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH'}
+l2=0.01, multiplier=3, fold=3: {'fold': 3, 'correct': 353, 'n': 420, 'accuracy': 84.04761904761905, 'nll': 0.4339451035697821, 'converged': True, 'iterations': 72, 'objective': 0.29959742127937355, 'message': 'CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH'}
+l2=0.01, multiplier=3, fold=4: {'fold': 4, 'correct': 350, 'n': 420, 'accuracy': 83.33333333333333, 'nll': 0.44529585379039693, 'converged': True, 'iterations': 72, 'objective': 0.298224208633622, 'message': 'CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH'}
+{
+  "selected_l2": 0.01,
+  "oof": {
+    "correct": 1731,
+    "n": 2114,
+    "accuracy": 81.88268684957427,
+    "nll": 0.4632466830233422
+  },
+  "asset_bytes": 28915,
+  "training_seconds": 25.789995478000492
+}
